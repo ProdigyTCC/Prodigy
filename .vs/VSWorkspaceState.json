@@ -1,6 +1,10 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\ProdigyWeb",
+    "\\ProdigyWeb\\Views",
+    "\\ProdigyWeb\\Views\\PagSobre"
   ],
+  "SelectedNode": "\\ProdigyWeb\\Views\\PagSobre\\sobre.cshtml",
   "PreviewInSolutionExplorer": false
 }
