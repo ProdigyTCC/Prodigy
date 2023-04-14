@@ -16,7 +16,7 @@ body {
 }
 
 .quem-somos {
-    padding: 0% 10% 5%;
+    margin: 5% 10%;
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
@@ -46,16 +46,11 @@ body {
 .valores {
     padding: 5% 10% 5%;
     display: flex;
-    flex-direction: column;
+    flex-direction: row-reverse;
+    justify-content: space-around;
     align-items: center;
     color: #1D7870;
     text-align: end;
-}
-
-.central-valores {
-    display: flex;
-    flex-direction: row-reverse;
-    justify-content: space-around;
 }
 
 .titulo {

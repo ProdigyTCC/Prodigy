@@ -28,7 +28,7 @@ footer {
     padding: 0% 5%;
 }
 
-.rodape-lista li:hover {
+.rodape-lista p:hover {
     cursor: pointer;
     color: #525661;
     transition: 0.3s;
@@ -53,17 +53,16 @@ footer {
 
 .rodape-icons {
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
+    margin: 0 30%;
 }
 
-.rodape-icons img {
+.icons-social {
     width: 2rem;
-    padding: 0rem 1rem;
     filter: invert(75%) sepia(10%) saturate(8%) hue-rotate(359deg) brightness(37%) contrast(47%);
-
 }
 
-.rodape-icons img:hover {  
+.icons-social:hover {  
     transition: 0.3s;
     cursor: pointer;
     filter: invert(58%) sepia(31%) saturate(842%) hue-rotate(126deg) brightness(102%) contrast(92%);
@@ -83,6 +82,12 @@ hr {
 }
 
 @media only screen and (max-width: 480px) {
+    .rodape {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
     .rodape-itens {
         display: flex;
         justify-content: center;
@@ -97,8 +102,19 @@ hr {
     .rodape-lista li {
         padding: 2% 0%;
     }
+
+    .rodape-icons {
+        margin: 0 10%;
+    }
+    
     
     .rodape-logo img {
         width: 8rem;
+    }
+}
+
+@media only screen and (max-width: 572px) {
+    .rodape-icons {
+        margin: 0 15%;
     }
 }
