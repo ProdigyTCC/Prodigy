@@ -25,26 +25,6 @@
       "PackagePath": "staticwebassets\\img\\svg\\PRODIGY.svg"
     },
     {
-      "Id": "C:\\Users\\Ana Carolina\\Prodigy\\ProdigyWeb\\wwwroot\\img\\svg\\Vector-1.svg",
-      "PackagePath": "staticwebassets\\img\\svg\\Vector-1.svg"
-    },
-    {
-      "Id": "C:\\Users\\Ana Carolina\\Prodigy\\ProdigyWeb\\wwwroot\\img\\svg\\Vector-2.svg",
-      "PackagePath": "staticwebassets\\img\\svg\\Vector-2.svg"
-    },
-    {
-      "Id": "C:\\Users\\Ana Carolina\\Prodigy\\ProdigyWeb\\wwwroot\\img\\svg\\Vector-3.svg",
-      "PackagePath": "staticwebassets\\img\\svg\\Vector-3.svg"
-    },
-    {
-      "Id": "C:\\Users\\Ana Carolina\\Prodigy\\ProdigyWeb\\wwwroot\\img\\svg\\Vector-4.svg",
-      "PackagePath": "staticwebassets\\img\\svg\\Vector-4.svg"
-    },
-    {
-      "Id": "C:\\Users\\Ana Carolina\\Prodigy\\ProdigyWeb\\wwwroot\\img\\svg\\Vector.svg",
-      "PackagePath": "staticwebassets\\img\\svg\\Vector.svg"
-    },
-    {
       "Id": "C:\\Users\\Ana Carolina\\Prodigy\\ProdigyWeb\\wwwroot\\img\\svg\\equipe-sobre.svg",
       "PackagePath": "staticwebassets\\img\\svg\\equipe-sobre.svg"
     },
@@ -59,6 +39,10 @@
     {
       "Id": "C:\\Users\\Ana Carolina\\Prodigy\\ProdigyWeb\\wwwroot\\img\\svg\\img-visao.svg",
       "PackagePath": "staticwebassets\\img\\svg\\img-visao.svg"
+    },
+    {
+      "Id": "C:\\Users\\Ana Carolina\\Prodigy\\ProdigyWeb\\wwwroot\\js\\.editorconfig",
+      "PackagePath": "staticwebassets\\js\\.editorconfig"
     },
     {
       "Id": "C:\\Users\\Ana Carolina\\Prodigy\\ProdigyWeb\\wwwroot\\js\\site.js",

@@ -19,7 +19,7 @@ body {
     margin: 5% 10%;
     display: flex;
     flex-direction: row;
-    justify-content: space-evenly;
+    justify-content: space-between;
     align-items: center;
     color: #E2F0EF;
 }
@@ -45,8 +45,7 @@ body {
 
 .valores {
     padding: 5% 10% 5%;
-    display: flex;
-    flex-direction: row-reverse;
+    display: grid;
     justify-content: space-around;
     align-items: center;
     color: #1D7870;
@@ -60,7 +59,7 @@ body {
 }
 
 .texto {
-    width: 37.5rem;
+    width: auto;
     text-align: justify;
     font-weight: 400;
     font-size: 1.3rem;
@@ -74,7 +73,23 @@ body {
 }
 
 .img-sobre img {
-    width: 28.125rem;
+    max-width: 500px;
+    width: auto;
+}
+
+.item1 {
+    grid-column: 2 / span 2;
+    grid-row: 1;
+}
+
+.item2 {
+    grid-column: 1;
+    grid-row: 1;
+}
+
+.item3 {
+    grid-column: 1 / span 2;
+    grid-row: 2;
 }
 
 @media only screen and (max-width: 1024px) {
@@ -83,9 +98,9 @@ body {
         font-weight: 600;
         text-decoration: underline;
     }
-    
+
     .texto {
-        width: 20rem;
+        width: 100%;
         text-align: justify;
         font-weight: 400;
         font-size: 1rem;
@@ -99,7 +114,7 @@ body {
     }
     
     .img-sobre img {
-        width: 25rem;
+        width: 100%;
     }
 }
 
@@ -111,7 +126,7 @@ body {
     }
     
     .texto {
-        width: 20rem;
+        width: 100%;
         text-align: justify;
         font-weight: 400;
         font-size: 0.7rem;
@@ -125,7 +140,7 @@ body {
     }
     
     .img-sobre img {
-        width: 20rem;
+        width: 100%;
     }
 }
 
@@ -137,7 +152,7 @@ body {
     }
     
     .texto {
-        width: 20rem;
+        width: 100%;
         text-align: justify;
         font-weight: 400;
         font-size: 0.6rem;
@@ -151,7 +166,7 @@ body {
     }
     
     .img-sobre img {
-        width: 15rem;
+        width: 100%;
     }
 }
 
@@ -163,7 +178,7 @@ body {
     }
     
     .texto {
-        width: 20rem;
+        width: 100%;
         text-align: justify;
         font-weight: 400;
         font-size: 0.6rem;
@@ -177,43 +192,38 @@ body {
     }
     
     .img-sobre img {
-        width: 10rem;
+        width: 100%;
     }
 }
 
 @media only screen and (max-width: 480px) {
     .quem-somos {
-        padding: 5% 0% 10%;
+        padding: 5% 5% 10%;
         display: flex;
         flex-direction: column-reverse;
         text-align: center;
+        margin: 0;
     }
     
     .missao {
-        padding: 5% 0%;
+        padding: 5% 5%;
         display: flex;
         flex-direction: column-reverse;
         text-align: center;
     }
     
     .visao {
-        padding: 5% 0%;
+        padding: 5% 5%;
         display: flex;
         flex-direction: column-reverse;
         text-align: center;
     }   
     
     .valores {
-        padding: 5% 0%;
+        padding: 5% 5%;
         display: flex;
         flex-direction: column;
         text-align: center;
-    }
-    
-    .central-valores {
-        display: flex;
-        flex-direction: column-reverse;
-        justify-content: space-around;
     }
 
     .titulo {
@@ -223,7 +233,7 @@ body {
     }
     
     .texto {
-        width: 20rem;
+        width: 100%;
         text-align: justify;
         font-weight: 400;
         font-size: 0.7rem;
@@ -231,14 +241,14 @@ body {
     
     .segundo-texto {
         padding-top: 2%;
-        width: 20rem;
+        width: 100%;
         text-align: justify;
         font-weight: 400;
         font-size: 0.7rem;
     }
     
     .img-sobre img {
-        width: 15rem;
+        width: 100%;
     }
 }
 
@@ -250,7 +260,7 @@ body {
     }
     
     .texto {
-        width: 16rem;
+        width: 100%;
         text-align: justify;
         font-weight: 400;
         font-size: 0.7rem;
@@ -258,13 +268,13 @@ body {
     
     .segundo-texto {
         padding-top: 2%;
-        width: 16rem;
+        width: 100%;
         text-align: justify;
         font-weight: 400;
         font-size: 0.7rem;
     }
     
     .img-sobre img {
-        width: 12rem;
+        width: 100%;
     }
 }
