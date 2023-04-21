@@ -1,19 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
 
-* {
-    margin: 0;
-    padding: 0%;
-    font-family: 'Montserrat', sans-serif;
-    user-select: none;
-}
-
-body {
-    background: rgb(29,120,112);
-    background: radial-gradient(circle, rgba(29,120,112,1) 0%, rgba(17,85,79,1) 100%);
-    color: #E2F0EF;
-}
-
-main {
+.section-contato {
     padding: 5% 10%;
     display: flex;
     flex-direction: row;
@@ -23,34 +10,37 @@ main {
 .aside-right {
     background-color: #30BEB2;
     border-radius: 20px;
+    max-height: 500px;
 }
 
 .svg img {
-    width: 400px;
+    max-width: 400px;
+    width: 100%;
 }
 
 .icons {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
+    padding: 0% 5% 10%;
 }
 
 .background-icons {
+    justify-content: space-between;
     background-color: #E2F0EF;
-    width: 2.6rem;
-    height: 2.6rem;
+    width: 100%;
+    height: auto;
     fill: #1D7870;
     transition: 0.3s ease-in;
-    display: flex;
-    justify-content: center;
     align-items: center;
-    margin: 2%;
     padding: 3%;
+    margin: 0% 3%;
     border-radius: 100px;
 }
 
 .background-icons:hover {
     background-color: #1D7870;
     fill: #E2F0EF;
+    cursor: pointer ;
 }
 
 .titulo {
@@ -58,32 +48,27 @@ main {
     font-size: 2rem;
 }
 
-.input-nome input, .input-email input {
-    border: 1px solid #E2F0EF;
-    border-radius: 5px;
-    background-color: #E2F0EF;
-    color: #1D7870;
-    width: 500px;
-    height: 30px;
-    padding-left: 10px;
-    font-weight: 600;
+.label-contato {
+    font-weight: 500;
+    font-size: 1rem;
+    padding: 0%;
 }
 
-.input-nome input, .input-email input {
-    outline: none;
+.input-group {
+    padding-bottom: 5%;
+    padding-right: 5%;
+    border-radius: 5px;
 }
 
-.input-detalhes textarea {
-    border: 1px solid #E2F0EF;
-    border-radius: 5px;
-    background-color: #E2F0EF;
+.form-control {
     color: #1D7870;
-    width: 500px;
-    height: 120px;
-    padding-top: 10px;
-    padding-left: 10px;
     font-weight: 600;
-    resize: none;
+    box-shadow: none;
+}
+
+input:focus {
+    border: 1px solid #30BEB2;
+    color: #1D7870;
 }
 
 .input-detalhes textarea {
@@ -106,4 +91,10 @@ main {
     background-color: #E2F0EF;
     color: #1D7870;
     transition: 0.3s;
+}
+
+@media only screen and (max-width: 768px) {
+    .section-contato {
+        flex-direction: column;
+    }
 }

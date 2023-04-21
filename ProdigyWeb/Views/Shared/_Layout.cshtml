@@ -7,7 +7,8 @@
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/ProdigyWeb.styles.css" asp-append-version="true" />
-    <link rel="stylesheet" href="~/css/pagSobre.css" asp-append-version="true"/>
+    <link rel="stylesheet" href="~/css/PagSobre.css" asp-append-version="true"/>
+    <link rel="stylesheet" href="~/css/PagContato.css" asp-append-version="true"/>
     <link rel="stylesheet" href="~/css/rodape.css" asp-append-version="true"/>
 </head>
 <body>
@@ -25,7 +26,10 @@
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="PagSobre" asp-action="Index">Sobre</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="PagContato" asp-action="Index">Contato</a>
                         </li>
                     </ul>
                 </div>
@@ -39,7 +43,7 @@
     </div>
 
     <footer>
-        <div class="rodape">
+        <div class="container-fluid rodape">
             <div class="rodape-itens">
                 <ul class="rodape-lista">
                     <li><p>Home</p></li>
@@ -52,7 +56,7 @@
             <br><br>
 
             <div class="rodape-logo">
-                <img src="img/svg/PRODIGY.svg" alt="Logo">
+                <img src="../img/svg/PRODIGY.svg" alt="Logo">
             </div>
 
             <br>
