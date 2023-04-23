@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "ZLuUVCyqLeWW7sgyIP8onVIXpRKn3xrrVrILcaicaa6kAqEdkdX4CamtWQvl/V/aYtSZ94zjzrDGWUQ06rd9QQ==",
+  "dgSpecHash": "R09lpeoJ/cFfF9ZiUMvCNtFqInL3KrOBvyCezOfSUeJ4TPdBJc/iBanmEbJDcN0kQKsg+SgPUXgbTyBxzTZxgA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Wallace\\Desktop\\Prodigy\\Sistema01\\Sistema01.csproj",
+  "projectFilePath": "C:\\Users\\Wallace\\Desktop\\Projetos\\TCC Git\\Prodigy\\Sistema01\\Sistema01.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Wallace\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\Wallace\\.nuget\\packages\\microsoft.entityframeworkcore\\7.0.3\\microsoft.entityframeworkcore.7.0.3.nupkg.sha512",

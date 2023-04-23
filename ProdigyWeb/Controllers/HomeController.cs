@@ -6,20 +6,20 @@ namespace ProdigyWeb.Controllers;
 
 public class HomeController : Controller
 {
-    private readonly ILogger<HomeController> _logger;
-
-    public HomeController(ILogger<HomeController> logger)
-    {
-        _logger = logger;
-    }
-
     public IActionResult Index()
     {
+        ViewBag.Layout = "ProdigyWeb";
         return View();
     }
 
-    public IActionResult Privacy()
+    public IActionResult Sobre()
     {
+        ViewBag.Layout = "ProdigyWeb";
+        return View();
+    }
+    public IActionResult Contato()
+    {
+        ViewBag.Layout = "ProdigyWeb";
         return View();
     }
 
