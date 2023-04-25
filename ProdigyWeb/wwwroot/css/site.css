@@ -16,3 +16,21 @@ html {
   position: relative;
   min-height: 100%;
 }
+
+.secondy-button {
+  color: #E2F0EF;
+  font-weight: 600;
+  font-size: 1.2rem;
+  text-shadow: 0px 0.6px 1px #000;
+  background-color: #30BEB2;
+  width: 350px;
+  height: 40px;
+  box-shadow: 0px 0.7px 2px #000;
+  border: none;
+  border-radius: 10px;
+  transition: ease-in-out 0.3s;
+}
+
+.secondy-button:hover {
+  background-color: #1D7870;
+}
