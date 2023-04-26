@@ -17,6 +17,39 @@ html {
   min-height: 100%;
 }
 
+body::-webkit-scrollbar {
+  width: 12px;               
+}
+
+body::-webkit-scrollbar-track {
+  background: #525661;
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: #1D7870;    
+  border-radius: none;       
+  border: none;  
+}
+
+.barra {
+  margin: 1% 5% 0%;
+}
+
+.barra ul li a{
+  color: #E2F0EF;
+  font-size: 1em;
+  margin-left: 2rem;  
+  transition: all 0.35s ease-in-out; 
+}
+
+.barra a:hover{
+  color: #30BEB2;
+}
+
+.barra img{
+  height: 1.5em;
+}
+
 .secondy-button {
   color: #E2F0EF;
   font-weight: 600;

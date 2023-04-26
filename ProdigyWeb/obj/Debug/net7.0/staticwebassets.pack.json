@@ -29,6 +29,14 @@
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
+      "Id": "C:\\Users\\marce\\OneDrive\\Área de Trabalho\\Marcelo\\Prodigy\\ProdigyWeb\\wwwroot\\img\\fotoPerfil.png",
+      "PackagePath": "staticwebassets\\img\\fotoPerfil.png"
+    },
+    {
+      "Id": "C:\\Users\\marce\\OneDrive\\Área de Trabalho\\Marcelo\\Prodigy\\ProdigyWeb\\wwwroot\\img\\prodigy.png",
+      "PackagePath": "staticwebassets\\img\\prodigy.png"
+    },
+    {
       "Id": "C:\\Users\\marce\\OneDrive\\Área de Trabalho\\Marcelo\\Prodigy\\ProdigyWeb\\wwwroot\\img\\svg\\Mobile.svg",
       "PackagePath": "staticwebassets\\img\\svg\\Mobile.svg"
     },
