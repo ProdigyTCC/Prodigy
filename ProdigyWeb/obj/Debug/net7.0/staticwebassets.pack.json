@@ -17,6 +17,10 @@
       "PackagePath": "staticwebassets\\css\\Perfil.css"
     },
     {
+      "Id": "C:\\Users\\marce\\OneDrive\\Área de Trabalho\\Marcelo\\Prodigy\\ProdigyWeb\\wwwroot\\css\\index.css",
+      "PackagePath": "staticwebassets\\css\\index.css"
+    },
+    {
       "Id": "C:\\Users\\marce\\OneDrive\\Área de Trabalho\\Marcelo\\Prodigy\\ProdigyWeb\\wwwroot\\css\\rodape.css",
       "PackagePath": "staticwebassets\\css\\rodape.css"
     },
@@ -31,6 +35,30 @@
     {
       "Id": "C:\\Users\\marce\\OneDrive\\Área de Trabalho\\Marcelo\\Prodigy\\ProdigyWeb\\wwwroot\\img\\fotoPerfil.png",
       "PackagePath": "staticwebassets\\img\\fotoPerfil.png"
+    },
+    {
+      "Id": "C:\\Users\\marce\\OneDrive\\Área de Trabalho\\Marcelo\\Prodigy\\ProdigyWeb\\wwwroot\\img\\menu.png",
+      "PackagePath": "staticwebassets\\img\\menu.png"
+    },
+    {
+      "Id": "C:\\Users\\marce\\OneDrive\\Área de Trabalho\\Marcelo\\Prodigy\\ProdigyWeb\\wwwroot\\img\\panel1.png",
+      "PackagePath": "staticwebassets\\img\\panel1.png"
+    },
+    {
+      "Id": "C:\\Users\\marce\\OneDrive\\Área de Trabalho\\Marcelo\\Prodigy\\ProdigyWeb\\wwwroot\\img\\panel2.png",
+      "PackagePath": "staticwebassets\\img\\panel2.png"
+    },
+    {
+      "Id": "C:\\Users\\marce\\OneDrive\\Área de Trabalho\\Marcelo\\Prodigy\\ProdigyWeb\\wwwroot\\img\\panel3.png",
+      "PackagePath": "staticwebassets\\img\\panel3.png"
+    },
+    {
+      "Id": "C:\\Users\\marce\\OneDrive\\Área de Trabalho\\Marcelo\\Prodigy\\ProdigyWeb\\wwwroot\\img\\panel4.png",
+      "PackagePath": "staticwebassets\\img\\panel4.png"
+    },
+    {
+      "Id": "C:\\Users\\marce\\OneDrive\\Área de Trabalho\\Marcelo\\Prodigy\\ProdigyWeb\\wwwroot\\img\\presentation.png",
+      "PackagePath": "staticwebassets\\img\\presentation.png"
     },
     {
       "Id": "C:\\Users\\marce\\OneDrive\\Área de Trabalho\\Marcelo\\Prodigy\\ProdigyWeb\\wwwroot\\img\\prodigy.png",

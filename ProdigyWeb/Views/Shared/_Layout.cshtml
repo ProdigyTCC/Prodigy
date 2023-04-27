@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/ProdigyWeb.styles.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/index.css" asp-append-version="true"/>
     <link rel="stylesheet" href="~/css/PagSobre.css" asp-append-version="true"/>
     <link rel="stylesheet" href="~/css/PagContato.css" asp-append-version="true"/>
     <link rel="stylesheet" href="~/css/rodape.css" asp-append-version="true"/>
@@ -17,14 +18,15 @@
     @if(ViewBag.Layout == "ProdigyWeb")
     {  
         <header>
-            <nav class="barra navbar navbar-expand-lg navbar">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index"><img src="../img/prodigy.png" alt=""></a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Alterna navegação">
-                <img src="img/menu.png" alt="">
-                </button>
-                <div class="barra collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav ml-auto">
-                    <li class="nav-item">
+            <nav class="navbar navbar-expand-lg">
+                <div class="container-fluid">
+                    <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index"><img src="../img/prodigy.png" alt=""></a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <img src="../img/menu.png" alt="">
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav ml-auto">
+                            <li class="nav-item">
                                 <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
                             </li>
                             <li class="nav-item">
@@ -39,7 +41,8 @@
                             <li class="nav-item">
                                 <a class="nav-link" asp-area="" asp-controller="Home2" asp-action="Index">Sistema</a>
                             </li>
-                    </ul>
+                        </ul>
+                    </div>
                 </div>
             </nav>
         </header>

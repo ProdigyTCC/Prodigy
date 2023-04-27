@@ -30,13 +30,13 @@
     width: 48px;
     height: auto;
     fill: #E2F0EF;
-    transition: 0.3s ease-in;
+    transition: 0.3s ease-in-out;
     align-items: center;
     border-radius: 100px;
 }
 
 .background-icons:hover {
-    fill: #1D7870;
+    fill: #30BEB2;
     cursor: pointer ;
 }
 
@@ -79,24 +79,6 @@ input:focus {
 
 .input-detalhes textarea {
     outline: none;
-}
-
-.botao-enviar {
-    width: 200px;
-    height: 40px;
-    background-color: #30BEB2;
-    border: none;
-    border-radius: 5px;
-    color: #E2F0EF;
-    font-weight: 600;
-    font-size: 20px;
-    transition: color 0.3s ease-out;
-}
-
-.botao-enviar:hover {
-    background-color: #E2F0EF;
-    color: #1D7870;
-    transition: 0.3s;
 }
 
 @media only screen and (max-width: 768px) {

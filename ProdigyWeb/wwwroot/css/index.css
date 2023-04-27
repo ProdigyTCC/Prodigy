@@ -1,0 +1,48 @@
+.texto-home {
+    width: 500px;
+}
+
+.titulo-index{
+    padding-top: 2em;
+    padding-bottom: 1em;
+    font-size: 2em;
+    font-weight: bolder;
+    color: #1D7870;
+    background-color: #E2F0EF;
+}
+
+.titulo2{
+    padding-top: 2em;
+    padding-bottom: 1em;
+    font-size: 2em;
+    font-weight: bolder;
+    color: #E2F0EF;
+}
+
+.texto button{
+    width: 50%;
+    padding: 0.2em;
+    color: #E2F0EF;
+    background-color: #30BEB2;
+    font-size: 1em;
+    font-weight: bolder;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.3em;
+    transition: all 0.35s ease-in-out;
+}
+
+.texto button:hover{
+    background-color: #E2F0EF;
+    color: #30BEB2;
+}
+
+.solucoes {
+    padding: 5% 10% 0%;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-around;
+    align-items: center;
+    color: #E2F0EF;
+    text-align: end;
+}

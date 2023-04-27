@@ -16,32 +16,29 @@ body {
     background-color: #E2F0EF;
 }
 
-.quem-somos {
-    margin: 5% 10%;
+.img-right {
+    padding: 5% 10%;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+}
+
+.texto-branco {
     color: #E2F0EF;
 }
 
-.missao {
-    padding: 5% 10% 0%;
+.texto-verde {
+    color: #1D7870;
+}
+
+.img-left {
+    padding: 5% 10%;
     display: flex;
     flex-direction: row-reverse;
     justify-content: space-around;
     align-items: center;
-    color: #1D7870;
     text-align: end;
-}
-
-.visao {
-    padding: 5% 10% 0%;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
-    color: #1D7870;
 }
 
 .valores {
@@ -51,6 +48,12 @@ body {
     align-items: center;
     color: #1D7870;
     text-align: end;
+}
+
+.texto-principal {
+    text-align: left;
+    font-weight: 700;
+    font-size: 2.2em;
 }
 
 .titulo {
@@ -78,6 +81,11 @@ body {
     width: auto;
 }
 
+.imagem-principal img {
+    width: 30rem;
+    text-align: center;
+}
+
 .item1 {
     grid-column: 2 / span 2;
     grid-row: 1;
@@ -100,6 +108,10 @@ body {
         text-decoration: underline;
     }
 
+    .texto-principal {
+        font-size: 1.6em;
+    }
+
     .texto {
         width: 100%;
         text-align: justify;
@@ -120,6 +132,11 @@ body {
 }
 
 @media only screen and (max-width: 768px) {
+    .texto-principal {
+        font-size: 1.2em;
+        text-align: justify;
+    }
+
     .titulo {
         font-size: 1rem;
         font-weight: 600;
@@ -143,9 +160,17 @@ body {
     .img-sobre img {
         width: 100%;
     }
+
+    .imagem-principal img {
+        width: 25rem;
+    }
 }
 
 @media only screen and (max-width: 650px) {
+    .texto-principal {
+        font-size: 1em;
+    }
+
     .titulo {
         font-size: 0.9rem;
         font-weight: 600;
@@ -172,6 +197,10 @@ body {
 }
 
 @media only screen and (max-width: 560px) {
+    .texto-principal {
+        font-size: 1em;
+    }
+
     .titulo {
         font-size: 0.9rem;
         font-weight: 600;
@@ -198,7 +227,17 @@ body {
 }
 
 @media only screen and (max-width: 480px) {
-    .quem-somos {
+    .div-home {
+        display: flex;
+        flex-direction: column-reverse;
+        justify-content: center;
+    }
+
+    .imagem-principal img{
+        width: 20rem;
+    }
+
+    .img-right {
         padding: 5% 5% 10%;
         display: flex;
         flex-direction: column-reverse;
@@ -206,25 +245,27 @@ body {
         margin: 0;
     }
     
-    .missao {
+    .img-left {
         padding: 5% 5%;
         display: flex;
         flex-direction: column-reverse;
         text-align: center;
     }
     
-    .visao {
-        padding: 5% 5%;
-        display: flex;
-        flex-direction: column-reverse;
-        text-align: center;
-    }   
-    
     .valores {
         padding: 5% 5%;
         display: flex;
         flex-direction: column;
         text-align: center;
+    }
+
+    .texto-home {
+        width: 100%;
+        padding: 0% 5%;
+    }
+
+    .texto-principal {
+        font-size: 1.2em;
     }
 
     .titulo {

@@ -7,10 +7,6 @@ a.navbar-brand[b-2aqqhd4fwa] {
   word-break: break-all;
 }
 
-a[b-2aqqhd4fwa] {
-  color: #0077cc;
-}
-
 .btn-primary[b-2aqqhd4fwa] {
   color: #fff;
   background-color: #1b6ec2;
@@ -45,4 +41,10 @@ button.accept-policy[b-2aqqhd4fwa] {
   width: 100%;
   white-space: nowrap;
   line-height: 60px;
+}
+
+@media(max-width: 1024px) {
+  .barra img[b-2aqqhd4fwa]{
+    height: 1em;
+  }
 }
