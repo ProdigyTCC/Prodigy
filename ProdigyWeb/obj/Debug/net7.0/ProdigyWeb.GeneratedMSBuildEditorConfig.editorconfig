@@ -9,173 +9,177 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = ProdigyWeb
 build_property.RootNamespace = ProdigyWeb
-build_property.ProjectDir = C:\Users\marce\OneDrive\Área de Trabalho\Marcelo\Prodigy\ProdigyWeb\
+build_property.ProjectDir = c:\Users\marce\OneDrive\Área de Trabalho\Marcelo\Prodigy\ProdigyWeb\
 build_property.RazorLangVersion = 7.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\marce\OneDrive\Área de Trabalho\Marcelo\Prodigy\ProdigyWeb
+build_property.MSBuildProjectDirectory = c:\Users\marce\OneDrive\Área de Trabalho\Marcelo\Prodigy\ProdigyWeb
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/marce/OneDrive/Área de Trabalho/Marcelo/Prodigy/ProdigyWeb/Views/Config/Criar.cshtml]
+[c:/Users/marce/OneDrive/Área de Trabalho/Marcelo/Prodigy/ProdigyWeb/Views/Config/Criar.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29uZmlnXENyaWFyLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/marce/OneDrive/Área de Trabalho/Marcelo/Prodigy/ProdigyWeb/Views/Config/Deletar.cshtml]
+[c:/Users/marce/OneDrive/Área de Trabalho/Marcelo/Prodigy/ProdigyWeb/Views/Config/Deletar.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29uZmlnXERlbGV0YXIuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/marce/OneDrive/Área de Trabalho/Marcelo/Prodigy/ProdigyWeb/Views/Config/Detalhar.cshtml]
+[c:/Users/marce/OneDrive/Área de Trabalho/Marcelo/Prodigy/ProdigyWeb/Views/Config/Detalhar.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29uZmlnXERldGFsaGFyLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/marce/OneDrive/Área de Trabalho/Marcelo/Prodigy/ProdigyWeb/Views/Config/Index.cshtml]
+[c:/Users/marce/OneDrive/Área de Trabalho/Marcelo/Prodigy/ProdigyWeb/Views/Config/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29uZmlnXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/marce/OneDrive/Área de Trabalho/Marcelo/Prodigy/ProdigyWeb/Views/ContaBancaria/Criar.cshtml]
+[c:/Users/marce/OneDrive/Área de Trabalho/Marcelo/Prodigy/ProdigyWeb/Views/ContaBancaria/Criar.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29udGFCYW5jYXJpYVxDcmlhci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/marce/OneDrive/Área de Trabalho/Marcelo/Prodigy/ProdigyWeb/Views/ContaBancaria/Deletar.cshtml]
+[c:/Users/marce/OneDrive/Área de Trabalho/Marcelo/Prodigy/ProdigyWeb/Views/ContaBancaria/Deletar.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29udGFCYW5jYXJpYVxEZWxldGFyLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/marce/OneDrive/Área de Trabalho/Marcelo/Prodigy/ProdigyWeb/Views/ContaBancaria/Detalhar.cshtml]
+[c:/Users/marce/OneDrive/Área de Trabalho/Marcelo/Prodigy/ProdigyWeb/Views/ContaBancaria/Detalhar.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29udGFCYW5jYXJpYVxEZXRhbGhhci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/marce/OneDrive/Área de Trabalho/Marcelo/Prodigy/ProdigyWeb/Views/ContaBancaria/Index.cshtml]
+[c:/Users/marce/OneDrive/Área de Trabalho/Marcelo/Prodigy/ProdigyWeb/Views/ContaBancaria/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29udGFCYW5jYXJpYVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/marce/OneDrive/Área de Trabalho/Marcelo/Prodigy/ProdigyWeb/Views/Contato/Criar.cshtml]
+[c:/Users/marce/OneDrive/Área de Trabalho/Marcelo/Prodigy/ProdigyWeb/Views/Contato/Criar.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29udGF0b1xDcmlhci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/marce/OneDrive/Área de Trabalho/Marcelo/Prodigy/ProdigyWeb/Views/Contato/Deletar.cshtml]
+[c:/Users/marce/OneDrive/Área de Trabalho/Marcelo/Prodigy/ProdigyWeb/Views/Contato/Deletar.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29udGF0b1xEZWxldGFyLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/marce/OneDrive/Área de Trabalho/Marcelo/Prodigy/ProdigyWeb/Views/Contato/Detalhar.cshtml]
+[c:/Users/marce/OneDrive/Área de Trabalho/Marcelo/Prodigy/ProdigyWeb/Views/Contato/Detalhar.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29udGF0b1xEZXRhbGhhci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/marce/OneDrive/Área de Trabalho/Marcelo/Prodigy/ProdigyWeb/Views/Contato/Index.cshtml]
+[c:/Users/marce/OneDrive/Área de Trabalho/Marcelo/Prodigy/ProdigyWeb/Views/Contato/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29udGF0b1xJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/marce/OneDrive/Área de Trabalho/Marcelo/Prodigy/ProdigyWeb/Views/Endereco/Criar.cshtml]
+[c:/Users/marce/OneDrive/Área de Trabalho/Marcelo/Prodigy/ProdigyWeb/Views/Endereco/Criar.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW5kZXJlY29cQ3JpYXIuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/marce/OneDrive/Área de Trabalho/Marcelo/Prodigy/ProdigyWeb/Views/Endereco/Deletar.cshtml]
+[c:/Users/marce/OneDrive/Área de Trabalho/Marcelo/Prodigy/ProdigyWeb/Views/Endereco/Deletar.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW5kZXJlY29cRGVsZXRhci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/marce/OneDrive/Área de Trabalho/Marcelo/Prodigy/ProdigyWeb/Views/Endereco/Detalhar.cshtml]
+[c:/Users/marce/OneDrive/Área de Trabalho/Marcelo/Prodigy/ProdigyWeb/Views/Endereco/Detalhar.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW5kZXJlY29cRGV0YWxoYXIuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/marce/OneDrive/Área de Trabalho/Marcelo/Prodigy/ProdigyWeb/Views/Endereco/Index.cshtml]
+[c:/Users/marce/OneDrive/Área de Trabalho/Marcelo/Prodigy/ProdigyWeb/Views/Endereco/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW5kZXJlY29cSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/marce/OneDrive/Área de Trabalho/Marcelo/Prodigy/ProdigyWeb/Views/Home/Contato.cshtml]
+[c:/Users/marce/OneDrive/Área de Trabalho/Marcelo/Prodigy/ProdigyWeb/Views/Home/Contato.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxDb250YXRvLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/marce/OneDrive/Área de Trabalho/Marcelo/Prodigy/ProdigyWeb/Views/Home/index.cshtml]
+[c:/Users/marce/OneDrive/Área de Trabalho/Marcelo/Prodigy/ProdigyWeb/Views/Home/index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxpbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/marce/OneDrive/Área de Trabalho/Marcelo/Prodigy/ProdigyWeb/Views/Home/Perfil.cshtml]
+[c:/Users/marce/OneDrive/Área de Trabalho/Marcelo/Prodigy/ProdigyWeb/Views/Home/Perfil.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQZXJmaWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/marce/OneDrive/Área de Trabalho/Marcelo/Prodigy/ProdigyWeb/Views/Home/Sobre.cshtml]
+[c:/Users/marce/OneDrive/Área de Trabalho/Marcelo/Prodigy/ProdigyWeb/Views/Home/Planos.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQbGFub3MuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[c:/Users/marce/OneDrive/Área de Trabalho/Marcelo/Prodigy/ProdigyWeb/Views/Home/Sobre.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxTb2JyZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/marce/OneDrive/Área de Trabalho/Marcelo/Prodigy/ProdigyWeb/Views/Juridico/Criar.cshtml]
+[c:/Users/marce/OneDrive/Área de Trabalho/Marcelo/Prodigy/ProdigyWeb/Views/Juridico/Criar.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSnVyaWRpY29cQ3JpYXIuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/marce/OneDrive/Área de Trabalho/Marcelo/Prodigy/ProdigyWeb/Views/Juridico/Deletar.cshtml]
+[c:/Users/marce/OneDrive/Área de Trabalho/Marcelo/Prodigy/ProdigyWeb/Views/Juridico/Deletar.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSnVyaWRpY29cRGVsZXRhci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/marce/OneDrive/Área de Trabalho/Marcelo/Prodigy/ProdigyWeb/Views/Juridico/Detalhar.cshtml]
+[c:/Users/marce/OneDrive/Área de Trabalho/Marcelo/Prodigy/ProdigyWeb/Views/Juridico/Detalhar.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSnVyaWRpY29cRGV0YWxoYXIuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/marce/OneDrive/Área de Trabalho/Marcelo/Prodigy/ProdigyWeb/Views/Juridico/Index.cshtml]
+[c:/Users/marce/OneDrive/Área de Trabalho/Marcelo/Prodigy/ProdigyWeb/Views/Juridico/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSnVyaWRpY29cSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/marce/OneDrive/Área de Trabalho/Marcelo/Prodigy/ProdigyWeb/Views/Modulo/Criar.cshtml]
+[c:/Users/marce/OneDrive/Área de Trabalho/Marcelo/Prodigy/ProdigyWeb/Views/Modulo/Criar.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTW9kdWxvXENyaWFyLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/marce/OneDrive/Área de Trabalho/Marcelo/Prodigy/ProdigyWeb/Views/Modulo/Deletar.cshtml]
+[c:/Users/marce/OneDrive/Área de Trabalho/Marcelo/Prodigy/ProdigyWeb/Views/Modulo/Deletar.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTW9kdWxvXERlbGV0YXIuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/marce/OneDrive/Área de Trabalho/Marcelo/Prodigy/ProdigyWeb/Views/Modulo/Detalhar.cshtml]
+[c:/Users/marce/OneDrive/Área de Trabalho/Marcelo/Prodigy/ProdigyWeb/Views/Modulo/Detalhar.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTW9kdWxvXERldGFsaGFyLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/marce/OneDrive/Área de Trabalho/Marcelo/Prodigy/ProdigyWeb/Views/Modulo/Index.cshtml]
+[c:/Users/marce/OneDrive/Área de Trabalho/Marcelo/Prodigy/ProdigyWeb/Views/Modulo/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTW9kdWxvXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/marce/OneDrive/Área de Trabalho/Marcelo/Prodigy/ProdigyWeb/Views/Pix/Criar.cshtml]
+[c:/Users/marce/OneDrive/Área de Trabalho/Marcelo/Prodigy/ProdigyWeb/Views/Pix/Criar.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGl4XENyaWFyLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/marce/OneDrive/Área de Trabalho/Marcelo/Prodigy/ProdigyWeb/Views/Pix/Deletar.cshtml]
+[c:/Users/marce/OneDrive/Área de Trabalho/Marcelo/Prodigy/ProdigyWeb/Views/Pix/Deletar.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGl4XERlbGV0YXIuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/marce/OneDrive/Área de Trabalho/Marcelo/Prodigy/ProdigyWeb/Views/Pix/Detalhar.cshtml]
+[c:/Users/marce/OneDrive/Área de Trabalho/Marcelo/Prodigy/ProdigyWeb/Views/Pix/Detalhar.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGl4XERldGFsaGFyLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/marce/OneDrive/Área de Trabalho/Marcelo/Prodigy/ProdigyWeb/Views/Pix/Index.cshtml]
+[c:/Users/marce/OneDrive/Área de Trabalho/Marcelo/Prodigy/ProdigyWeb/Views/Pix/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGl4XEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/marce/OneDrive/Área de Trabalho/Marcelo/Prodigy/ProdigyWeb/Views/Shared/Error.cshtml]
+[c:/Users/marce/OneDrive/Área de Trabalho/Marcelo/Prodigy/ProdigyWeb/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/marce/OneDrive/Área de Trabalho/Marcelo/Prodigy/ProdigyWeb/Views/Shared/_ValidationScriptsPartial.cshtml]
+[c:/Users/marce/OneDrive/Área de Trabalho/Marcelo/Prodigy/ProdigyWeb/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/marce/OneDrive/Área de Trabalho/Marcelo/Prodigy/ProdigyWeb/Views/Usuario/Criar.cshtml]
+[c:/Users/marce/OneDrive/Área de Trabalho/Marcelo/Prodigy/ProdigyWeb/Views/Usuario/Criar.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXN1YXJpb1xDcmlhci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/marce/OneDrive/Área de Trabalho/Marcelo/Prodigy/ProdigyWeb/Views/Usuario/Deletar.cshtml]
+[c:/Users/marce/OneDrive/Área de Trabalho/Marcelo/Prodigy/ProdigyWeb/Views/Usuario/Deletar.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXN1YXJpb1xEZWxldGFyLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/marce/OneDrive/Área de Trabalho/Marcelo/Prodigy/ProdigyWeb/Views/Usuario/Detalhar.cshtml]
+[c:/Users/marce/OneDrive/Área de Trabalho/Marcelo/Prodigy/ProdigyWeb/Views/Usuario/Detalhar.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXN1YXJpb1xEZXRhbGhhci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/marce/OneDrive/Área de Trabalho/Marcelo/Prodigy/ProdigyWeb/Views/Usuario/Index.cshtml]
+[c:/Users/marce/OneDrive/Área de Trabalho/Marcelo/Prodigy/ProdigyWeb/Views/Usuario/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXN1YXJpb1xJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/marce/OneDrive/Área de Trabalho/Marcelo/Prodigy/ProdigyWeb/Views/_ViewImports.cshtml]
+[c:/Users/marce/OneDrive/Área de Trabalho/Marcelo/Prodigy/ProdigyWeb/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/marce/OneDrive/Área de Trabalho/Marcelo/Prodigy/ProdigyWeb/Views/_ViewStart.cshtml]
+[c:/Users/marce/OneDrive/Área de Trabalho/Marcelo/Prodigy/ProdigyWeb/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/marce/OneDrive/Área de Trabalho/Marcelo/Prodigy/ProdigyWeb/Views/Shared/_Layout.cshtml]
+[c:/Users/marce/OneDrive/Área de Trabalho/Marcelo/Prodigy/ProdigyWeb/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-2aqqhd4fwa

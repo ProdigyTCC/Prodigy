@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "Bt/qmmheEcN262BychEj5v4Bpja0vgVMSbtZvXyRLA4=",
+  "Hash": "WI7Ldn9qdMCKcEY4lVAJNe3GrSnMLH01JSeWprdAXsM=",
   "Source": "ProdigyWeb",
   "BasePath": "_content/ProdigyWeb",
   "Mode": "Default",
@@ -136,6 +136,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\Perfil.css"
+    },
+    {
+      "Identity": "C:\\Users\\marce\\OneDrive\\Área de Trabalho\\Marcelo\\Prodigy\\ProdigyWeb\\wwwroot\\css\\planos.css",
+      "SourceId": "ProdigyWeb",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\marce\\OneDrive\\Área de Trabalho\\Marcelo\\Prodigy\\ProdigyWeb\\wwwroot\\",
+      "BasePath": "_content/ProdigyWeb",
+      "RelativePath": "css/planos.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\planos.css"
     },
     {
       "Identity": "C:\\Users\\marce\\OneDrive\\Área de Trabalho\\Marcelo\\Prodigy\\ProdigyWeb\\wwwroot\\css\\rodape.css",
@@ -342,12 +359,12 @@
       "OriginalItemSpec": "wwwroot\\img\\svg\\equipe-sobre.svg"
     },
     {
-      "Identity": "C:\\Users\\marce\\OneDrive\\Área de Trabalho\\Marcelo\\Prodigy\\ProdigyWeb\\wwwroot\\img\\svg\\img-img-left.svg",
+      "Identity": "C:\\Users\\marce\\OneDrive\\Área de Trabalho\\Marcelo\\Prodigy\\ProdigyWeb\\wwwroot\\img\\svg\\img-missao.svg",
       "SourceId": "ProdigyWeb",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\marce\\OneDrive\\Área de Trabalho\\Marcelo\\Prodigy\\ProdigyWeb\\wwwroot\\",
       "BasePath": "_content/ProdigyWeb",
-      "RelativePath": "img/svg/img-img-left.svg",
+      "RelativePath": "img/svg/img-missao.svg",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -356,7 +373,7 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\img\\svg\\img-img-left.svg"
+      "OriginalItemSpec": "wwwroot\\img\\svg\\img-missao.svg"
     },
     {
       "Identity": "C:\\Users\\marce\\OneDrive\\Área de Trabalho\\Marcelo\\Prodigy\\ProdigyWeb\\wwwroot\\img\\svg\\img-valores.svg",

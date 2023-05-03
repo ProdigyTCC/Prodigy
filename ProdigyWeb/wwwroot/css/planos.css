@@ -1,0 +1,89 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+
+*{
+    font-family: 'Montserrat';
+    outline-color:#30BEB2;    
+}
+
+.barra ul li a{
+  color: #1D7870;
+}
+
+.card-planos {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 0% 10%;
+}
+
+.card-unico {
+  margin: 0%;
+  padding: 1% 1%;
+}
+
+#card-1{
+  background:#2D3037;
+  border-radius: 10px;
+  color: #E2F0EF;
+}
+
+.lista-planos {
+  text-align: start;
+}
+
+.titulo-plano h1 {
+  font-size: 2em;
+  font-weight: 700;
+}
+
+.titulo-preco {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.texto-cifrao {
+  font-size: 2.5em;
+  font-weight: 500;
+}
+
+.texto-preco {
+  font-size: 2.5em;
+  font-weight: 600;
+  color: #30BEB2;
+}
+
+.botao button{
+  font-weight: bolder;
+  font-size: 1.3em;
+  border: none;
+  border-radius: 10px;
+  color: #E2F0EF;
+  background-color: #30BEB2;
+  transition: all 0.35s ease-in-out;
+  width: 90%;
+}
+
+.botao button:hover{
+  background-color: #E2F0EF;
+  color: #92ddd7;
+}
+
+@media(max-width: 1444px){
+    #wrap{
+      flex-direction: column-reverse;
+    }
+
+    #card-1{
+      margin: 0 auto;
+      width: 100%;
+      margin-bottom: 3em;
+    }
+}
+
+@media(max-width: 1000px){
+    .table{
+      display: none;
+    }
+}
+
