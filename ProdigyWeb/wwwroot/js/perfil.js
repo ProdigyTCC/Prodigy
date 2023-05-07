@@ -1,5 +1,15 @@
-const inputPerfil = document.querySelector('#input-perfil');
+const inputPerfil = document.querySelector('#inputPerfil');
+const botaoEditar = document.getElementById("#botaoEditar");
+const botaoConfirmar = document.getElementById("#botaoConfirmar");
+let clickBotao = false;
 
-console.log(inputPerfil)
+inputPerfil.disabled = true;
+botaoConfirmar.style.display = "none";
 
-inputPerfil.disabled = false;
+botaoEditar.addEventListener("click", function editarInput(clickBotao) {
+    if (clickBotao) {
+        inputPerfil.disabled = false;
+        botaoEditar.style.display = "none";
+        botaoConfirmar.style.display = "block";
+    }
+})

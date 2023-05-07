@@ -9,16 +9,24 @@
       "PackagePath": "staticwebassets\\css\\PagContato.css"
     },
     {
-      "Id": "C:\\Users\\marce\\OneDrive\\Área de Trabalho\\Marcelo\\Prodigy\\ProdigyWeb\\wwwroot\\css\\PagSobre.css",
-      "PackagePath": "staticwebassets\\css\\PagSobre.css"
-    },
-    {
       "Id": "C:\\Users\\marce\\OneDrive\\Área de Trabalho\\Marcelo\\Prodigy\\ProdigyWeb\\wwwroot\\css\\Perfil.css",
       "PackagePath": "staticwebassets\\css\\Perfil.css"
     },
     {
+      "Id": "C:\\Users\\marce\\OneDrive\\Área de Trabalho\\Marcelo\\Prodigy\\ProdigyWeb\\wwwroot\\css\\cadastro.css",
+      "PackagePath": "staticwebassets\\css\\cadastro.css"
+    },
+    {
       "Id": "C:\\Users\\marce\\OneDrive\\Área de Trabalho\\Marcelo\\Prodigy\\ProdigyWeb\\wwwroot\\css\\index.css",
       "PackagePath": "staticwebassets\\css\\index.css"
+    },
+    {
+      "Id": "C:\\Users\\marce\\OneDrive\\Área de Trabalho\\Marcelo\\Prodigy\\ProdigyWeb\\wwwroot\\css\\login.css",
+      "PackagePath": "staticwebassets\\css\\login.css"
+    },
+    {
+      "Id": "C:\\Users\\marce\\OneDrive\\Área de Trabalho\\Marcelo\\Prodigy\\ProdigyWeb\\wwwroot\\css\\pagSobre.css",
+      "PackagePath": "staticwebassets\\css\\pagSobre.css"
     },
     {
       "Id": "C:\\Users\\marce\\OneDrive\\Área de Trabalho\\Marcelo\\Prodigy\\ProdigyWeb\\wwwroot\\css\\planos.css",

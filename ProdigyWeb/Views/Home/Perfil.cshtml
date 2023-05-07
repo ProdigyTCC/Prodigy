@@ -31,17 +31,23 @@
         
         <p class="label-profile pb-1 m-0">Nome</p>
         <div class="input-group pb-3">
-            <input id="input-perfil" class="form-control" type="text" placeholder="Nome">
-            <button id="editar" class="btn btn-secondary icon-edit" type="button" id="button-addon2"><svg width="27" height="24" viewBox="0 0 27 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <input id="inputPerfil" class="form-control" type="text" placeholder="Nome">
+            <button id="botaoEditar" class="btn-editar btn btn-secondary icon-edit" type="button" id="button-addon2"><svg width="27" height="24" viewBox="0 0 27 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M18.8551 16.1683L20.3548 14.6686C20.5892 14.4342 20.9969 14.5983 20.9969 14.9357V21.7503C20.9969 22.9923 19.9893 24 18.7473 24H2.24967C1.00767 24 0 22.9923 0 21.7503V5.25275C0 4.01074 1.00767 3.00308 2.24967 3.00308H15.0681C15.4009 3.00308 15.5696 3.40614 15.3353 3.64517L13.8355 5.14495C13.7652 5.21525 13.6714 5.25275 13.5683 5.25275H2.24967V21.7503H18.7473V16.4308C18.7473 16.3324 18.7847 16.2386 18.8551 16.1683ZM26.1946 6.71035L13.887 19.0179L9.65015 19.4866C8.4222 19.6225 7.37705 18.5867 7.51296 17.3494L7.98164 13.1125L20.2892 0.80496C21.3625 -0.26832 23.0966 -0.26832 24.1652 0.80496L26.1899 2.82966C27.2632 3.90294 27.2632 5.64175 26.1946 6.71035ZM21.564 8.15857L18.841 5.43553L10.1329 14.1483L9.79075 17.2088L12.8512 16.8667L21.564 8.15857ZM24.6011 4.42318L22.5764 2.39848C22.3842 2.20632 22.0702 2.20632 21.8827 2.39848L20.4345 3.8467L23.1575 6.56974L24.6058 5.12152C24.7932 4.92467 24.7932 4.61534 24.6011 4.42318Z" fill="#E2F0EF"/>
+            </svg></button>
+            <button id="botaoConfirmar" class="btn-confirmar btn icon-edit" type="button"><svg width="27" height="24" viewBox="0 0 27 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M21.4286 0H2.57143C1.15125 0 0 1.15125 0 2.57143V21.4286C0 22.8488 1.15125 24 2.57143 24H21.4286C22.8488 24 24 22.8488 24 21.4286V2.57143C24 1.15125 22.8488 0 21.4286 0ZM21.4286 21.4286H2.57143V2.57143H21.4286V21.4286ZM19.5073 8.47907L10.2614 17.6507C10.0094 17.9007 9.60236 17.8991 9.35234 17.6471L4.48907 12.7444C4.23905 12.4924 4.24066 12.0853 4.49277 11.8353L5.70986 10.628C5.96191 10.378 6.36895 10.3796 6.61896 10.6317L9.82211 13.8608L17.3945 6.34923C17.6466 6.09921 18.0536 6.10082 18.3036 6.35288L19.5109 7.56991C19.7609 7.82202 19.7593 8.22905 19.5073 8.47907Z" fill="#E2F0EF"/>
             </svg></button>
         </div>
 
         <p class="label-profile pb-1 m-0">Data de fundação</p>
         <div class="input-group pb-3">
-            <input class="form-control" type="text" placeholder="00/00/0000" aria-label="Disabled input example" aria-describedby="button-addon2" disabled>
-            <button class="btn btn-secondary icon-edit" type="button" id="button-addon2"><svg width="27" height="24" viewBox="0 0 27 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <input id="inputPerfil" class="form-control" type="text" placeholder="00/00/0000" aria-label="Disabled input example" aria-describedby="button-addon2" disabled>
+            <button id="botaoEditar" class="btn-editar btn btn-secondary icon-edit" type="button" id="button-addon2"><svg width="27" height="24" viewBox="0 0 27 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M18.8551 16.1683L20.3548 14.6686C20.5892 14.4342 20.9969 14.5983 20.9969 14.9357V21.7503C20.9969 22.9923 19.9893 24 18.7473 24H2.24967C1.00767 24 0 22.9923 0 21.7503V5.25275C0 4.01074 1.00767 3.00308 2.24967 3.00308H15.0681C15.4009 3.00308 15.5696 3.40614 15.3353 3.64517L13.8355 5.14495C13.7652 5.21525 13.6714 5.25275 13.5683 5.25275H2.24967V21.7503H18.7473V16.4308C18.7473 16.3324 18.7847 16.2386 18.8551 16.1683ZM26.1946 6.71035L13.887 19.0179L9.65015 19.4866C8.4222 19.6225 7.37705 18.5867 7.51296 17.3494L7.98164 13.1125L20.2892 0.80496C21.3625 -0.26832 23.0966 -0.26832 24.1652 0.80496L26.1899 2.82966C27.2632 3.90294 27.2632 5.64175 26.1946 6.71035ZM21.564 8.15857L18.841 5.43553L10.1329 14.1483L9.79075 17.2088L12.8512 16.8667L21.564 8.15857ZM24.6011 4.42318L22.5764 2.39848C22.3842 2.20632 22.0702 2.20632 21.8827 2.39848L20.4345 3.8467L23.1575 6.56974L24.6058 5.12152C24.7932 4.92467 24.7932 4.61534 24.6011 4.42318Z" fill="#E2F0EF"/>
+            </svg></button>
+            <button id="botaoConfirmar" class="btn-confirmar btn icon-edit" type="button"><svg width="27" height="24" viewBox="0 0 27 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M21.4286 0H2.57143C1.15125 0 0 1.15125 0 2.57143V21.4286C0 22.8488 1.15125 24 2.57143 24H21.4286C22.8488 24 24 22.8488 24 21.4286V2.57143C24 1.15125 22.8488 0 21.4286 0ZM21.4286 21.4286H2.57143V2.57143H21.4286V21.4286ZM19.5073 8.47907L10.2614 17.6507C10.0094 17.9007 9.60236 17.8991 9.35234 17.6471L4.48907 12.7444C4.23905 12.4924 4.24066 12.0853 4.49277 11.8353L5.70986 10.628C5.96191 10.378 6.36895 10.3796 6.61896 10.6317L9.82211 13.8608L17.3945 6.34923C17.6466 6.09921 18.0536 6.10082 18.3036 6.35288L19.5109 7.56991C19.7609 7.82202 19.7593 8.22905 19.5073 8.47907Z" fill="#E2F0EF"/>
             </svg></button>
         </div>
     

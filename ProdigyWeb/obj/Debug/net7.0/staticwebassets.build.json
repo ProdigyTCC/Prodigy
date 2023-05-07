@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "0Zxec7tFhGITc8FT6M9rl8mQNAMAJIiKnS+DP99gH/s=",
+  "Hash": "w57EqXHWRzoue8ZuJ+z0aWjLISCy0lDUNuISr1CyVQ4=",
   "Source": "ProdigyWeb",
   "BasePath": "_content/ProdigyWeb",
   "Mode": "Default",
@@ -70,6 +70,23 @@
       "OriginalItemSpec": "C:\\Users\\marce\\OneDrive\\Área de Trabalho\\Marcelo\\Prodigy\\ProdigyWeb\\obj\\Debug\\net7.0\\scopedcss\\projectbundle\\ProdigyWeb.bundle.scp.css"
     },
     {
+      "Identity": "C:\\Users\\marce\\OneDrive\\Área de Trabalho\\Marcelo\\Prodigy\\ProdigyWeb\\wwwroot\\css\\cadastro.css",
+      "SourceId": "ProdigyWeb",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\marce\\OneDrive\\Área de Trabalho\\Marcelo\\Prodigy\\ProdigyWeb\\wwwroot\\",
+      "BasePath": "_content/ProdigyWeb",
+      "RelativePath": "css/cadastro.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\cadastro.css"
+    },
+    {
       "Identity": "C:\\Users\\marce\\OneDrive\\Área de Trabalho\\Marcelo\\Prodigy\\ProdigyWeb\\wwwroot\\css\\index.css",
       "SourceId": "ProdigyWeb",
       "SourceType": "Discovered",
@@ -85,6 +102,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\index.css"
+    },
+    {
+      "Identity": "C:\\Users\\marce\\OneDrive\\Área de Trabalho\\Marcelo\\Prodigy\\ProdigyWeb\\wwwroot\\css\\login.css",
+      "SourceId": "ProdigyWeb",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\marce\\OneDrive\\Área de Trabalho\\Marcelo\\Prodigy\\ProdigyWeb\\wwwroot\\",
+      "BasePath": "_content/ProdigyWeb",
+      "RelativePath": "css/login.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\login.css"
     },
     {
       "Identity": "C:\\Users\\marce\\OneDrive\\Área de Trabalho\\Marcelo\\Prodigy\\ProdigyWeb\\wwwroot\\css\\PagContato.css",
@@ -104,12 +138,12 @@
       "OriginalItemSpec": "wwwroot\\css\\PagContato.css"
     },
     {
-      "Identity": "C:\\Users\\marce\\OneDrive\\Área de Trabalho\\Marcelo\\Prodigy\\ProdigyWeb\\wwwroot\\css\\PagSobre.css",
+      "Identity": "C:\\Users\\marce\\OneDrive\\Área de Trabalho\\Marcelo\\Prodigy\\ProdigyWeb\\wwwroot\\css\\pagSobre.css",
       "SourceId": "ProdigyWeb",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\marce\\OneDrive\\Área de Trabalho\\Marcelo\\Prodigy\\ProdigyWeb\\wwwroot\\",
       "BasePath": "_content/ProdigyWeb",
-      "RelativePath": "css/PagSobre.css",
+      "RelativePath": "css/pagSobre.css",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -118,7 +152,7 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\css\\PagSobre.css"
+      "OriginalItemSpec": "wwwroot\\css\\pagSobre.css"
     },
     {
       "Identity": "C:\\Users\\marce\\OneDrive\\Área de Trabalho\\Marcelo\\Prodigy\\ProdigyWeb\\wwwroot\\css\\Perfil.css",
