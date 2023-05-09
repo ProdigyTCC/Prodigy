@@ -28,8 +28,13 @@ namespace ProdigyWeb.Controllers
         [HttpGet("Index")]
         public IActionResult Index()
         {
+            ClaimsPrincipal claims = HttpContext.User;
             ViewBag.Layout = "ProdigyWeb";
-            return View();
+
+            if (claims.Identity.IsAuthenticated)
+                return View();
+
+            return RedirectToAction("Login", "Usuario");
         }
 
         [HttpGet("Login")]

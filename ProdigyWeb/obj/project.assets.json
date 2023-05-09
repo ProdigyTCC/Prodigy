@@ -904,25 +904,6 @@
         "build": {
           "buildTransitive/net6.0/System.Text.Json.targets": {}
         }
-      },
-      "Sistema01/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v7.0",
-        "dependencies": {
-          "Microsoft.AspNetCore.Authentication": "2.2.0",
-          "Microsoft.AspNetCore.Authentication.Cookies": "2.2.0",
-          "Microsoft.AspNetCore.Session": "2.2.0",
-          "Npgsql.EntityFrameworkCore.PostgreSQL": "7.0.3"
-        },
-        "compile": {
-          "bin/placeholder/Sistema01.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/Sistema01.dll": {}
-        },
-        "frameworkReferences": [
-          "Microsoft.AspNetCore.App"
-        ]
       }
     }
   },
@@ -2110,11 +2091,6 @@
         "system.text.json.nuspec",
         "useSharedDesignerContext.txt"
       ]
-    },
-    "Sistema01/1.0.0": {
-      "type": "project",
-      "path": "../Sistema01/Sistema01.csproj",
-      "msbuildProject": "../Sistema01/Sistema01.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -2124,8 +2100,7 @@
       "Microsoft.AspNetCore.Session >= 2.2.0",
       "Microsoft.EntityFrameworkCore.Design >= 7.0.3",
       "Microsoft.EntityFrameworkCore.Tools >= 7.0.3",
-      "Npgsql.EntityFrameworkCore.PostgreSQL >= 7.0.3",
-      "Sistema01 >= 1.0.0"
+      "Npgsql.EntityFrameworkCore.PostgreSQL >= 7.0.3"
     ]
   },
   "packageFolders": {
@@ -2160,11 +2135,7 @@
       "frameworks": {
         "net7.0": {
           "targetAlias": "net7.0",
-          "projectReferences": {
-            "C:\\Users\\Wallace\\Desktop\\Prodigy\\Sistema01\\Sistema01.csproj": {
-              "projectPath": "C:\\Users\\Wallace\\Desktop\\Prodigy\\Sistema01\\Sistema01.csproj"
-            }
-          }
+          "projectReferences": {}
         }
       },
       "warningProperties": {

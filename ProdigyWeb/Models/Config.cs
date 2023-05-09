@@ -14,9 +14,11 @@ namespace ProdigyWeb.Models
         [MaxLength(20)]
         [Display(Name = "Cor do tema")]
         public string Tema { get; set; }
+        public string NomeEmpresa { get; set; }
 
         [ForeignKey("UsuarioId")]
         public Usuario Usuario { get; set; }
         public int UsuarioId { get; set; }
+        public virtual List<ModuloComposta> ModuloComposta { get; set; }
     }
 }

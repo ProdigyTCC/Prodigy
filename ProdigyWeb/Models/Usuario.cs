@@ -24,13 +24,12 @@ namespace ProdigyWeb.Models
         public string Email { get; set; }
 
         [Phone]
-        [Display(Name = "Celular")]
-        public string Celular { get; set; }
+        [Display(Name = "Telefone")]
+        public string Telefone { get; set; }
 
         [Display(Name = "Cargo")]
         public string Nivel { get; set; }
 
-        [ForeignKey("UsuarioId")]
         [Display(Name = "Foto")]
         public string Imagem { get; set; }
 
@@ -72,5 +71,7 @@ namespace ProdigyWeb.Models
         public virtual List<Pagamento> Pagamentos { get; set; }
         [NotMapped]
         public virtual List<EnderecoComposta> EnderecoCompostas { get; set; }
+        [NotMapped]
+        public virtual List<ModuloComposta> ModuloComposta { get; set; }
     }
 }

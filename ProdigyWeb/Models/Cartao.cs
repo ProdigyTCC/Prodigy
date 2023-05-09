@@ -16,10 +16,16 @@ namespace ProdigyWeb.Models
         [Required(ErrorMessage = "* Campo obirgatório")]
         public int NumeroCartao { get; set; }
 
+        [Display(Name = "Código do cartão")]
+        public int Codigo { get; set; }
+
         [MaxLength(100)]
-        [Display(Name = "Nome do Titular")]
+        [Display(Name = "Nome do titular")]
         [Required(ErrorMessage = "* Campo obirgatório")]
         public string NomeTitular { get; set; }
+
+        [Display(Name = "Tipo do cartão")]
+        public string TipoCartao { get; set; }
 
         [MaxLength(14)]
         [Display(Name = "CPF do titular")]

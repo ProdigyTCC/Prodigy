@@ -1,7 +1,3 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
@@ -16,6 +12,14 @@ namespace ProdigyWeb.Models
         [Display(Name = "Nome Fantasia")]
         [Required(ErrorMessage = "Razão social obrigatório")]
         public string NomeRazao { get; set; }
+
+        [EmailAddress]
+        [Display(Name = "Email válido")]
+        public string Email { get; set; }
+
+        [Phone]
+        [Display(Name = "Telefone")]
+        public string Telefone { get; set; }
 
         [MaxLength(18)]
         [Display(Name = "CNPJ")]

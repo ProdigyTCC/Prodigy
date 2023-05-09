@@ -19,9 +19,6 @@ namespace ProdigyWeb.Models
         [Display(Name = "Escolha seu plano")]
         [Required(ErrorMessage = "* Campo Obrigatório")]
         public string Plano { get; set; }
-
-        [ForeignKey("UsuarioId")]
-        public Usuario Usuario { get; set; }
-        public int UsuarioId { get; set; }
+        public virtual List<ModuloComposta> ModuloComposta { get; set; }
     }
 }
