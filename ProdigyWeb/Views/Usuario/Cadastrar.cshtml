@@ -1,4 +1,7 @@
-
+@model ProdigyWeb.Models.Usuario
+@{
+    ViewData["Title"] = "Cadastro";
+}
   <div class="cadastro-titulo">
     <p>Olá novo usuário! É um prazer tê-lo conosco.</p>
     <p>Pedimos que preencha todos os dados solicitados
@@ -6,16 +9,28 @@
   </div>
   <div class="primeiro cadastro">
     <h1>Dados principais</h1>
-    <form action="">
+    <p class="text-danger">@TempData["ErroLogin"]</p>
+    <p class="text-danger">@TempData["DbErro"]</p>
+    <form asp-controller="Usuario" asp-action="CadastrarUsuario">
+        <label for="nome">Nome completo</label><br>
+        <input type="text" asp-for="Nome" id="" required placeholder="Ex.: Marcelo Antônio Nunes"><br>
+        
+        <label for="cpf">CPF</label><br>
+        <input type="text" asp-for="Cpf" id="" required placeholder="Ex.: 000.000.000-00"><br>
+
         <label for="email">Email</label><br>
-        <input type="email" name="" id="" required placeholder="Ex.: email@contato.com"><br>
+        <input type="email" asp-for="Email" id="" required placeholder="Ex.: email@contato.com"><br>
+
         <label for="confirm-email">Confirmar e-mail</label><br>
         <input type="email" name="" id="" required placeholder="Ex.: email@contato.com"><br>
-        <label for="nome">Nome</label><br>
-        <input type="text" name="" id="" required placeholder="Ex.: Marcelo Antônio Nunes"><br>
+
         <label for="nascimento">Data de nascimento</label><br>
-        <input type="text" name="" id="" required placeholder="Ex.: 01/01/2000"><br>
-        <button class="button-small">Avançar</button>
+        <input type="date" asp-for="DataNascimento" id="" required placeholder="Ex.: 01/01/2000"><br>
+
+        <label for="senha">Senha</label><br>
+        <input type="password" asp-for="Senha" id="" required placeholder="Ex.: #Senha.Forte10"><br>
+
+        <button type="submit" class="button-small">Confirmar</button>
     </form>
   </div>
  

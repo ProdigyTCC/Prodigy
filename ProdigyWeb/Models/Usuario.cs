@@ -27,9 +27,7 @@ namespace ProdigyWeb.Models
         [Display(Name = "Celular")]
         public string Celular { get; set; }
 
-        [Phone]
-        [Display(Name = "Telefone residencial")]
-        public string Telefone { get; set; }
+        [Display(Name = "Cargo")]
         public string Nivel { get; set; }
 
         [ForeignKey("UsuarioId")]
@@ -51,6 +49,7 @@ namespace ProdigyWeb.Models
             MinLength(4, ErrorMessage = "A sua senha deve conter pelo menos 5 caracteres")]
         public string Senha { get; set; }
 
+        [Display(Name = "Status de Pagamento")]
         public string Status { get; set; }
 
         [Display(Name = "Orientação Sexual")]
