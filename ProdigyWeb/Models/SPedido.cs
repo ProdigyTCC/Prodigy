@@ -5,12 +5,12 @@ using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Sistema01.Models
+namespace ProdigyWeb.Models
 {
     public class SPedido
     {
         [Key]
-        public int PedidoId { get; set; }
+        public int SPedidoId { get; set; }
         public DateTime DataPedido { get; set; }
         public DateTime DataEntrega { get; set; }
 
@@ -20,11 +20,11 @@ namespace Sistema01.Models
         public string NotaFiscal { get; set; }
 
         [ForeignKey("FornecedorId")]
-        public virtual SFornecedor Fornecedor { get; set; }
-        public int FornecedorId { get; set; }
+        public virtual SFornecedor SFornecedor { get; set; }
+        public int SFornecedorId { get; set; }
 
         [ForeignKey("ProdutoId")]
-        public virtual SProduto Produto { get; set; }
-        public int ProdutoId { get; set; }
+        public virtual SProduto SProduto { get; set; }
+        public int SProdutoId { get; set; }
     }
 }

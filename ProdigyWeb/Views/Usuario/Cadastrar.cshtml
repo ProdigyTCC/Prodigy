@@ -9,12 +9,9 @@
   </div>
   <div class="primeiro cadastro">
     <h1>Dados principais</h1>
-    @if (!string.IsNullOrEmpty(TempData["ErroLogin"].ToString()) ||
-    !string.IsNullOrEmpty(TempData["DbErro"].ToString()))
-    {
-        <p class="text-danger">@TempData["ErroLogin"].ToString()</p>
-        <p class="text-danger">@TempData["DbErro"].ToString()</p>
-    }
+   
+        
+    
     <form asp-controller="Usuario" asp-action="CadastrarUsuario">
         <label for="nome">Nome completo</label><br>
         <input type="text" asp-for="Nome" id="" required placeholder="Ex.: Marcelo Antônio Nunes"><br>

@@ -5,12 +5,12 @@ using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Sistema01.Models
+namespace ProdigyWeb.Models
 {
-    public class Caixa
+    public class SCaixa
     {
         [Key]
-        public int CaixaId { get; set; }
+        public int SCaixaId { get; set; }
 
         [Column(TypeName = "decimal(10,2)")]
         [Display(Name = "Valor para abertura de caixa")]

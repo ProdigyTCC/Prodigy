@@ -44,8 +44,6 @@ namespace ProdigyWeb.Models
         [DataType(DataType.Password)]
         [Display(Name = "Senha")]
         [Required(ErrorMessage = "* Senha obrigatória")]
-        [MaxLength(10, ErrorMessage = "A sua senha não pode ultrapassar 10 caracteres"),
-            MinLength(4, ErrorMessage = "A sua senha deve conter pelo menos 5 caracteres")]
         public string Senha { get; set; }
 
         [Display(Name = "Status de Pagamento")]

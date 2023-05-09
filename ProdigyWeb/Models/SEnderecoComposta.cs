@@ -6,32 +6,31 @@ using System.ComponentModel.DataAnnotations.Schema;
 using System.ComponentModel.DataAnnotations;
 using Microsoft.EntityFrameworkCore;
 
-namespace Sistema01.Models
+namespace ProdigyWeb.Models
 {
-    [Keyless]
     public class SEnderecoComposta
     {
         [Key]
-        public int EnderecoCompostaId { get; set; }
+        public int SEnderecoCompostaId { get; set; }
 
         [ForeignKey("ClienteJuridicoId")]
-        public virtual SClienteJuridico ClienteJuridico { get; set; }
-        public int ClienteJuridicoId { get; set; }
+        public virtual SClienteJuridico SClienteJuridico { get; set; }
+        public int SClienteJuridicoId { get; set; }
 
         [ForeignKey("ClienteId")]
-        public virtual SCliente Cliente { get; set; }
-        public int ClienteId { get; set; } 
+        public virtual SCliente SCliente { get; set; }
+        public int SClienteId { get; set; } 
 
         [ForeignKey("FornecedorId")]
-        public virtual SFornecedor Fornecedor { get; set; }
-        public int FornecedorId { get; set; }
+        public virtual SFornecedor SFornecedor { get; set; }
+        public int SFornecedorId { get; set; }
 
         [ForeignKey("FuncionarioId")]
-        public virtual SFuncionario Funcionario { get; set; }
-        public int FuncionarioId { get; set; }
+        public virtual SFuncionario SFuncionario { get; set; }
+        public int SFuncionarioId { get; set; }
 
         [ForeignKey("EnderecoId")]
-        public virtual SEndereco Endereco { get; set; }
-        public int EnderecoId { get; set; }
+        public virtual SEndereco SEndereco { get; set; }
+        public int SEnderecoId { get; set; }
     }
 }

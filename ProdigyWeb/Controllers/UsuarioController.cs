@@ -25,6 +25,15 @@ namespace ProdigyWeb.Controllers
             _context = context;
         }
 
+        [AllowAnonymous]
+        public void AddSessao()
+        {
+            ViewBag.Id = User.FindFirst("Id")?.Value;
+            ViewBag.Nome = User.FindFirst(ClaimTypes.Name)?.Value;
+            ViewBag.Email = User.FindFirst(ClaimTypes.Email)?.Value;
+            ViewBag.Nivel = User.FindFirst(ClaimTypes.Role)?.Value;
+        }
+
         [HttpGet("Index")]
         public IActionResult Index()
         {
@@ -34,6 +43,7 @@ namespace ProdigyWeb.Controllers
             if (claims.Identity.IsAuthenticated)
                 return View();
 
+            AddSessao();
             return RedirectToAction("Login", "Usuario");
         }
 
@@ -50,7 +60,7 @@ namespace ProdigyWeb.Controllers
             return View();
         }
 
-        [HttpPost("LoginUsuario")]
+        [HttpPost("LoginUsuario"), AllowAnonymous]
         public async Task<IActionResult> Login(Usuario usuario)
         {
             if (usuario.Email == null || usuario.Senha == null)
@@ -67,7 +77,7 @@ namespace ProdigyWeb.Controllers
 
             await _cookie.GerarClaim(HttpContext, usuarios);
 
-            return RedirectToAction("Index", "Tarefa");
+            return RedirectToAction("Index", "Usuario");
         }
 
         [HttpGet("Cadastrar")]
@@ -87,27 +97,32 @@ namespace ProdigyWeb.Controllers
 
         [HttpPost("CadastrarUsuario")]
         public IActionResult CadastrarUsuario(Usuario usuario)
-        {
-            var usuarios = _context.Usuarios.FirstOrDefault(x => x.Email == usuario.Email);
-
-            string senhaSecreta = hash.CriptografarSenha(usuario.Senha.ToString());
-
+        {   
             try
-            {
+            {            
                 if (ModelState.IsValid)
                 {
-                    usuario.Senha = senhaSecreta;
-                
-                    _context.Usuarios.Add(usuario);
-                    _context.SaveChanges();
-                    return RedirectToAction(nameof(Index));
+                    var usuarios = _context.Usuarios.FirstOrDefault(x => x.Email == usuario.Email);
+
+                    string senhaSecreta = hash.CriptografarSenha(usuario.Senha.ToString());
+
+                    if (usuarios == null)
+                    {
+                        usuario.Senha = senhaSecreta;
+
+                        _context.Usuarios.Add(usuario);
+                        _context.SaveChanges();
+
+                        return RedirectToAction(nameof(Index));
+                    }
                 }
             }
-            catch(DbUpdateException e)
+            catch (DbUpdateException e)
             {
-                TempData["DbErro"] = $"Erro ao criar cadastro: {e}";
-                return RedirectToAction(nameof(Cadastrar));
+                ViewBag.ErroCriar = $"Erro ao criar cadastro: {e}";
+                return RedirectToAction(nameof(Login));
             }
+
             return RedirectToAction("Cadastrar", new { erroCadastro = true }); ;
         }
 

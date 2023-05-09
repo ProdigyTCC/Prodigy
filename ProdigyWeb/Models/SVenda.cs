@@ -5,12 +5,12 @@ using System.Threading.Tasks;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.ComponentModel.DataAnnotations;
 
-namespace Sistema01.Models
+namespace ProdigyWeb.Models
 {
     public class SVenda
     {
         [Key]
-        public int VendaId { get; set; }
+        public int SVendaId { get; set; }
 
         [Display(Name = "Valor total")]
         [Column(TypeName = "decimal(10,2)")]
@@ -24,15 +24,15 @@ namespace Sistema01.Models
         public string FormaPagamento { get; set; }
         
         [ForeignKey("ProdutoId")]
-        public virtual SProduto Produto { get; set; }
-        public int ProdutoId { get; set; }
+        public virtual SProduto SProduto { get; set; }
+        public int SProdutoId { get; set; }
 
         [ForeignKey("FuncionarioId")]
-        public virtual SFuncionario Funcionario { get; set; }
-        public int FuncionarioId { get; set; }
+        public virtual SFuncionario SFuncionario { get; set; }
+        public int SFuncionarioId { get; set; }
 
         [ForeignKey("ClienteId")]
-        public virtual SCliente Cliente { get; set; }
-        public int ClienteId { get; set; }
+        public virtual SCliente SCliente { get; set; }
+        public int SClienteId { get; set; }
     }
 }

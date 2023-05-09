@@ -1,6 +1,6 @@
 @model ProdigyWeb.Models.Usuario
 @{
-    @ViewData["Login"]
+    ViewData["Title"] = "Login";
 }
   
   <div class="card-login">
@@ -12,6 +12,7 @@
                 <br>
                 <label for="Senha"><p>Senha</p></label><br>
                 <input type="password" asp-for="Senha" id="" placeholder="*****************" required><br>
+            
                 @if (!string.IsNullOrEmpty(ViewBag.Erro))
                 {
                     <p style="color: red;">

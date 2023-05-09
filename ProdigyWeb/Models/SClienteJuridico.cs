@@ -6,12 +6,12 @@ using System.ComponentModel.DataAnnotations.Schema;
 using System.ComponentModel.DataAnnotations;
 using Microsoft.EntityFrameworkCore;
 
-namespace Sistema01.Models
+namespace ProdigyWeb.Models
 {
     public class SClienteJuridico
     {
         [Key]
-        public int ClienteJuridicoId { get; set; }
+        public int SClienteJuridicoId { get; set; }
 
         [MaxLength(100)]
         [Display(Name = "Nome fantasia")]
@@ -50,10 +50,10 @@ namespace Sistema01.Models
         public DateTime DataResgistro { get; set; }
 
         [NotMapped]
-        public virtual List<SEnderecoComposta> EnderecoCompostas { get; set; }
+        public virtual List<SEnderecoComposta> SEnderecoCompostas { get; set; }
 
         [ForeignKey("ClienteId")]
-        public virtual SCliente Cliente { get; set; }
-        public int ClienteId { get; set; }
+        public virtual SCliente SCliente { get; set; }
+        public int SClienteId { get; set; }
     }
 }

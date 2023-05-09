@@ -5,12 +5,12 @@ using System.Threading.Tasks;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.ComponentModel.DataAnnotations;
 
-namespace Sistema01.Models
+namespace ProdigyWeb.Models
 {
     public class SProduto
     {
         [Key]
-        public int ProdutoId { get; set; }
+        public int SProdutoId { get; set; }
 
         [Display(Name = "Nome do produto")]
         [Required(ErrorMessage = "*Campo obrigatório!")]
@@ -48,15 +48,15 @@ namespace Sistema01.Models
         public decimal ValorFinal { get; set; }
         [NotMapped]
 
-        public virtual List<SVenda> Vendas { get; set; }
+        public virtual List<SVenda> SVendas { get; set; }
 
         [ForeignKey("CategoriaProdutoId")]
-        public virtual SCategoriaProduto CategoriaProduto { get; set; }
-        public int CategoriaProdutoId { get; set; }
+        public virtual SCategoriaProduto SCategoriaProduto { get; set; }
+        public int SCategoriaProdutoId { get; set; }
 
         [ForeignKey("FornecedorId")]
-        public virtual SFornecedor Fornecedor { get; set; }
-        public int FornecedorId { get; set; }
-        public virtual List<SPedido> Pedidos { get; set; }
+        public virtual SFornecedor SFornecedor { get; set; }
+        public int SFornecedorId { get; set; }
+        public virtual List<SPedido> SPedidos { get; set; }
     }
 }

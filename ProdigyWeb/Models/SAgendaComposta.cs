@@ -5,19 +5,19 @@ using System.Threading.Tasks;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.ComponentModel.DataAnnotations;
 
-namespace Sistema01.Models
+namespace ProdigyWeb.Models
 {
     public class SAgendaComposta
     {
         [Key]
-        public int AgendaCompostaId { get; set; }
+        public int SAgendaCompostaId { get; set; }
 
         [ForeignKey("AgendaId")]
         public virtual SAgenda Agenda { get; set; }
         public int AgendaId { get; set; }
 
         [ForeignKey("ClienteId")]
-        public virtual SCliente Cliente { get; set; }
-        public int ClienteId { get; set; }
+        public virtual SCliente SCliente { get; set; }
+        public int SClienteId { get; set; }
     }
 }

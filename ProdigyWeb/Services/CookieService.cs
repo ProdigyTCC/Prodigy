@@ -23,7 +23,6 @@ namespace ProdigyWeb.Services
             claims.Add(new Claim("Id", usuario.UsuarioId.ToString()));
             claims.Add(new Claim(ClaimTypes.Email, usuario.Email));
             claims.Add(new Claim(ClaimTypes.Name, usuario.Nome));
-            claims.Add(new Claim(ClaimTypes.Role, usuario.Nivel));
 
             var claimsIdentity =
                 new ClaimsPrincipal(

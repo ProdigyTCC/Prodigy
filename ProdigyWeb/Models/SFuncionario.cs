@@ -5,12 +5,12 @@ using System.Threading.Tasks;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.ComponentModel.DataAnnotations;
 
-namespace Sistema01.Models
+namespace ProdigyWeb.Models
 {
     public class SFuncionario
     {
         [Key]
-        public int FuncionarioId { get; set; }
+        public int SFuncionarioId { get; set; }
 
         [MaxLength(100)]
         [Display(Name = "Nome do funcionário")]
@@ -70,8 +70,8 @@ namespace Sistema01.Models
         [Display(Name = "Observações")]
         public string Observacao { get; set; }
         [NotMapped]
-        public virtual List<SVenda> Vendas { get; set; }
+        public virtual List<SVenda> SVendas { get; set; }
         [NotMapped]
-        public virtual List<SEnderecoComposta> EnderecoCompostas { get; set; }
+        public virtual List<SEnderecoComposta> SEnderecoCompostas { get; set; }
     }
 }

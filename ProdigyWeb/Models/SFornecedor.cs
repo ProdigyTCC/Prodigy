@@ -1,16 +1,12 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.ComponentModel.DataAnnotations;
 
-namespace Sistema01.Models
+namespace ProdigyWeb.Models
 {
     public class SFornecedor
     {
         [Key]
-        public int FornecedorId { get; set; }
+        public int SFornecedorId { get; set; }
 
         [MaxLength(100)]
         [Display(Name = "Nome fantasia")]
@@ -53,6 +49,6 @@ namespace Sistema01.Models
         public string NomeRepresentante { get; set; }
 
         [NotMapped]
-        public virtual List<SEnderecoComposta> EnderecoCompostas { get; set; }
+        public virtual List<SEnderecoComposta> SEnderecoCompostas { get; set; }
     }
 }

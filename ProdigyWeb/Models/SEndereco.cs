@@ -5,12 +5,12 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace Sistema01.Models
+namespace ProdigyWeb.Models
 {
     public class SEndereco
     {
         [Key]
-        public int EnderecoId { get; set; }
+        public int SEnderecoId { get; set; }
 
         [MaxLength(100)]
         [Display(Name = "Rua")]
@@ -50,6 +50,6 @@ namespace Sistema01.Models
         [Required(ErrorMessage = "* Campo obrigatório")]
         public string Pais { get; set; }
         [NotMapped]
-        public virtual List<SEnderecoComposta> EnderecoCompostas { get; set; }
+        public virtual List<SEnderecoComposta> SEnderecoCompostas { get; set; }
     }
 }

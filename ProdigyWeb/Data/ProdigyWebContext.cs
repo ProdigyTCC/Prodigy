@@ -1,10 +1,5 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using ProdigyWeb.Models;
-using Sistema01.Models;
 
 namespace ProdigyWeb.Data
 {
@@ -37,6 +32,6 @@ namespace ProdigyWeb.Data
         public DbSet<SProduto> SProdutos { get; set; }
         public DbSet<SVenda> SVendas { get; set; }
         public DbSet<SPedido> SPedidos { get; set; }
-        public DbSet<Caixa> SCaixas { get; set; }
+        public DbSet<SCaixa> SCaixas { get; set; }
     }
 }

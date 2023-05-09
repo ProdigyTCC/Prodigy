@@ -5,12 +5,12 @@ using System.Threading.Tasks;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.ComponentModel.DataAnnotations;
 
-namespace Sistema01.Models
+namespace ProdigyWeb.Models
 {
     public class SAgenda
     {
         [Key]
-        public int AgendaId { get; set; }
+        public int SAgendaId { get; set; }
 
         [MaxLength(50)]
         [Display(Name = "Título")]
@@ -23,6 +23,6 @@ namespace Sistema01.Models
         [Required(ErrorMessage = "* Campo obrigatório")]
         public string Descricao { get; set; }
         [NotMapped]
-        public virtual List<SAgendaComposta> AgendaCompostas { get; set; }
+        public virtual List<SAgendaComposta> SAgendaCompostas { get; set; }
     }
 }
