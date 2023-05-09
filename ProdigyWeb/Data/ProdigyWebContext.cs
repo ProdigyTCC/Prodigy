@@ -23,6 +23,5 @@ namespace ProdigyWeb.Data
         public DbSet<Pix> Pix { get; set; }
         public DbSet<Modulo> Modulos { get; set; }
         public DbSet<EnderecoComposta> EnderecoCompostas { get; set; }
-        public DbSet<Contato> Contatos { get; set; }
     }
 }

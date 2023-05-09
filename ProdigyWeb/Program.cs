@@ -1,11 +1,24 @@
 using ProdigyWeb.Data;
 using Microsoft.EntityFrameworkCore;
+using ProdigyWeb.Interfaces;
+using ProdigyWeb.Services;
+using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.CookiePolicy;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 builder.Services.AddDbContext<ProdigyWebContext>(options => options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection")));
+builder.Services.AddScoped<ICookie, CookieService>();
+builder.Services.AddScoped<IEmail, EmailService>();
+builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
+    .AddCookie(options =>
+    {
+        options.LoginPath = "/Usuario/Login";
+        options.ExpireTimeSpan = TimeSpan.FromHours(8);
+    });
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -21,13 +34,16 @@ app.UseStaticFiles();
 
 app.UseRouting();
 
+app.UseCookiePolicy(new CookiePolicyOptions
+{
+    MinimumSameSitePolicy = SameSiteMode.Strict,
+    HttpOnly = HttpOnlyPolicy.Always
+});
+
+app.UseAuthentication();
+
 app.UseAuthorization();
-app.MapControllerRoute(
-            name: "Sistema01",
-            pattern: "Sistema01/{controller}/{action}",
-            defaults: new { controller = "Home2", action = "Index" },
-            constraints: new { controller = "(Home2)" }
-        );
+
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");

@@ -17,6 +17,22 @@ namespace ProdigyWeb.Models
         [MaxLength(100, ErrorMessage = "O seu nome não pode ultrapassar 100 caracteres.")]
         public string Nome { get; set; }
 
+        [EmailAddress]
+        [Display(Name = "Email válido")]
+        [Required(ErrorMessage = "* E-mail obrigatório")]
+        [MaxLength(100, ErrorMessage = "O seu e-mail não pode ultrapassar 100 caracteres")]
+        public string Email { get; set; }
+
+        [Phone]
+        [Display(Name = "Celular")]
+        public string Celular { get; set; }
+
+        [Phone]
+        [Display(Name = "Telefone residencial")]
+        public string Telefone { get; set; }
+        public string Nivel { get; set; }
+
+        [ForeignKey("UsuarioId")]
         [Display(Name = "Foto")]
         public string Imagem { get; set; }
 

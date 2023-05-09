@@ -24,24 +24,6 @@ public class HomeController : Controller
         return View();
     }
 
-    public IActionResult Perfil()
-    {
-        ViewBag.Layout = "ProdigyWeb";
-        return View();
-    }
-
-    public IActionResult Login()
-    {
-        ViewBag.Layout = "ProdigyWeb";
-        return View();
-    }
-
-    public IActionResult Cadastro()
-    {
-        ViewBag.Layout = "ProdigyWeb";
-        return View();
-    }
-
     public IActionResult Planos()
     {
         ViewBag.Layout = "ProdigyWeb";

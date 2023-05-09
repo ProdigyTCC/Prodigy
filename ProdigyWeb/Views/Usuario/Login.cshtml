@@ -1,0 +1,19 @@
+  @{
+    @ViewData["Login"]
+  }
+  
+  <div class="card-login">
+    <img src="img/foto.png" alt="">
+      <div class="formulario">
+          <form action="">
+              <label for="email"><p>Email</p></label><br>
+              <input type="email" name="email" id="email"  placeholder="exemplo@exemplo.com" required>
+              <br>
+              <label for="senha"><p>Senha</p></label><br>
+              <input type="password" name="senha" id="" placeholder="*****************" required><br>
+              <a href="">Esqueceu sua senha?</a><br>
+              <button>Entrar</button>
+          </form>
+      </div>
+    </div>
+  <div class="registro"><a asp-area="" asp-controller="Usuario" asp-action="Cadastrar">Não tem conta? Cadastre-se</a></div>

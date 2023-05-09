@@ -20,12 +20,21 @@ namespace ProdigyWeb.Controllers
             _context = context;
         }
 
+        [HttpGet("Index")]
         public IActionResult Index()
         {
-            var usuarios = _context.Usuarios.ToList();
-            return View(usuarios);
+            ViewBag.Layout = "ProdigyWeb";
+            return View();
         }
 
+        [HttpGet("Login")]
+        public IActionResult Login()
+        {
+            ViewBag.Layout = "ProdigyWeb";
+            return View();
+        }
+
+        [HttpPost("LoginUsuario")]
         public IActionResult Login(Usuario usuario)
         {
             var usuarios = _context.Usuarios.Find(usuario);
@@ -41,13 +50,15 @@ namespace ProdigyWeb.Controllers
             return View();
         }
 
-        public IActionResult Criar()
+        [HttpGet("Cadastrar")]
+        public IActionResult Cadastrar()
         {
+            ViewBag.Layout = "ProdigyWeb";
             return View();
         }
 
-        [HttpPost]
-        public IActionResult Criar(Usuario usuario)
+        [HttpPost("CadastrarUsuario")]
+        public IActionResult CadastrarUsuario(Usuario usuario)
         {
             if (ModelState.IsValid)
             {
