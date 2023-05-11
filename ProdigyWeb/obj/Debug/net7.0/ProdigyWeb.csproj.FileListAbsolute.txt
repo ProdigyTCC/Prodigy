@@ -173,11 +173,5 @@ C:\Users\Wallace\Desktop\Projetos\TCC Git\Prodigy\ProdigyWeb\bin\Debug\net7.0\Si
 C:\Users\Wallace\Desktop\Projetos\TCC Git\Prodigy\ProdigyWeb\bin\Debug\net7.0\Sistema01.dll
 C:\Users\Wallace\Desktop\Projetos\TCC Git\Prodigy\ProdigyWeb\bin\Debug\net7.0\Sistema01.pdb
 C:\Users\Wallace\Desktop\Projetos\TCC Git\Prodigy\ProdigyWeb\obj\Debug\net7.0\ProdigyWeb.MvcApplicationPartsAssemblyInfo.cs
-C:\Users\marce\OneDrive\Área de Trabalho\Marcelo\Prodigy\ProdigyWeb\bin\Debug\net7.0\Sistema01.deps.json
-C:\Users\marce\OneDrive\Área de Trabalho\Marcelo\Prodigy\ProdigyWeb\bin\Debug\net7.0\Sistema01.runtimeconfig.json
-C:\Users\marce\OneDrive\Área de Trabalho\Marcelo\Prodigy\ProdigyWeb\bin\Debug\net7.0\Sistema01.staticwebassets.runtime.json
-C:\Users\marce\OneDrive\Área de Trabalho\Marcelo\Prodigy\ProdigyWeb\bin\Debug\net7.0\Sistema01.exe
-C:\Users\marce\OneDrive\Área de Trabalho\Marcelo\Prodigy\ProdigyWeb\bin\Debug\net7.0\Sistema01.dll
-C:\Users\marce\OneDrive\Área de Trabalho\Marcelo\Prodigy\ProdigyWeb\bin\Debug\net7.0\Sistema01.pdb
-C:\Users\marce\OneDrive\Área de Trabalho\Marcelo\Prodigy\ProdigyWeb\obj\Debug\net7.0\ProdigyWeb.MvcApplicationPartsAssemblyInfo.cs
 C:\Users\Wallace\Desktop\Prodigy\ProdigyWeb\bin\Debug\net7.0\System.Security.Permissions.dll
+C:\Users\marce\OneDrive\Área de Trabalho\Marcelo\Prodigy\ProdigyWeb\bin\Debug\net7.0\System.Security.Permissions.dll

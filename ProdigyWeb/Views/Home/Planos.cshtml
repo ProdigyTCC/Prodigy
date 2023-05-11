@@ -3,11 +3,12 @@
   }    
     
   <div class="secao-light">
-    <div class="container-fluid text-center"><h1>Conheça nossos planos</h1></div>
-    <div class="container-fluid text-center mb-3"><h3>Selecione qual atende melhor sua necessidade</h3></div>
+    <div class="title-planos container-fluid text-center pt-5"><h1>Conheça nossos planos</h1></div>
+    <div class="text-planos container-fluid text-center pb-5"><h3>Selecione qual atende melhor sua necessidade</h3></div>
 
-        <div class="card-planos card-deck mx-auto">
-          <div class="card-unico card shadow-sm" id="card-1">
+      <div class="card-planos row row-cols-2 row-cols-md-3 g-4 pb-5">
+        <div class="col-lg-3 col-md-4 col-sm-6 ps-4 pe-4">
+          <div class="card-unico card h-100">
             <div class="titulo-plano card-title text-center"><h1>Starter</h1></div>
             <div class="titulo-preco card-title text-center">
               <h2 class="texto-cifrao">R$</h2>
@@ -22,68 +23,91 @@
                 <li>Gestão financeira simplificada</li><br>
               </ul>
             </div>
-            <div class="d-flex justify-content-center mb-4"><button class="button-small">Assinar</button></div>
+            <div class="d-flex justify-content-center mb-4">
+              <a asp-area="" asp-controller="Home" asp-action="Pagamento">
+                <button class="button-small">Assinar</button>
+              </a>
+            </div>
           </div>
-
-        <div class="card-unico card shadow-sm" id="card-1">
-          <div class="titulo-plano card-title text-center"><h1>Plus</h1></div>
-          <div class="titulo-preco card-title text-center">
-            <h2 class="texto-cifrao">R$</h2>
-            <h2 class="texto-preco">00,00</h2>
-          </div>
-          <div class="card-subtitle text-center"><p>Beneficios</p></div>
-          <div class="card-body text-center">
-            <ul class="lista-planos">
-              <li>Recursos avançados de gerenciamento empresarial</li><br>
-              <li>Gerenciamento de projetos e equipes</li><br>
-              <li>Relatórios personalizados para análise de negócios</li><br>
-              <li>Suporte ao cliente premium</li><br>
-            </ul>
-          </div>
-          <div class="d-flex justify-content-center mb-4"><button class="button-small">Assinar</button></div>
         </div>
 
-        <div class="card-unico card shadow-sm" id="card-1">
-          <div class="titulo-plano card-title text-center"><h1>Pro</h1></div>
-          <div class="titulo-preco card-title text-center">
-            <h2 class="texto-cifrao">R$</h2>
-            <h2 class="texto-preco">00,00</h2>
+        <div class="col-lg-3 col-md-4 col-sm-6 ps-4 pe-4">
+          <div class="card-unico card h-100">
+            <div class="titulo-plano card-title text-center"><h1>Starter</h1></div>
+            <div class="titulo-preco card-title text-center">
+              <h2 class="texto-cifrao">R$</h2>
+              <h2 class="texto-preco">00,00</h2>
+            </div>
+            <div class="card-subtitle text-center"><p>Beneficios</p></div>
+            <div class="card-body text-center">
+              <ul class="lista-planos">
+                <li>Preço acessível para pequenas empresas</li><br>
+                <li>Recursos básicos de gerenciamento empresarial</li><br>
+                <li>Faturamento e controle de estoque em um só lugar</li><br>
+                <li>Gestão financeira simplificada</li><br>
+              </ul>
+            </div>
+            <div class="d-flex justify-content-center mb-4">
+              <a asp-area="" asp-controller="Home" asp-action="Pagamento">
+                <button class="button-small">Assinar</button>
+              </a>
+            </div>
           </div>
-          <div class="card-subtitle text-center"><p>Beneficios</p></div>
-          <div class="card-body text-center">
-            <ul class="lista-planos">
-              <li>Recursos avançados de análise de dados</li><br>
-              <li>Gestão de contratos simplificada</li><br>
-              <li>Suporte ao cliente premium 24/7</li><br>
-              <li>Recursos de segurança aprimorados</li><br>
-            </ul>
-          </div>
-          <div class="d-flex justify-content-center mb-4"><button class="button-small">Assinar</button></div>
         </div>
 
-        <div class="card-unico card shadow-sm" id="card-1">
-          <div class="titulo-plano card-title text-center"><h1>Personalizado</h1></div>
-          <div class="titulo-preco card-title text-center">
-            <h2 class="texto-cifrao">R$</h2>
-            <h2 class="texto-preco">00,00</h2>
+        <div class="col-lg-3 col-md-4 col-sm-6 ps-4 pe-4">
+          <div class="card-unico card h-100">
+            <div class="titulo-plano card-title text-center"><h1>Starter</h1></div>
+            <div class="titulo-preco card-title text-center">
+              <h2 class="texto-cifrao">R$</h2>
+              <h2 class="texto-preco">00,00</h2>
+            </div>
+            <div class="card-subtitle text-center"><p>Beneficios</p></div>
+            <div class="card-body text-center">
+              <ul class="lista-planos">
+                <li>Preço acessível para pequenas empresas</li><br>
+                <li>Recursos básicos de gerenciamento empresarial</li><br>
+                <li>Faturamento e controle de estoque em um só lugar</li><br>
+                <li>Gestão financeira simplificada</li><br>
+              </ul>
+            </div>
+            <div class="d-flex justify-content-center mb-4">
+              <a asp-area="" asp-controller="Home" asp-action="Pagamento">
+                <button class="button-small">Assinar</button>
+              </a>
+            </div>
           </div>
-          <div class="card-subtitle text-center"><p>Beneficios</p></div>
-          <div class="card-body text-center">
-            <ul class="lista-planos">
-              <li>Personalização de recursos de acordo com as necessidades da empresa</li><br>
-              <li>Pagamento somente pelo que é utilizado</li><br>
-              <li>Suporte técnico especializado</li><br>
-              <li>Flexibilidade para mudar recursos e funcionalidades conforme necessário.</li><br>
-            </ul>
+        </div>
+
+        <div class="col-lg-3 col-md-4 col-sm-6 ps-4 pe-4">
+          <div class="card-unico card h-100">
+            <div class="titulo-plano card-title text-center"><h1>Starter</h1></div>
+            <div class="titulo-preco card-title text-center">
+              <h2 class="texto-cifrao">R$</h2>
+              <h2 class="texto-preco">00,00</h2>
+            </div>
+            <div class="card-subtitle text-center"><p>Beneficios</p></div>
+            <div class="card-body text-center">
+              <ul class="lista-planos">
+                <li>Preço acessível para pequenas empresas</li><br>
+                <li>Recursos básicos de gerenciamento empresarial</li><br>
+                <li>Faturamento e controle de estoque em um só lugar</li><br>
+                <li>Gestão financeira simplificada</li><br>
+              </ul>
+            </div>
+            <div class="d-flex justify-content-center mb-4">
+              <a asp-area="" asp-controller="Home" asp-action="Pagamento">
+                <button class="button-small">Assinar</button>
+              </a>
+            </div>
           </div>
-          <div class="d-flex justify-content-center mb-4"><button class="button-small">Assinar</button></div>
         </div>
       </div>
 
-    <div class="table">
+    <div class="table pt-5 pb-5">
       <div class="container-fluid text-center mt-3"><h1>Mais informações</h1></div>
       <div class="container-fluid text-center mb-3"><h3>Beneficios detalhados de cada plano</h3></div>
-      <div class="container-fluid mx-auto text-center mt-3 mb-3">
+      <div class="container-fluid mx-auto text-center mt-5 mb-5">
         <img src="../img/table.png" alt="" width="75%">
       </div>
     </div>

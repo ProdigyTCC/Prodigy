@@ -29,6 +29,11 @@ public class HomeController : Controller
         ViewBag.Layout = "ProdigyWeb";
         return View();
     }
+    public IActionResult Pagamento()
+    {
+        ViewBag.Layout = "ProdigyWeb";
+        return View();
+    }
 
     [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
     public IActionResult Error()

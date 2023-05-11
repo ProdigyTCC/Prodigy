@@ -1,0 +1,88 @@
+.main-checkout {
+    background-color: #E2F0EF;
+    display: flex;
+    flex-direction: column;
+    padding: 0%;
+}
+
+.card-plan-info {
+    margin: 32px 16px;
+    background-color: #1D7870;
+    color: #E2F0EF;
+    border-radius: 10px;
+}
+
+.plan-info {
+    padding: 16px;
+}
+
+.plan-select {
+    font-size: 1rem;
+    font-weight: 600;
+    margin: 0%;
+}
+
+.name-plan {
+    font-size: 2rem;
+    font-weight: 700;
+    margin: 0%;
+}
+
+.plan-details {
+    padding: 4% 0%;
+    list-style: none;
+}
+
+.plan-details li {
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.section-total-plan {
+    padding: 16px;
+    margin: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    background-color: #2D3037;
+    border-radius: 0px 0px 10px 10px;
+}
+
+.total-plan {
+    font-size: 1.25rem;
+    font-weight: 700;
+}
+
+.value-plan {
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+.card-checkout-data {
+    background-color: #2D3037;
+    color: #E2F0EF;
+}
+
+.guide {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 0% 1%;
+    gap: 6px;
+}
+
+.guide-icon p {
+    margin: 0;
+    font-size: 0.6rem;
+}
+
+.guide-name {
+    font-size: 0.6rem;
+    font-weight: 400;
+    margin: 0;
+}
+
+.options { 
+    padding: 32px 16px;
+}

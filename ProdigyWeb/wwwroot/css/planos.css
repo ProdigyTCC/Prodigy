@@ -1,30 +1,24 @@
-@import url('https://fonts.googleapis.com/css?family=Montserrat');
-
-*{
-    font-family: 'Montserrat';
-    outline-color:#30BEB2;    
+.text-planos h3 {
+  color: #1D7870;
+  font-size: 1.2em;
 }
 
-.barra ul li a{
+.title-planos h1 {
   color: #1D7870;
+  font-weight: 700;
 }
 
 .card-planos {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
-  padding: 0% 10%;
+  justify-content: space-around;
+  margin: 0% 10%;
 }
 
 .card-unico {
-  margin: 0%;
-  padding: 1% 1%;
-}
-
-#card-1{
-  background:#2D3037;
+  background-color: #2D3037;
+  padding: 5% 2%;
   border-radius: 10px;
-  color: #E2F0EF;
 }
 
 .lista-planos {
@@ -32,8 +26,8 @@
 }
 
 .titulo-plano h1 {
-  font-size: 2em;
-  font-weight: 700;
+  font-size: 2.5em;
+  font-weight: 600;
 }
 
 .titulo-preco {
@@ -43,14 +37,20 @@
 }
 
 .texto-cifrao {
-  font-size: 2.5em;
-  font-weight: 500;
+  font-size: 3em;
+  font-weight: 600;
 }
 
 .texto-preco {
-  font-size: 2.5em;
-  font-weight: 600;
+  font-size: 3em;
+  font-weight: 700;
   color: #30BEB2;
+}
+
+.card-subtitle {
+  padding-top: 8%;
+  font-size: 1.5em;
+  font-weight: 600;
 }
 
 .botao button{
