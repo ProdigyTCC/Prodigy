@@ -2,18 +2,24 @@
     background-color: #E2F0EF;
     display: flex;
     flex-direction: column;
+    justify-content: center;
     padding: 0%;
 }
 
 .card-plan-info {
-    margin: 32px 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: auto;
+    margin: 2rem 1rem;
+    padding: 0%;
     background-color: #1D7870;
     color: #E2F0EF;
     border-radius: 10px;
 }
 
 .plan-info {
-    padding: 16px;
+    padding: 1rem;
 }
 
 .plan-select {
@@ -39,7 +45,7 @@
 }
 
 .section-total-plan {
-    padding: 16px;
+    padding: 1rem;
     margin: 0;
     display: flex;
     justify-content: space-between;
@@ -62,27 +68,208 @@
 .card-checkout-data {
     background-color: #2D3037;
     color: #E2F0EF;
+    padding-bottom: 10%;
+}
+
+.guide-checkout {
+    padding-top: 6%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
 }
 
 .guide {
     display: flex;
     flex-direction: row;
+    justify-content: center;
     align-items: center;
     margin: 0% 1%;
-    gap: 6px;
 }
 
-.guide-icon p {
-    margin: 0;
-    font-size: 0.6rem;
+.guide-icon span {
+    display: flex;
+    font-size: 0.625rem;
+    width: 0.375rem;
+    height: 0.75rem;
+    line-height: 12.19px;
+}
+
+.guide-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 1.125rem;
+    height: 1.125rem;
+    padding: 10%;
+    border-radius: 100px;
+    color: #2D3037;
+    background-color: #E2F0EF;
 }
 
 .guide-name {
+    line-break: anywhere;
     font-size: 0.6rem;
-    font-weight: 400;
+    font-weight: 600;
+    text-align: start;
     margin: 0;
 }
 
 .options { 
-    padding: 32px 16px;
+    padding: 2rem 1rem;
+}
+
+.options-title {
+    font-weight: 600;
+    padding-bottom: 5%;
+}
+
+.form-check {
+    display: flex;
+    align-items: center;
+    padding-bottom: 5%;
+}
+
+.form-check-label {
+    font-size: 0.9rem;
+    font-weight: 500;
+    padding-left: 3%;
+}
+
+.payment-card {
+    position: relative;
+    margin: 0;
+    width: 20,1rem;
+    height: 12rem;
+}
+
+.payment-card .front {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0; left: 0;
+    background: rgb(11,48,44);
+    background: linear-gradient(90deg, rgba(11,48,44,1) 0%, rgba(48,190,178,1) 100%);
+    border-radius: 10px;
+    backface-visibility: hidden;
+    box-shadow: 0 15px 25px rgba(0, 0, 0, .2);
+    padding: 1rem;
+    transform:perspective(1000px) rotateY(0deg);
+    transition: transform .4s ease-out;
+}
+
+.payment-card .front .image {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.payment-card .front .image img {
+    height: 2rem;
+    width: auto;
+}
+
+.payment-card .front .card-number-box {
+    padding: 2rem 0;
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: #E2F0EF;
+} 
+
+.payment-card .front .flexbox {
+    display: flex;
+}
+
+.payment-card .front .flexbox .box:nth-child(1) {
+    margin-right: auto;
+}
+
+.payment-card .front .flexbox .box {
+    font-size: 1rem;
+    color: #E2F0EF;
+}
+
+.payment-card .back {
+    position: absolute;
+    top: 0; left: 0;
+    height: 100%;
+    width: 100%;
+    background: rgb(11,48,44);
+    background: linear-gradient(45deg, rgba(11,48,44,1) 0%, rgba(48,190,178,1) 100%);
+    border-radius: 10px;
+    text-align: right;
+    padding: 1rem 0;
+    backface-visibility: hidden;
+    box-shadow: 0 15px 25px rgba(0, 0, 0, .2);
+    transform:perspective(1000px) rotateY(180deg);
+    transition: transform .4s ease-out;
+}
+
+.payment-card .back .stripe {
+    background-color: #000;
+    width: 100%;
+    /* margin: 0.6rem 0; */
+    height: 2rem;
+}
+
+.payment-card .back .box {
+    padding: 2rem 1rem;
+}
+
+.payment-card .back .box span{
+    color: #E2F0EF;
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.payment-card .back .box .cvv-box {
+    height: 2rem;
+    padding: 1rem;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    margin: 0.4rem 0 1rem;
+    color: #2D3037;
+    font-weight: 600;
+    background: #E2F0EF;
+    border-radius: 10px;
+    width: 100%;
+}
+
+.payment-card .back .box img {
+    height: 1rem;
+    width: auto;
+}
+
+@media only screen and (min-width: 768px) {
+    .card-plan-info {
+        margin: 2rem 5rem;
+    }
+
+    .payment-card {
+        margin: 2rem 10rem;
+    }
+}
+
+@media only screen and (min-width: 1024px) {
+    .main-checkout {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .card-plan-info {
+        margin: 2rem;
+        width: 100%;
+    }
+
+    .payment-card {
+        margin: 4rem 4rem 0rem;
+    }
+
+    .card-checkout-data {
+        width: 100%;
+    }
+
+    .section-total-plan {
+        height: 30%;
+    }
 }

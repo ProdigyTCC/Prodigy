@@ -12,7 +12,7 @@
   display: flex;
   flex-direction: row;
   justify-content: space-around;
-  margin: 0% 10%;
+  margin: 0% 5%;
 }
 
 .card-unico {
@@ -26,7 +26,7 @@
 }
 
 .titulo-plano h1 {
-  font-size: 2.5em;
+  font-size: 2.3em;
   font-weight: 600;
 }
 
@@ -37,12 +37,12 @@
 }
 
 .texto-cifrao {
-  font-size: 3em;
+  font-size: 2.5em;
   font-weight: 600;
 }
 
 .texto-preco {
-  font-size: 3em;
+  font-size: 2.5em;
   font-weight: 700;
   color: #30BEB2;
 }
@@ -51,22 +51,6 @@
   padding-top: 8%;
   font-size: 1.5em;
   font-weight: 600;
-}
-
-.botao button{
-  font-weight: bolder;
-  font-size: 1.3em;
-  border: none;
-  border-radius: 10px;
-  color: #E2F0EF;
-  background-color: #30BEB2;
-  transition: all 0.35s ease-in-out;
-  width: 90%;
-}
-
-.botao button:hover{
-  background-color: #E2F0EF;
-  color: #92ddd7;
 }
 
 @media(max-width: 1444px){
@@ -79,6 +63,32 @@
       width: 100%;
       margin-bottom: 3em;
     }
+}
+
+@media(max-width: 1024px) {
+  .titulo-plano h1 {
+    font-size: 1.6em;
+    font-weight: 600;
+  }
+  .texto-cifrao {
+    font-size: 2em;
+    font-weight: 600;
+  }
+  
+  .texto-preco {
+    font-size: 2em;
+    font-weight: 700;
+    color: #30BEB2;
+  }
+  .card-subtitle {
+    padding-top: 8%;
+    font-size: 1.2em;
+    font-weight: 600;
+  }
+
+  .lista-planos {
+    font-size: 0.8em;
+  }
 }
 
 @media(max-width: 1000px){

@@ -49,6 +49,22 @@
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
+      "Id": "C:\\Users\\marce\\OneDrive\\Área de Trabalho\\Marcelo\\Prodigy\\ProdigyWeb\\wwwroot\\img\\Chip.png",
+      "PackagePath": "staticwebassets\\img\\Chip.png"
+    },
+    {
+      "Id": "C:\\Users\\marce\\OneDrive\\Área de Trabalho\\Marcelo\\Prodigy\\ProdigyWeb\\wwwroot\\img\\backgroundCard.png",
+      "PackagePath": "staticwebassets\\img\\backgroundCard.png"
+    },
+    {
+      "Id": "C:\\Users\\marce\\OneDrive\\Área de Trabalho\\Marcelo\\Prodigy\\ProdigyWeb\\wwwroot\\img\\brandMastercard.png",
+      "PackagePath": "staticwebassets\\img\\brandMastercard.png"
+    },
+    {
+      "Id": "C:\\Users\\marce\\OneDrive\\Área de Trabalho\\Marcelo\\Prodigy\\ProdigyWeb\\wwwroot\\img\\brandVisa.png",
+      "PackagePath": "staticwebassets\\img\\brandVisa.png"
+    },
+    {
       "Id": "C:\\Users\\marce\\OneDrive\\Área de Trabalho\\Marcelo\\Prodigy\\ProdigyWeb\\wwwroot\\img\\fotoPerfil.png",
       "PackagePath": "staticwebassets\\img\\fotoPerfil.png"
     },
@@ -111,6 +127,10 @@
     {
       "Id": "C:\\Users\\marce\\OneDrive\\Área de Trabalho\\Marcelo\\Prodigy\\ProdigyWeb\\wwwroot\\js\\.editorconfig",
       "PackagePath": "staticwebassets\\js\\.editorconfig"
+    },
+    {
+      "Id": "C:\\Users\\marce\\OneDrive\\Área de Trabalho\\Marcelo\\Prodigy\\ProdigyWeb\\wwwroot\\js\\payment.js",
+      "PackagePath": "staticwebassets\\js\\payment.js"
     },
     {
       "Id": "C:\\Users\\marce\\OneDrive\\Área de Trabalho\\Marcelo\\Prodigy\\ProdigyWeb\\wwwroot\\js\\perfil.js",
