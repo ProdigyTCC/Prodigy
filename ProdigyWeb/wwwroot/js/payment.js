@@ -1,6 +1,4 @@
 // constantes sobre as abas
-document.getElementById('pix').style.display = "none"
-document.getElementById('boleto').style.display = "none"
 document.getElementById('abaCartao').style.display = "none"
 document.getElementById('abaPix').style.display = "none"
 document.getElementById('abaBoleto').style.display = "none"
@@ -20,30 +18,46 @@ botaoAvancar.addEventListener("click", () => {
     switch (valor) {
         case "cartao":
             document.getElementById('abaCartao').style.display = "block";
-            // document.getElementById('cartao-container').style.display = "block";
-            // document.getElementById('planInfo').style.display = "none";
+            document.getElementById('cartao-container').style.display = "block";
+            document.getElementById('planoInfo').style.alignItems = "center"
+
+            document.getElementById('planInfo').style.display = "none";
             document.getElementById('abaFormaPagamento').style.display = "none";
             document.getElementById('avancarForma').style.display = "none";
             break;
+            
             case "pix":
                 document.getElementById('abaPix').style.display = "block";
+                document.getElementById('pix').style.display = "block";
+                document.getElementById('planoInfo').style.alignItems = "center"
+
+            document.getElementById('planInfo').style.display = "none";
                 document.getElementById('avancarForma').style.display = "none";
             document.getElementById('abaFormaPagamento').style.display = "none";
             break;
-        case "boleto":
-            document.getElementById('abaBoleto').style.display = "block";
-            document.getElementById('avancarForma').style.display = "none";
-            document.getElementById('abaFormaPagamento').style.display = "none";
-            break;
-            default:
-                window.alert('Selecione uma opção correta')
+            
+                case "boleto":
+                document.getElementById('abaBoleto').style.display = "block";
+                document.getElementById('boleto').style.display = "block";
+                document.getElementById('planoInfo').style.alignItems = "center"
+
+                document.getElementById('planInfo').style.display = "none";
+                document.getElementById('avancarForma').style.display = "none";
+                document.getElementById('abaFormaPagamento').style.display = "none";
                 break;
+                    default:
+                        window.alert('Selecione uma opção correta')
+                        break;
     }
 }
 )
 
-document.getElementById('planInfo').style.display = "none"
-document.getElementById('cartao-container').style.display = "block"
+// CHECKOUT VARIAVEIS
+document.getElementById('planoInfo').style.alignItems = "start"
+document.getElementById('planInfo').style.display = "block"
+document.getElementById('cartao-container').style.display = "none"
+document.getElementById('pix').style.display = "none"
+document.getElementById('boleto').style.display = "none"
 document.getElementById('visa').style.display = "none"
 
 document.querySelector('#card-number-input').oninput = () => {
@@ -64,12 +78,12 @@ document.querySelector('#exp-year').oninput = () => {
 
 const cardRotate = document.getElementById('cvv-input')
 
-cardRotate.addEventListener("click", () => {
-    document.querySelector('#front').style.transform = 'perspective(1000px) rotateY(-180deg)'
+cardRotate.addEventListener("mouseenter", () => {
+    document.querySelector('#front').style.transform = 'perspective(1000px) rotateY44(-180deg)'
     document.querySelector('#back').style.transform = 'perspective(1000px) rotateY(0deg)'
 })
 
-cardRotate.addEventListener("mouseout", () => {
+cardRotate.addEventListener("mouseleave", () => {
     document.querySelector('#front').style.transform = 'perspective(1000px) rotateY(0deg)'
     document.querySelector('#back').style.transform = 'perspective(1000px) rotateY(180deg)'
 })

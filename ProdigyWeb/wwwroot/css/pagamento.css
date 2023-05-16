@@ -185,6 +185,7 @@
 
 .payment-card .front .flexbox .box {
     font-size: 1rem;
+    font-weight: 500;
     color: #E2F0EF;
 }
 
@@ -207,7 +208,6 @@
 .payment-card .back .stripe {
     background-color: #000;
     width: 100%;
-    /* margin: 0.6rem 0; */
     height: 2rem;
 }
 
@@ -245,31 +245,133 @@
         margin: 2rem 5rem;
     }
 
+    .plan-info {
+        padding: 2rem 2rem 1rem;
+    }
+
+    .name-plan {
+        font-size: 3.5rem;
+    }
+
+    .plan-select {
+        font-size: 1.7rem;
+    }
+
+    .plan-details li {
+        font-size: 1.2rem;
+    }
+
     .payment-card {
-        margin: 2rem 10rem;
+        margin: 2rem 9rem;
+    }
+
+    .card-checkout-data {
+        padding: 2rem 10rem;
+    }
+
+    .options-title {
+        font-size: 1.4rem;
     }
 }
 
 @media only screen and (min-width: 1024px) {
     .main-checkout {
         flex-direction: row;
+        align-items: center;
         justify-content: space-between;
     }
 
     .card-plan-info {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
         margin: 2rem;
+        max-height: 500px;
         width: 100%;
     }
 
     .payment-card {
-        margin: 4rem 4rem 0rem;
+        width: 26rem;
+        height: 16rem;
+        margin: 4rem 2rem;
+    }
+    
+    .front {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .card-holder-name, .card-date-expiration {
+        font-size: 1.2rem;
+    }
+
+    .payment-card .front .card-number-box {
+        font-size: 1.6rem;
+    }
+
+    .plan-info {
+        align-items: flex-start;
+        padding: 2rem 2rem 1rem;
+    }
+
+    .name-plan {
+        font-size: 3.5rem;
+    }
+
+    .plan-select {
+        font-size: 1.7rem;
+    }
+
+    .plan-details li {
+        font-size: 1.2rem;
     }
 
     .card-checkout-data {
-        width: 100%;
+        padding: 2rem 3rem;
     }
 
     .section-total-plan {
         height: 30%;
+    }
+
+    .line-form {
+        display: none;
+    }
+}
+
+@media only screen and (min-width: 1440px) {
+    .main-checkout {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+
+    .card-plan-info {
+        height: 50rem;
+        width: 43.75rem;
+    }
+
+    .front {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .card-checkout-data {
+        height: 50rem;
+        width: 50rem;
+        padding: 2rem 8rem;
+        margin: 0;
+    }
+
+    .options-title {
+        font-size: 1.9rem;
+    }
+
+    .total-plan, .value-plan {
+        font-size: 2.5rem;
     }
 }
