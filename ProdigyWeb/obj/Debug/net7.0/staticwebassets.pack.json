@@ -13,6 +13,10 @@
       "PackagePath": "staticwebassets\\css\\Perfil.css"
     },
     {
+      "Id": "C:\\Users\\marce\\OneDrive\\Área de Trabalho\\Marcelo\\Prodigy\\ProdigyWeb\\wwwroot\\css\\SDashboard.css",
+      "PackagePath": "staticwebassets\\css\\SDashboard.css"
+    },
+    {
       "Id": "C:\\Users\\marce\\OneDrive\\Área de Trabalho\\Marcelo\\Prodigy\\ProdigyWeb\\wwwroot\\css\\cadastro.css",
       "PackagePath": "staticwebassets\\css\\cadastro.css"
     },
@@ -97,6 +101,30 @@
       "PackagePath": "staticwebassets\\img\\prodigy.png"
     },
     {
+      "Id": "C:\\Users\\marce\\OneDrive\\Área de Trabalho\\Marcelo\\Prodigy\\ProdigyWeb\\wwwroot\\img\\svg\\Balance.svg",
+      "PackagePath": "staticwebassets\\img\\svg\\Balance.svg"
+    },
+    {
+      "Id": "C:\\Users\\marce\\OneDrive\\Área de Trabalho\\Marcelo\\Prodigy\\ProdigyWeb\\wwwroot\\img\\svg\\Calendar.svg",
+      "PackagePath": "staticwebassets\\img\\svg\\Calendar.svg"
+    },
+    {
+      "Id": "C:\\Users\\marce\\OneDrive\\Área de Trabalho\\Marcelo\\Prodigy\\ProdigyWeb\\wwwroot\\img\\svg\\Config.svg",
+      "PackagePath": "staticwebassets\\img\\svg\\Config.svg"
+    },
+    {
+      "Id": "C:\\Users\\marce\\OneDrive\\Área de Trabalho\\Marcelo\\Prodigy\\ProdigyWeb\\wwwroot\\img\\svg\\Dashboard.svg",
+      "PackagePath": "staticwebassets\\img\\svg\\Dashboard.svg"
+    },
+    {
+      "Id": "C:\\Users\\marce\\OneDrive\\Área de Trabalho\\Marcelo\\Prodigy\\ProdigyWeb\\wwwroot\\img\\svg\\Employeers.svg",
+      "PackagePath": "staticwebassets\\img\\svg\\Employeers.svg"
+    },
+    {
+      "Id": "C:\\Users\\marce\\OneDrive\\Área de Trabalho\\Marcelo\\Prodigy\\ProdigyWeb\\wwwroot\\img\\svg\\Inventory.svg",
+      "PackagePath": "staticwebassets\\img\\svg\\Inventory.svg"
+    },
+    {
       "Id": "C:\\Users\\marce\\OneDrive\\Área de Trabalho\\Marcelo\\Prodigy\\ProdigyWeb\\wwwroot\\img\\svg\\Mobile.svg",
       "PackagePath": "staticwebassets\\img\\svg\\Mobile.svg"
     },
@@ -105,8 +133,28 @@
       "PackagePath": "staticwebassets\\img\\svg\\PRODIGY.svg"
     },
     {
+      "Id": "C:\\Users\\marce\\OneDrive\\Área de Trabalho\\Marcelo\\Prodigy\\ProdigyWeb\\wwwroot\\img\\svg\\Profile.svg",
+      "PackagePath": "staticwebassets\\img\\svg\\Profile.svg"
+    },
+    {
+      "Id": "C:\\Users\\marce\\OneDrive\\Área de Trabalho\\Marcelo\\Prodigy\\ProdigyWeb\\wwwroot\\img\\svg\\Subtract.svg",
+      "PackagePath": "staticwebassets\\img\\svg\\Subtract.svg"
+    },
+    {
+      "Id": "C:\\Users\\marce\\OneDrive\\Área de Trabalho\\Marcelo\\Prodigy\\ProdigyWeb\\wwwroot\\img\\svg\\Tips.svg",
+      "PackagePath": "staticwebassets\\img\\svg\\Tips.svg"
+    },
+    {
+      "Id": "C:\\Users\\marce\\OneDrive\\Área de Trabalho\\Marcelo\\Prodigy\\ProdigyWeb\\wwwroot\\img\\svg\\card_foto.svg",
+      "PackagePath": "staticwebassets\\img\\svg\\card_foto.svg"
+    },
+    {
       "Id": "C:\\Users\\marce\\OneDrive\\Área de Trabalho\\Marcelo\\Prodigy\\ProdigyWeb\\wwwroot\\img\\svg\\equipe-sobre.svg",
       "PackagePath": "staticwebassets\\img\\svg\\equipe-sobre.svg"
+    },
+    {
+      "Id": "C:\\Users\\marce\\OneDrive\\Área de Trabalho\\Marcelo\\Prodigy\\ProdigyWeb\\wwwroot\\img\\svg\\icon.svg",
+      "PackagePath": "staticwebassets\\img\\svg\\icon.svg"
     },
     {
       "Id": "C:\\Users\\marce\\OneDrive\\Área de Trabalho\\Marcelo\\Prodigy\\ProdigyWeb\\wwwroot\\img\\svg\\img-missao.svg",
@@ -127,6 +175,10 @@
     {
       "Id": "C:\\Users\\marce\\OneDrive\\Área de Trabalho\\Marcelo\\Prodigy\\ProdigyWeb\\wwwroot\\js\\.editorconfig",
       "PackagePath": "staticwebassets\\js\\.editorconfig"
+    },
+    {
+      "Id": "C:\\Users\\marce\\OneDrive\\Área de Trabalho\\Marcelo\\Prodigy\\ProdigyWeb\\wwwroot\\js\\doughnut.js",
+      "PackagePath": "staticwebassets\\js\\doughnut.js"
     },
     {
       "Id": "C:\\Users\\marce\\OneDrive\\Área de Trabalho\\Marcelo\\Prodigy\\ProdigyWeb\\wwwroot\\js\\payment.js",

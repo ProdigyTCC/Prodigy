@@ -2,6 +2,89 @@
     ViewData["Title"] = "Home Page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">DashBoard</h1>
+<div class="main-dashboard">
+    <div class="title"><p class="title-system">Dashboard</p></div>
+
+    <div class="cards-dashboard"> @*Div principal que armazena os 4 cards = relatório/vendas/estoque/histórico*@
+        
+        <div class="card-relatorio"> @*Div relatório*@
+            <div class="subtitle-cards-dashboard"><p>Relatório</p></div>
+            <div class="content-relatorio d-flex flex-column justify-content-center align-items-center">
+                <div class="grafico-relatorio"> @*Gráfico do relatório*@
+                    <canvas id="doughnut" width="400" height="150"></canvas>
+                </div> 
+                <div class="listen-relatorio w-75 d-flex flex-row justify-content-between"> @*Lista que fica abaixo do gráfico*@
+                    <div class="item-lucro d-flex flex-row align-items-center">
+                        <div class="circle-lucro me-1"></div> @*Estas divs circle são os círculos ao lado dos paragrafos*@
+                        <p class="m-0">Lucro</p>
+                    </div>
+                    <div class="item-faturamento d-flex flex-row align-items-center">
+                        <div class="circle-faturamento me-1"></div>
+                        <p class="m-0">Faturamento</p>
+                    </div>
+                    <div class="item-lucro d-flex flex-row align-items-center">
+                        <div class="circle-despesas me-1"></div>
+                        <p class="m-0">Despesas</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card-vendas">
+            <div class="info-vendas d-flex flex-row justify-content-between">
+                <div class="nome-valor-vendas">
+                    <div class="subtitle-cards-dashboard">Total de Vendas</div>
+                    <p class="valor-vendas">R$1024,83</p>
+                </div>
+                <div class="circles-info-vendas">
+                    <div class="item-info-vendas d-flex flex-row align-items-center">
+                        <div class="circle-info-faturamento me-1"></div>
+                        <p class="m-0">Faturamento</p>
+                    </div>
+                    <div class="item-info-vendas d-flex flex-row align-items-center">
+                        <div class="circle-info-despesas me-1"></div>
+                        <p class="m-0">Despesas</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card-estoque">
+            <div class="subtitle-cards-dashboard">Estoque</div>
+            <table class="table table-estoque-dashboard">
+                <thead>
+                    <tr>
+                        <th scope="col"></th>
+                        <th scope="col">Produto</th>
+                        <th scope="col">Categoria</th>
+                        <th scope="col">Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                    <th scope="row">1</th>
+                    <td>Produto</td>
+                    <td>Categoria</td>
+                    <td><i class="fa fa-exclamation-triangle" style="color: yellow;"></i></td>
+                    </tr>
+                    <tr>
+                    <th scope="row">2</th>
+                    <td>Produto</td>
+                    <td>Categoria</td>
+                    <td><i class="fa fa-exclamation-circle" style="color: red;"></i></td>
+                    </tr>
+                    <tr>
+                    <th scope="row">3</th>
+                    <td>Produto</td>
+                    <td>Categoria</td>
+                    <td><i class="fa fa-exclamation-circle" style="color: red;"></i></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="card-agenda">
+            
+        </div>
+    </div>
 </div>

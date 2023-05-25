@@ -1,0 +1,175 @@
+/* Estilo Navbar Lateral  */
+#hr {
+    border: solid 1px  #30BEB2;
+    width: 75%;
+    margin: 3em auto;
+}
+
+.logo {
+    width: 60%;
+    margin: 0 auto;
+    padding-top: 3em;
+    padding-bottom: 3em;
+}
+
+.barra {
+    position: fixed;
+    width: 18.75%;
+    height: 100vh;
+    background-color: #2D3037;
+    overflow: scroll;
+}
+
+.barra::-webkit-scrollbar {
+    display: none;
+  }
+
+.baixo,
+.topo {
+    display: flex;
+    flex-direction: column;
+    vertical-align: middle;
+}
+
+.baixo a,
+.topo a{
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #E2F0EF;
+    margin: 0.7em auto;
+    width: 80%;
+    border-radius: 15px;
+    height: 50px;
+    transition: all 0.20s ease-in-out;
+}
+
+.baixo p, .topo p {
+    font-weight: 600;
+}
+
+.baixo a:hover,
+.topo a:hover{
+    background-color: #1D7870;
+    cursor: pointer;
+}
+
+.baixo a:active, .topo a:active {
+    background-color: #1D7870;
+}
+
+/* DASHBOARD ITENS */
+
+.main-dashboard {
+    background-color: #E2F0EF;
+    padding-left: 14rem;
+    padding-top: 3rem;
+}
+
+.title-system {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #2D3037;
+}
+
+.cards-dashboard {
+    display: grid;
+    grid-template-columns: 0.9fr 1.1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 5% 5%;
+    grid-auto-flow: row;
+    grid-template-areas:
+      "relatorio vendas"
+      "estoque agenda";
+}
+  
+.card-relatorio, .card-vendas, .card-estoque, .card-agenda {
+    width: 25rem;
+    height: 18rem;
+    background-color: #2D3037;
+    border-radius: 15px;
+    padding: 5% 5%;
+}
+
+/* CARD RELATORIO */
+.card-relatorio {
+    grid-area: relatorio;
+}
+
+.subtitle-cards-dashboard {
+    font-size: 1.4rem;
+    font-weight: 600;
+}
+
+.circle-lucro, .circle-faturamento, .circle-despesas {
+    width: 14px;
+    height: 14px;
+    border-radius: 100px;
+}
+
+.listen-relatorio p {
+    font-size: 0.8rem;
+}
+
+.circle-lucro {
+    background-color: #30BEB2;
+}
+
+.circle-faturamento {
+    background-color: #1D7870;
+}
+
+.circle-despesas {
+    background-color: #E2F0EF;
+}
+/* FIM CARD RELATORIO */
+
+/* CARD VENDAS */
+.card-vendas { 
+    grid-area: vendas;
+}
+
+.valor-vendas {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: #30BEB2;
+}
+
+.circle-info-faturamento {
+    width: 10px;
+    height: 10px;
+    background-color: #30BEB2;
+    border-radius: 100px;
+}
+
+.circle-info-despesas {
+    width: 10px;
+    height: 10px;
+    background-color: #FF2323;
+    border-radius: 100px;
+}
+
+.item-info-vendas p{
+    font-size: 0.7rem;
+    font-weight: 500;
+}
+/* FIM CARD VENDAS */
+
+/* CARD ESTOQUE */
+.card-estoque { 
+    grid-area: estoque;
+}
+
+.table-estoque-dashboard {
+    color: #E2F0EF;
+}
+/* FIM CARD ESTOQUE */
+
+/* CARD AGENDA */
+.card-agenda { 
+    grid-area: agenda;
+}
+/* FIM CARD AGENDA */
+
+/* CALENDARIO */
+

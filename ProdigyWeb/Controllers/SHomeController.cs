@@ -6,7 +6,13 @@ namespace ProdigyWeb.Controllers
     {
         public IActionResult Index()
         {
-            ViewBag.Layout = "Sistema01";
+            ViewBag.Layout = "Dashboard";
+            return View();
+        }
+
+        public IActionResult Caixa()
+        {
+            ViewBag.Layout = "Caixa";
             return View();
         }
     }
