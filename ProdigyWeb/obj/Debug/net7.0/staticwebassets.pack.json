@@ -21,6 +21,10 @@
       "PackagePath": "staticwebassets\\css\\cadastro.css"
     },
     {
+      "Id": "C:\\Users\\marce\\OneDrive\\Área de Trabalho\\Marcelo\\Prodigy\\ProdigyWeb\\wwwroot\\css\\estoque.css",
+      "PackagePath": "staticwebassets\\css\\estoque.css"
+    },
+    {
       "Id": "C:\\Users\\marce\\OneDrive\\Área de Trabalho\\Marcelo\\Prodigy\\ProdigyWeb\\wwwroot\\css\\index.css",
       "PackagePath": "staticwebassets\\css\\index.css"
     },
@@ -179,6 +183,10 @@
     {
       "Id": "C:\\Users\\marce\\OneDrive\\Área de Trabalho\\Marcelo\\Prodigy\\ProdigyWeb\\wwwroot\\js\\doughnut.js",
       "PackagePath": "staticwebassets\\js\\doughnut.js"
+    },
+    {
+      "Id": "C:\\Users\\marce\\OneDrive\\Área de Trabalho\\Marcelo\\Prodigy\\ProdigyWeb\\wwwroot\\js\\estoque.js",
+      "PackagePath": "staticwebassets\\js\\estoque.js"
     },
     {
       "Id": "C:\\Users\\marce\\OneDrive\\Área de Trabalho\\Marcelo\\Prodigy\\ProdigyWeb\\wwwroot\\js\\payment.js",

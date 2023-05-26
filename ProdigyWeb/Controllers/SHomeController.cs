@@ -10,6 +10,12 @@ namespace ProdigyWeb.Controllers
             return View();
         }
 
+        public IActionResult Estoque()
+        {
+            ViewBag.Layout = "Dashboard";
+            return View();
+        }
+
         public IActionResult Caixa()
         {
             ViewBag.Layout = "Caixa";

@@ -1,0 +1,40 @@
+.fundo {
+    padding: 3em;
+    margin-left: 18.75%;
+    width: 81.25%;
+    background-color: #E2F0EF;
+    height: 100vh;
+}
+
+.tabela {
+    padding: 1em;
+    margin: 0 auto;
+    width: 100%;
+    height: 90vh;
+    border-radius: 15px;
+    background-color: #2D3037;
+}
+
+.tabela-estoque {
+    color: #E2F0EF;
+}
+
+.botoes-estoque {
+    width: 100%;
+    justify-content: space-around;
+}
+
+.botao-estoque i {
+    color: #E2F0EF;
+    transition: ease-in-out 0.3s;
+}
+
+.botao-estoque i:hover {
+    color: #30BEB2;
+}
+
+.botao-estoque {
+    background-color: transparent;
+    border: none;
+    padding: 0;
+}
