@@ -12,13 +12,6 @@
                 <br>
                 <label for="Senha"><p>Senha</p></label><br>
                 <input type="password" asp-for="Senha" id="" placeholder="*****************" required><br>
-            
-                @if (!string.IsNullOrEmpty(ViewBag.Erro))
-                {
-                    <p style="color: red;">
-                        @ViewBag.Erro.ToString()
-                    </p>
-                }
                 <a href="">Esqueceu sua senha?</a><br>
                 <button type="submit">Entrar</button>
           </form>

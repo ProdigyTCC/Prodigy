@@ -14,7 +14,7 @@ namespace ProdigyWeb.Models
 
        [MaxLength(20)]
        [Display(Name = "Forma de Pagamento")]
-       public int TipoPagamento { get; set; } 
+       public string TipoPagamento { get; set; } 
 
        public DateOnly DataPagamento { get; set; } 
        public bool Status { get; set; } 

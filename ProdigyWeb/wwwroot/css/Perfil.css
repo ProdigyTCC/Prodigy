@@ -80,3 +80,9 @@
     margin-top: 20%;
     padding-bottom: 20%;
 }
+
+.button-profile2 {
+    margin-top: 5%;
+    padding-bottom: 5%;
+    display: none;
+}

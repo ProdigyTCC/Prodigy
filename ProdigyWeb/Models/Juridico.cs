@@ -10,7 +10,6 @@ namespace ProdigyWeb.Models
 
         [MaxLength(100)]
         [Display(Name = "Nome Fantasia")]
-        [Required(ErrorMessage = "Razão social obrigatório")]
         public string NomeRazao { get; set; }
 
         [EmailAddress]
@@ -23,7 +22,6 @@ namespace ProdigyWeb.Models
 
         [MaxLength(18)]
         [Display(Name = "CNPJ")]
-        [Required(ErrorMessage = "CNPJ obrigatório")]
         public string Cnpj { get; set; }
 
         [Display(Name = "Inscrição Municipal")]
@@ -37,8 +35,7 @@ namespace ProdigyWeb.Models
 
         [Display(Name = "Data de fundação")]
         public DateOnly DataFundacao { get; set; }
-        
-        [NotMapped]
+
         public virtual List<EnderecoComposta> EnderecoCompostas { get; set; }
         public Usuario Usuario { get; set; }
         [ForeignKey("UsuarioId")]

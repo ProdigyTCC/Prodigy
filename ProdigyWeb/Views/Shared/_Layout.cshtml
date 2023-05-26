@@ -1,9 +1,9 @@
 ﻿<!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - ProdigyWeb</title>
+    <title>@ViewData["Title"] - Prodigy</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
@@ -19,16 +19,27 @@
     <link rel="stylesheet" href="~/css/cadastro.css" asp-append-version="true"/>
     <link rel="stylesheet" href="~/css/SDashboard.css" asp-append-version="true"/>
     <link rel="stylesheet" href="~/css/estoque.css" asp-append-version="true"/>
+   
+    <script>
+        window.onload = function () {
+            var Erro = "@TempData["Erro"]"
+
+            if (Erro) {
+                alert(Erro)
+            }
+        }
+    </script>
+
 </head>
 <body>
     @if(ViewBag.Layout == "ProdigyWeb")
-    {  
+    {
         <header>
             <nav class="navbar navbar-expand-lg">
                 <div class="container-fluid">
                     <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index"><img src="../img/prodigy.png" alt=""></a>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                    <img src="../img/menu.png" alt="">
+                        <img src="../img/menu.png" alt="">
                     </button>
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul class="navbar-nav ml-auto">
@@ -42,21 +53,40 @@
                                 <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Contato">Contato</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" asp-area="" asp-controller="Usuario" asp-action="Index">Perfil</a>
+                                <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Planos">Planos</a>
                             </li>
-                            <li class="nav-item">
-                                <a class="nav-link" asp-area="" asp-controller="Usuario" asp-action="Login">Login</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" asp-area="" asp-controller="Usuario" asp-action="Cadastrar">Cadastrar-se</a>
-                            </li>
+
+                            @if (ViewBag.Id == null)
+                            {
+                                <li class="nav-item">
+                                    <a class="nav-link" asp-area="" asp-controller="Usuario" asp-action="Login">Login</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" asp-area="" asp-controller="Usuario" asp-action="Cadastrar">Cadastrar-se</a>
+                                </li>
+                            }
                             <li class="nav-item">
                                 <a class="nav-link" asp-area="" asp-controller="SHome" asp-action="Index">Sistema</a>
                             </li>
-                            @if(ViewBag.Id != null)
+                            @if (ViewBag.Id != null)
                             {
                                 <li class="nav-item">
+                                    <a class="nav-link" asp-area="" asp-controller="Usuario" asp-action="Index">Perfil</a>
+                                </li>
+                                <li class="nav-item">
                                     <a class="nav-link" asp-area="" asp-controller="Usuario" asp-action="Logout">Sair</a>
+                                </li>
+                                <li class="nav-item">
+                                    <p class="nav-link">
+                                        @try
+                                        {
+                                            @ViewBag.Nome.ToString().Substring(0, @ViewBag.Nome.ToString().IndexOf(' '))
+                                        }
+                                        catch (Exception)
+                                        {
+                                            @ViewBag.Nome.ToString()
+                                        }
+                                    </p>
                                 </li>
                             }
                         </ul>

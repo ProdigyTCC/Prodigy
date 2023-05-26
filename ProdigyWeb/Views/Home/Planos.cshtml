@@ -1,114 +1,118 @@
-  @{
-    @ViewData["Planos"]
-  }    
-    
-  <div class="secao-light">
+@{
+    ViewData["Title"] = "Planos";
+}
+
+<div class="secao-light">
     <div class="title-planos container-fluid text-center pt-5"><h1>Conheça nossos planos</h1></div>
     <div class="text-planos container-fluid text-center pb-5"><h3>Selecione qual atende melhor sua necessidade</h3></div>
 
-      <div class="card-planos row row-cols-2 row-cols-md-3 g-4 pb-5">
+    <div class="card-planos row row-cols-2 row-cols-md-3 g-4 pb-5">
         <div class="col-lg-3 col-md-6 col-sm-6">
-          <div class="card-unico card h-100">
-            <div class="titulo-plano card-title text-center"><h1>Starter</h1></div>
-            <div class="titulo-preco card-title text-center">
-              <h2 class="texto-cifrao">R$</h2>
-              <h2 class="texto-preco">00,00</h2>
+            <div class="card-unico card h-100">
+                <div class="titulo-plano card-title text-center"><h1>Starter</h1></div>
+                <div class="titulo-preco card-title text-center">
+                    <h2 class="texto-cifrao">R$</h2>
+                    <h2 class="texto-preco">00,00</h2>
+                </div>
+                <div class="card-subtitle text-center"><p>Beneficios</p></div>
+                <div class="card-body text-center">
+                    <ul class="lista-planos">
+                        <li>Preço acessível para pequenas empresas</li>
+                        <li>Recursos básicos de gerenciamento empresarial</li>
+                        <li>Faturamento e controle de estoque em um só lugar</li>
+                        <li>Gestão financeira simplificada</li>
+                    </ul>
+                </div>
+                <div class="d-flex justify-content-center mb-4">
+                    <form asp-controller="Pagamento" asp-action="AddPlano">
+                        <input type="hidden" name="plano" value="Starter" />
+                        <button type="submit" class="button-small">Assinar</button>
+                    </form>
+                </div>
             </div>
-            <div class="card-subtitle text-center"><p>Beneficios</p></div>
-            <div class="card-body text-center">
-              <ul class="lista-planos">
-                <li>Preço acessível para pequenas empresas</li><br>
-                <li>Recursos básicos de gerenciamento empresarial</li><br>
-                <li>Faturamento e controle de estoque em um só lugar</li><br>
-                <li>Gestão financeira simplificada</li><br>
-              </ul>
-            </div>
-            <div class="d-flex justify-content-center mb-4">
-              <a asp-area="" asp-controller="Home" asp-action="Pagamento">
-                <button class="button-small">Assinar</button>
-              </a>
-            </div>
-          </div>
         </div>
 
         <div class="col-lg-3 col-md-6 col-sm-6">
-          <div class="card-unico card h-100">
-            <div class="titulo-plano card-title text-center"><h1>Starter</h1></div>
-            <div class="titulo-preco card-title text-center">
-              <h2 class="texto-cifrao">R$</h2>
-              <h2 class="texto-preco">00,00</h2>
+            <div class="card-unico card h-100">
+                <div class="titulo-plano card-title text-center"><h1>Pro</h1></div>
+                <div class="titulo-preco card-title text-center">
+                    <h2 class="texto-cifrao">R$</h2>
+                    <h2 class="texto-preco">00,00</h2>
+                </div>
+                <div class="card-subtitle text-center"><p>Beneficios</p></div>
+                <div class="card-body text-center">
+                    <ul class="lista-planos">
+                        <li>Preço acessível para pequenas empresas</li>
+                        <li>Recursos básicos de gerenciamento empresarial</li>
+                        <li>Faturamento e controle de estoque em um só lugar</li>
+                        <li>Gestão financeira simplificada</li>
+                    </ul>
+                </div>
+                <div class="d-flex justify-content-center mb-4">
+                    <form asp-controller="Pagamento" asp-action="AddPlano">
+                        <input type="hidden" name="plano" value="Pro" />
+                        <button type="submit" class="button-small">Assinar</button>
+                    </form>
+                </div>
             </div>
-            <div class="card-subtitle text-center"><p>Beneficios</p></div>
-            <div class="card-body text-center">
-              <ul class="lista-planos">
-                <li>Preço acessível para pequenas empresas</li><br>
-                <li>Recursos básicos de gerenciamento empresarial</li><br>
-                <li>Faturamento e controle de estoque em um só lugar</li><br>
-                <li>Gestão financeira simplificada</li><br>
-              </ul>
-            </div>
-            <div class="d-flex justify-content-center mb-4">
-              <a asp-area="" asp-controller="Home" asp-action="Pagamento">
-                <button class="button-small">Assinar</button>
-              </a>
-            </div>
-          </div>
         </div>
 
         <div class="col-lg-3 col-md-6 col-sm-6">
-          <div class="card-unico card h-100">
-            <div class="titulo-plano card-title text-center"><h1>Starter</h1></div>
-            <div class="titulo-preco card-title text-center">
-              <h2 class="texto-cifrao">R$</h2>
-              <h2 class="texto-preco">00,00</h2>
+            <div class="card-unico card h-100">
+                <div class="titulo-plano card-title text-center"><h1>+Pro</h1></div>
+                <div class="titulo-preco card-title text-center">
+                    <h2 class="texto-cifrao">R$</h2>
+                    <h2 class="texto-preco">00,00</h2>
+                </div>
+                <div class="card-subtitle text-center"><p>Beneficios</p></div>
+                <div class="card-body text-center">
+                    <ul class="lista-planos">
+                        <li>Preço acessível para pequenas empresas</li>
+                        <li>Recursos básicos de gerenciamento empresarial</li>
+                        <li>Faturamento e controle de estoque em um só lugar</li>
+                        <li>Gestão financeira simplificada</li>
+                    </ul>
+                </div>
+                <div class="d-flex justify-content-center mb-4">
+                    <form asp-controller="Pagamento" asp-action="AddPlano">
+                        <input type="hidden" name="plano" value="+Pro" />
+                        <button type="submit" class="button-small">Assinar</button>
+                    </form>
+                </div>
             </div>
-            <div class="card-subtitle text-center"><p>Beneficios</p></div>
-            <div class="card-body text-center">
-              <ul class="lista-planos">
-                <li>Preço acessível para pequenas empresas</li><br>
-                <li>Recursos básicos de gerenciamento empresarial</li><br>
-                <li>Faturamento e controle de estoque em um só lugar</li><br>
-                <li>Gestão financeira simplificada</li><br>
-              </ul>
-            </div>
-            <div class="d-flex justify-content-center mb-4">
-              <a asp-area="" asp-controller="Home" asp-action="Pagamento">
-                <button class="button-small">Assinar</button>
-              </a>
-            </div>
-          </div>
         </div>
 
         <div class="col-lg-3 col-md-6 col-sm-6">
-          <div class="card-unico card h-100">
-            <div class="titulo-plano card-title text-center"><h1>Starter</h1></div>
-            <div class="titulo-preco card-title text-center">
-              <h2 class="texto-cifrao">R$</h2>
-              <h2 class="texto-preco">00,00</h2>
+            <div class="card-unico card h-100">
+                <div class="titulo-plano card-title text-center"><h1>Personalizado</h1></div>
+                <div class="titulo-preco card-title text-center">
+                    <h2 class="texto-cifrao">R$</h2>
+                    <h2 class="texto-preco">00,00</h2>
+                </div>
+                <div class="card-subtitle text-center"><p>Beneficios</p></div>
+                <div class="card-body text-center">
+                    <ul class="lista-planos">
+                        <li>Preço acessível para pequenas empresas</li>
+                        <li>Recursos básicos de gerenciamento empresarial</li>
+                        <li>Faturamento e controle de estoque em um só lugar</li>
+                        <li>Gestão financeira simplificada</li>
+                    </ul>
+                </div>
+                <div class="d-flex justify-content-center mb-4">
+                    <form asp-controller="Pagamento" asp-action="AddPlano">
+                        <input type="hidden" name="plano" value="Personalizado" />
+                        <button type="submit" class="button-small">Assinar</button>
+                    </form>
+                </div>
             </div>
-            <div class="card-subtitle text-center"><p>Beneficios</p></div>
-            <div class="card-body text-center">
-              <ul class="lista-planos">
-                <li>Preço acessível para pequenas empresas</li><br>
-                <li>Recursos básicos de gerenciamento empresarial</li><br>
-                <li>Faturamento e controle de estoque em um só lugar</li><br>
-                <li>Gestão financeira simplificada</li><br>
-              </ul>
-            </div>
-            <div class="d-flex justify-content-center mb-4">
-              <a asp-area="" asp-controller="Home" asp-action="Pagamento">
-                <button class="button-small">Assinar</button>
-              </a>
-            </div>
-          </div>
         </div>
-      </div>
-
-    <div class="table pt-5 pb-5">
-      <div class="container-fluid text-center mt-3"><h1>Mais informações</h1></div>
-      <div class="container-fluid text-center mb-3"><h3>Beneficios detalhados de cada plano</h3></div>
-      <div class="container-fluid mx-auto text-center mt-5 mb-5">
-        <img src="../img/table.png" alt="" width="75%">
-      </div>
     </div>
-  </div>
+</div>
+
+<div class="table pt-5 pb-5">
+    <div class="container-fluid text-center mt-3"><h1>Mais informações</h1></div>
+    <div class="container-fluid text-center mb-3"><h3>Beneficios detalhados de cada plano</h3></div>
+    <div class="container-fluid mx-auto text-center mt-5 mb-5">
+        <img src="../img/table.png" alt="" width="75%">
+    </div>
+</div>

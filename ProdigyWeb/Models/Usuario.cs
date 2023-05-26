@@ -33,21 +33,19 @@ namespace ProdigyWeb.Models
         [Display(Name = "Foto")]
         public string Imagem { get; set; }
 
-        [DataType(DataType.Date)]
         [Display(Name = "Data de Nascimento")]
         [Required(ErrorMessage = "* Data de nascimento obrigatório")]
-        public DateOnly DataNascimento { get; set; }
+        public string DataNascimento { get; set; }
 
-        [DataType(DataType.Date)]
-        public DateOnly DataRegistro { get; set; }
+        public string DataRegistro { get; set; }
 
         [DataType(DataType.Password)]
         [Display(Name = "Senha")]
         [Required(ErrorMessage = "* Senha obrigatória")]
         public string Senha { get; set; }
 
-        [Display(Name = "Status de Pagamento")]
-        public string Status { get; set; }
+        [Display(Name = "Plano")]
+        public string Plano { get; set; }
 
         [Display(Name = "Orientação Sexual")]
         public string Sexo { get; set; }
@@ -65,11 +63,8 @@ namespace ProdigyWeb.Models
         [MaxLength(14)]
         public string Cpf { get; set; }
 
-        [NotMapped]
         public virtual List<Pagamento> Pagamentos { get; set; }
-        [NotMapped]
         public virtual List<EnderecoComposta> EnderecoCompostas { get; set; }
-        [NotMapped]
         public virtual List<ModuloComposta> ModuloComposta { get; set; }
     }
 }

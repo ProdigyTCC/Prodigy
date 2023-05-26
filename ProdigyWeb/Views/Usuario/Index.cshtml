@@ -1,62 +1,83 @@
-<div class="section-profile container-fluid d-flex flex-row justify-content-between pt-3 pb-5">
-    <div class="container-fluid profile">
-        <div class="container-fluid card-profile pt-3 justify-content-center text-center">
-            <div class="personal-image">
-                <label class="label">
-                    <input type="file" />
-                    <figure class="personal-figure">
-                    <img src="../img/fotoPerfil.png" class="personal-avatar" alt="avatar">
-                    <figcaption class="personal-figcaption">
-                        <img src="https://raw.githubusercontent.com/ThiagoLuizNunes/angular-boilerplate/master/src/assets/imgs/camera-white.png">
-                    </figcaption>
-                    </figure>
-                </label>
-            </div>
+@model IEnumerable<ProdigyWeb.Models.Usuario>;
+@{
+    ViewData["Title"] = "Perfil";
+}
+@foreach (var item in Model)
+{
+    <div class="section-profile container-fluid d-flex flex-row justify-content-between pt-3 pb-5">
+        <div class="container-fluid profile">
+            <div class="container-fluid card-profile pt-3 justify-content-center text-center">
+                <form asp-action="UploadImagem" asp-controller="Usuario" enctype="multipart/form-data">
+                    <div class="personal-image">
+                        <label class="label">
+                            <input type="file" name="imagem" id="imagem-perfil" />
+                            <figure class="personal-figure">
+                                @if (item.Imagem == "" || item.Imagem == null)
+                                {
+                                    <img src="/img/fotoPerfil.png" class="personal-avatar" alt="avatar">
+                                }
+                                else
+                                {
+                                    string img = "/Imagem/" + item.Imagem;
+                                    <img src="@img" class="personal-avatar" alt="avatar">
+                                }
+                                <figcaption class="personal-figcaption">
+                                    <img src="https://raw.githubusercontent.com/ThiagoLuizNunes/angular-boilerplate/master/src/assets/imgs/camera-white.png">
+                                </figcaption>
+                            </figure>
+                        </label>
+                        <div class="button-profile2" id="btn-imagem">
+                            <button class="secondary-button" type="submit">Atualizar Foto</button>
+                        </div>
+                    </div>
+                </form>
 
-            <p class="name-profile mb-5">Admin</p>
+                <p class="name-profile mb-5">@item.Nome</p>
 
-            <div class="info-profile mb-5">
-                <p class="info-user info-cargo mb-0">Cargo: Gerente</p>
-                <p class="info-user info-email mb-0">admin@empresa.com</p>
-            </div>
+                <div class="info-profile mb-5">
+                    <p class="info-user info-cargo mb-0">Cargo: @item.Nivel</p>
+                    <p class="info-user info-email mb-0">@item.Email</p>
+                </div>
 
-            <div class="button-profile">
-                <button class="secondary-button" type="button">Acessar o Prodigy</button>
+                <div class="button-profile">
+                    <button class="secondary-button" type="button" asp-controller="SHome" asp-action="Index">Acessar o Prodigy</button>
+                </div>
             </div>
         </div>
+
+        <div class="container-fluid input-profile d-flex flex-column">
+            <h2 class="info-input mb-3">Informações de sua empresa</h2>
+          
+                <p class="label-profile pb-1 m-0">Nome</p>
+                <div class="input-group pb-3">
+                    <input class="inputProfileName form-control" value="" type="text" placeholder="Nome">
+                </div>
+
+                <p class="label-profile pb-1 m-0">Data de fundação</p>
+                <div class="input-group pb-3">
+                    <input class="inputProfileDate form-control" value="" type="text" placeholder="00/00/0000">
+                </div>
+
+                <p class="label-profile pb-1 m-0">CNPJ</p>
+                <div class="input-group pb-3">
+                    <input class="form-control" value="" type="text" placeholder="Informação" aria-label="Disabled input example" disabled>
+                </div>
+
+                <p class="label-profile pb-1 m-0">Plano Atual</p>
+                <div class="input-group pb-3">
+                    <input class="form-control" value="@item.Plano" type="text" placeholder="Plano" aria-label="Disabled input example" disabled>
+                </div>
+                <p class="label-profile pb-1 m-0">Vencimento do plano</p>
+                <div class="input-group pb-3">
+                    <input class="form-control" type="text" placeholder="29/07/2023" aria-label="Disabled input example" disabled>
+                </div>
+                <div class="container d-flex justify-content-end p-0">
+                    <button id="buttonEdit" type="button" class="button-edit">Editar</button>
+                    <button id="buttonConfirm" type="button" class="button-small">Confirmar</button>
+                </div>
+            
+
+        </div>
+
     </div>
-
-    <div class="container-fluid input-profile d-flex flex-column">
-        <h2 class="info-input mb-3">Informações de sua empresa</h2>
-        
-        <p class="label-profile pb-1 m-0">Nome</p>
-        <div class="input-group pb-3">
-            <input class="inputProfileName form-control" type="text" placeholder="Nome">
-        </div>
-
-        <p class="label-profile pb-1 m-0">Data de fundação</p>
-        <div class="input-group pb-3">
-            <input class="inputProfileDate form-control" type="text" placeholder="00/00/0000">
-        </div>
-    
-        <p class="label-profile pb-1 m-0">CNPJ</p>
-        <div class="input-group pb-3">
-            <input class="form-control" type="text" placeholder="Informação" aria-label="Disabled input example" disabled>
-        </div>
-
-        <p class="label-profile pb-1 m-0">Plano Atual</p>
-        <div class="input-group pb-3">
-            <input class="form-control" type="text" placeholder="Starter" aria-label="Disabled input example" disabled>
-        </div>
-
-        <p class="label-profile pb-1 m-0">Vencimento do plano</p>
-        <div class="input-group pb-3">
-            <input class="form-control" type="text" placeholder="29/07/2023" aria-label="Disabled input example" disabled>
-        </div>
-        <div class="container d-flex justify-content-end p-0">
-            <button id="buttonEdit" type="button" class="button-edit">Editar</button>
-            <button id="buttonConfirm" type="button" class="button-small">Confirmar</button>
-        </div>
-    </div>
-
-</div>
+}

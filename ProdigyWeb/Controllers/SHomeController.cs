@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using System.Security.Claims;
 
 namespace ProdigyWeb.Controllers
 {
@@ -6,20 +7,38 @@ namespace ProdigyWeb.Controllers
     {
         public IActionResult Index()
         {
-            ViewBag.Layout = "Dashboard";
-            return View();
+            ClaimsPrincipal claims = HttpContext.User;
+
+            if (claims.Identity.IsAuthenticated)
+            {
+                ViewBag.Layout = "Dashboard";
+                return View();
+            }
+            return RedirectToAction("Login","Usuario");
         }
 
         public IActionResult Estoque()
         {
-            ViewBag.Layout = "Dashboard";
-            return View();
+            ClaimsPrincipal claims = HttpContext.User;
+
+            if (claims.Identity.IsAuthenticated)
+            {
+                ViewBag.Layout = "Dashboard";
+                return View();
+            }
+            return RedirectToAction("Login", "Usuario");
         }
 
         public IActionResult Caixa()
         {
-            ViewBag.Layout = "Caixa";
-            return View();
+            ClaimsPrincipal claims = HttpContext.User;
+
+            if (claims.Identity.IsAuthenticated)
+            {
+                ViewBag.Layout = "Caixa";
+                return View();
+            }
+            return RedirectToAction("Login", "Usuario");
         }
     }
 }

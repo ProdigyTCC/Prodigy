@@ -12,193 +12,179 @@ namespace ProdigyWeb.Controllers
 {
     [Route("[controller]")]
     public class UsuarioController : Controller
-    {
-        HashService hash = new HashService(SHA256.Create());
-        private readonly ProdigyWebContext _context;
-        private readonly ICookie _cookie;
-
-        public UsuarioController(
-            ProdigyWebContext context,
-            ICookie cookie)
         {
-            _cookie = cookie;
-            _context = context;
-        }
+            HashService hash = new HashService(SHA256.Create());
+            private readonly ProdigyWebContext _context;
+            private readonly ICookie _cookie;
+            private string _caminhoServidor;
 
-        [AllowAnonymous]
-        public void AddSessao()
-        {
-            ViewBag.Id = User.FindFirst("Id")?.Value;
-            ViewBag.Nome = User.FindFirst(ClaimTypes.Name)?.Value;
-            ViewBag.Email = User.FindFirst(ClaimTypes.Email)?.Value;
-            ViewBag.Nivel = User.FindFirst(ClaimTypes.Role)?.Value;
-        }
-
-        [HttpGet("Index")]
-        public IActionResult Index()
-        {
-            ClaimsPrincipal claims = HttpContext.User;
-            ViewBag.Layout = "ProdigyWeb";
-
-            if (claims.Identity.IsAuthenticated)
-                return View();
-
-            AddSessao();
-            return RedirectToAction("Login", "Usuario");
-        }
-
-        [HttpGet("Login")]
-        public IActionResult Login(bool erroLogin)
-        {
-            ClaimsPrincipal claims = HttpContext.User;
-            if (erroLogin) ViewBag.Erro = "Login e/ou senha inválidos!";
-
-            if (claims.Identity.IsAuthenticated)
-                return RedirectToAction("Index", "Usuario");
-
-            ViewBag.Layout = "ProdigyWeb";
-            return View();
-        }
-
-        [HttpPost("LoginUsuario"), AllowAnonymous]
-        public async Task<IActionResult> Login(Usuario usuario)
-        {
-            if (usuario.Email == null || usuario.Senha == null)
+            public UsuarioController(
+                ProdigyWebContext context,
+                ICookie cookie,
+                IWebHostEnvironment caminhoServidor)
             {
-                return RedirectToAction("Index", new { erroLogin = true });
+                _caminhoServidor = caminhoServidor.WebRootPath;
+                _cookie = cookie;
+                _context = context;
             }
 
-            var usuarios = _cookie.ValidarUsuario(usuario.Email, usuario.Senha);
-
-            if (usuarios == null)
+            [AllowAnonymous]
+            public void AddSessao()
             {
-                return RedirectToAction("Index", new { erroLogin = true });
+                ViewBag.Id = User.FindFirst("Id")?.Value;
+                ViewBag.Nome = User.FindFirst(ClaimTypes.Name)?.Value;
+                ViewBag.Email = User.FindFirst(ClaimTypes.Email)?.Value;
             }
 
-            await _cookie.GerarClaim(HttpContext, usuarios);
+            [HttpGet("Index"), AllowAnonymous]
+            public IActionResult Index()
+            {
+                ViewBag.Layout = "ProdigyWeb";
+                ClaimsPrincipal claims = HttpContext.User;
 
-            return RedirectToAction("Index", "Usuario");
-        }
-
-        [HttpGet("Cadastrar")]
-        public IActionResult Cadastrar(bool erroCadastro)
-        {
-            ClaimsPrincipal claims = HttpContext.User;
-
-            if (erroCadastro) TempData["ErroLogin"] = "Email já existe, ou algum campo está incompleto.";
-
-            if (claims.Identity.IsAuthenticated)
-                return RedirectToAction("Index", "Usuario");
-
-            ViewBag.Layout = "ProdigyWeb";
-
-            return View();
-        }
-
-        [HttpPost("CadastrarUsuario")]
-        public IActionResult CadastrarUsuario(Usuario usuario)
-        {   
-            try
-            {            
-                if (ModelState.IsValid)
+                if (claims.Identity.IsAuthenticated)
                 {
-                    var usuarios = _context.Usuarios.FirstOrDefault(x => x.Email == usuario.Email);
+                    var usuarioId = User.FindFirst("Id").Value;
 
-                    string senhaSecreta = hash.CriptografarSenha(usuario.Senha.ToString());
+                    var usuarios = _context.Usuarios
+                    .Where(x => x.UsuarioId.ToString() == usuarioId).ToList();
+
+                    AddSessao();
+                    return View(usuarios);
+                }
+
+                return RedirectToAction("Login", "Usuario");
+            }
+
+            [HttpGet("Login")]
+            public IActionResult Login()
+            {
+                ViewBag.Layout = "ProdigyWeb";
+                ClaimsPrincipal claims = HttpContext.User;
+
+                if (claims.Identity.IsAuthenticated)
+                    return RedirectToAction("Index", "Usuario");
+
+                AddSessao();
+                return View();
+            }
+
+            [HttpPost("LoginUsuario"), AllowAnonymous]
+            public async Task<IActionResult> Login(Usuario usuario)
+            {
+                try
+                {
+                    var usuarios = _cookie.ValidarUsuario(usuario.Email, usuario.Senha);
 
                     if (usuarios == null)
                     {
-                        usuario.Senha = senhaSecreta;
-
-                        _context.Usuarios.Add(usuario);
-                        _context.SaveChanges();
-
+                        TempData["Erro"] = "Login e/ou senha inválidos!";
                         return RedirectToAction(nameof(Index));
                     }
+
+                    await _cookie.GerarClaim(HttpContext, usuarios);
+
+                    return RedirectToAction(nameof(Index));
+                }
+                catch (Exception)
+                {
+                    return RedirectToAction(nameof(Login));
                 }
             }
-            catch (DbUpdateException e)
+
+            [HttpGet("Cadastrar")]
+            public IActionResult Cadastrar()
             {
-                ViewBag.ErroCriar = $"Erro ao criar cadastro: {e}";
-                return RedirectToAction(nameof(Login));
+                ViewBag.Layout = "ProdigyWeb";
+                ClaimsPrincipal claims = HttpContext.User;
+
+                if (claims.Identity.IsAuthenticated)
+                    return RedirectToAction(nameof(Index));
+
+                AddSessao();
+
+                return View();
             }
 
-            return RedirectToAction("Cadastrar", new { erroCadastro = true }); ;
-        }
+            [HttpPost("CadastrarUsuario")]
+            public async Task<IActionResult> CadastrarUsuario(Usuario usuario)
+            {
+                try
+                {
+                    if (ModelState.IsValid)
+                    {
+                        var usuarios = await _context.Usuarios.FirstOrDefaultAsync(x => x.Email == usuario.Email);
 
-        [HttpGet("Logout"), Authorize]
-        public async Task<IActionResult> Logout()
-        {
-            await _cookie.Logout(HttpContext);
-            return RedirectToAction("Index");
-        }
+                        string senhaSecreta = hash.CriptografarSenha(usuario.Senha.ToString());
 
-        public IActionResult Editar(int id)
-        {
-            var usuario = _context.Usuarios.Find(id);
+                        if (usuarios == null)
+                        {
+                            usuario.Senha = senhaSecreta;
+                            usuario.Nivel = "Administrador";
+                            usuario.DataRegistro = DateTime.UtcNow.ToString("dd/MM/yyyy");
 
-            if (usuario == null)
+                            _context.Usuarios.Add(usuario);
+                            _context.SaveChanges();
+
+                            return RedirectToAction(nameof(Index));
+                        }
+                        else
+                        {
+                            TempData["Erro"] = "Email já existe, ou algum campo está incompleto.";
+                            return RedirectToAction(nameof(Cadastrar));
+                        }
+                    }
+                }
+                catch (DbUpdateException e)
+                {
+                    TempData["Erro"] = $"Erro ao criar cadastro: {e.Message}";
+                    return RedirectToAction(nameof(Login));
+                }
+                return RedirectToAction(nameof(Cadastrar));
+            }
+
+            [HttpGet("Logout"), Authorize]
+            public async Task<IActionResult> Logout()
+            {
+                await _cookie.Logout(HttpContext);
+                return RedirectToAction("Index");
+            }
+            [HttpPost("UploadImagem")]
+            public async Task<IActionResult> UploadImagem(IFormFile? imagem)
+            {
+                AddSessao();
+
+                if (imagem == null) return RedirectToAction(nameof(Index),
+                       TempData["Erro"] = $"Selecione uma imagem para atualizar o perfil!");
+
+                string caminhoAddFoto = _caminhoServidor + "\\Imagem\\";
+                string nomeImagem = Guid.NewGuid().ToString() + "_" + imagem.FileName;
+                string usuarioId = ViewBag.Id;
+                var usuarioBanco = _context.Usuarios
+                    .AsNoTracking()
+                    .FirstOrDefault(x => x.UsuarioId.ToString() == usuarioId);
+
+                if (!Directory.Exists(caminhoAddFoto))
+                {
+                    Directory.CreateDirectory(caminhoAddFoto);
+                }
+
+                using (var stream = System.IO.File.Create(caminhoAddFoto + nomeImagem))
+                {
+                    await imagem.CopyToAsync(stream);
+                }
+                try
+                {
+                    usuarioBanco.Imagem = nomeImagem;
+                    _context.Usuarios.Update(usuarioBanco);
+                    _context.SaveChanges();
+                }
+                catch (DbUpdateException e)
+                {
+                    return RedirectToAction(nameof(Index),
+                        TempData["Erro"] = $"Falha ao atualizar imagem! ERRO: [ {e} ]");
+                }
                 return RedirectToAction(nameof(Index));
-
-            return View(usuario);
+            }
         }
-        
-        [HttpPost]
-        public IActionResult Editar(Usuario usuario)
-        {
-            var usuarioBanco = _context.Usuarios.Find(usuario.UsuarioId);
-
-            usuarioBanco.Nome = usuario.Nome;
-            usuarioBanco.Imagem = usuario.Imagem;
-            usuarioBanco.DataNascimento = usuario.DataNascimento;
-            usuarioBanco.DataRegistro = usuario.DataRegistro;
-            usuarioBanco.Senha = usuario.Senha;
-            usuarioBanco.Status = usuario.Status;
-            usuarioBanco.Sexo = usuario.Sexo;
-            usuarioBanco.Raca = usuario.Raca;
-            usuarioBanco.Nacionalidade = usuario.Nacionalidade;
-            usuarioBanco.Cpf = usuario.Cpf;
-
-            _context.Usuarios.Update(usuarioBanco);
-            _context.SaveChanges();
-
-            return RedirectToAction(nameof(Index));
-        }
-
-        public IActionResult Detalhes()
-        {
-            return View();
-        }
-
-        public IActionResult Detalhes(int id)
-        {
-            var usuario = _context.Usuarios.Find(id);
-
-            if (usuario == null)
-                return RedirectToAction(nameof(Index));
-
-            return View(usuario);
-        }
-
-        public IActionResult Deletar(int id)
-        {
-            var usuario = _context.Usuarios.Find(id);
-
-            if (usuario == null)
-                return RedirectToAction(nameof(Index));
-
-            return View(usuario);
-        }
-
-        [HttpPost]
-        public IActionResult Deletar(Usuario usuario)
-        {
-            var usuarioBanco = _context.Usuarios.Find(usuario.UsuarioId);
-
-            _context.Usuarios.Remove(usuarioBanco);
-            _context.SaveChanges();
-
-            return RedirectToAction(nameof(Index));
-        }
-    }
 }

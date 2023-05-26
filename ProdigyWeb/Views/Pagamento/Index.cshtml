@@ -1,0 +1,224 @@
+@{
+    ViewData["Title"] = "Pagamento";
+}
+
+<div class="main-checkout container-fluid">
+    <div id="planoInfo" class="card-plan-info container-fluid">
+        <div id="planInfo" class="plan-info">
+            <p class="plan-select">Plano selecionado:</p>
+            @if (TempData["Plano"] != null)
+            {
+                <p class="name-plan">@TempData["Plano"].ToString()</p>
+            }
+            else
+            {
+                <p class="name-plan">Starter</p>
+            }
+            <hr class="m-0">
+            <ul class="plan-details m-0">
+                <li>Valor do plano: R$00,00</li>
+                <li>Tipo do plano: Mensal</li>
+                <li>Desconto: R$00,00</li>
+            </ul>
+        </div>
+
+        <div id="cartao-container" class="payment-card">
+            <div id="front" class="front">
+                <div class="image">
+                    <img src="~/img/Chip.png" alt="" srcset="">
+                    <img src="~/img/brandVisa.png" alt="" id="visa">
+                    <img src="~/img/brandMastercard.png" alt="" id="mastercard">
+                </div>
+                <div class="card-number-box">0000 0000 0000 0000</div>
+                <div class="flexbox">
+                    <div class="box">
+                        <div class="card-holder-name">Nome completo</div>
+                    </div>
+                    <div class="box">
+                        <span>Validade</span>
+                        <div class="card-date-expiration">
+                            <span class="exp-month">MM</span>
+                            <span class="bar">/</span>
+                            <span class="exp-year">YY</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="back" class="back">
+                <div class="stripe"></div>
+                <div class="box">
+                    <span>CVV</span>
+                    <div class="cvv-box"></div>
+                    <img src="~/img/brandVisa.png" alt="" id="visa">
+                    <img src="~/img/brandMastercard.png" alt="" id="mastercard">
+                </div>
+            </div>
+        </div>
+
+        <div id="pix" class="payment-pix">
+        </div>
+
+        <div id="boleto" class="payment-boleto">
+        </div>
+
+        <div class="section-total-plan container-fluid">
+            <p class="total-plan m-0 p-0">Total:</p>
+            <p class="value-plan m-0 p-0">R$00,00</p>
+        </div>
+    </div>
+
+    <div class="card-checkout-data d-flex flex-column justify-content-center container-fluid">
+        <div class="guide-checkout d-flex flex-row justify-content-center">
+            <div class="guide d-flex flex-row w-100">
+                <div class="guide-icon">
+                    <span>1</span>
+                </div>
+                <span class="guide-name">Forma de pagamento</span>
+            </div>
+            <span class="arrow">></span>
+            <div class="guide d-flex flex-row w-100">
+                <div class="guide-icon">
+                    <span>2</span>
+                </div>
+                <span class="guide-name">Pagamento</span>
+            </div>
+            <span class="arrow">></span>
+            <div class="guide d-flex flex-row w-100">
+                <div class="guide-icon">
+                    <span>3</span>
+                </div>
+                <span class="guide-name">Confirmar</span>
+            </div>
+        </div>
+
+        <div class="options">
+            <div id="abaFormaPagamento" class="options-forma-pagamento">
+                @*OPÇÕES DE PAGAMENTOS*@
+                <p class="options-title">Escolha o método de pagamento:</p>
+
+                <div class="form-check">
+                    <input class="form-check-input" value="cartao" type="radio" name="opcaoPagamento" id="cardCreditDebit">
+                    <label class="form-check-label" for="flexRadioDefault1">
+                        Cartão de Crédito/Débito
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" value="pix" type="radio" name="opcaoPagamento" id="pix">
+                    <label class="form-check-label" for="flexRadioDefault1">
+                        PIX
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" value="boleto" type="radio" name="opcaoPagamento" id="boletoBancario">
+                    <label class="form-check-label" for="flexRadioDefault1">
+                        Boleto Bancário
+                    </label>
+                </div>
+            </div>
+
+            <div id="abaCartao" class="options-pagamento-cartao">
+                @*FORMS PARA PAGAMENTO CARTÃO DE CRÉDITO OU DÉBITO*@
+                <p class="options-title">Insira os seus dados:</p>
+                <div class="group-input-contato">
+                    <p class="label-contato mb-1">Nome no cartão</p>
+                    <div class="input-contato input-group">
+                        <input id="card-name-input" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                    </div>
+                </div>
+                <div class="group-input-contato">
+                    <p class="label-contato mb-1">Número no cartão</p>
+                    <div class="input-contato input-group">
+                        <input id="card-number-input" type="number" maxlength="16" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                    </div>
+                </div>
+                <div class="group-input-contato">
+                    <p class="label-contato mb-1">Data de validade</p>
+                    <div class="d-flex flex-row pb-3">
+                        <select class="form-select me-2" id="exp-month" aria-label="Default select example">
+                            <option selected>Mês</option>
+                            <option value="01">01</option>
+                            <option value="02">02</option>
+                            <option value="03">03</option>
+                            <option value="04">04</option>
+                            <option value="05">05</option>
+                            <option value="06">06</option>
+                            <option value="07">07</option>
+                            <option value="08">08</option>
+                            <option value="09">09</option>
+                            <option value="10">10</option>
+                            <option value="11">11</option>
+                            <option value="12">12</option>
+                        </select>
+
+                        <select class="form-select ms-2" id="exp-year" aria-label="Default select example">
+                            <option selected>Ano</option>
+                            <option value="23">2023</option>
+                            <option value="24">2024</option>
+                            <option value="25">2025</option>
+                            <option value="26">2026</option>
+                            <option value="27">2027</option>
+                            <option value="28">2028</option>
+                            <option value="29">2029</option>
+                            <option value="30">2030</option>
+                            <option value="31">2031</option>
+                            <option value="32">2032</option>
+                            <option value="33">2033</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="group-input-contato">
+                    <p class="label-contato mb-1">CVV</p>
+                    <div class="input-contato input-group">
+                        <input id="cvv-input" type="number" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                    </div>
+                </div>
+                <div class="button-advanced d-flex justify-content-center mt-3">
+                    <button class="primary-button">Avançar</button>
+                </div>
+
+            </div>
+
+            <div id="abaPix" class="options-pagamento-pix">
+                @*ABA PARA PIX*@
+                <p class="options-title">Use o QrCode ou copia o código pix para efetuar o pagamento</p>
+                <div class="group-input-contato">
+                    <p class="label-contato mb-1">Código PIX</p>
+                    <div class="input-contato input-group">
+                        <input type="text" readonly class="form-control-plaintext" id="staticEmail2" value="agjsapoigjweg24ty24ty4y23y-h9uih9eq">
+                    </div>
+                </div>
+
+                <div class="button-advanced d-flex justify-content-center">
+                    <button id="copiarCodigoPix" class="button-white">Copiar código PIX</button>
+                </div>
+            </div>
+
+            <div id="abaBoleto" class="options-pagamento-boleto">
+                @*ABA PARA BOLETO*@
+                <p class="options-title">Baixe o arquivo PDF ou copia o código do Boleto Bancário para efetuar o pagamento</p>
+                <div class="group-input-contato">
+                    <p class="label-contato mb-1">Código Boleto</p>
+                    <div class="input-contato input-group">
+                        <input type="text" readonly class="form-control-plaintext" id="staticEmail2" value="agjsapoigjweg24ty24ty4y23y-h9uih9eq">
+                    </div>
+                </div>
+
+                <div class="button-advanced d-flex justify-content-center pb-3">
+                    <button id="copiarCodigoBoleto" class="button-white">Copiar código Boleto Bancário</button>
+                </div>
+
+                <div class="button-advanced d-flex justify-content-center">
+                    <button id="baixarBoletoPDF" class="button-white">Baixar PDF</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="button-advanced d-flex justify-content-center">
+            <button id="avancarForma" class="primary-button">Avançar</button>
+        </div>
+
+        <hr class="line-form mt-5">
+    </div>
+</div>
+
