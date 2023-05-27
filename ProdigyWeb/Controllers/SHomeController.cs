@@ -40,5 +40,17 @@ namespace ProdigyWeb.Controllers
             }
             return RedirectToAction("Login", "Usuario");
         }
+
+         public IActionResult Addproduto()
+        {
+            ClaimsPrincipal claims = HttpContext.User;
+
+            if (claims.Identity.IsAuthenticated)
+            {
+                ViewBag.Layout = "Addproduto";
+                return View();
+            }
+            return RedirectToAction("Login", "Usuario");
+        }
     }
 }

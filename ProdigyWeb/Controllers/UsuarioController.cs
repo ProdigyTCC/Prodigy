@@ -148,7 +148,7 @@ namespace ProdigyWeb.Controllers
             public async Task<IActionResult> Logout()
             {
                 await _cookie.Logout(HttpContext);
-                return RedirectToAction(nameof(Index);
+                return RedirectToAction(nameof(Index));
             }
             [HttpPost("UploadImagem")]
             public async Task<IActionResult> UploadImagem(IFormFile? imagem)

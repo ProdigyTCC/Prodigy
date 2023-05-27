@@ -1,12 +1,14 @@
-<div class="fundo">
-    <div class="tabela">
+<div class="fundo d-flex flex-column justify-content-between align-items-center">
+    <div class="tabela mb-3">
         <table class="table tabela-estoque">
             <thead>
                 <tr>
                 <th scope="col">#</th>
                 <th scope="col">Produto</th>
                 <th scope="col">Categoria</th>
-                <th scope="col">Quantidade</th>
+                <th scope="col">Qtd</th>
+                <th scope="col">Valor compra</th>
+                <th scope="col">Valor venda</th>
                 <th scope="col"></th>
               </tr>
             </thead>
@@ -16,19 +18,106 @@
                     <td>Nome Produto</td>
                     <td>Categoria</td>
                     <td>43</td>
+                    <td>R$23,99</td>
+                    <td>R$49,90</td>
                     <td>
                         <div class="d-flex botoes-estoque">
                             <button id="buttonAddProd" class="botao-estoque" href=""><i class="fa-solid fa-square-plus fa-xl"></i></button>
-                            <button type="button" class="botao-estoque" ><i class="fa-solid fa-square-pen fa-xl"></i></button>
-                            <button type="button" class="botao-estoque" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="mdo"><i class="fa-solid fa-circle-info fa-xl"></i></button>
+                            <button type="button" class="botao-estoque" data-bs-toggle="modal" data-bs-target="#editProduto"><i class="fa-solid fa-square-pen fa-xl"></i></button>
+                            <button type="button" class="botao-estoque" data-bs-toggle="modal" data-bs-target="#verInfoProduto" data-bs-whatever="mdo"><i class="fa-solid fa-circle-info fa-xl"></i></button>
                         </div>
                     </td>
                 </tr>
             </tbody>
         </table>
+    </div>
 
-        <!-- Modal -->
-        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="div-botoes-estoque w-75 d-flex flex-row justify-content-between">
+        <a asp-area="" asp-controller="SHome" asp-action="Addproduto"><button class="primary-button">Adicionar produto</button></a>
+        <button class="primary-button" data-bs-toggle="modal" data-bs-target="#addCategoria">Adicionar Categoria</button>
+    </div>
+
+        @* MODAL EDITAR PRDUTO *@
+        <div class="modal fade" id="editProduto" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal-dialog text-dark">
+                <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Informações do produto</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="container">
+                                    <div class="mb-3">
+                                        <label for="recipient-name" class="col-form-label">Foto</label>
+                                        <img src="~/img/fotoPerfil.png" class="img-thumbnail w-15" alt="...">
+                                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <div class="modal-body">
+                                <form>
+                                    <div class="mb-3">
+                                        <label for="recipient-name" class="col-form-label">Nome</label>
+                                        <input type="text" class="form-control" id="recipient-name">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="recipient-name" class="col-form-label">Descrição</label>
+                                        <input type="text" class="form-control" id="recipient-name">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="recipient-name" class="col-form-label">Quantidade</label>
+                                        <input type="number" class="form-control" id="recipient-name">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="recipient-name" class="col-form-label">Fabricante</label>
+                                        <input type="text" class="form-control" id="recipient-name">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="recipient-name" class="col-form-label">Fornecedor</label>
+                                        <input type="text" class="form-control" id="recipient-name">
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="modal-body">
+                                <form>
+                                    <div class="mb-3">
+                                        <label for="recipient-name" class="col-form-label">Data de validade</label>
+                                        <input type="date" class="form-control" id="recipient-name">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="recipient-name" class="col-form-label">Data de entrada</label>
+                                        <input type="date" class="form-control" id="recipient-name">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="recipient-name" class="col-form-label">Valor de custo</label>
+                                        <input type="text" class="form-control" id="recipient-name">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="recipient-name" class="col-form-label">Valor de venda</label>
+                                        <input type="text" class="form-control" id="recipient-name">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="recipient-name" class="col-form-label">Categoria</label>
+                                        <select class="form-select" aria-label="Default select example">
+                                            <option selected>Selecionar Categoria</option>
+                                            <option value="null">Exemplo</option>
+                                        </select>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                </div>
+                </div>
+            </div>
+        </div>
+        @* FIM DO MODAL EDITAR PRODUTO *@
+
+        @* MODAL INFORMAÇÕES *@
+        <div class="modal fade" id="verInfoProduto" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog modal-fullscreen-xl-down text-dark w-100">
                 <div class="modal-content">
                 <div class="modal-header">
@@ -101,5 +190,33 @@
                 </div>
             </div>
         </div>
+        @* FIM DAS INFORMAÇÕES *@
+
+    @* ADICIONAR CATEGORIA *@
+    <div class="modal" id="addCategoria" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog text-dark">
+            <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Adicionar categoria</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="mb-3">
+                    <label for="exampleFormControlInput1" class="form-label">Nome da categoria</label>
+                    <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="">
+                </div>
+
+                <div class="mb-3">
+                    <label for="exampleFormControlTextarea1" class="form-label">Descrição da categoria</label>
+                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn button-modal-cancel" data-bs-dismiss="modal">Cancelar</button>
+                <button type="button" class="btn button-modal-confirm">Salvar</button>
+            </div>
+            </div>
+        </div>
     </div>
+    @* FIM DO MODAL ADD CATEGORIA *@
 </div>
