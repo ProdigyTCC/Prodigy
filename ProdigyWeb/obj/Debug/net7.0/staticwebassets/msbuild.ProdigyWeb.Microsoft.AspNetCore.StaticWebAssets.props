@@ -240,6 +240,22 @@
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Imagem\423182c3-95c8-494e-bbc3-6174ba4a8a78_Captura de tela 2023-05-08 205227.png))</OriginalItemSpec>
     </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Imagem\9b5f95c9-cea9-46c6-a8b4-dffe73384707_WhatsApp Image 2023-01-04 at 19.29.55.jpeg))">
+      <SourceType>Package</SourceType>
+      <SourceId>ProdigyWeb</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/ProdigyWeb</BasePath>
+      <RelativePath>Imagem/9b5f95c9-cea9-46c6-a8b4-dffe73384707_WhatsApp Image 2023-01-04 at 19.29.55.jpeg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Imagem\9b5f95c9-cea9-46c6-a8b4-dffe73384707_WhatsApp Image 2023-01-04 at 19.29.55.jpeg))</OriginalItemSpec>
+    </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Imagem\a8a58529-f615-49b1-8812-b6a140e29bf2_planet-volumes-qxIObOAjoOc-unsplash.jpg))">
       <SourceType>Package</SourceType>
       <SourceId>ProdigyWeb</SourceId>
@@ -319,6 +335,54 @@
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Imagem\d74470fe-8203-46a2-9825-04b39c0e067a_WhatsApp Image 2023-01-04 at 19.29.55.jpeg))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Imagem\ef8cb56f-286c-4553-9f08-079dbe14ce6b_planet-volumes-qxIObOAjoOc-unsplash.jpg))">
+      <SourceType>Package</SourceType>
+      <SourceId>ProdigyWeb</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/ProdigyWeb</BasePath>
+      <RelativePath>Imagem/ef8cb56f-286c-4553-9f08-079dbe14ce6b_planet-volumes-qxIObOAjoOc-unsplash.jpg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Imagem\ef8cb56f-286c-4553-9f08-079dbe14ce6b_planet-volumes-qxIObOAjoOc-unsplash.jpg))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Imagem\f2fbb107-1fb3-4453-aa10-d64103c8e3c4_Web.png))">
+      <SourceType>Package</SourceType>
+      <SourceId>ProdigyWeb</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/ProdigyWeb</BasePath>
+      <RelativePath>Imagem/f2fbb107-1fb3-4453-aa10-d64103c8e3c4_Web.png</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Imagem\f2fbb107-1fb3-4453-aa10-d64103c8e3c4_Web.png))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Imagem\f94c18e1-d8d5-49fd-a53b-0e9fe1b1b377_Captura de tela 2023-05-08 205227.png))">
+      <SourceType>Package</SourceType>
+      <SourceId>ProdigyWeb</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/ProdigyWeb</BasePath>
+      <RelativePath>Imagem/f94c18e1-d8d5-49fd-a53b-0e9fe1b1b377_Captura de tela 2023-05-08 205227.png</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Imagem\f94c18e1-d8d5-49fd-a53b-0e9fe1b1b377_Captura de tela 2023-05-08 205227.png))</OriginalItemSpec>
     </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\img\backgroundCard.png))">
       <SourceType>Package</SourceType>

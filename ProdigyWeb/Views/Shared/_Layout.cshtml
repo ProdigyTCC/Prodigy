@@ -1,7 +1,7 @@
 ﻿<!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <meta charset="utf-8" />
+    <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - Prodigy</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
@@ -22,6 +22,8 @@
    
     <script>
         window.onload = function () {
+            var idioma = "pt-BR";
+            document.documentElement.lang = idioma;
             var Erro = "@TempData["Erro"]"
 
             if (Erro) {
@@ -189,7 +191,7 @@
                 <div class="baixo">
                     <a class="ps-3" asp-area="" asp-controller="Usuario" asp-action="Index"><img src="~/img/svg/Profile.svg" alt=""><p class="ps-3 m-0">Perfil</p></a>
                     <a class="ps-3" asp-area="" asp-controller="SHome" asp-action="Config"><img src="~/img/svg/Config.svg" alt=""><p class="ps-3 m-0">Configurações</p></a>
-                    <a class="ps-3" asp-area="" asp-controller="SHome" asp-action="Sair"><img src="~/img/svg/Subtract.svg" alt=""><p class="ps-3 m-0">Sair</p></a>
+                        <a class="ps-3" asp-area="" asp-controller="Usuario" asp-action="Logout"><img src="~/img/svg/Subtract.svg" alt=""><p class="ps-3 m-0">Sair</p></a>
                 </div>
             </div>
             <!-- NAVBAR FIM -->
