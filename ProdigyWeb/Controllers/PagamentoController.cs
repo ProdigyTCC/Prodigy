@@ -45,7 +45,7 @@ namespace ProdigyWeb.Controllers
             {
                 if (usuarios == null) 
                 {
-                    TempData["Erro"] = "Faça o login primeiro";
+                    TempData["Erro"] = "Faça o login primeiro!";
                     return RedirectToAction("Login", "Usuario");
                 }
                 usuarios.Plano = plano;

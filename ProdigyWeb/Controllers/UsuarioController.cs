@@ -5,6 +5,7 @@ using ProdigyWeb.Data;
 using ProdigyWeb.Interfaces;
 using ProdigyWeb.Models;
 using ProdigyWeb.Services;
+using System.Data.Common;
 using System.Security.Claims;
 using System.Security.Cryptography;
 
@@ -130,7 +131,7 @@ namespace ProdigyWeb.Controllers
                         }
                         else
                         {
-                            TempData["Erro"] = "Email já existe, ou algum campo está incompleto.";
+                            TempData["Erro"] = "Email j\u00e1 existe, ou algum campo est\u00e1 incompleto.";
                             return RedirectToAction(nameof(Cadastrar));
                         }
                     }
@@ -147,7 +148,7 @@ namespace ProdigyWeb.Controllers
             public async Task<IActionResult> Logout()
             {
                 await _cookie.Logout(HttpContext);
-                return RedirectToAction("Index");
+                return RedirectToAction(nameof(Index);
             }
             [HttpPost("UploadImagem")]
             public async Task<IActionResult> UploadImagem(IFormFile? imagem)
@@ -182,9 +183,29 @@ namespace ProdigyWeb.Controllers
                 catch (DbUpdateException e)
                 {
                     return RedirectToAction(nameof(Index),
-                        TempData["Erro"] = $"Falha ao atualizar imagem! ERRO: [ {e} ]");
+                        TempData["Erro"] = $"Falha ao atualizar a imagem! ERRO: [ {e} ]");
                 }
                 return RedirectToAction(nameof(Index));
+            }
+
+            [HttpPost("DeletarConta")]
+            public async Task<IActionResult> DeletarConta()
+            {
+                var usuarioId = User.FindFirst("Id")?.Value;
+                    
+                try
+                {
+                    var usuarios = await _context.Usuarios.FirstOrDefaultAsync(x => x.UsuarioId.ToString() == usuarioId);
+                    await _cookie.Logout(HttpContext);
+                    _context.Usuarios.Remove(usuarios);
+                    _context.SaveChanges();
+                    return RedirectToAction(nameof(Login));
+                }
+                catch(DbException e)
+                {
+                    TempData["Erro"] = $"Ocorreu um erro ao tentar excluir a conta. Contate o administrador! {e.Message}";
+                    return RedirectToAction(nameof(Index));
+                }
             }
         }
 }
