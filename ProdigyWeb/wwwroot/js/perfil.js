@@ -2,8 +2,10 @@ const inputProfileName = document.querySelector(".inputProfileName");
 const inputProfileDate = document.querySelector(".inputProfileDate");
 const buttonEdit = document.getElementById('buttonEdit');
 const buttonConfirm = document.getElementById('buttonConfirm');
+const buttonCancel = document.getElementById('buttonCancel');
 let clickEdit = false;
 let clickConfirm = true;
+let clickCancel = true;
 
 var inputFile = document.getElementById("imagem-perfil");
 var btnImage = document.getElementById("btn-imagem");
@@ -34,6 +36,7 @@ inputFile.addEventListener("change", () => {
 inputProfileName.disabled = true;
 inputProfileDate.disabled = true;
 buttonConfirm.style.display = "none";
+buttonCancel.style.display = "none";
 
 buttonEdit.addEventListener("click", function editarInput(clickEdit) {
     if (clickEdit) {
@@ -41,6 +44,7 @@ buttonEdit.addEventListener("click", function editarInput(clickEdit) {
         inputProfileDate.disabled = false;
         buttonEdit.style.display = "none";
         buttonConfirm.style.display = "block";
+        buttonCancel.style.display = "block";
         clickEdit = true;
     }
 })
@@ -51,6 +55,18 @@ buttonConfirm.addEventListener("click", function editarInput(clickConfirm) {
         inputProfileDate.disabled = true;
         buttonEdit.style.display = "block";
         buttonConfirm.style.display = "none";
+        buttonCancel.style.display = "none";
         clickConfirm = false;
+    }
+})
+
+buttonCancel.addEventListener("click", function editarInput(clickCancel) {
+    if (clickConfirm) {
+        inputProfileName.disabled = true;
+        inputProfileDate.disabled = true;
+        buttonEdit.style.display = "block";
+        buttonConfirm.style.display = "none";
+        buttonCancel.style.display = "none";
+        clickCancel = false;
     }
 })

@@ -126,7 +126,7 @@ namespace ProdigyWeb.Controllers
                             _context.Usuarios.Add(usuario);
                             _context.SaveChanges();
 
-                            return RedirectToAction(nameof(Index));
+                            return RedirectToAction("Planos", "Home");
                         }
                         else
                         {

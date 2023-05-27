@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using ProdigyWeb.Data;
 using System.Data.Common;
 using System.Security.Claims;
@@ -34,11 +35,11 @@ namespace ProdigyWeb.Controllers
         }
         
         [HttpPost("AddPlano")]
-        public IActionResult AddPlano(string? plano) 
+        public async Task<IActionResult> AddPlano(string? plano) 
         {
             var usuarioId = User.FindFirst("Id")?.Value;
 
-            var usuarios = _context.Usuarios.FirstOrDefault(x => x.UsuarioId.ToString() == usuarioId);
+            var usuarios = await _context.Usuarios.FirstOrDefaultAsync(x => x.UsuarioId.ToString() == usuarioId);
 
             try
             {
