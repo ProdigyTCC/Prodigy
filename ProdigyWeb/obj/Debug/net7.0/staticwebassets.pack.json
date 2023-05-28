@@ -1,483 +1,483 @@
 {
   "Files": [
     {
-      "Id": "C:\\Users\\marce\\OneDrive\\Área de Trabalho\\Prodigy\\ProdigyWeb\\obj\\Debug\\net7.0\\scopedcss\\projectbundle\\ProdigyWeb.bundle.scp.css",
+      "Id": "C:\\Users\\Wallace\\Desktop\\tcc\\Prodigy\\ProdigyWeb\\obj\\Debug\\net7.0\\scopedcss\\projectbundle\\ProdigyWeb.bundle.scp.css",
       "PackagePath": "staticwebassets\\ProdigyWeb.bundle.scp.css"
     },
     {
-      "Id": "C:\\Users\\marce\\OneDrive\\Área de Trabalho\\Prodigy\\ProdigyWeb\\wwwroot\\Imagem\\211147b7-7bfc-4422-bc13-3966c00c3f48_planet-volumes-qxIObOAjoOc-unsplash.jpg",
+      "Id": "C:\\Users\\Wallace\\Desktop\\tcc\\Prodigy\\ProdigyWeb\\wwwroot\\Imagem\\211147b7-7bfc-4422-bc13-3966c00c3f48_planet-volumes-qxIObOAjoOc-unsplash.jpg",
       "PackagePath": "staticwebassets\\Imagem\\211147b7-7bfc-4422-bc13-3966c00c3f48_planet-volumes-qxIObOAjoOc-unsplash.jpg"
     },
     {
-      "Id": "C:\\Users\\marce\\OneDrive\\Área de Trabalho\\Prodigy\\ProdigyWeb\\wwwroot\\Imagem\\27e1572b-ecef-453b-b25c-0c02152f09af_jonxina.jpg",
+      "Id": "C:\\Users\\Wallace\\Desktop\\tcc\\Prodigy\\ProdigyWeb\\wwwroot\\Imagem\\27e1572b-ecef-453b-b25c-0c02152f09af_jonxina.jpg",
       "PackagePath": "staticwebassets\\Imagem\\27e1572b-ecef-453b-b25c-0c02152f09af_jonxina.jpg"
     },
     {
-      "Id": "C:\\Users\\marce\\OneDrive\\Área de Trabalho\\Prodigy\\ProdigyWeb\\wwwroot\\Imagem\\423182c3-95c8-494e-bbc3-6174ba4a8a78_Captura de tela 2023-05-08 205227.png",
+      "Id": "C:\\Users\\Wallace\\Desktop\\tcc\\Prodigy\\ProdigyWeb\\wwwroot\\Imagem\\423182c3-95c8-494e-bbc3-6174ba4a8a78_Captura de tela 2023-05-08 205227.png",
       "PackagePath": "staticwebassets\\Imagem\\423182c3-95c8-494e-bbc3-6174ba4a8a78_Captura de tela 2023-05-08 205227.png"
     },
     {
-      "Id": "C:\\Users\\marce\\OneDrive\\Área de Trabalho\\Prodigy\\ProdigyWeb\\wwwroot\\Imagem\\8212d2c0-cb36-4a4e-b3f8-6ee4cf591d63_WhatsApp Image 2023-01-04 at 19.29.55.jpeg",
+      "Id": "C:\\Users\\Wallace\\Desktop\\tcc\\Prodigy\\ProdigyWeb\\wwwroot\\Imagem\\8212d2c0-cb36-4a4e-b3f8-6ee4cf591d63_WhatsApp Image 2023-01-04 at 19.29.55.jpeg",
       "PackagePath": "staticwebassets\\Imagem\\8212d2c0-cb36-4a4e-b3f8-6ee4cf591d63_WhatsApp Image 2023-01-04 at 19.29.55.jpeg"
     },
     {
-      "Id": "C:\\Users\\marce\\OneDrive\\Área de Trabalho\\Prodigy\\ProdigyWeb\\wwwroot\\Imagem\\9b5f95c9-cea9-46c6-a8b4-dffe73384707_WhatsApp Image 2023-01-04 at 19.29.55.jpeg",
+      "Id": "C:\\Users\\Wallace\\Desktop\\tcc\\Prodigy\\ProdigyWeb\\wwwroot\\Imagem\\9b5f95c9-cea9-46c6-a8b4-dffe73384707_WhatsApp Image 2023-01-04 at 19.29.55.jpeg",
       "PackagePath": "staticwebassets\\Imagem\\9b5f95c9-cea9-46c6-a8b4-dffe73384707_WhatsApp Image 2023-01-04 at 19.29.55.jpeg"
     },
     {
-      "Id": "C:\\Users\\marce\\OneDrive\\Área de Trabalho\\Prodigy\\ProdigyWeb\\wwwroot\\Imagem\\a8a58529-f615-49b1-8812-b6a140e29bf2_planet-volumes-qxIObOAjoOc-unsplash.jpg",
+      "Id": "C:\\Users\\Wallace\\Desktop\\tcc\\Prodigy\\ProdigyWeb\\wwwroot\\Imagem\\a8a58529-f615-49b1-8812-b6a140e29bf2_planet-volumes-qxIObOAjoOc-unsplash.jpg",
       "PackagePath": "staticwebassets\\Imagem\\a8a58529-f615-49b1-8812-b6a140e29bf2_planet-volumes-qxIObOAjoOc-unsplash.jpg"
     },
     {
-      "Id": "C:\\Users\\marce\\OneDrive\\Área de Trabalho\\Prodigy\\ProdigyWeb\\wwwroot\\Imagem\\b1eaf712-f8d3-43d1-95d3-96b37c748990_WhatsApp Image 2023-01-04 at 19.29.55.jpeg",
+      "Id": "C:\\Users\\Wallace\\Desktop\\tcc\\Prodigy\\ProdigyWeb\\wwwroot\\Imagem\\b1eaf712-f8d3-43d1-95d3-96b37c748990_WhatsApp Image 2023-01-04 at 19.29.55.jpeg",
       "PackagePath": "staticwebassets\\Imagem\\b1eaf712-f8d3-43d1-95d3-96b37c748990_WhatsApp Image 2023-01-04 at 19.29.55.jpeg"
     },
     {
-      "Id": "C:\\Users\\marce\\OneDrive\\Área de Trabalho\\Prodigy\\ProdigyWeb\\wwwroot\\Imagem\\b76b17cb-a9aa-4ab6-b76a-f9dca5f3c228_WhatsApp Image 2023-01-04 at 19.29.55.jpeg",
+      "Id": "C:\\Users\\Wallace\\Desktop\\tcc\\Prodigy\\ProdigyWeb\\wwwroot\\Imagem\\b76b17cb-a9aa-4ab6-b76a-f9dca5f3c228_WhatsApp Image 2023-01-04 at 19.29.55.jpeg",
       "PackagePath": "staticwebassets\\Imagem\\b76b17cb-a9aa-4ab6-b76a-f9dca5f3c228_WhatsApp Image 2023-01-04 at 19.29.55.jpeg"
     },
     {
-      "Id": "C:\\Users\\marce\\OneDrive\\Área de Trabalho\\Prodigy\\ProdigyWeb\\wwwroot\\Imagem\\beb6fa45-44da-46fd-80c3-9b13610db24a_Captura de tela 2023-05-08 205227.png",
+      "Id": "C:\\Users\\Wallace\\Desktop\\tcc\\Prodigy\\ProdigyWeb\\wwwroot\\Imagem\\beb6fa45-44da-46fd-80c3-9b13610db24a_Captura de tela 2023-05-08 205227.png",
       "PackagePath": "staticwebassets\\Imagem\\beb6fa45-44da-46fd-80c3-9b13610db24a_Captura de tela 2023-05-08 205227.png"
     },
     {
-      "Id": "C:\\Users\\marce\\OneDrive\\Área de Trabalho\\Prodigy\\ProdigyWeb\\wwwroot\\Imagem\\d74470fe-8203-46a2-9825-04b39c0e067a_WhatsApp Image 2023-01-04 at 19.29.55.jpeg",
+      "Id": "C:\\Users\\Wallace\\Desktop\\tcc\\Prodigy\\ProdigyWeb\\wwwroot\\Imagem\\d74470fe-8203-46a2-9825-04b39c0e067a_WhatsApp Image 2023-01-04 at 19.29.55.jpeg",
       "PackagePath": "staticwebassets\\Imagem\\d74470fe-8203-46a2-9825-04b39c0e067a_WhatsApp Image 2023-01-04 at 19.29.55.jpeg"
     },
     {
-      "Id": "C:\\Users\\marce\\OneDrive\\Área de Trabalho\\Prodigy\\ProdigyWeb\\wwwroot\\Imagem\\ef8cb56f-286c-4553-9f08-079dbe14ce6b_planet-volumes-qxIObOAjoOc-unsplash.jpg",
+      "Id": "C:\\Users\\Wallace\\Desktop\\tcc\\Prodigy\\ProdigyWeb\\wwwroot\\Imagem\\ef8cb56f-286c-4553-9f08-079dbe14ce6b_planet-volumes-qxIObOAjoOc-unsplash.jpg",
       "PackagePath": "staticwebassets\\Imagem\\ef8cb56f-286c-4553-9f08-079dbe14ce6b_planet-volumes-qxIObOAjoOc-unsplash.jpg"
     },
     {
-      "Id": "C:\\Users\\marce\\OneDrive\\Área de Trabalho\\Prodigy\\ProdigyWeb\\wwwroot\\Imagem\\f2fbb107-1fb3-4453-aa10-d64103c8e3c4_Web.png",
+      "Id": "C:\\Users\\Wallace\\Desktop\\tcc\\Prodigy\\ProdigyWeb\\wwwroot\\Imagem\\f2fbb107-1fb3-4453-aa10-d64103c8e3c4_Web.png",
       "PackagePath": "staticwebassets\\Imagem\\f2fbb107-1fb3-4453-aa10-d64103c8e3c4_Web.png"
     },
     {
-      "Id": "C:\\Users\\marce\\OneDrive\\Área de Trabalho\\Prodigy\\ProdigyWeb\\wwwroot\\Imagem\\f94c18e1-d8d5-49fd-a53b-0e9fe1b1b377_Captura de tela 2023-05-08 205227.png",
+      "Id": "C:\\Users\\Wallace\\Desktop\\tcc\\Prodigy\\ProdigyWeb\\wwwroot\\Imagem\\f94c18e1-d8d5-49fd-a53b-0e9fe1b1b377_Captura de tela 2023-05-08 205227.png",
       "PackagePath": "staticwebassets\\Imagem\\f94c18e1-d8d5-49fd-a53b-0e9fe1b1b377_Captura de tela 2023-05-08 205227.png"
     },
     {
-      "Id": "C:\\Users\\marce\\OneDrive\\Área de Trabalho\\Prodigy\\ProdigyWeb\\wwwroot\\css\\PagContato.css",
+      "Id": "C:\\Users\\Wallace\\Desktop\\tcc\\Prodigy\\ProdigyWeb\\wwwroot\\css\\PagContato.css",
       "PackagePath": "staticwebassets\\css\\PagContato.css"
     },
     {
-      "Id": "C:\\Users\\marce\\OneDrive\\Área de Trabalho\\Prodigy\\ProdigyWeb\\wwwroot\\css\\Perfil.css",
+      "Id": "C:\\Users\\Wallace\\Desktop\\tcc\\Prodigy\\ProdigyWeb\\wwwroot\\css\\Perfil.css",
       "PackagePath": "staticwebassets\\css\\Perfil.css"
     },
     {
-      "Id": "C:\\Users\\marce\\OneDrive\\Área de Trabalho\\Prodigy\\ProdigyWeb\\wwwroot\\css\\SDashboard.css",
+      "Id": "C:\\Users\\Wallace\\Desktop\\tcc\\Prodigy\\ProdigyWeb\\wwwroot\\css\\SDashboard.css",
       "PackagePath": "staticwebassets\\css\\SDashboard.css"
     },
     {
-      "Id": "C:\\Users\\marce\\OneDrive\\Área de Trabalho\\Prodigy\\ProdigyWeb\\wwwroot\\css\\cadastro.css",
+      "Id": "C:\\Users\\Wallace\\Desktop\\tcc\\Prodigy\\ProdigyWeb\\wwwroot\\css\\cadastro.css",
       "PackagePath": "staticwebassets\\css\\cadastro.css"
     },
     {
-      "Id": "C:\\Users\\marce\\OneDrive\\Área de Trabalho\\Prodigy\\ProdigyWeb\\wwwroot\\css\\estoque.css",
+      "Id": "C:\\Users\\Wallace\\Desktop\\tcc\\Prodigy\\ProdigyWeb\\wwwroot\\css\\estoque.css",
       "PackagePath": "staticwebassets\\css\\estoque.css"
     },
     {
-      "Id": "C:\\Users\\marce\\OneDrive\\Área de Trabalho\\Prodigy\\ProdigyWeb\\wwwroot\\css\\index.css",
+      "Id": "C:\\Users\\Wallace\\Desktop\\tcc\\Prodigy\\ProdigyWeb\\wwwroot\\css\\index.css",
       "PackagePath": "staticwebassets\\css\\index.css"
     },
     {
-      "Id": "C:\\Users\\marce\\OneDrive\\Área de Trabalho\\Prodigy\\ProdigyWeb\\wwwroot\\css\\login.css",
+      "Id": "C:\\Users\\Wallace\\Desktop\\tcc\\Prodigy\\ProdigyWeb\\wwwroot\\css\\login.css",
       "PackagePath": "staticwebassets\\css\\login.css"
     },
     {
-      "Id": "C:\\Users\\marce\\OneDrive\\Área de Trabalho\\Prodigy\\ProdigyWeb\\wwwroot\\css\\pagSobre.css",
+      "Id": "C:\\Users\\Wallace\\Desktop\\tcc\\Prodigy\\ProdigyWeb\\wwwroot\\css\\pagSobre.css",
       "PackagePath": "staticwebassets\\css\\pagSobre.css"
     },
     {
-      "Id": "C:\\Users\\marce\\OneDrive\\Área de Trabalho\\Prodigy\\ProdigyWeb\\wwwroot\\css\\pagamento.css",
+      "Id": "C:\\Users\\Wallace\\Desktop\\tcc\\Prodigy\\ProdigyWeb\\wwwroot\\css\\pagamento.css",
       "PackagePath": "staticwebassets\\css\\pagamento.css"
     },
     {
-      "Id": "C:\\Users\\marce\\OneDrive\\Área de Trabalho\\Prodigy\\ProdigyWeb\\wwwroot\\css\\planos.css",
+      "Id": "C:\\Users\\Wallace\\Desktop\\tcc\\Prodigy\\ProdigyWeb\\wwwroot\\css\\planos.css",
       "PackagePath": "staticwebassets\\css\\planos.css"
     },
     {
-      "Id": "C:\\Users\\marce\\OneDrive\\Área de Trabalho\\Prodigy\\ProdigyWeb\\wwwroot\\css\\rodape.css",
+      "Id": "C:\\Users\\Wallace\\Desktop\\tcc\\Prodigy\\ProdigyWeb\\wwwroot\\css\\rodape.css",
       "PackagePath": "staticwebassets\\css\\rodape.css"
     },
     {
-      "Id": "C:\\Users\\marce\\OneDrive\\Área de Trabalho\\Prodigy\\ProdigyWeb\\wwwroot\\css\\site.css",
+      "Id": "C:\\Users\\Wallace\\Desktop\\tcc\\Prodigy\\ProdigyWeb\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
     },
     {
-      "Id": "C:\\Users\\marce\\OneDrive\\Área de Trabalho\\Prodigy\\ProdigyWeb\\wwwroot\\favicon.ico",
+      "Id": "C:\\Users\\Wallace\\Desktop\\tcc\\Prodigy\\ProdigyWeb\\wwwroot\\favicon.ico",
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
-      "Id": "C:\\Users\\marce\\OneDrive\\Área de Trabalho\\Prodigy\\ProdigyWeb\\wwwroot\\img\\Chip.png",
+      "Id": "C:\\Users\\Wallace\\Desktop\\tcc\\Prodigy\\ProdigyWeb\\wwwroot\\img\\Chip.png",
       "PackagePath": "staticwebassets\\img\\Chip.png"
     },
     {
-      "Id": "C:\\Users\\marce\\OneDrive\\Área de Trabalho\\Prodigy\\ProdigyWeb\\wwwroot\\img\\backgroundCard.png",
+      "Id": "C:\\Users\\Wallace\\Desktop\\tcc\\Prodigy\\ProdigyWeb\\wwwroot\\img\\backgroundCard.png",
       "PackagePath": "staticwebassets\\img\\backgroundCard.png"
     },
     {
-      "Id": "C:\\Users\\marce\\OneDrive\\Área de Trabalho\\Prodigy\\ProdigyWeb\\wwwroot\\img\\brandMastercard.png",
+      "Id": "C:\\Users\\Wallace\\Desktop\\tcc\\Prodigy\\ProdigyWeb\\wwwroot\\img\\brandMastercard.png",
       "PackagePath": "staticwebassets\\img\\brandMastercard.png"
     },
     {
-      "Id": "C:\\Users\\marce\\OneDrive\\Área de Trabalho\\Prodigy\\ProdigyWeb\\wwwroot\\img\\brandVisa.png",
+      "Id": "C:\\Users\\Wallace\\Desktop\\tcc\\Prodigy\\ProdigyWeb\\wwwroot\\img\\brandVisa.png",
       "PackagePath": "staticwebassets\\img\\brandVisa.png"
     },
     {
-      "Id": "C:\\Users\\marce\\OneDrive\\Área de Trabalho\\Prodigy\\ProdigyWeb\\wwwroot\\img\\fotoPerfil.png",
+      "Id": "C:\\Users\\Wallace\\Desktop\\tcc\\Prodigy\\ProdigyWeb\\wwwroot\\img\\fotoPerfil.png",
       "PackagePath": "staticwebassets\\img\\fotoPerfil.png"
     },
     {
-      "Id": "C:\\Users\\marce\\OneDrive\\Área de Trabalho\\Prodigy\\ProdigyWeb\\wwwroot\\img\\menu.png",
+      "Id": "C:\\Users\\Wallace\\Desktop\\tcc\\Prodigy\\ProdigyWeb\\wwwroot\\img\\menu.png",
       "PackagePath": "staticwebassets\\img\\menu.png"
     },
     {
-      "Id": "C:\\Users\\marce\\OneDrive\\Área de Trabalho\\Prodigy\\ProdigyWeb\\wwwroot\\img\\panel1.png",
+      "Id": "C:\\Users\\Wallace\\Desktop\\tcc\\Prodigy\\ProdigyWeb\\wwwroot\\img\\panel1.png",
       "PackagePath": "staticwebassets\\img\\panel1.png"
     },
     {
-      "Id": "C:\\Users\\marce\\OneDrive\\Área de Trabalho\\Prodigy\\ProdigyWeb\\wwwroot\\img\\panel2.png",
+      "Id": "C:\\Users\\Wallace\\Desktop\\tcc\\Prodigy\\ProdigyWeb\\wwwroot\\img\\panel2.png",
       "PackagePath": "staticwebassets\\img\\panel2.png"
     },
     {
-      "Id": "C:\\Users\\marce\\OneDrive\\Área de Trabalho\\Prodigy\\ProdigyWeb\\wwwroot\\img\\panel3.png",
+      "Id": "C:\\Users\\Wallace\\Desktop\\tcc\\Prodigy\\ProdigyWeb\\wwwroot\\img\\panel3.png",
       "PackagePath": "staticwebassets\\img\\panel3.png"
     },
     {
-      "Id": "C:\\Users\\marce\\OneDrive\\Área de Trabalho\\Prodigy\\ProdigyWeb\\wwwroot\\img\\panel4.png",
+      "Id": "C:\\Users\\Wallace\\Desktop\\tcc\\Prodigy\\ProdigyWeb\\wwwroot\\img\\panel4.png",
       "PackagePath": "staticwebassets\\img\\panel4.png"
     },
     {
-      "Id": "C:\\Users\\marce\\OneDrive\\Área de Trabalho\\Prodigy\\ProdigyWeb\\wwwroot\\img\\presentation.png",
+      "Id": "C:\\Users\\Wallace\\Desktop\\tcc\\Prodigy\\ProdigyWeb\\wwwroot\\img\\presentation.png",
       "PackagePath": "staticwebassets\\img\\presentation.png"
     },
     {
-      "Id": "C:\\Users\\marce\\OneDrive\\Área de Trabalho\\Prodigy\\ProdigyWeb\\wwwroot\\img\\prodigy.png",
+      "Id": "C:\\Users\\Wallace\\Desktop\\tcc\\Prodigy\\ProdigyWeb\\wwwroot\\img\\prodigy.png",
       "PackagePath": "staticwebassets\\img\\prodigy.png"
     },
     {
-      "Id": "C:\\Users\\marce\\OneDrive\\Área de Trabalho\\Prodigy\\ProdigyWeb\\wwwroot\\img\\svg\\Balance.svg",
+      "Id": "C:\\Users\\Wallace\\Desktop\\tcc\\Prodigy\\ProdigyWeb\\wwwroot\\img\\svg\\Balance.svg",
       "PackagePath": "staticwebassets\\img\\svg\\Balance.svg"
     },
     {
-      "Id": "C:\\Users\\marce\\OneDrive\\Área de Trabalho\\Prodigy\\ProdigyWeb\\wwwroot\\img\\svg\\Calendar.svg",
+      "Id": "C:\\Users\\Wallace\\Desktop\\tcc\\Prodigy\\ProdigyWeb\\wwwroot\\img\\svg\\Calendar.svg",
       "PackagePath": "staticwebassets\\img\\svg\\Calendar.svg"
     },
     {
-      "Id": "C:\\Users\\marce\\OneDrive\\Área de Trabalho\\Prodigy\\ProdigyWeb\\wwwroot\\img\\svg\\Config.svg",
+      "Id": "C:\\Users\\Wallace\\Desktop\\tcc\\Prodigy\\ProdigyWeb\\wwwroot\\img\\svg\\Config.svg",
       "PackagePath": "staticwebassets\\img\\svg\\Config.svg"
     },
     {
-      "Id": "C:\\Users\\marce\\OneDrive\\Área de Trabalho\\Prodigy\\ProdigyWeb\\wwwroot\\img\\svg\\Dashboard.svg",
+      "Id": "C:\\Users\\Wallace\\Desktop\\tcc\\Prodigy\\ProdigyWeb\\wwwroot\\img\\svg\\Dashboard.svg",
       "PackagePath": "staticwebassets\\img\\svg\\Dashboard.svg"
     },
     {
-      "Id": "C:\\Users\\marce\\OneDrive\\Área de Trabalho\\Prodigy\\ProdigyWeb\\wwwroot\\img\\svg\\Employeers.svg",
+      "Id": "C:\\Users\\Wallace\\Desktop\\tcc\\Prodigy\\ProdigyWeb\\wwwroot\\img\\svg\\Employeers.svg",
       "PackagePath": "staticwebassets\\img\\svg\\Employeers.svg"
     },
     {
-      "Id": "C:\\Users\\marce\\OneDrive\\Área de Trabalho\\Prodigy\\ProdigyWeb\\wwwroot\\img\\svg\\Inventory.svg",
+      "Id": "C:\\Users\\Wallace\\Desktop\\tcc\\Prodigy\\ProdigyWeb\\wwwroot\\img\\svg\\Inventory.svg",
       "PackagePath": "staticwebassets\\img\\svg\\Inventory.svg"
     },
     {
-      "Id": "C:\\Users\\marce\\OneDrive\\Área de Trabalho\\Prodigy\\ProdigyWeb\\wwwroot\\img\\svg\\Mobile.svg",
+      "Id": "C:\\Users\\Wallace\\Desktop\\tcc\\Prodigy\\ProdigyWeb\\wwwroot\\img\\svg\\Mobile.svg",
       "PackagePath": "staticwebassets\\img\\svg\\Mobile.svg"
     },
     {
-      "Id": "C:\\Users\\marce\\OneDrive\\Área de Trabalho\\Prodigy\\ProdigyWeb\\wwwroot\\img\\svg\\PRODIGY.svg",
+      "Id": "C:\\Users\\Wallace\\Desktop\\tcc\\Prodigy\\ProdigyWeb\\wwwroot\\img\\svg\\PRODIGY.svg",
       "PackagePath": "staticwebassets\\img\\svg\\PRODIGY.svg"
     },
     {
-      "Id": "C:\\Users\\marce\\OneDrive\\Área de Trabalho\\Prodigy\\ProdigyWeb\\wwwroot\\img\\svg\\Profile.svg",
+      "Id": "C:\\Users\\Wallace\\Desktop\\tcc\\Prodigy\\ProdigyWeb\\wwwroot\\img\\svg\\Profile.svg",
       "PackagePath": "staticwebassets\\img\\svg\\Profile.svg"
     },
     {
-      "Id": "C:\\Users\\marce\\OneDrive\\Área de Trabalho\\Prodigy\\ProdigyWeb\\wwwroot\\img\\svg\\Subtract.svg",
+      "Id": "C:\\Users\\Wallace\\Desktop\\tcc\\Prodigy\\ProdigyWeb\\wwwroot\\img\\svg\\Subtract.svg",
       "PackagePath": "staticwebassets\\img\\svg\\Subtract.svg"
     },
     {
-      "Id": "C:\\Users\\marce\\OneDrive\\Área de Trabalho\\Prodigy\\ProdigyWeb\\wwwroot\\img\\svg\\Tips.svg",
+      "Id": "C:\\Users\\Wallace\\Desktop\\tcc\\Prodigy\\ProdigyWeb\\wwwroot\\img\\svg\\Tips.svg",
       "PackagePath": "staticwebassets\\img\\svg\\Tips.svg"
     },
     {
-      "Id": "C:\\Users\\marce\\OneDrive\\Área de Trabalho\\Prodigy\\ProdigyWeb\\wwwroot\\img\\svg\\card_foto.svg",
+      "Id": "C:\\Users\\Wallace\\Desktop\\tcc\\Prodigy\\ProdigyWeb\\wwwroot\\img\\svg\\card_foto.svg",
       "PackagePath": "staticwebassets\\img\\svg\\card_foto.svg"
     },
     {
-      "Id": "C:\\Users\\marce\\OneDrive\\Área de Trabalho\\Prodigy\\ProdigyWeb\\wwwroot\\img\\svg\\equipe-sobre.svg",
+      "Id": "C:\\Users\\Wallace\\Desktop\\tcc\\Prodigy\\ProdigyWeb\\wwwroot\\img\\svg\\equipe-sobre.svg",
       "PackagePath": "staticwebassets\\img\\svg\\equipe-sobre.svg"
     },
     {
-      "Id": "C:\\Users\\marce\\OneDrive\\Área de Trabalho\\Prodigy\\ProdigyWeb\\wwwroot\\img\\svg\\icon.svg",
+      "Id": "C:\\Users\\Wallace\\Desktop\\tcc\\Prodigy\\ProdigyWeb\\wwwroot\\img\\svg\\icon.svg",
       "PackagePath": "staticwebassets\\img\\svg\\icon.svg"
     },
     {
-      "Id": "C:\\Users\\marce\\OneDrive\\Área de Trabalho\\Prodigy\\ProdigyWeb\\wwwroot\\img\\svg\\img-missao.svg",
+      "Id": "C:\\Users\\Wallace\\Desktop\\tcc\\Prodigy\\ProdigyWeb\\wwwroot\\img\\svg\\img-missao.svg",
       "PackagePath": "staticwebassets\\img\\svg\\img-missao.svg"
     },
     {
-      "Id": "C:\\Users\\marce\\OneDrive\\Área de Trabalho\\Prodigy\\ProdigyWeb\\wwwroot\\img\\svg\\img-valores.svg",
+      "Id": "C:\\Users\\Wallace\\Desktop\\tcc\\Prodigy\\ProdigyWeb\\wwwroot\\img\\svg\\img-valores.svg",
       "PackagePath": "staticwebassets\\img\\svg\\img-valores.svg"
     },
     {
-      "Id": "C:\\Users\\marce\\OneDrive\\Área de Trabalho\\Prodigy\\ProdigyWeb\\wwwroot\\img\\svg\\img-visao.svg",
+      "Id": "C:\\Users\\Wallace\\Desktop\\tcc\\Prodigy\\ProdigyWeb\\wwwroot\\img\\svg\\img-visao.svg",
       "PackagePath": "staticwebassets\\img\\svg\\img-visao.svg"
     },
     {
-      "Id": "C:\\Users\\marce\\OneDrive\\Área de Trabalho\\Prodigy\\ProdigyWeb\\wwwroot\\img\\table.png",
+      "Id": "C:\\Users\\Wallace\\Desktop\\tcc\\Prodigy\\ProdigyWeb\\wwwroot\\img\\table.png",
       "PackagePath": "staticwebassets\\img\\table.png"
     },
     {
-      "Id": "C:\\Users\\marce\\OneDrive\\Área de Trabalho\\Prodigy\\ProdigyWeb\\wwwroot\\js\\.editorconfig",
+      "Id": "C:\\Users\\Wallace\\Desktop\\tcc\\Prodigy\\ProdigyWeb\\wwwroot\\js\\.editorconfig",
       "PackagePath": "staticwebassets\\js\\.editorconfig"
     },
     {
-      "Id": "C:\\Users\\marce\\OneDrive\\Área de Trabalho\\Prodigy\\ProdigyWeb\\wwwroot\\js\\doughnut.js",
+      "Id": "C:\\Users\\Wallace\\Desktop\\tcc\\Prodigy\\ProdigyWeb\\wwwroot\\js\\doughnut.js",
       "PackagePath": "staticwebassets\\js\\doughnut.js"
     },
     {
-      "Id": "C:\\Users\\marce\\OneDrive\\Área de Trabalho\\Prodigy\\ProdigyWeb\\wwwroot\\js\\estoque.js",
+      "Id": "C:\\Users\\Wallace\\Desktop\\tcc\\Prodigy\\ProdigyWeb\\wwwroot\\js\\estoque.js",
       "PackagePath": "staticwebassets\\js\\estoque.js"
     },
     {
-      "Id": "C:\\Users\\marce\\OneDrive\\Área de Trabalho\\Prodigy\\ProdigyWeb\\wwwroot\\js\\payment.js",
+      "Id": "C:\\Users\\Wallace\\Desktop\\tcc\\Prodigy\\ProdigyWeb\\wwwroot\\js\\payment.js",
       "PackagePath": "staticwebassets\\js\\payment.js"
     },
     {
-      "Id": "C:\\Users\\marce\\OneDrive\\Área de Trabalho\\Prodigy\\ProdigyWeb\\wwwroot\\js\\perfil.js",
+      "Id": "C:\\Users\\Wallace\\Desktop\\tcc\\Prodigy\\ProdigyWeb\\wwwroot\\js\\perfil.js",
       "PackagePath": "staticwebassets\\js\\perfil.js"
     },
     {
-      "Id": "C:\\Users\\marce\\OneDrive\\Área de Trabalho\\Prodigy\\ProdigyWeb\\wwwroot\\js\\site.js",
+      "Id": "C:\\Users\\Wallace\\Desktop\\tcc\\Prodigy\\ProdigyWeb\\wwwroot\\js\\site.js",
       "PackagePath": "staticwebassets\\js\\site.js"
     },
     {
-      "Id": "C:\\Users\\marce\\OneDrive\\Área de Trabalho\\Prodigy\\ProdigyWeb\\wwwroot\\lib\\bootstrap\\LICENSE",
+      "Id": "C:\\Users\\Wallace\\Desktop\\tcc\\Prodigy\\ProdigyWeb\\wwwroot\\lib\\bootstrap\\LICENSE",
       "PackagePath": "staticwebassets\\lib\\bootstrap"
     },
     {
-      "Id": "C:\\Users\\marce\\OneDrive\\Área de Trabalho\\Prodigy\\ProdigyWeb\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
+      "Id": "C:\\Users\\Wallace\\Desktop\\tcc\\Prodigy\\ProdigyWeb\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css"
     },
     {
-      "Id": "C:\\Users\\marce\\OneDrive\\Área de Trabalho\\Prodigy\\ProdigyWeb\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
+      "Id": "C:\\Users\\Wallace\\Desktop\\tcc\\Prodigy\\ProdigyWeb\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map"
     },
     {
-      "Id": "C:\\Users\\marce\\OneDrive\\Área de Trabalho\\Prodigy\\ProdigyWeb\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
+      "Id": "C:\\Users\\Wallace\\Desktop\\tcc\\Prodigy\\ProdigyWeb\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css"
     },
     {
-      "Id": "C:\\Users\\marce\\OneDrive\\Área de Trabalho\\Prodigy\\ProdigyWeb\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
+      "Id": "C:\\Users\\Wallace\\Desktop\\tcc\\Prodigy\\ProdigyWeb\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map"
     },
     {
-      "Id": "C:\\Users\\marce\\OneDrive\\Área de Trabalho\\Prodigy\\ProdigyWeb\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
+      "Id": "C:\\Users\\Wallace\\Desktop\\tcc\\Prodigy\\ProdigyWeb\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css"
     },
     {
-      "Id": "C:\\Users\\marce\\OneDrive\\Área de Trabalho\\Prodigy\\ProdigyWeb\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
+      "Id": "C:\\Users\\Wallace\\Desktop\\tcc\\Prodigy\\ProdigyWeb\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map"
     },
     {
-      "Id": "C:\\Users\\marce\\OneDrive\\Área de Trabalho\\Prodigy\\ProdigyWeb\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css",
+      "Id": "C:\\Users\\Wallace\\Desktop\\tcc\\Prodigy\\ProdigyWeb\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css"
     },
     {
-      "Id": "C:\\Users\\marce\\OneDrive\\Área de Trabalho\\Prodigy\\ProdigyWeb\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map",
+      "Id": "C:\\Users\\Wallace\\Desktop\\tcc\\Prodigy\\ProdigyWeb\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map"
     },
     {
-      "Id": "C:\\Users\\marce\\OneDrive\\Área de Trabalho\\Prodigy\\ProdigyWeb\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
+      "Id": "C:\\Users\\Wallace\\Desktop\\tcc\\Prodigy\\ProdigyWeb\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css"
     },
     {
-      "Id": "C:\\Users\\marce\\OneDrive\\Área de Trabalho\\Prodigy\\ProdigyWeb\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
+      "Id": "C:\\Users\\Wallace\\Desktop\\tcc\\Prodigy\\ProdigyWeb\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map"
     },
     {
-      "Id": "C:\\Users\\marce\\OneDrive\\Área de Trabalho\\Prodigy\\ProdigyWeb\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
+      "Id": "C:\\Users\\Wallace\\Desktop\\tcc\\Prodigy\\ProdigyWeb\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css"
     },
     {
-      "Id": "C:\\Users\\marce\\OneDrive\\Área de Trabalho\\Prodigy\\ProdigyWeb\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
+      "Id": "C:\\Users\\Wallace\\Desktop\\tcc\\Prodigy\\ProdigyWeb\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map"
     },
     {
-      "Id": "C:\\Users\\marce\\OneDrive\\Área de Trabalho\\Prodigy\\ProdigyWeb\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css",
+      "Id": "C:\\Users\\Wallace\\Desktop\\tcc\\Prodigy\\ProdigyWeb\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css"
     },
     {
-      "Id": "C:\\Users\\marce\\OneDrive\\Área de Trabalho\\Prodigy\\ProdigyWeb\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map",
+      "Id": "C:\\Users\\Wallace\\Desktop\\tcc\\Prodigy\\ProdigyWeb\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map"
     },
     {
-      "Id": "C:\\Users\\marce\\OneDrive\\Área de Trabalho\\Prodigy\\ProdigyWeb\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css",
+      "Id": "C:\\Users\\Wallace\\Desktop\\tcc\\Prodigy\\ProdigyWeb\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css"
     },
     {
-      "Id": "C:\\Users\\marce\\OneDrive\\Área de Trabalho\\Prodigy\\ProdigyWeb\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map",
+      "Id": "C:\\Users\\Wallace\\Desktop\\tcc\\Prodigy\\ProdigyWeb\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map"
     },
     {
-      "Id": "C:\\Users\\marce\\OneDrive\\Área de Trabalho\\Prodigy\\ProdigyWeb\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
+      "Id": "C:\\Users\\Wallace\\Desktop\\tcc\\Prodigy\\ProdigyWeb\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css"
     },
     {
-      "Id": "C:\\Users\\marce\\OneDrive\\Área de Trabalho\\Prodigy\\ProdigyWeb\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map",
+      "Id": "C:\\Users\\Wallace\\Desktop\\tcc\\Prodigy\\ProdigyWeb\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map"
     },
     {
-      "Id": "C:\\Users\\marce\\OneDrive\\Área de Trabalho\\Prodigy\\ProdigyWeb\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css",
+      "Id": "C:\\Users\\Wallace\\Desktop\\tcc\\Prodigy\\ProdigyWeb\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css"
     },
     {
-      "Id": "C:\\Users\\marce\\OneDrive\\Área de Trabalho\\Prodigy\\ProdigyWeb\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map",
+      "Id": "C:\\Users\\Wallace\\Desktop\\tcc\\Prodigy\\ProdigyWeb\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map"
     },
     {
-      "Id": "C:\\Users\\marce\\OneDrive\\Área de Trabalho\\Prodigy\\ProdigyWeb\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css",
+      "Id": "C:\\Users\\Wallace\\Desktop\\tcc\\Prodigy\\ProdigyWeb\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css"
     },
     {
-      "Id": "C:\\Users\\marce\\OneDrive\\Área de Trabalho\\Prodigy\\ProdigyWeb\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map",
+      "Id": "C:\\Users\\Wallace\\Desktop\\tcc\\Prodigy\\ProdigyWeb\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map"
     },
     {
-      "Id": "C:\\Users\\marce\\OneDrive\\Área de Trabalho\\Prodigy\\ProdigyWeb\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css",
+      "Id": "C:\\Users\\Wallace\\Desktop\\tcc\\Prodigy\\ProdigyWeb\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css"
     },
     {
-      "Id": "C:\\Users\\marce\\OneDrive\\Área de Trabalho\\Prodigy\\ProdigyWeb\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map",
+      "Id": "C:\\Users\\Wallace\\Desktop\\tcc\\Prodigy\\ProdigyWeb\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map"
     },
     {
-      "Id": "C:\\Users\\marce\\OneDrive\\Área de Trabalho\\Prodigy\\ProdigyWeb\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
+      "Id": "C:\\Users\\Wallace\\Desktop\\tcc\\Prodigy\\ProdigyWeb\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css"
     },
     {
-      "Id": "C:\\Users\\marce\\OneDrive\\Área de Trabalho\\Prodigy\\ProdigyWeb\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
+      "Id": "C:\\Users\\Wallace\\Desktop\\tcc\\Prodigy\\ProdigyWeb\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css.map"
     },
     {
-      "Id": "C:\\Users\\marce\\OneDrive\\Área de Trabalho\\Prodigy\\ProdigyWeb\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
+      "Id": "C:\\Users\\Wallace\\Desktop\\tcc\\Prodigy\\ProdigyWeb\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css"
     },
     {
-      "Id": "C:\\Users\\marce\\OneDrive\\Área de Trabalho\\Prodigy\\ProdigyWeb\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
+      "Id": "C:\\Users\\Wallace\\Desktop\\tcc\\Prodigy\\ProdigyWeb\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map"
     },
     {
-      "Id": "C:\\Users\\marce\\OneDrive\\Área de Trabalho\\Prodigy\\ProdigyWeb\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
+      "Id": "C:\\Users\\Wallace\\Desktop\\tcc\\Prodigy\\ProdigyWeb\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css"
     },
     {
-      "Id": "C:\\Users\\marce\\OneDrive\\Área de Trabalho\\Prodigy\\ProdigyWeb\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map",
+      "Id": "C:\\Users\\Wallace\\Desktop\\tcc\\Prodigy\\ProdigyWeb\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map"
     },
     {
-      "Id": "C:\\Users\\marce\\OneDrive\\Área de Trabalho\\Prodigy\\ProdigyWeb\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css",
+      "Id": "C:\\Users\\Wallace\\Desktop\\tcc\\Prodigy\\ProdigyWeb\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css"
     },
     {
-      "Id": "C:\\Users\\marce\\OneDrive\\Área de Trabalho\\Prodigy\\ProdigyWeb\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map",
+      "Id": "C:\\Users\\Wallace\\Desktop\\tcc\\Prodigy\\ProdigyWeb\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map"
     },
     {
-      "Id": "C:\\Users\\marce\\OneDrive\\Área de Trabalho\\Prodigy\\ProdigyWeb\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
+      "Id": "C:\\Users\\Wallace\\Desktop\\tcc\\Prodigy\\ProdigyWeb\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js"
     },
     {
-      "Id": "C:\\Users\\marce\\OneDrive\\Área de Trabalho\\Prodigy\\ProdigyWeb\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
+      "Id": "C:\\Users\\Wallace\\Desktop\\tcc\\Prodigy\\ProdigyWeb\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map"
     },
     {
-      "Id": "C:\\Users\\marce\\OneDrive\\Área de Trabalho\\Prodigy\\ProdigyWeb\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
+      "Id": "C:\\Users\\Wallace\\Desktop\\tcc\\Prodigy\\ProdigyWeb\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js"
     },
     {
-      "Id": "C:\\Users\\marce\\OneDrive\\Área de Trabalho\\Prodigy\\ProdigyWeb\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
+      "Id": "C:\\Users\\Wallace\\Desktop\\tcc\\Prodigy\\ProdigyWeb\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map"
     },
     {
-      "Id": "C:\\Users\\marce\\OneDrive\\Área de Trabalho\\Prodigy\\ProdigyWeb\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
+      "Id": "C:\\Users\\Wallace\\Desktop\\tcc\\Prodigy\\ProdigyWeb\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js"
     },
     {
-      "Id": "C:\\Users\\marce\\OneDrive\\Área de Trabalho\\Prodigy\\ProdigyWeb\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map",
+      "Id": "C:\\Users\\Wallace\\Desktop\\tcc\\Prodigy\\ProdigyWeb\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map"
     },
     {
-      "Id": "C:\\Users\\marce\\OneDrive\\Área de Trabalho\\Prodigy\\ProdigyWeb\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js",
+      "Id": "C:\\Users\\Wallace\\Desktop\\tcc\\Prodigy\\ProdigyWeb\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js"
     },
     {
-      "Id": "C:\\Users\\marce\\OneDrive\\Área de Trabalho\\Prodigy\\ProdigyWeb\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map",
+      "Id": "C:\\Users\\Wallace\\Desktop\\tcc\\Prodigy\\ProdigyWeb\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map"
     },
     {
-      "Id": "C:\\Users\\marce\\OneDrive\\Área de Trabalho\\Prodigy\\ProdigyWeb\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
+      "Id": "C:\\Users\\Wallace\\Desktop\\tcc\\Prodigy\\ProdigyWeb\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js"
     },
     {
-      "Id": "C:\\Users\\marce\\OneDrive\\Área de Trabalho\\Prodigy\\ProdigyWeb\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map",
+      "Id": "C:\\Users\\Wallace\\Desktop\\tcc\\Prodigy\\ProdigyWeb\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js.map"
     },
     {
-      "Id": "C:\\Users\\marce\\OneDrive\\Área de Trabalho\\Prodigy\\ProdigyWeb\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
+      "Id": "C:\\Users\\Wallace\\Desktop\\tcc\\Prodigy\\ProdigyWeb\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js"
     },
     {
-      "Id": "C:\\Users\\marce\\OneDrive\\Área de Trabalho\\Prodigy\\ProdigyWeb\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
+      "Id": "C:\\Users\\Wallace\\Desktop\\tcc\\Prodigy\\ProdigyWeb\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map"
     },
     {
-      "Id": "C:\\Users\\marce\\OneDrive\\Área de Trabalho\\Prodigy\\ProdigyWeb\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
+      "Id": "C:\\Users\\Wallace\\Desktop\\tcc\\Prodigy\\ProdigyWeb\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
       "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
     },
     {
-      "Id": "C:\\Users\\marce\\OneDrive\\Área de Trabalho\\Prodigy\\ProdigyWeb\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
+      "Id": "C:\\Users\\Wallace\\Desktop\\tcc\\Prodigy\\ProdigyWeb\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js"
     },
     {
-      "Id": "C:\\Users\\marce\\OneDrive\\Área de Trabalho\\Prodigy\\ProdigyWeb\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
+      "Id": "C:\\Users\\Wallace\\Desktop\\tcc\\Prodigy\\ProdigyWeb\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js"
     },
     {
-      "Id": "C:\\Users\\marce\\OneDrive\\Área de Trabalho\\Prodigy\\ProdigyWeb\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
+      "Id": "C:\\Users\\Wallace\\Desktop\\tcc\\Prodigy\\ProdigyWeb\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
       "PackagePath": "staticwebassets\\lib\\jquery-validation\\LICENSE.md"
     },
     {
-      "Id": "C:\\Users\\marce\\OneDrive\\Área de Trabalho\\Prodigy\\ProdigyWeb\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
+      "Id": "C:\\Users\\Wallace\\Desktop\\tcc\\Prodigy\\ProdigyWeb\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.js"
     },
     {
-      "Id": "C:\\Users\\marce\\OneDrive\\Área de Trabalho\\Prodigy\\ProdigyWeb\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
+      "Id": "C:\\Users\\Wallace\\Desktop\\tcc\\Prodigy\\ProdigyWeb\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.min.js"
     },
     {
-      "Id": "C:\\Users\\marce\\OneDrive\\Área de Trabalho\\Prodigy\\ProdigyWeb\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
+      "Id": "C:\\Users\\Wallace\\Desktop\\tcc\\Prodigy\\ProdigyWeb\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.js"
     },
     {
-      "Id": "C:\\Users\\marce\\OneDrive\\Área de Trabalho\\Prodigy\\ProdigyWeb\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
+      "Id": "C:\\Users\\Wallace\\Desktop\\tcc\\Prodigy\\ProdigyWeb\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.min.js"
     },
     {
-      "Id": "C:\\Users\\marce\\OneDrive\\Área de Trabalho\\Prodigy\\ProdigyWeb\\wwwroot\\lib\\jquery\\LICENSE.txt",
+      "Id": "C:\\Users\\Wallace\\Desktop\\tcc\\Prodigy\\ProdigyWeb\\wwwroot\\lib\\jquery\\LICENSE.txt",
       "PackagePath": "staticwebassets\\lib\\jquery\\LICENSE.txt"
     },
     {
-      "Id": "C:\\Users\\marce\\OneDrive\\Área de Trabalho\\Prodigy\\ProdigyWeb\\wwwroot\\lib\\jquery\\dist\\jquery.js",
+      "Id": "C:\\Users\\Wallace\\Desktop\\tcc\\Prodigy\\ProdigyWeb\\wwwroot\\lib\\jquery\\dist\\jquery.js",
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.js"
     },
     {
-      "Id": "C:\\Users\\marce\\OneDrive\\Área de Trabalho\\Prodigy\\ProdigyWeb\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
+      "Id": "C:\\Users\\Wallace\\Desktop\\tcc\\Prodigy\\ProdigyWeb\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.js"
     },
     {
-      "Id": "C:\\Users\\marce\\OneDrive\\Área de Trabalho\\Prodigy\\ProdigyWeb\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
+      "Id": "C:\\Users\\Wallace\\Desktop\\tcc\\Prodigy\\ProdigyWeb\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
     },
     {

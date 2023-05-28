@@ -35,7 +35,7 @@ namespace ProdigyWeb.Controllers
 
             if (claims.Identity.IsAuthenticated)
             {
-                ViewBag.Layout = "Caixa";
+                ViewBag.Layout = "Dashboard";
                 return View();
             }
             return RedirectToAction("Login", "Usuario");
@@ -47,7 +47,7 @@ namespace ProdigyWeb.Controllers
 
             if (claims.Identity.IsAuthenticated)
             {
-                ViewBag.Layout = "Addproduto";
+                ViewBag.Layout = "Dashboard";
                 return View();
             }
             return RedirectToAction("Login", "Usuario");
