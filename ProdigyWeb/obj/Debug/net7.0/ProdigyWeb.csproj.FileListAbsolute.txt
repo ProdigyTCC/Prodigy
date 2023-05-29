@@ -261,3 +261,4 @@ C:\Users\marce\OneDrive\Área de Trabalho\Prodigy\ProdigyWeb\obj\Debug\net7.0\sc
 C:\Users\marce\OneDrive\Área de Trabalho\Prodigy\ProdigyWeb\obj\Debug\net7.0\ProdigyWeb.csproj.CopyComplete
 C:\Users\marce\OneDrive\Área de Trabalho\Prodigy\ProdigyWeb\obj\Debug\net7.0\ProdigyWeb.genruntimeconfig.cache
 C:\Users\marce\OneDrive\Área de Trabalho\Prodigy\ProdigyWeb\obj\Debug\net7.0\ref\ProdigyWeb.dll
+C:\Users\Wallace\Desktop\tcc\Prodigy\ProdigyWeb\bin\Debug\net7.0\railway.json
