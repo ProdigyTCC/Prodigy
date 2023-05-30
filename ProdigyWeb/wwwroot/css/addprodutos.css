@@ -4,7 +4,7 @@
 
 .formulario input {
     margin-bottom: 1.5em;
-    border: solid #1D7870 1px;
+    border: solid #1D7870 0.1px;
 }
 
 .formulario input:focus {

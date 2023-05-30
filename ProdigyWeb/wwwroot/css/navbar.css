@@ -1,0 +1,30 @@
+.navbar {
+    margin: 1% 5% 1%;
+    display: flex;
+    justify-content: space-around;
+  }
+  
+  .navbar ul li a{
+    color: #E2F0EF;
+    font-size: 1em;
+    font-weight: 500;
+    margin-left: 2rem;  
+    transition: all 0.35s ease-in-out; 
+  }
+  
+  .navbar a:hover{
+    color: #30BEB2;
+  }
+  
+  .navbar img{
+    height: 1.2rem;
+  }
+  
+  .navbar-toggler {
+    border: none !important;
+    outline: none;
+  }
+  
+  .navbar-toggler:focus {
+    box-shadow: 0 0 0 0;
+  }

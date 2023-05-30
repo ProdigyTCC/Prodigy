@@ -1,0 +1,112 @@
+button {
+    text-align: center;
+    border: none;
+    border-radius: 5px;
+    text-shadow: 0px 1px 1px #00000070;
+    box-shadow: 0px 5px 10px #00000040;
+    transition: ease-in-out 0.3s;
+}
+
+/* BOTÕES COM O MESMO TAMANHO */
+.primary-button, .button-dash-default, .button-white {
+    width: 20rem;
+    height: 2.8rem;
+    font-size: 1.2em;
+    font-weight: 600;
+}
+
+/* BOTÕES COM O MESMO TAMANHO */
+.button-small, .button-small-cancel, .button-small-confirm {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 12.5rem;
+    height: 2.5rem;
+    color: #E2F0EF;
+    font-size: 18px;
+    font-weight: 600;
+  }
+  
+  /* BOTÕES MODAL COM O MESMO TAMANHO */
+  .button-modal-confirm, .button-modal-cancel {
+    width: 8rem;
+    height: 2.5rem;
+    color: #E2F0EF;
+    font-size: 16px;
+    font-weight: 600;
+  }
+
+.secondary-button {
+    width: 350px;
+    height: 40px;
+    color: #E2F0EF;
+    font-size: 1.2rem;
+    font-weight: 600;
+    background-color: #30BEB2;
+}
+
+.button-edit {
+    width: 200px;
+    height: 40px;
+    color: #E2F0EF;
+    font-size: 20px;
+    font-weight: 600;
+    background-color: #2D3037;
+  }
+
+/* BOTÕES COM A MESMA COR - VERDE*/
+.primary-button, .button-dash-default, .button-modal-confirm, .button-small, .button-small-confirm  {
+    color: #E2F0EF;
+    background-color: #30BEB2;
+}
+
+/* BOTÃO COM A MESMA COR - BRANCA */
+.button-white {
+  color: #1D7870;
+  background-color: #E2F0EF;
+}
+
+ /* BOTÕES COM A MESMA COR - VERMELHA */
+ .button-small-cancel, .button-modal-cancel {
+    background-color: #c71f37;
+  }
+
+
+/* HOVERS */
+
+
+  /* BOTÕES COM O MESMO HOVER - VERDE ESCURO */
+  .button-confirm:hover, .button-small-confirm:hover, .button-dash-default:hover {
+    color: #E2F0EF;
+    background-color: #1D7870;
+  }
+  
+  /* BOTÕES COM O MESMO HOVER - VERMELHO ESCURO */
+  .button-cancel:hover, .button-small-cancel:hover {
+    color: #E2F0EF;
+    background-color: #85182a;
+  }
+  
+  /* BOTÕES COM O MESMO HOVER - CINZA */
+  .button-edit:hover {
+    background-color: #434853;
+  }
+  
+  /* BOTÕES COM O MESMO HOVER - VERDE CLARO */
+  .primary-button:hover, .secondary-button:hover, .button-small:hover {
+    background-color: #E2F0EF;
+    color: #30BEB2;
+  }
+  
+  /* BOTÕES COM O MESMO HOVER - OPACITY BAIXO */
+  .button-white:hover {
+    opacity: 0.7;
+  }
+
+  @media only screen and (max-width: 768px) {
+    .primary-button {
+      width: 260px;
+      height: 35px;
+      font-size: 1em;
+    }
+  }

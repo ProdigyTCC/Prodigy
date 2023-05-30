@@ -23,15 +23,13 @@ html {
 }
 
 .btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
-  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #30BEB2;
 }
 
 html {
   position: relative;
   min-height: 100%;
 }
-
-
 
 body::-webkit-scrollbar {
   width: 12px;               
@@ -47,225 +45,6 @@ body::-webkit-scrollbar-thumb {
   border: none;  
 }
 
-.navbar {
-  margin: 1% 5% 1%;
-  display: flex;
-  justify-content: space-around;
-}
-
-.navbar ul li a{
-  color: #E2F0EF;
-  font-size: 1em;
-  font-weight: 500;
-  margin-left: 2rem;  
-  transition: all 0.35s ease-in-out; 
-}
-
-.navbar a:hover{
-  color: #30BEB2;
-}
-
-.navbar img{
-  height: 1.2rem;
-}
-
-.navbar-toggler {
-  border: none !important;
-  outline: none;
-}
-
-.navbar-toggler:focus {
-  box-shadow: 0 0 0 0;
-}
-
-.primary-button {
-  width: 20rem;
-  height: 2.8rem;
-  color: #E2F0EF;
-  font-size: 1.2em;
-  font-weight: 600;
-  text-align: center;
-  border: none;
-  border-radius: 5px;
-  text-shadow: 0px 1px 1px #00000070;
-  box-shadow: 0px 5px 10px #00000040;
-  background-color: #30BEB2;
-  transition: ease-in-out 0.3s;
-}
-
-.secondary-button {
-  width: 350px;
-  height: 40px;
-  color: #E2F0EF;
-  font-size: 1.2rem;
-  font-weight: 600;
-  text-align: center;
-  border: none;
-  border-radius: 5px;
-  text-shadow: 0px 1px 1px #00000070;
-  box-shadow: 0px 5px 10px #00000040;
-  background-color: #30BEB2;
-  transition: ease-in-out 0.3s;
-}
-
-.button-dash-default {
-  width: 20rem;
-  height: 2.8rem;
-  color: #E2F0EF;
-  font-size: 1.2em;
-  font-weight: 600;
-  text-align: center;
-  border: none;
-  border-radius: 5px;
-  text-shadow: 0px 1px 1px #00000070;
-  box-shadow: 0px 5px 10px #00000040;
-  background-color: #30BEB2;
-  transition: ease-in-out 0.3s;
-}
-
-.button-white {
-  width: 20rem;
-  height: 2.8rem;
-  color: #1D7870;
-  font-size: 1.2em;
-  font-weight: 600;
-  text-align: center;
-  border: none;
-  border-radius: 5px;
-  text-shadow: 0px 1px 1px #00000070;
-  box-shadow: 0px 5px 10px #00000040;
-  background-color: #E2F0EF;
-  transition: ease-in-out 0.3s;
-}
-
-.button-small {
-  width: 12.5rem;
-  height: 2.5rem;
-  color: #E2F0EF;
-  font-size: 18px;
-  font-weight: 600;
-  text-align: center;
-  border: none;
-  border-radius: 5px;
-  text-shadow: 0px 1px 1px #00000070;
-  box-shadow: 0px 5px 10px #00000040;
-  background-color: #30BEB2;
-  white-space: normal;
-  transition: ease-in-out 0.3s;
-}
-
-.button-small-cancel {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 12.5rem;
-  height: 2.5rem;
-  color: #E2F0EF;
-  font-size: 18px;
-  font-weight: 600;
-  text-align: center;
-  border: none;
-  border-radius: 5px;
-  text-shadow: 0px 1px 1px #00000070;
-  box-shadow: 0px 5px 10px #00000040;
-  background-color: #c71f37;
-  white-space: normal;
-  transition: ease-in-out 0.3s;
-}
-
-.button-small-confirm {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 12.5rem;
-  height: 2.5rem;
-  color: #E2F0EF;
-  font-size: 18px;
-  font-weight: 600;
-  text-align: center;
-  border: none;
-  border-radius: 5px;
-  text-shadow: 0px 1px 1px #00000070;
-  box-shadow: 0px 5px 10px #00000040;
-  background-color: #30BEB2;
-  white-space: normal;
-  transition: ease-in-out 0.3s;
-}
-
-.button-modal-confirm {
-  width: 8rem;
-  height: 2.5rem;
-  color: #E2F0EF;
-  font-size: 16px;
-  font-weight: 600;
-  text-align: center;
-  border: none;
-  border-radius: 5px;
-  text-shadow: 0px 1px 1px #00000070;
-  box-shadow: 0px 5px 10px #00000040;
-  background-color: #30BEB2;
-  white-space: normal;
-  transition: ease-in-out 0.3s;
-}
-
-.button-modal-cancel {
-  width: 8rem;
-  height: 2.5rem;
-  color: #E2F0EF;
-  font-size: 16px;
-  font-weight: 600;
-  text-align: center;
-  border: none;
-  border-radius: 5px;
-  text-shadow: 0px 1px 1px #00000070;
-  box-shadow: 0px 5px 10px #00000040;
-  background-color: #c71f37;
-  white-space: normal;
-  transition: ease-in-out 0.3s;
-}
-
-.button-confirm:hover, .button-small-confirm:hover {
-  color: #E2F0EF;
-  background-color: #1D7870;
-}
-
-.button-cancel:hover, .button-small-cancel:hover {
-  color: #E2F0EF;
-  background-color: #85182a;
-}
-
-.button-edit {
-  width: 200px;
-  height: 40px;
-  color: #E2F0EF;
-  font-size: 20px;
-  font-weight: 600;
-  text-align: center;
-  border: none;
-  border-radius: 5px;
-  text-shadow: 0px 1px 1px #00000070;
-  box-shadow: 0px 5px 10px #00000040;
-  background-color: #2D3037;
-  transition: ease-in-out 0.3s;
-}
-
-.button-edit:hover {
-  background-color: #434853;
-}
-
-.primary-button:hover, .secondary-button:hover, .button-small:hover {
-  background-color: #E2F0EF;
-  color: #30BEB2;
-}
-
-.button-dash-default:hover {
-  background-color: #1D7870;
-}
-
-.button-white:hover {
-  opacity: 0.7;
-}
-
 input[type="radio"] {
   background-color: #E2F0EF;
   cursor: pointer;
@@ -275,13 +54,8 @@ input[type="radio"] {
   transition: 0.2s ease-in-out;
 }
 
-input[type="radio"]:checked {
+input[type="radio"]:checked, input[type="checkbox"]:checked {
   background-color: #30BEB2;
-}
-
-input[type="radio"]:focus {
-  background: #30BEB2;
-  box-shadow: none;
 }
 
 .label-contato {
@@ -318,12 +92,4 @@ input:focus {
   background-color: #fff;
   padding-left: 5%;
   border-radius: 5px 5px 5px 5px;
-}
-
-@media only screen and (max-width: 768px) {
-  .primary-button {
-    width: 260px;
-    height: 35px;
-    font-size: 1em;
-  }
 }
