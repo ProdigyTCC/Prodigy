@@ -1,0 +1,31 @@
+.main-addproduto {
+    color: #1D7870;
+}
+
+.formulario input {
+    margin-bottom: 1.5em;
+    border: solid #1D7870 1px;
+}
+
+.formulario input:focus {
+    outline-color: #1D7870;
+}
+
+.texto {
+    display:flex;
+    justify-content: center;
+    padding-top: 0.75em;
+    height: 3em;
+    font-size: larger;
+}
+
+.texto input {
+    margin-left: 2em;
+}
+
+.label-estoque {
+    font-weight: 600;
+    font-size: 1rem;
+    padding: 0%;
+    margin-bottom: 1%;
+  }

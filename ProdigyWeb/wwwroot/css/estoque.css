@@ -38,3 +38,7 @@
     border: none;
     padding: 0;
 }
+
+.div-botoes-estoque a:hover {
+    text-decoration: none;
+}
