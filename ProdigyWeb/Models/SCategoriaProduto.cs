@@ -14,5 +14,12 @@ namespace ProdigyWeb.Models
 
         [MaxLength(50)]
         public string Nome { get; set; }
+        
+        [MaxLength(50)]
+        public string DescCategoria { get; set; }
+
+        [ForeignKey("UsuarioId")]
+        public virtual Usuario Usuario { get; set; }
+        public int UsuarioId { get; set; }
     }
 }

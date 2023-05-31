@@ -54,6 +54,10 @@ namespace ProdigyWeb.Models
         public virtual SCategoriaProduto SCategoriaProduto { get; set; }
         public int SCategoriaProdutoId { get; set; }
 
+        [ForeignKey("UsuarioId")]
+        public virtual Usuario Usuario { get; set; }
+        public int UsuarioId { get; set; }
+
         [ForeignKey("FornecedorId")]
         public virtual SFornecedor SFornecedor { get; set; }
         public int SFornecedorId { get; set; }

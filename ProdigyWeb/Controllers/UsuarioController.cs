@@ -85,6 +85,10 @@ namespace ProdigyWeb.Controllers
 
                     await _cookie.GerarClaim(HttpContext, usuarios);
 
+                    var usuarioBanco = _context.Usuarios.FirstOrDefault(x => x.Email == usuario.Email);
+
+                    if (string.IsNullOrEmpty(usuarioBanco.Plano)) return RedirectToAction("Planos", "Home");
+
                     return RedirectToAction(nameof(Index));
                 }
                 catch (Exception)
@@ -127,7 +131,7 @@ namespace ProdigyWeb.Controllers
                             _context.Usuarios.Add(usuario);
                             _context.SaveChanges();
 
-                            return RedirectToAction("Planos", "Home");
+                            return RedirectToAction(nameof(Login));
                         }
                         else
                         {
@@ -148,7 +152,7 @@ namespace ProdigyWeb.Controllers
             public async Task<IActionResult> Logout()
             {
                 await _cookie.Logout(HttpContext);
-                return RedirectToAction(nameof(Index));
+                return RedirectToAction("Home", "Index");
             }
             [HttpPost("UploadImagem")]
             public async Task<IActionResult> UploadImagem(IFormFile? imagem)

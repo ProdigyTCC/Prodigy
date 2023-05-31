@@ -94,22 +94,22 @@
                             @if (ViewBag.Id != null)
                             {
                                 <li class="nav-item">
-                                    <a class="nav-link" asp-area="" asp-controller="Usuario" asp-action="Index">Perfil</a>
+                                    <a class="nav-link" asp-controller="Usuario" asp-action="Index">Perfil</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" asp-area="" asp-controller="Usuario" asp-action="Logout">Sair</a>
+                                    <a class="nav-link" asp-controller="Usuario" asp-action="Logout">Sair</a>
                                 </li>
                                 <li class="nav-item">
-                                    <p class="nav-link">
+                                    <a class="nav-link">
                                         @try
                                         {
                                             @ViewBag.Nome.ToString().Substring(0, @ViewBag.Nome.ToString().IndexOf(' '))
                                         }
-                                        catch (Exception)
+                                        catch
                                         {
                                             @ViewBag.Nome.ToString()
                                         }
-                                    </p>
+                                    </a>
                                 </li>
                             }
                         </ul>
@@ -204,7 +204,7 @@
                     <a class="ps-3" asp-area="" asp-controller="SHome" asp-action="Index"><img src="~/img/svg/Dashboard.svg" alt=""><p class="ps-3 m-0">Dashboard</p></a>
                     <a class="ps-3" asp-area="" asp-controller="SHome" asp-action="Caixa"><img src="~/img/svg/Balance.svg" alt=""><p class="ps-3 m-0">Fluxo de caixa</p></a>
                     <a class="ps-3" asp-area="" asp-controller="SHome" asp-action="Pedidos"><img src="~/img/svg/Tips.svg" alt=""><p class="ps-3 m-0">Pedidos</p></a>
-                    <a class="ps-3" asp-area="" asp-controller="SHome" asp-action="Estoque"><img src="~/img/svg/Inventory.svg" alt=""><p class="ps-3 m-0">Estoque</p></a>
+                    <a class="ps-3" asp-area="" asp-controller="SEstoque" asp-action="Index"><img src="~/img/svg/Inventory.svg" alt=""><p class="ps-3 m-0">Estoque</p></a>
                     <a class="ps-3" asp-area="" asp-controller="SHome" asp-action="Funcionarios"><img src="~/img/svg/Employeers.svg" alt=""><p class="ps-3 m-0">Funcionários</p></a>
                     <a class="ps-3" asp-area="" asp-controller="SHome" asp-action="Agenda"><img src="~/img/svg/Calendar.svg" alt=""><p class="ps-3 m-0">Agenda</p></a>
                 </div>

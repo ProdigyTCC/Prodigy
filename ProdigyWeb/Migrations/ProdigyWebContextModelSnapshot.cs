@@ -213,7 +213,6 @@ namespace ProdigyWeb.Migrations
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("JuridicoId"));
 
                     b.Property<string>("Cnpj")
-                        .IsRequired()
                         .HasMaxLength(18)
                         .HasColumnType("character varying(18)");
 
@@ -227,7 +226,6 @@ namespace ProdigyWeb.Migrations
                         .HasColumnType("text");
 
                     b.Property<string>("NomeRazao")
-                        .IsRequired()
                         .HasMaxLength(100)
                         .HasColumnType("character varying(100)");
 
@@ -323,9 +321,9 @@ namespace ProdigyWeb.Migrations
                     b.Property<bool>("Status")
                         .HasColumnType("boolean");
 
-                    b.Property<int>("TipoPagamento")
+                    b.Property<string>("TipoPagamento")
                         .HasMaxLength(20)
-                        .HasColumnType("integer");
+                        .HasColumnType("character varying(20)");
 
                     b.Property<int>("UsuarioId")
                         .HasColumnType("integer");
@@ -443,6 +441,10 @@ namespace ProdigyWeb.Migrations
                         .HasColumnType("integer");
 
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("SCategoriaProdutoId"));
+
+                    b.Property<string>("DescCategoria")
+                        .HasMaxLength(50)
+                        .HasColumnType("character varying(50)");
 
                     b.Property<string>("Nome")
                         .HasMaxLength(50)
@@ -853,6 +855,9 @@ namespace ProdigyWeb.Migrations
                     b.Property<int>("SFornecedorId")
                         .HasColumnType("integer");
 
+                    b.Property<int>("UsuarioId")
+                        .HasColumnType("integer");
+
                     b.Property<decimal>("ValorFinal")
                         .HasColumnType("numeric");
 
@@ -864,6 +869,8 @@ namespace ProdigyWeb.Migrations
                     b.HasIndex("CategoriaProdutoId");
 
                     b.HasIndex("FornecedorId");
+
+                    b.HasIndex("UsuarioId");
 
                     b.ToTable("SProdutos");
                 });
@@ -928,11 +935,12 @@ namespace ProdigyWeb.Migrations
                         .HasMaxLength(14)
                         .HasColumnType("character varying(14)");
 
-                    b.Property<DateOnly>("DataNascimento")
-                        .HasColumnType("date");
+                    b.Property<string>("DataNascimento")
+                        .IsRequired()
+                        .HasColumnType("text");
 
-                    b.Property<DateOnly>("DataRegistro")
-                        .HasColumnType("date");
+                    b.Property<string>("DataRegistro")
+                        .HasColumnType("text");
 
                     b.Property<string>("Email")
                         .IsRequired()
@@ -954,6 +962,9 @@ namespace ProdigyWeb.Migrations
                         .HasMaxLength(100)
                         .HasColumnType("character varying(100)");
 
+                    b.Property<string>("Plano")
+                        .HasColumnType("text");
+
                     b.Property<string>("Raca")
                         .HasMaxLength(10)
                         .HasColumnType("character varying(10)");
@@ -963,9 +974,6 @@ namespace ProdigyWeb.Migrations
                         .HasColumnType("text");
 
                     b.Property<string>("Sexo")
-                        .HasColumnType("text");
-
-                    b.Property<string>("Status")
                         .HasColumnType("text");
 
                     b.Property<string>("Telefone")
@@ -996,13 +1004,13 @@ namespace ProdigyWeb.Migrations
                         .IsRequired();
 
                     b.HasOne("ProdigyWeb.Models.Juridico", "Juridico")
-                        .WithMany()
+                        .WithMany("EnderecoCompostas")
                         .HasForeignKey("JuridicoId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.HasOne("ProdigyWeb.Models.Usuario", "Usuario")
-                        .WithMany()
+                        .WithMany("EnderecoCompostas")
                         .HasForeignKey("UsuarioId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -1038,7 +1046,7 @@ namespace ProdigyWeb.Migrations
                         .IsRequired();
 
                     b.HasOne("ProdigyWeb.Models.Usuario", "Usuario")
-                        .WithMany()
+                        .WithMany("ModuloComposta")
                         .HasForeignKey("UsuarioId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -1069,7 +1077,7 @@ namespace ProdigyWeb.Migrations
                         .IsRequired();
 
                     b.HasOne("ProdigyWeb.Models.Usuario", "Usuario")
-                        .WithMany()
+                        .WithMany("Pagamentos")
                         .HasForeignKey("UsuarioId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -1167,9 +1175,17 @@ namespace ProdigyWeb.Migrations
                         .WithMany()
                         .HasForeignKey("FornecedorId");
 
+                    b.HasOne("ProdigyWeb.Models.Usuario", "Usuario")
+                        .WithMany()
+                        .HasForeignKey("UsuarioId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
                     b.Navigation("SCategoriaProduto");
 
                     b.Navigation("SFornecedor");
+
+                    b.Navigation("Usuario");
                 });
 
             modelBuilder.Entity("ProdigyWeb.Models.SVenda", b =>
@@ -1198,6 +1214,11 @@ namespace ProdigyWeb.Migrations
                     b.Navigation("ModuloComposta");
                 });
 
+            modelBuilder.Entity("ProdigyWeb.Models.Juridico", b =>
+                {
+                    b.Navigation("EnderecoCompostas");
+                });
+
             modelBuilder.Entity("ProdigyWeb.Models.Modulo", b =>
                 {
                     b.Navigation("ModuloComposta");
@@ -1206,6 +1227,15 @@ namespace ProdigyWeb.Migrations
             modelBuilder.Entity("ProdigyWeb.Models.SProduto", b =>
                 {
                     b.Navigation("SPedidos");
+                });
+
+            modelBuilder.Entity("ProdigyWeb.Models.Usuario", b =>
+                {
+                    b.Navigation("EnderecoCompostas");
+
+                    b.Navigation("ModuloComposta");
+
+                    b.Navigation("Pagamentos");
                 });
 #pragma warning restore 612, 618
         }
