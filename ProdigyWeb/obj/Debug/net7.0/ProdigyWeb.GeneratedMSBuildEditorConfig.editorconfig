@@ -156,6 +156,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU0VzdG9xdWVcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/Wallace/Desktop/tcc/Development/Prodigy/ProdigyWeb/Views/SFuncionario/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU0Z1bmNpb25hcmlvXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/Wallace/Desktop/tcc/Development/Prodigy/ProdigyWeb/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
@@ -166,10 +170,6 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/Wallace/Desktop/tcc/Development/Prodigy/ProdigyWeb/Views/SHome/Caixa.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU0hvbWVcQ2FpeGEuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/Wallace/Desktop/tcc/Development/Prodigy/ProdigyWeb/Views/SHome/Funcionarios.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU0hvbWVcRnVuY2lvbmFyaW9zLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Wallace/Desktop/tcc/Development/Prodigy/ProdigyWeb/Views/SHome/Index.cshtml]

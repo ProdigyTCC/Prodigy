@@ -39,12 +39,12 @@
                     <p class="label-estoque">Categoria</p>
                     <div class="input-contato input-group">
                         <select class="form-select" aria-label="Default select example">
-                            <option selected>Selecionar Categoria</option>
+                            <option value="0" selected>Selecionar Categoria</option>
                             @if(ViewBag.CategProduto != null)
                             {
                                 @foreach (var cgProduto in ViewBag.CategProduto)
                                 {
-                                    <option value"@cgProduto.SCategoriaProdutoId">@cgProduto.Nome</option>
+                                <option value="@cgProduto.SCategoriaProdutoId">@cgProduto.Nome</option>
                                 }
                             }
                         </select>

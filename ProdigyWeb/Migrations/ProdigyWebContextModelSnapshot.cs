@@ -450,7 +450,12 @@ namespace ProdigyWeb.Migrations
                         .HasMaxLength(50)
                         .HasColumnType("character varying(50)");
 
+                    b.Property<int>("UsuarioId")
+                        .HasColumnType("integer");
+
                     b.HasKey("SCategoriaProdutoId");
+
+                    b.HasIndex("UsuarioId");
 
                     b.ToTable("SCategoriaProdutos");
                 });
@@ -1106,6 +1111,17 @@ namespace ProdigyWeb.Migrations
                     b.Navigation("Agenda");
 
                     b.Navigation("SCliente");
+                });
+
+            modelBuilder.Entity("ProdigyWeb.Models.SCategoriaProduto", b =>
+                {
+                    b.HasOne("ProdigyWeb.Models.Usuario", "Usuario")
+                        .WithMany()
+                        .HasForeignKey("UsuarioId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Usuario");
                 });
 
             modelBuilder.Entity("ProdigyWeb.Models.SClienteJuridico", b =>

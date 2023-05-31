@@ -130,7 +130,7 @@ namespace ProdigyWeb.Controllers
 
                             _context.Usuarios.Add(usuario);
                             _context.SaveChanges();
-
+                            TempData["Sucesso"] = "Cadastro realizado com sucesso!";
                             return RedirectToAction(nameof(Login));
                         }
                         else
@@ -152,7 +152,8 @@ namespace ProdigyWeb.Controllers
             public async Task<IActionResult> Logout()
             {
                 await _cookie.Logout(HttpContext);
-                return RedirectToAction("Home", "Index");
+                TempData["Sucesso"] = "Sessão finalizada";
+                return RedirectToAction("Index", "Home");
             }
             [HttpPost("UploadImagem")]
             public async Task<IActionResult> UploadImagem(IFormFile? imagem)
@@ -203,6 +204,7 @@ namespace ProdigyWeb.Controllers
                     await _cookie.Logout(HttpContext);
                     _context.Usuarios.Remove(usuarios);
                     _context.SaveChanges();
+                    TempData["Sucesso"] = "O grupo Prodigy agradece a sua utilização!";
                     return RedirectToAction(nameof(Login));
                 }
                 catch(DbException e)

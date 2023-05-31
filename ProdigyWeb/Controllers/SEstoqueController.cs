@@ -24,9 +24,6 @@ namespace ProdigyWeb.Controllers
             {
                 ViewBag.Layout = "Dashboard";
                 var produtos = await _context.SProdutos.Where(x => x.UsuarioId.ToString() == usuarioId).ToListAsync();
-                var categProduto = await _context.SCategoriaProdutos.Where(x => x.UsuarioId.ToString() == usuarioId).ToListAsync();
-
-                ViewBag.CategProduto = categProduto;
 
                 if (produtos != null) return View(produtos);
                 return View();
@@ -35,12 +32,16 @@ namespace ProdigyWeb.Controllers
         }
 
         [HttpGet("AddProduto")]
-        public IActionResult AddProduto()
+        public async Task<IActionResult> AddProduto()
         {
             ClaimsPrincipal claims = HttpContext.User;
+            var usuarioId = User.FindFirst("Id")?.Value;
 
             if (claims.Identity.IsAuthenticated)
             {
+                var categProduto = await _context.SCategoriaProdutos.Where(x => x.UsuarioId.ToString() == usuarioId).ToListAsync();
+
+                ViewBag.CategProduto = categProduto;
                 ViewBag.Layout = "Dashboard";
                 return View();
             }
@@ -60,6 +61,7 @@ namespace ProdigyWeb.Controllers
                     produto.UsuarioId = int.Parse(usuarioId);
                     _context.SProdutos.Add(produto);
                     _context.SaveChanges();
+                    TempData["Sucesso"] = "Produto cadastrado com sucesso!";
                     return RedirectToAction(nameof(Index));
                 }
                 TempData["Erro"] = "Este produta já existe em seu estoque!\nVocê podê atualizar ele em edições de produto.";
@@ -74,19 +76,25 @@ namespace ProdigyWeb.Controllers
         }
 
         [HttpPost("AddCategoriaProduto")]
-        public async Task<IActionResult> AddCategoriaProduto(SCategoriaProduto categProduto)
+        public async Task<IActionResult> AddCategoriaProduto(string nome, string descCategoria)
         {
-            var categProdutosBanco = await _context.SCategoriaProdutos.Where(x => x.Nome.Equals(categProduto.Nome)).FirstOrDefaultAsync();
+            var categProdutosBanco = await _context.SCategoriaProdutos.Where(x => x.Nome.Equals(nome)).FirstOrDefaultAsync();
             var usuarioId = User.FindFirst("Id")?.Value;
+
+            var categProduto = new SCategoriaProduto()
+            {
+                Nome = nome,
+                DescCategoria = descCategoria,
+                UsuarioId = int.Parse(usuarioId)
+            };
 
             try
             {
                 if(categProdutosBanco == null)
                 {
-                    categProduto.UsuarioId = int.Parse(usuarioId);
                     _context.SCategoriaProdutos.Add(categProduto);
                     _context.SaveChanges();
-                    TempData["Erro"] = "Categoria cadastrada!";
+                    TempData["Sucesso"] = "Categoria cadastrada com sucesso!";
                     return RedirectToAction(nameof(Index));
                 }
                 TempData["Erro"] = "Esta categoria já existe!";
