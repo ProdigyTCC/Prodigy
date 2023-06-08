@@ -30,7 +30,7 @@ namespace ProdigyWeb.Controllers
         }
 
         [AllowAnonymous]
-        public void AddSessao()
+        private void AddSessao()
             {
                 ViewBag.Id = User.FindFirst("Id")?.Value;
                 ViewBag.Nome = User.FindFirst(ClaimTypes.Name)?.Value;
@@ -111,7 +111,6 @@ namespace ProdigyWeb.Controllers
             }
 
         [HttpPost("CadastrarUsuario")]
-        
         public async Task<IActionResult> CadastrarUsuario(Usuario usuario)
             {
                 try
@@ -135,7 +134,7 @@ namespace ProdigyWeb.Controllers
                         }
                         else
                         {
-                            TempData["Erro"] = "Email j\u00e1 existe, ou algum campo est\u00e1 incompleto.";
+                            TempData["Erro"] = "Email já existe, ou algum campo está incompleto.";
                             return RedirectToAction(nameof(Cadastrar));
                         }
                     }
@@ -195,18 +194,18 @@ namespace ProdigyWeb.Controllers
             }
 
         [HttpPost("DeletarConta")]
-        public async Task<IActionResult> DeletarConta()
+        public async Task<IActionResult> DeletarConta(string id)
             {
                 var usuarioId = User.FindFirst("Id")?.Value;
                     
                 try
                 {
-                    var usuarios = await _context.Usuarios.FirstOrDefaultAsync(x => x.UsuarioId.ToString() == usuarioId);
-                    await _cookie.Logout(HttpContext);
+                    var usuarios = _context.Usuarios.FirstOrDefault(x => x.UsuarioId.ToString() == id);
                     _context.Usuarios.Remove(usuarios);
                     _context.SaveChanges();
+                    await _cookie.Logout(HttpContext);
                     TempData["Sucesso"] = "O grupo Prodigy agradece a sua utilização!";
-                    return RedirectToAction(nameof(Login));
+                    return RedirectToAction("Index", "Home");
                 }
                 catch(DbException e)
                 {
@@ -215,8 +214,27 @@ namespace ProdigyWeb.Controllers
                 }
             }
 
-        [HttpPost("EditarConta")]
-        public async Task<IActionResult> EditarConta(Usuario usuario)
+        [HttpGet("Atualizar"), AllowAnonymous]
+        public async Task<IActionResult> Atualizar(bool? erroAtualizar)
+        {
+            var usuarioId = User.FindFirst("Id")?.Value;
+            var usuarios = await _context.Usuarios.FirstOrDefaultAsync(x => x.UsuarioId.Equals(int.Parse(usuarioId)));
+
+            ViewBag.Layout = "ProdigyWeb";
+            ClaimsPrincipal claims = HttpContext.User;
+
+            if (claims.Identity.IsAuthenticated)
+            {
+                if(erroAtualizar == true) TempData["Sucesso"] = "Cadastro atualizado com sucesso!";
+
+                AddSessao();
+                return View(usuarios);
+            }
+            return RedirectToAction("Login", "Usuario");
+        }
+
+        [HttpPost("AtualizarConta")]
+        public async Task<IActionResult> AtualizarConta(string Nome, string Cpf, string Email, string DataNascimento, string Senha)
         {   
             try
             {
@@ -228,26 +246,21 @@ namespace ProdigyWeb.Controllers
 
                     if (usuarioBanco != null)
                     {
-                        if (!string.IsNullOrEmpty(usuario.Senha))
+                        if (!string.IsNullOrEmpty(Senha))
                         {
-                            senhaSecreta = hash.CriptografarSenha(usuario.Senha.ToString());
+                            senhaSecreta = hash.CriptografarSenha(Senha.ToString());
                             usuarioBanco.Senha = senhaSecreta;
                         }
 
-                        if (!string.IsNullOrEmpty(usuario.Nome)) usuarioBanco.Nome = usuario.Nome;
-                        if (!string.IsNullOrEmpty(usuario.Email)) usuarioBanco.Email = usuario.Email;
-                        if (!string.IsNullOrEmpty(usuario.Cpf)) usuarioBanco.Cpf = usuario.Cpf;
-                        if (!string.IsNullOrEmpty(usuario.DataNascimento)) usuarioBanco.DataNascimento = usuario.DataNascimento;
+                        if (!string.IsNullOrEmpty(Nome)) usuarioBanco.Nome = Nome;
+                        if (!string.IsNullOrEmpty(Cpf)) usuarioBanco.Cpf = Cpf;
+                        if (!string.IsNullOrEmpty(Email)) usuarioBanco.Email = Email;
+                        if (!string.IsNullOrEmpty(DataNascimento)) usuarioBanco.DataNascimento = DataNascimento;
 
                         _context.Usuarios.Update(usuarioBanco);
                         _context.SaveChanges();
-                        TempData["Sucesso"] = "Cadastro atualizado com sucesso!";
-                        return RedirectToAction(nameof(Index));
-                    }
-                    else
-                    {
-                        TempData["Erro"] = "Algo deu errado! Tente novamente";
-                        return RedirectToAction(nameof(Index));
+
+                        return RedirectToAction("Atualizar", new { erroAtualizar = true});
                     }
                 }
             }

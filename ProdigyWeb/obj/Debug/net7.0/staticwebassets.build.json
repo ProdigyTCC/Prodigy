@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "LKVI0gKytsYI20Kpay4YVS4yx8M5/8TXcANdJntvj54=",
+  "Hash": "8RJ9Kc2T/5HiPw+56sUAlOsUzGzXBAunUWDXNGEDr5w=",
   "Source": "ProdigyWeb",
   "BasePath": "_content/ProdigyWeb",
   "Mode": "Default",
@@ -323,6 +323,23 @@
       "OriginalItemSpec": "wwwroot\\favicon.ico"
     },
     {
+      "Identity": "C:\\Users\\Wallace\\Desktop\\tcc\\Development\\Prodigy\\ProdigyWeb\\wwwroot\\Imagem\\0907e367-3fae-4231-ac39-441a3aad9383_WhatsApp Image 2023-01-04 at 19.29.55.jpeg",
+      "SourceId": "ProdigyWeb",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Wallace\\Desktop\\tcc\\Development\\Prodigy\\ProdigyWeb\\wwwroot\\",
+      "BasePath": "_content/ProdigyWeb",
+      "RelativePath": "Imagem/0907e367-3fae-4231-ac39-441a3aad9383_WhatsApp Image 2023-01-04 at 19.29.55.jpeg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Imagem\\0907e367-3fae-4231-ac39-441a3aad9383_WhatsApp Image 2023-01-04 at 19.29.55.jpeg"
+    },
+    {
       "Identity": "C:\\Users\\Wallace\\Desktop\\tcc\\Development\\Prodigy\\ProdigyWeb\\wwwroot\\Imagem\\1aca124f-682c-4960-9433-4a54a3b8eb02_planet-volumes-qxIObOAjoOc-unsplash.jpg",
       "SourceId": "ProdigyWeb",
       "SourceType": "Discovered",
@@ -442,6 +459,23 @@
       "OriginalItemSpec": "wwwroot\\Imagem\\56fbb6ce-5415-464d-a934-7ed8ca12d033_planet-volumes-qxIObOAjoOc-unsplash.jpg"
     },
     {
+      "Identity": "C:\\Users\\Wallace\\Desktop\\tcc\\Development\\Prodigy\\ProdigyWeb\\wwwroot\\Imagem\\7dbe9efa-b231-4a27-904f-235324de1a23_planet-volumes-qxIObOAjoOc-unsplash.jpg",
+      "SourceId": "ProdigyWeb",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Wallace\\Desktop\\tcc\\Development\\Prodigy\\ProdigyWeb\\wwwroot\\",
+      "BasePath": "_content/ProdigyWeb",
+      "RelativePath": "Imagem/7dbe9efa-b231-4a27-904f-235324de1a23_planet-volumes-qxIObOAjoOc-unsplash.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Imagem\\7dbe9efa-b231-4a27-904f-235324de1a23_planet-volumes-qxIObOAjoOc-unsplash.jpg"
+    },
+    {
       "Identity": "C:\\Users\\Wallace\\Desktop\\tcc\\Development\\Prodigy\\ProdigyWeb\\wwwroot\\Imagem\\8212d2c0-cb36-4a4e-b3f8-6ee4cf591d63_WhatsApp Image 2023-01-04 at 19.29.55.jpeg",
       "SourceId": "ProdigyWeb",
       "SourceType": "Discovered",
@@ -457,6 +491,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\Imagem\\8212d2c0-cb36-4a4e-b3f8-6ee4cf591d63_WhatsApp Image 2023-01-04 at 19.29.55.jpeg"
+    },
+    {
+      "Identity": "C:\\Users\\Wallace\\Desktop\\tcc\\Development\\Prodigy\\ProdigyWeb\\wwwroot\\Imagem\\85fae9ae-8de2-49a5-b8ac-26a12ca7f764_Captura de tela 2023-05-08 205227.png",
+      "SourceId": "ProdigyWeb",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Wallace\\Desktop\\tcc\\Development\\Prodigy\\ProdigyWeb\\wwwroot\\",
+      "BasePath": "_content/ProdigyWeb",
+      "RelativePath": "Imagem/85fae9ae-8de2-49a5-b8ac-26a12ca7f764_Captura de tela 2023-05-08 205227.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Imagem\\85fae9ae-8de2-49a5-b8ac-26a12ca7f764_Captura de tela 2023-05-08 205227.png"
     },
     {
       "Identity": "C:\\Users\\Wallace\\Desktop\\tcc\\Development\\Prodigy\\ProdigyWeb\\wwwroot\\Imagem\\9b5f95c9-cea9-46c6-a8b4-dffe73384707_WhatsApp Image 2023-01-04 at 19.29.55.jpeg",
@@ -593,6 +644,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\Imagem\\beb6fa45-44da-46fd-80c3-9b13610db24a_Captura de tela 2023-05-08 205227.png"
+    },
+    {
+      "Identity": "C:\\Users\\Wallace\\Desktop\\tcc\\Development\\Prodigy\\ProdigyWeb\\wwwroot\\Imagem\\c1fc97be-a9af-414f-b8cc-4dec4e464cc9_App.png",
+      "SourceId": "ProdigyWeb",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Wallace\\Desktop\\tcc\\Development\\Prodigy\\ProdigyWeb\\wwwroot\\",
+      "BasePath": "_content/ProdigyWeb",
+      "RelativePath": "Imagem/c1fc97be-a9af-414f-b8cc-4dec4e464cc9_App.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Imagem\\c1fc97be-a9af-414f-b8cc-4dec4e464cc9_App.png"
     },
     {
       "Identity": "C:\\Users\\Wallace\\Desktop\\tcc\\Development\\Prodigy\\ProdigyWeb\\wwwroot\\Imagem\\d74470fe-8203-46a2-9825-04b39c0e067a_WhatsApp Image 2023-01-04 at 19.29.55.jpeg",
@@ -1239,6 +1307,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\js\\.editorconfig"
+    },
+    {
+      "Identity": "C:\\Users\\Wallace\\Desktop\\tcc\\Development\\Prodigy\\ProdigyWeb\\wwwroot\\js\\atualizarUsuario.js",
+      "SourceId": "ProdigyWeb",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Wallace\\Desktop\\tcc\\Development\\Prodigy\\ProdigyWeb\\wwwroot\\",
+      "BasePath": "_content/ProdigyWeb",
+      "RelativePath": "js/atualizarUsuario.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\atualizarUsuario.js"
     },
     {
       "Identity": "C:\\Users\\Wallace\\Desktop\\tcc\\Development\\Prodigy\\ProdigyWeb\\wwwroot\\js\\doughnut.js",

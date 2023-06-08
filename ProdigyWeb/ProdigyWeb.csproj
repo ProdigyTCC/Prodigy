@@ -25,4 +25,12 @@
     <Folder Include="Models\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <UpToDateCheckInput Remove="Views\Usuario\Atualizar.cshtml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <_ContentIncludedByDefault Remove="Views\Usuario\Atualizar.cshtml" />
+  </ItemGroup>
+
 </Project>

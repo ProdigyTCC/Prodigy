@@ -52,7 +52,7 @@
     </script>
 
 </head>
-<body style="background-color:@ViewBag.color">
+<body>
     @*MENSAGEM DE ERRO*@
     <div class="modal" tabindex="-1" role="dialog" id="modalErro">
         <div class="modal-dialog" role="document">
@@ -99,7 +99,7 @@
                 </div>
                 <div class="modal-footer d-flex justify-content-center">
                     <button class="button-small" data-dismiss="modal">Cancelar</button>
-                    <button type="button" class="button-small-cancel" asp-controller="Usuario" asp-action="DeletarConta" data-dismiss="modal">Deletar</button>
+                    <a style="text-decoration: none;" class="button-small-cancel" asp-controller="Usuario" asp-action="DeletarConta" asp-route-id="@ViewBag.Id" data-dismiss="modal">Deletar</a>
                 </div>
             </div>
         </div>
@@ -260,6 +260,7 @@
         <script src="~/js/perfil.js" asp-append-version="true"></script>
         <script src="~/js/payment.js" asp-append-version="true"></script>
         <script src="~/js/doughnut.js" asp-append-version="true"></script>
+        <script src="~/js/atualizarUsuario.js" asp-append-version="true"></script>
         @await RenderSectionAsync("Scripts", required: false)
     }
     else if(ViewBag.Layout == "Dashboard")
@@ -303,6 +304,7 @@
         <script src="~/js/payment.js" asp-append-version="true"></script>
         <script src="~/js/doughnut.js" asp-append-version="true"></script>
         <script src="~/js/estoque.js" asp-append-version="true"></script>
+        <script src="~/js/atualizarUsuario.js" asp-append-version="true"></script>
         @await RenderSectionAsync("Scripts", required: false)
     }
 

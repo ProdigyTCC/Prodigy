@@ -5,6 +5,10 @@
       "PackagePath": "staticwebassets\\ProdigyWeb.bundle.scp.css"
     },
     {
+      "Id": "C:\\Users\\Wallace\\Desktop\\tcc\\Development\\Prodigy\\ProdigyWeb\\wwwroot\\Imagem\\0907e367-3fae-4231-ac39-441a3aad9383_WhatsApp Image 2023-01-04 at 19.29.55.jpeg",
+      "PackagePath": "staticwebassets\\Imagem\\0907e367-3fae-4231-ac39-441a3aad9383_WhatsApp Image 2023-01-04 at 19.29.55.jpeg"
+    },
+    {
       "Id": "C:\\Users\\Wallace\\Desktop\\tcc\\Development\\Prodigy\\ProdigyWeb\\wwwroot\\Imagem\\1aca124f-682c-4960-9433-4a54a3b8eb02_planet-volumes-qxIObOAjoOc-unsplash.jpg",
       "PackagePath": "staticwebassets\\Imagem\\1aca124f-682c-4960-9433-4a54a3b8eb02_planet-volumes-qxIObOAjoOc-unsplash.jpg"
     },
@@ -33,8 +37,16 @@
       "PackagePath": "staticwebassets\\Imagem\\56fbb6ce-5415-464d-a934-7ed8ca12d033_planet-volumes-qxIObOAjoOc-unsplash.jpg"
     },
     {
+      "Id": "C:\\Users\\Wallace\\Desktop\\tcc\\Development\\Prodigy\\ProdigyWeb\\wwwroot\\Imagem\\7dbe9efa-b231-4a27-904f-235324de1a23_planet-volumes-qxIObOAjoOc-unsplash.jpg",
+      "PackagePath": "staticwebassets\\Imagem\\7dbe9efa-b231-4a27-904f-235324de1a23_planet-volumes-qxIObOAjoOc-unsplash.jpg"
+    },
+    {
       "Id": "C:\\Users\\Wallace\\Desktop\\tcc\\Development\\Prodigy\\ProdigyWeb\\wwwroot\\Imagem\\8212d2c0-cb36-4a4e-b3f8-6ee4cf591d63_WhatsApp Image 2023-01-04 at 19.29.55.jpeg",
       "PackagePath": "staticwebassets\\Imagem\\8212d2c0-cb36-4a4e-b3f8-6ee4cf591d63_WhatsApp Image 2023-01-04 at 19.29.55.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\Wallace\\Desktop\\tcc\\Development\\Prodigy\\ProdigyWeb\\wwwroot\\Imagem\\85fae9ae-8de2-49a5-b8ac-26a12ca7f764_Captura de tela 2023-05-08 205227.png",
+      "PackagePath": "staticwebassets\\Imagem\\85fae9ae-8de2-49a5-b8ac-26a12ca7f764_Captura de tela 2023-05-08 205227.png"
     },
     {
       "Id": "C:\\Users\\Wallace\\Desktop\\tcc\\Development\\Prodigy\\ProdigyWeb\\wwwroot\\Imagem\\9b5f95c9-cea9-46c6-a8b4-dffe73384707_WhatsApp Image 2023-01-04 at 19.29.55.jpeg",
@@ -67,6 +79,10 @@
     {
       "Id": "C:\\Users\\Wallace\\Desktop\\tcc\\Development\\Prodigy\\ProdigyWeb\\wwwroot\\Imagem\\beb6fa45-44da-46fd-80c3-9b13610db24a_Captura de tela 2023-05-08 205227.png",
       "PackagePath": "staticwebassets\\Imagem\\beb6fa45-44da-46fd-80c3-9b13610db24a_Captura de tela 2023-05-08 205227.png"
+    },
+    {
+      "Id": "C:\\Users\\Wallace\\Desktop\\tcc\\Development\\Prodigy\\ProdigyWeb\\wwwroot\\Imagem\\c1fc97be-a9af-414f-b8cc-4dec4e464cc9_App.png",
+      "PackagePath": "staticwebassets\\Imagem\\c1fc97be-a9af-414f-b8cc-4dec4e464cc9_App.png"
     },
     {
       "Id": "C:\\Users\\Wallace\\Desktop\\tcc\\Development\\Prodigy\\ProdigyWeb\\wwwroot\\Imagem\\d74470fe-8203-46a2-9825-04b39c0e067a_WhatsApp Image 2023-01-04 at 19.29.55.jpeg",
@@ -283,6 +299,10 @@
     {
       "Id": "C:\\Users\\Wallace\\Desktop\\tcc\\Development\\Prodigy\\ProdigyWeb\\wwwroot\\js\\.editorconfig",
       "PackagePath": "staticwebassets\\js\\.editorconfig"
+    },
+    {
+      "Id": "C:\\Users\\Wallace\\Desktop\\tcc\\Development\\Prodigy\\ProdigyWeb\\wwwroot\\js\\atualizarUsuario.js",
+      "PackagePath": "staticwebassets\\js\\atualizarUsuario.js"
     },
     {
       "Id": "C:\\Users\\Wallace\\Desktop\\tcc\\Development\\Prodigy\\ProdigyWeb\\wwwroot\\js\\doughnut.js",

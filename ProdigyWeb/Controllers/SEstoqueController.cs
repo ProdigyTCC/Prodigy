@@ -52,20 +52,22 @@ namespace ProdigyWeb.Controllers
         }
 
         [HttpPost("AddProdutoBanco")]
-        public async Task<IActionResult> AddProdutoBanco(SProduto produto, IFormFile? imagem)
+        public async Task<IActionResult> AddProdutoBanco(SProduto produto, IFormFile? imagem) 
         {
-            var produtoBanco = await _context.SProdutos.FirstOrDefaultAsync(x => x.Nome == produto.Nome);
             var usuarioId = User.FindFirst("Id")?.Value;
 
-            string caminhoAddFoto = _caminhoServidor + "\\Imagem\\";
+            var produtoBanco = await _context.SProdutos.FirstOrDefaultAsync(x => x.Nome.Equals(produto.Nome) &&
+                x.UsuarioId.ToString().Equals(usuarioId));
+
+            string caminhoImagem = _caminhoServidor + "\\Imagem\\";
             string nomeImagem = Guid.NewGuid().ToString() + "_" + imagem.FileName;
 
-            if (!Directory.Exists(caminhoAddFoto))
+            if (!Directory.Exists(caminhoImagem))
             {
-                Directory.CreateDirectory(caminhoAddFoto);
+                Directory.CreateDirectory(caminhoImagem);
             }
 
-            using (var stream = System.IO.File.Create(caminhoAddFoto + nomeImagem))
+            using (var stream = System.IO.File.Create(caminhoImagem + nomeImagem))
             {
                 await imagem.CopyToAsync(stream);
             }
@@ -75,8 +77,10 @@ namespace ProdigyWeb.Controllers
                 {
                     produto.Imagem = nomeImagem;
                     produto.UsuarioId = int.Parse(usuarioId);
+
                     _context.SProdutos.Add(produto);
                     _context.SaveChanges();
+
                     TempData["Sucesso"] = "Produto cadastrado com sucesso!";
                     return RedirectToAction(nameof(Index));
                 }
@@ -86,7 +90,6 @@ namespace ProdigyWeb.Controllers
             catch(DbException e)
             {
                 TempData["Erro"] = $"Erro cadastrar o produto {e.Message}";
-                ViewBag.Produto = produto;
                 return RedirectToAction(nameof(AddProduto));
             }
         }
@@ -94,8 +97,10 @@ namespace ProdigyWeb.Controllers
         [HttpPost("AddCategoriaProduto")]
         public async Task<IActionResult> AddCategoriaProduto(string nome, string descCategoria)
         {
-            var categProdutosBanco = await _context.SCategoriaProdutos.Where(x => x.Nome.Equals(nome)).FirstOrDefaultAsync();
             var usuarioId = User.FindFirst("Id")?.Value;
+
+            var categProdutosBanco = await _context.SCategoriaProdutos.Where(x => x.Nome.Equals(nome) && 
+                x.UsuarioId.ToString().Equals(usuarioId)).FirstOrDefaultAsync();
 
             var categProduto = new SCategoriaProduto()
             {

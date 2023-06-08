@@ -1,0 +1,159 @@
+﻿@model ProdigyWeb.Models.Usuario
+@{
+    ViewData["Title"] = "Atualizar";
+}
+<div class="section-profile container-fluid d-flex flex-row justify-content-between pt-3 pb-5">
+    <div class="container-fluid card-profile d-flex flex-column w-50">
+            <ul class="nav nav-pills mb-3 mt-3 d-flex flex-row justify-content-around" id="pills-tab" role="tablist">
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link active" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-geral" type="button" role="tab" aria-controls="pills-geral" aria-selected="true">Geral</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#pills-conta" type="button" role="tab" aria-controls="pills-conta" aria-selected="false">Conta</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="pills-contact-tab" data-bs-toggle="pill" data-bs-target="#pills-endereco" type="button" role="tab" aria-controls="pills-endereco" aria-selected="false">Endereço</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="pills-contact-tab" data-bs-toggle="pill" data-bs-target="#pills-empresa" type="button" role="tab" aria-controls="pills-empresa" aria-selected="false">Empresa</button>
+                </li>
+            </ul>
+        <hr class="line-profile">
+
+        <div class="tab-content mx-3 mb-2" id="pills-tabContent">
+            @*PAINEL GERAL *@
+            <div class="tab-pane fade show active" id="pills-geral" role="tabpanel" aria-labelledby="pills-geral-tab">
+                <p class="label-profile pb-1 m-0">Data de Vencimento Mensal</p>
+                <div class="input-group pb-3">
+                    <input class="form-control" value="" type="date" placeholder="Nome" disabled>
+                </div>
+
+                <p class="label-profile pb-1 m-0">Data de Registro</p>
+                <div class="input-group pb-3">
+                    <input class="form-control" value="" type="text" placeholder="00/00/0000" disabled>
+                </div>
+
+                <p class="label-profile pb-1 m-0">Status de Pagamento</p>
+                <div class="input-group pb-3">
+                    <input class="form-control" value="" type="text" placeholder="Informação" aria-label="Disabled input example" disabled>
+                </div>
+
+                <p class="label-profile pb-1 m-0">Plano Atual</p>
+                <div class="input-group pb-3">
+                        <input class="form-control" value="@Model.Plano" type="text" placeholder="Plano" aria-label="Disabled input example" disabled>
+                </div>
+                <p class="label-profile pb-1 m-0">Vencimento do plano</p>
+                <div class="input-group pb-3">
+                    <input class="form-control" type="text" placeholder="29/07/2023" aria-label="Disabled input example" disabled>
+                </div>
+
+                <div class="container d-flex justify-content-end p-0">
+                    <button id="btnEditGeral" type="button" class="buttonConfirm button-small">Editar</button>
+                    <button id="btnCancelGeral" type="button" class="buttonCancel button-small-cancel mx-2">Cancelar</button>
+                    <button id="btnConfirmGeral" type="submit" class="buttonConfirm button-small">Confirmar</button>
+                </div>
+            </div>
+
+            @*PAINEL CONTA*@
+            <div class="tab-pane fade" id="pills-conta" role="tabpanel" aria-labelledby="pills-conta-tab">
+                <div id="FormConta">
+                    
+                    <p class="label-profile pb-1 m-0">Nome</p>
+                    <div class="input-group pb-3">
+                        <input name="Nome" id="inputNome" class="inputProfile form-control" value="@Model.Nome" type="text" placeholder="Nome" disabled>
+                    </div>
+
+                    <p class="label-profile pb-1 m-0">CPF</p>
+                    <div class="input-group pb-3">
+                        <input name="Cpf" id="inputCpf" class="inputProfile form-control" value="@Model.Cpf" type="text" placeholder="000.000.000-00" disabled>
+                    </div>
+
+                    <p class="label-profile pb-1 m-0">Email</p>
+                    <div class="input-group pb-3">
+                        <input name="Email" id="inputEmail" class="inputProfile form-control" value="@Model.Email" type="email" placeholder="email@email" disabled>
+                    </div>
+
+                    <p class="label-profile pb-1 m-0">Data de nascimento</p>
+                    <div class="input-group pb-3">
+                        <input name="DataNascimento" id="inputDtNasc" class="inputProfile form-control" value="@Model.DataNascimento" type="text" placeholder="00/00/00" disabled>
+                    </div>
+
+
+                    <p class="label-profile pb-1 m-0">Senha</p>
+                    <div class="input-group pb-3">
+                        <input name="Senha" id="inputSenha" class="inputProfile form-control" type="password" placeholder="Nova Senha" disabled>
+                    </div>
+
+                    <div class="container d-flex justify-content-end p-0">
+                        <button id="btnEditConta" type="button" class="buttonConfirm button-small">Editar</button>
+                        <button id="btnCancelConta" type="button" class="buttonCancel button-small-cancel mx-2">Cancelar</button>
+                        <button id="btnConfirmConta" onclick="submitConta()" class="buttonConfirm button-small">Confirmar</button>
+                    </div>
+                </div>
+            </div>
+            <script>
+                function submitConta() {
+
+                    var formData = new FormData()
+
+                    var nomeInput = document.querySelector("#FormConta input[name='Nome']")
+                    var cpfInput = document.querySelector("#FormConta input[name='Cpf']")
+                    var emailInput = document.querySelector("#FormConta input[name='Email']")
+                    var dtNascimentoInput = document.querySelector("#FormConta input[name='DataNascimento']")
+                    var senhaInput = document.querySelector("#FormConta input[name='Senha']")
+
+                    formData.append("Nome", nomeInput.value);
+                    formData.append("Cpf", cpfInput.value);
+                    formData.append("Email", emailInput.value);
+                    formData.append("DataNascimento", dtNascimentoInput.value);
+                    formData.append("Senha", senhaInput.value);
+
+                    fetch("/Usuario/AtualizarConta", {
+                        method: "POST",
+                        body: formData
+                    })
+                        .then(function (response) {
+                            @TempData["Sucesso"] = "Cadastro realizado com sucesso!"
+                            location.reload()
+                        })
+                }
+            </script>
+
+            @*PAINEL ENDERECO*@
+            <div class="tab-pane fade" id="pills-endereco" role="tabpanel" aria-labelledby="pills-endereco-tab">
+                <p class="label-profile pb-1 m-0">Rua</p>
+                <div class="input-group pb-3">
+                    <input class="inputProfile form-control" value="" type="text" placeholder="Endereço" disabled>
+                </div>
+
+                <p class="label-profile pb-1 m-0">Número</p>
+                <div class="input-group pb-3">
+                    <input class="inputProfile form-control" value="" type="text" placeholder="000" disabled>
+                </div>
+
+                <p class="label-profile pb-1 m-0">Email</p>
+                <div class="input-group pb-3">
+                    <input class="inputProfile form-control" value="" type="email" placeholder="email@email" disabled>
+                </div>
+
+                <p class="label-profile pb-1 m-0">Data de nascimento</p>
+                <div class="input-group pb-3">
+                    <input class="inputProfile form-control" value="" type="date" placeholder="00/00/00" disabled>
+                </div>
+
+                <p class="label-profile pb-1 m-0">CPF</p>
+                <div class="input-group pb-3">
+                    <input class="inputProfile form-control" value="" type="text" placeholder="000.000.000-00" disabled>
+                </div>
+                <div class="container d-flex justify-content-end p-0">
+                    <button id="btnEditEndereco" type="button" class="buttonConfirm button-small">Editar</button>
+                    <button id="btnCancelEndereco" type="button" class="buttonCancel button-small-cancel mx-2">Cancelar</button>
+                    <button id="btnConfirmEndereco" type="button" class="buttonConfirm button-small">Confirmar</button>
+                </div>
+            </div>
+
+            @*PAINEL EMPRESA*@
+            <div class="tab-pane fade" id="pills-empresa" role="tabpanel" aria-labelledby="pills-empresa-tab">D</div>
+        </div>
+    </div>
+</div>
