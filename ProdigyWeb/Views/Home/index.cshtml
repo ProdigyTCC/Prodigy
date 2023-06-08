@@ -1,67 +1,68 @@
-    @{
-        ViewData["Title"] = "Home";
-    }
-    
-    <div class="container-fluid m-0 pb-5 d-flex justify-content-center img-right div-home">
-        <div class="container-fluid texto-home m-0">
-            <p class="texto-principal">Transformando desafios em oportunidades de sucesso! A gestão empresarial que sua empresa merece.</p>
-            <a asp-area="" asp-controller="Home" asp-action="Planos"><button type="button" class="btn primary-button">Conheça nossos planos</button></a>
+@{
+    ViewData["Title"] = "Home";
+}
+
+<div class="div-home texto-branco">
+    <div class="texto-home m-0">
+        <p class="texto-principal">Transformando desafios em oportunidades de sucesso! A gestão empresarial que sua empresa merece.</p>
+        <a asp-area="" asp-controller="Home" asp-action="Planos"><button type="button" class="btn primary-button">Conheça nossos planos</button></a>
+    </div>
+    <div class="img-home-index">
+        <img class="imagem-principal" src="../img/presentation.png" alt="">
+    </div>
+</div>
+
+<div class="secao-light">
+    <div class="sections-home texto-verde">
+        <div class="text-center titulo-index">Produtos</div>
+        <div class="div-img-left">
+            <p class="texto-home-right">
+                Oferecemos uma ampla gama de produtos de software de gestão empresarial que podem
+                ajudar a gerenciar todos os aspectos do seu negócio, desde finanças e recursos humanos até
+                gerenciamento de projetos e análise de dados. Com a Prodigy, você pode otimizar seus processos
+                de negócios e tomar decisões mais informadas e estratégicas.
+            </p>
+            <img class="img-fluid img-home-left" src="../img/panel1.png" alt="">
         </div>
-            <div class="imagem-principal">
-                <img class="img-fluid" src="../img/presentation.png" alt="">
-            </div>
     </div>
 
-    <div class="secao-light">
-      <div class="container-fluid text-center pt-5 titulo-index">Produtos</div>
-      <div class="container-fluid pb-5 d-flex img-left texto-verde">
-        <div class="container texto-sobre">
-          <p class="texto">Oferecemos uma ampla gama de produtos de software de gestão empresarial que podem
-          ajudar a gerenciar todos os aspectos do seu negócio, desde finanças e recursos humanos até 
-          gerenciamento de projetos e análise de dados. Com a Prodigy, você pode otimizar seus processos
-          de negócios e tomar decisões mais informadas e estratégicas.</p>
-        </div>
-        <div class="container img-sobre">
-          <img src="../img/panel1.png" alt="">
-        </div>
-      </div>
 
-      <div class="container-fluid text-center pt-5 titulo-index">Benefícios</div>
-      <div class="container-fluid pb-5 d-flex img-right texto-verde">
-        <div class="container texto-sobre">
-          <p class="texto">Ao usar o software de gestão empresarial Prodigy, você pode economizar tempo e dinheiro, além de aumentar
-           a precisão dos dados e a facilidade de colaboração. Nossos produtos são projetados para ajudá-lo a tomar decisões
-           melhores e mais informadas, com base em dados precisos e em tempo real.</p>
+    <div class="sections-home texto-verde">
+        <div class="text-center titulo-index">Benefícios</div>
+        <div div class="div-img-right">
+            <p class="texto-home-left">
+                Ao usar o software de gestão empresarial Prodigy, você pode economizar tempo e dinheiro, além de aumentar
+                a precisão dos dados e a facilidade de colaboração. Nossos produtos são projetados para ajudá-lo a tomar decisões
+                melhores e mais informadas, com base em dados precisos e em tempo real.
+            </p>
+            <img class="img-fluid img-home-right" src="../img/panel2.png" alt="">
         </div>
-        <div class="container img-sobre">
-          <img src="../img/panel2.png" alt="">
-        </div>
-      </div>
     </div>
+</div>
 
-      <div class="container-fluid text-center pt-5 titulo2">Soluções Personalizadas</div>
-      <div class="container-fluid pb-5 d-flex img-left texto-branco">
-        <div class="container texto-sobre">
-          <p class="texto">Entendemos que cada empresa é única, e é por isso que oferecemos soluções personalizadas
-             para atender às necessidades específicas de cada cliente. Nós trabalhamos com você para
-              entender suas necessidades e objetivos de negócios, garantindo que nossos produtos ajudem
-               a alcançar os resultados desejados.</p>
-        </div>
-        <div class="container img-sobre">
-          <img src="../img/panel3.png" alt="">
-        </div>
-      </div>
-
-    <div class="secao-light">
-      <div class="container-fluid text-center pt-5 titulo-index">Suporte ao Cliente</div>
-      <div class="container-fluid pb-5 d-flex img-right texto-verde">
-        <div class="container texto-sobre">
-          <p class="texto">Nós valorizamos nossos clientes e estamos sempre disponíveis para fornecer suporte de alta qualidade,
-             incluindo treinamento e suporte técnico. Temos uma equipe dedicada pronta para ajudá-lo em qualquer
-             etapa do caminho.</p>
-        </div>
-        <div class="container img-sobre">
-          <img src="../img/panel4.png" alt="">
-        </div>
-      </div>
+<div class="sections-home texto-branco">
+    <div class="text-center titulo-index">Soluções Personalizadas</div>
+    <div class="div-img-left">
+        <p class="texto-home-right">
+            Entendemos que cada empresa é única, e é por isso que oferecemos soluções personalizadas
+            para atender às necessidades específicas de cada cliente. Nós trabalhamos com você para
+            entender suas necessidades e objetivos de negócios, garantindo que nossos produtos ajudem
+            a alcançar os resultados desejados.
+        </p>
+        <img class="img-fluid img-home-left" src="../img/panel3.png" alt="">
     </div>
+</div>
+
+<div class="secao-light">
+    <div class="sections-home texto-verde">
+        <div class="text-center titulo-index">Suporte ao Cliente</div>
+        <div class="div-img-right">
+            <p class="texto-home-left">
+                Nós valorizamos nossos clientes e estamos sempre disponíveis para fornecer suporte de alta qualidade,
+                incluindo treinamento e suporte técnico. Temos uma equipe dedicada pronta para ajudá-lo em qualquer
+                etapa do caminho.
+            </p>
+            <img class="img-fluid img-home-right" src="../img/panel4.png" alt="">
+        </div>
+    </div>
+</div>

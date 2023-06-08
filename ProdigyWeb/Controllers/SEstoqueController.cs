@@ -10,8 +10,11 @@ namespace ProdigyWeb.Controllers
     public class SEstoqueController : Controller
     {
         private readonly ProdigyWebContext _context;
-        public SEstoqueController(ProdigyWebContext context)
+        private string _caminhoServidor;
+        public SEstoqueController(ProdigyWebContext context,
+            IWebHostEnvironment caminhoServidor)
         {
+            _caminhoServidor = caminhoServidor.WebRootPath;
             _context = context;
         }
 
@@ -24,7 +27,7 @@ namespace ProdigyWeb.Controllers
             {
                 ViewBag.Layout = "Dashboard";
                 var produtos = await _context.SProdutos.Where(x => x.UsuarioId.ToString() == usuarioId).ToListAsync();
-
+                
                 if (produtos != null) return View(produtos);
                 return View();
             }
@@ -49,15 +52,28 @@ namespace ProdigyWeb.Controllers
         }
 
         [HttpPost("AddProdutoBanco")]
-        public async Task<IActionResult> AddProdutoBanco(SProduto produto)
+        public async Task<IActionResult> AddProdutoBanco(SProduto produto, IFormFile? imagem)
         {
-            var produtoBanco = await _context.SProdutos.FindAsync(produto.Nome);
+            var produtoBanco = await _context.SProdutos.FirstOrDefaultAsync(x => x.Nome == produto.Nome);
             var usuarioId = User.FindFirst("Id")?.Value;
 
+            string caminhoAddFoto = _caminhoServidor + "\\Imagem\\";
+            string nomeImagem = Guid.NewGuid().ToString() + "_" + imagem.FileName;
+
+            if (!Directory.Exists(caminhoAddFoto))
+            {
+                Directory.CreateDirectory(caminhoAddFoto);
+            }
+
+            using (var stream = System.IO.File.Create(caminhoAddFoto + nomeImagem))
+            {
+                await imagem.CopyToAsync(stream);
+            }
             try
             {
-                if(produtoBanco != null)
+                if(produtoBanco == null)
                 {
+                    produto.Imagem = nomeImagem;
                     produto.UsuarioId = int.Parse(usuarioId);
                     _context.SProdutos.Add(produto);
                     _context.SaveChanges();
@@ -105,6 +121,27 @@ namespace ProdigyWeb.Controllers
                 TempData["Erro"] = $"Erro ao cadastrar no banco {e.Message}";
                 return RedirectToAction(nameof(Index));
             }
+        }
+
+        public async Task<IActionResult> Editar(int? id)
+        {
+            var produtos = await _context.SProdutos.FirstOrDefaultAsync(x => x.SProdutoId.Equals(id));
+
+            ClaimsPrincipal claims = HttpContext.User;
+            var usuarioId = User.FindFirst("Id")?.Value;
+
+            if (claims.Identity.IsAuthenticated)
+            {
+                if (produtos != null)
+                {
+                    ViewBag.Layout = "Dashboard";
+                    return View(produtos);
+                }
+                ViewBag.Layout = "Dashboard";
+                return View();
+            }
+            return RedirectToAction("Login", "Usuario");
+
         }
     }
 }

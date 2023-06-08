@@ -13,15 +13,13 @@ namespace ProdigyWeb.Models
         public int CartaoId { get; set; }
 
         [Display(Name = "Número do cartão")]
-        [Required(ErrorMessage = "* Campo obirgatório")]
-        public int NumeroCartao { get; set; }
+        public string NumeroCartao { get; set; }
 
         [Display(Name = "Código do cartão")]
         public int Codigo { get; set; }
 
         [MaxLength(100)]
         [Display(Name = "Nome do titular")]
-        [Required(ErrorMessage = "* Campo obirgatório")]
         public string NomeTitular { get; set; }
 
         [Display(Name = "Tipo do cartão")]
@@ -29,7 +27,6 @@ namespace ProdigyWeb.Models
 
         [MaxLength(14)]
         [Display(Name = "CPF do titular")]
-        [Required(ErrorMessage = "* Campo obirgatório")]
         public string CpfTitular { get; set; }
 
         [MaxLength(18)]
@@ -37,8 +34,11 @@ namespace ProdigyWeb.Models
         public string CnpjTitular { get; set; }
         
         [Display(Name = "Data de Validade")]
-        [Required(ErrorMessage = "* Campo obirgatório")]
-        public DateOnly ValidadeCartao { get; set; }
+        public string ValidadeCartao { get; set; }
+
+        [ForeignKey("UsuarioId")]
+        public virtual Usuario Usuario { get; set; }
+        public int UsuarioId { get; set; }
         [NotMapped]
         public virtual List<Pagamento> Pagamentos { get; set; }
     }

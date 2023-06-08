@@ -27,25 +27,23 @@ namespace ProdigyWeb.Models
 
         [MaxLength(50)]
         [Display(Name = "Fabricante")]
-        [Required(ErrorMessage = "*Campo obrigatório!")]
         public string Marca { get; set; }
 
         [Display(Name = "Data de validade")]
-        public DateTime DataValidade { get; set; }
+        public string DataValidade { get; set; }
         
         [Display(Name = "Data de entrada do produto")]
-        [Required(ErrorMessage = "*Campo obrigatório!")]
-        public DateTime DataEntrada { get; set; }
+        public string DataEntrada { get; set; }
         
         [Display(Name = "Imagem do produto")]
         public string Imagem { get; set; }
 
         [Display(Name = "Valor de custo")]
         [Required(ErrorMessage = "*Campo obrigatório!")]
-        public decimal ValorInicial { get; set; }
+        public string ValorInicial { get; set; }
 
         [Display(Name = "Valor de venda")]
-        public decimal ValorFinal { get; set; }
+        public string ValorFinal { get; set; }
         [NotMapped]
 
         public virtual List<SVenda> SVendas { get; set; }

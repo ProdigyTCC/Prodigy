@@ -12,7 +12,7 @@
                 <tr>
                 <th scope="col">#</th>
                 <th scope="col">Produto</th>
-                <th scope="col">Categoria</th>
+                <th scope="col">Marca</th>
                 <th scope="col">Qtd</th>
                 <th scope="col">Valor compra</th>
                 <th scope="col">Valor venda</th>
@@ -25,17 +25,17 @@
                     foreach(var item in Model)
                     {
                         <tr>
-                            <th scope="row">1</th>
+                            <th scope="row">@item.SProdutoId</th>
                             <td>@item.Nome</td>
-                            <td>@item.SCategoriaProdutoId</td>
+                            <td>@item.Marca</td>
                             <td>@item.QuantProduto</td>
                             <td>@item.ValorInicial</td>
                             <td>@item.ValorFinal</td>
                             <td>
                                 <div class="d-flex botoes-estoque">
                                     <button id="buttonAddProd" class="botao-estoque" href=""><i class="fa-solid fa-square-plus fa-xl"></i></button>
-                                    <button type="button" class="botao-estoque" data-bs-toggle="modal" data-bs-target="#editProduto"><i class="fa-solid fa-square-pen fa-xl"></i></button>
-                                    <button type="button" class="botao-estoque" data-bs-toggle="modal" data-bs-target="#verInfoProduto" data-bs-whatever="mdo"><i class="fa-solid fa-circle-info fa-xl"></i></button>
+                                    <a asp-controller="SEstoque" asp-action="Editar" asp-route-id="@item.SProdutoId" type="button" class="botao-estoque"><i class="fa-solid fa-square-pen fa-xl"></i></a>
+                                    <a asp-action="InfoProdutos"  type="button" class="botao-estoque" data-bs-toggle="modal" data-bs-target="#verInfoProduto" data-bs-whatever="mdo"><i class="fa-solid fa-circle-info fa-xl"></i></a>
                                 </div>
                             </td>
                         </tr>
@@ -44,10 +44,10 @@
             </tbody>
         </table>
     </div>
-
+    
     <div class="div-botoes-estoque w-75 d-flex flex-row justify-content-between">
-        <a class="" asp-area="" asp-controller="SEstoque" asp-action="Addproduto"><button class="button-dash-default">Adicionar produto</button></a>
-        <button class="button-dash-default" data-bs-toggle="modal" data-bs-target="#addCategoria">Adicionar Categoria</button>
+        <a class="" asp-area="" asp-controller="SEstoque" asp-action="Addproduto"><button class="button-small">Adicionar produto</button></a>
+        <button class="button-small" data-bs-toggle="modal" data-bs-target="#addCategoria">Adicionar Categoria</button>
     </div>
 
         @* MODAL EDITAR PRDUTO *@
@@ -129,7 +129,7 @@
         </div>
         @* FIM DO MODAL EDITAR PRODUTO *@
 
-        @* MODAL INFORMAÇÕES *@
+    @* MODAL INFORMAÇÕES*@
         <div class="modal fade" id="verInfoProduto" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog modal-fullscreen-xl-down text-dark w-100">
                 <div class="modal-content">
@@ -148,7 +148,7 @@
                                 <form>
                                     <div class="mb-3">
                                         <label for="recipient-name" class="col-form-label">Nome</label>
-                                        <input type="text" class="form-control" id="recipient-name" disabled>
+                                            <input value="" type="text" class="form-control" id="recipient-name" disabled>
                                     </div>
                                     <div class="mb-3">
                                         <label for="recipient-name" class="col-form-label">Descrição</label>
@@ -203,7 +203,7 @@
                 </div>
             </div>
         </div>
-        @* FIM DAS INFORMAÇÕES *@
+    @* FIM DAS INFORMAÇÕES *@
 
     @* ADICIONAR CATEGORIA *@
     <div class="modal" id="addCategoria" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">

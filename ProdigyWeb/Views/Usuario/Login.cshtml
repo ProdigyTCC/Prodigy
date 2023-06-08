@@ -2,24 +2,24 @@
 @{
     ViewData["Title"] = "Login";
 }
-  
-  <div class="card-login">
-    <h1 class="text-center my-4 pt-4">Login</h1>
-      <div class="formulario d-flex flex-column justify-content-center">
-          <form asp-controller="Usuario" asp-action="LoginUsuario">
-              <div class="mb-3 ms-5 me-5 text-start">
+
+<div class="card-login">
+    <h1 class="text-center my-4 fw-bold">Login</h1>
+    <div class="formulario d-flex flex-column justify-content-center">
+        <form asp-controller="Usuario" asp-action="LoginUsuario">
+            <div class="mb-3 ms-5 me-5 text-start">
                 <p class="label-profile pb-1 m-0">Email</p>
                 <input type="email" asp-for="Email" id="email" placeholder="exemplo@exemplo.com" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" required>
-              </div>
-              <div class="mb-3 ms-5 me-5 text-start">
+            </div>
+            <div class="mb-3 ms-5 me-5 text-start">
                 <p class="label-profile pb-1 m-0">Senha</p>
                 <input type="password" asp-for="Senha" id="" placeholder="*****************" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" required>
-              </div>
-              <div class="botao-esqueceu-senha d-flex flex-column justify-content-center align-items-center mb-3">
+            </div>
+            <div class="botao-esqueceu-senha d-flex flex-column justify-content-center align-items-center pt-3 mb-3">
                 <a class="mb-3" href="">Esqueceu sua senha?</a>
-                <button type="submit" class="button-small">Entrar</button>
-              </div>
-          </form>
-      </div>
+                <button type="submit" class="primary-button">Entrar</button>
+            </div>
+        </form>
     </div>
-  <div class="registro"><a asp-area="" asp-controller="Usuario" asp-action="Cadastrar">Não tem conta? Cadastre-se</a></div>
+</div>
+<div class="registro"><a asp-area="" asp-controller="Usuario" asp-action="Cadastrar">Não tem conta? Cadastre-se</a></div>

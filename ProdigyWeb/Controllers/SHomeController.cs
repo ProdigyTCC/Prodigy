@@ -12,6 +12,7 @@ namespace ProdigyWeb.Controllers
             if (claims.Identity.IsAuthenticated)
             {
                 ViewBag.Layout = "Dashboard";
+                ViewBag.color = "#E2F0EF";
                 return View();
             }
             return RedirectToAction("Login","Usuario");

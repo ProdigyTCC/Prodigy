@@ -1,4 +1,5 @@
-button {
+.primary-button, .secondary-button, .button-edit, .button-small,
+.button-small-cancel, .button-small-confirm, .button-modal-cancel, .button-modal-confirm, .button-white {
     text-align: center;
     border: none;
     border-radius: 5px;
@@ -25,16 +26,16 @@ button {
     color: #E2F0EF;
     font-size: 18px;
     font-weight: 600;
-  }
-  
-  /* BOTÕES MODAL COM O MESMO TAMANHO */
-  .button-modal-confirm, .button-modal-cancel {
+}
+
+/* BOTÕES MODAL COM O MESMO TAMANHO */
+.button-modal-confirm, .button-modal-cancel {
     width: 8rem;
     height: 2.5rem;
     color: #E2F0EF;
     font-size: 16px;
     font-weight: 600;
-  }
+}
 
 .secondary-button {
     width: 350px;
@@ -52,61 +53,61 @@ button {
     font-size: 20px;
     font-weight: 600;
     background-color: #2D3037;
-  }
+}
 
 /* BOTÕES COM A MESMA COR - VERDE*/
-.primary-button, .button-dash-default, .button-modal-confirm, .button-small, .button-small-confirm  {
+.primary-button, .button-dash-default, .button-modal-confirm, .button-small, .button-small-confirm {
     color: #E2F0EF;
     background-color: #30BEB2;
 }
 
 /* BOTÃO COM A MESMA COR - BRANCA */
 .button-white {
-  color: #1D7870;
-  background-color: #E2F0EF;
+    color: #1D7870;
+    background-color: #E2F0EF;
 }
 
- /* BOTÕES COM A MESMA COR - VERMELHA */
- .button-small-cancel, .button-modal-cancel {
+/* BOTÕES COM A MESMA COR - VERMELHA */
+.button-small-cancel, .button-modal-cancel {
     background-color: #c71f37;
-  }
+}
 
 
 /* HOVERS */
 
 
-  /* BOTÕES COM O MESMO HOVER - VERDE ESCURO */
-  .button-confirm:hover, .button-small-confirm:hover, .button-dash-default:hover {
+/* BOTÕES COM O MESMO HOVER - VERDE ESCURO */
+.button-confirm:hover, .button-small-confirm:hover, .button-dash-default:hover {
     color: #E2F0EF;
     background-color: #1D7870;
-  }
-  
-  /* BOTÕES COM O MESMO HOVER - VERMELHO ESCURO */
-  .button-cancel:hover, .button-small-cancel:hover {
+}
+
+/* BOTÕES COM O MESMO HOVER - VERMELHO ESCURO */
+.button-cancel:hover, .button-small-cancel:hover {
     color: #E2F0EF;
     background-color: #85182a;
-  }
-  
-  /* BOTÕES COM O MESMO HOVER - CINZA */
-  .button-edit:hover {
+}
+
+/* BOTÕES COM O MESMO HOVER - CINZA */
+.button-edit:hover {
     background-color: #434853;
-  }
-  
-  /* BOTÕES COM O MESMO HOVER - VERDE CLARO */
-  .primary-button:hover, .secondary-button:hover, .button-small:hover {
+}
+
+/* BOTÕES COM O MESMO HOVER - VERDE CLARO */
+.primary-button:hover, .secondary-button:hover, .button-small:hover {
     background-color: #E2F0EF;
     color: #30BEB2;
-  }
-  
-  /* BOTÕES COM O MESMO HOVER - OPACITY BAIXO */
-  .button-white:hover {
-    opacity: 0.7;
-  }
+}
 
-  @media only screen and (max-width: 768px) {
+/* BOTÕES COM O MESMO HOVER - OPACITY BAIXO */
+.button-white:hover {
+    opacity: 0.7;
+}
+
+@media only screen and (max-width: 768px) {
     .primary-button {
-      width: 260px;
-      height: 35px;
-      font-size: 1em;
+        width: 260px;
+        height: 35px;
+        font-size: 1em;
     }
-  }
+}

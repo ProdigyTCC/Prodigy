@@ -1,0 +1,75 @@
+﻿@model ProdigyWeb.Models.SProduto
+
+<div class="modal fade" id="verInfoProduto" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-fullscreen-xl-down text-dark w-100">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Informações do produto</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+                <div class="container">
+                    <div class="mb-3">
+                        <label for="recipient-name" class="col-form-label">Foto</label>
+                        <img src="~/img/fotoPerfil.png" class="img-thumbnail w-15" alt="...">
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <div class="modal-body">
+                                <form>
+                                    <div class="mb-3">
+                                        <label for="recipient-name" class="col-form-label">Nome</label>
+                                        <input type="text" class="form-control" id="recipient-name" disabled>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="recipient-name" class="col-form-label">Descrição</label>
+                                        <input type="text" class="form-control" id="recipient-name" disabled>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="recipient-name" class="col-form-label">Quantidade</label>
+                                        <input type="number" class="form-control" id="recipient-name" disabled>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="recipient-name" class="col-form-label">Fabricante</label>
+                                        <input type="text" class="form-control" id="recipient-name" disabled>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="recipient-name" class="col-form-label">Fornecedor</label>
+                                        <input type="text" class="form-control" id="recipient-name" disabled>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="modal-body">
+                                <form>
+                                    <div class="mb-3">
+                                        <label for="recipient-name" class="col-form-label">Data de validade</label>
+                                        <input type="date" class="form-control" id="recipient-name" disabled>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="recipient-name" class="col-form-label">Data de entrada</label>
+                                        <input type="date" class="form-control" id="recipient-name" disabled>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="recipient-name" class="col-form-label">Valor de custo</label>
+                                        <input type="text" class="form-control" id="recipient-name" disabled>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="recipient-name" class="col-form-label">Valor de venda</label>
+                                        <input type="text" class="form-control" id="recipient-name" disabled>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="recipient-name" class="col-form-label">Categoria</label>
+                                        <input type="text" class="form-control" id="recipient-name" disabled>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+            </div>
+        </div>
+    </div>
+</div>

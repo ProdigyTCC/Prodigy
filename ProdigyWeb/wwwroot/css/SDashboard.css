@@ -1,11 +1,11 @@
-body {
-    //background: #E2F0EF;
-    //color: #1D7870;
-}
+/* body {
+    background: #E2F0EF;
+    color: #1D7870;
+} */
 
 /* Estilo Navbar Lateral  */
 #hr {
-    border: solid 1px  #30BEB2;
+    border: solid 1px #30BEB2;
     width: 75%;
     margin: 3em auto;
 }
@@ -25,9 +25,9 @@ body {
     overflow: scroll;
 }
 
-.barra::-webkit-scrollbar {
-    display: none;
-  }
+    .barra::-webkit-scrollbar {
+        display: none;
+    }
 
 .baixo,
 .topo {
@@ -36,32 +36,32 @@ body {
     vertical-align: middle;
 }
 
-.baixo a,
-.topo a{
-    display: flex;
-    align-items: center;
-    text-decoration: none;
-    color: #E2F0EF;
-    margin: 0.7em auto;
-    width: 80%;
-    border-radius: 15px;
-    height: 50px;
-    transition: all 0.20s ease-in-out;
-}
+    .baixo a,
+    .topo a {
+        display: flex;
+        align-items: center;
+        text-decoration: none;
+        color: #E2F0EF;
+        margin: 0.7em auto;
+        width: 80%;
+        border-radius: 15px;
+        height: 50px;
+        transition: all 0.20s ease-in-out;
+    }
 
-.baixo p, .topo p {
-    font-weight: 600;
-}
+    .baixo p, .topo p {
+        font-weight: 600;
+    }
 
-.baixo a:hover,
-.topo a:hover{
-    background-color: #1D7870;
-    cursor: pointer;
-}
+    .baixo a:hover,
+    .topo a:hover {
+        background-color: #1D7870;
+        cursor: pointer;
+    }
 
-.baixo a:active, .topo a:active {
-    background-color: #1D7870;
-}
+    .baixo a:active, .topo a:active {
+        background-color: #1D7870;
+    }
 
 /* DASHBOARD ITENS */
 
@@ -84,10 +84,10 @@ body {
     gap: 5% 5%;
     grid-auto-flow: row;
     grid-template-areas:
-      "relatorio vendas"
-      "estoque agenda";
+        "relatorio vendas"
+        "estoque agenda";
 }
-  
+
 .card-relatorio, .card-vendas, .card-estoque, .card-agenda {
     width: 25rem;
     height: 18rem;
@@ -130,7 +130,7 @@ body {
 /* FIM CARD RELATORIO */
 
 /* CARD VENDAS */
-.card-vendas { 
+.card-vendas {
     grid-area: vendas;
 }
 
@@ -154,14 +154,14 @@ body {
     border-radius: 100px;
 }
 
-.item-info-vendas p{
+.item-info-vendas p {
     font-size: 0.7rem;
     font-weight: 500;
 }
 /* FIM CARD VENDAS */
 
 /* CARD ESTOQUE */
-.card-estoque { 
+.card-estoque {
     grid-area: estoque;
 }
 
@@ -171,7 +171,7 @@ body {
 /* FIM CARD ESTOQUE */
 
 /* CARD AGENDA */
-.card-agenda { 
+.card-agenda {
     grid-area: agenda;
 }
 /* FIM CARD AGENDA */

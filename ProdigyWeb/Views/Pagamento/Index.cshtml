@@ -3,7 +3,7 @@
 }
 
 <div class="main-checkout container-fluid">
-    <div id="planoInfo" class="card-plan-info container-fluid">
+    <div id="planoInfo" class="card-plan-info container">
         <div id="planInfo" class="plan-info">
             <p class="plan-select">Plano selecionado:</p>
             @if (TempData["Plano"] != null)
@@ -57,6 +57,7 @@
         </div>
 
         <div id="pix" class="payment-pix">
+            <img src="~/img/qrCode.png" alt="QrCode" srcset="">
         </div>
 
         <div id="boleto" class="payment-boleto">
@@ -68,29 +69,7 @@
         </div>
     </div>
 
-    <div class="card-checkout-data d-flex flex-column justify-content-center container-fluid">
-        <div class="guide-checkout d-flex flex-row justify-content-center">
-            <div class="guide d-flex flex-row w-100">
-                <div class="guide-icon">
-                    <span>1</span>
-                </div>
-                <span class="guide-name">Forma de pagamento</span>
-            </div>
-            <span class="arrow">></span>
-            <div class="guide d-flex flex-row w-100">
-                <div class="guide-icon">
-                    <span>2</span>
-                </div>
-                <span class="guide-name">Pagamento</span>
-            </div>
-            <span class="arrow">></span>
-            <div class="guide d-flex flex-row w-100">
-                <div class="guide-icon">
-                    <span>3</span>
-                </div>
-                <span class="guide-name">Confirmar</span>
-            </div>
-        </div>
+    <div class="card-checkout-data d-flex flex-column container-fluid">
 
         <div class="options">
             <div id="abaFormaPagamento" class="options-forma-pagamento">
@@ -119,23 +98,31 @@
 
             <div id="abaCartao" class="options-pagamento-cartao">
                 @*FORMS PARA PAGAMENTO CARTÃO DE CRÉDITO OU DÉBITO*@
+                <form asp-action="AdicionarCartao" asp-controller="Pagamento">
                 <p class="options-title">Insira os seus dados:</p>
                 <div class="group-input-contato">
                     <p class="label-contato mb-1">Nome no cartão</p>
                     <div class="input-contato input-group">
-                        <input id="card-name-input" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                        <input name="nomeCartao" id="card-name-input" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                            <input name="plano" id="card-name-input" value="@TempData["Plano"].ToString()" type="hidden" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
                     </div>
                 </div>
                 <div class="group-input-contato">
                     <p class="label-contato mb-1">Número no cartão</p>
                     <div class="input-contato input-group">
-                        <input id="card-number-input" type="number" maxlength="16" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                        <input name="numeroCartao" id="card-number-input" type="text" maxlength="19" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
                     </div>
                 </div>
+                    <div class="group-input-contato">
+                        <p class="label-contato mb-1">Cpf do titular</p>
+                        <div class="input-contato input-group">
+                            <input name="cpfTitular" id="card-number-input" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                        </div>
+                    </div>
                 <div class="group-input-contato">
                     <p class="label-contato mb-1">Data de validade</p>
                     <div class="d-flex flex-row pb-3">
-                        <select class="form-select me-2" id="exp-month" aria-label="Default select example">
+                        <select name="mesCartao" class="form-select me-2" id="exp-month" aria-label="Default select example">
                             <option selected>Mês</option>
                             <option value="01">01</option>
                             <option value="02">02</option>
@@ -151,7 +138,7 @@
                             <option value="12">12</option>
                         </select>
 
-                        <select class="form-select ms-2" id="exp-year" aria-label="Default select example">
+                        <select name="anoCartao" class="form-select ms-2" id="exp-year" aria-label="Default select example">
                             <option selected>Ano</option>
                             <option value="23">2023</option>
                             <option value="24">2024</option>
@@ -170,13 +157,13 @@
                 <div class="group-input-contato">
                     <p class="label-contato mb-1">CVV</p>
                     <div class="input-contato input-group">
-                        <input id="cvv-input" type="number" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                        <input name="cvCartao" id="cvv-input" type="number" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
                     </div>
                 </div>
                 <div class="button-advanced d-flex justify-content-center mt-3">
-                    <button class="primary-button">Avançar</button>
+                    <button type="submit" class="primary-button">Confirmar</button>
                 </div>
-
+            </form>
             </div>
 
             <div id="abaPix" class="options-pagamento-pix">

@@ -23,25 +23,24 @@ footer {
     font-weight: 500;
 }
 
-.rodape-lista li {
-    justify-content: center;
-    padding: 0% 5%;
-}
+    .rodape-lista li {
+        justify-content: center;
+        padding: 0% 5%;
+    }
 
-.rodape-lista p:hover {
-    cursor: pointer;
-    color: #525661;
-    transition: 0.3s;
-}
+    .rodape-lista p:hover {
+        cursor: pointer;
+        color: #E2F0EF;
+    }
 
 .rodape-logo {
     display: flex;
     justify-content: center;
 }
 
-.rodape-logo img {
-    width: 180px;
-}
+    .rodape-logo img {
+        width: 180px;
+    }
 
 .rodape-slogan {
     display: flex;
@@ -62,11 +61,10 @@ footer {
     filter: invert(75%) sepia(10%) saturate(8%) hue-rotate(359deg) brightness(37%) contrast(47%);
 }
 
-.icons-social:hover {  
-    transition: 0.3s;
-    cursor: pointer;
-    filter: invert(58%) sepia(31%) saturate(842%) hue-rotate(126deg) brightness(102%) contrast(92%);
-}
+    .icons-social:hover {
+        cursor: pointer;
+        filter: invert(58%) sepia(31%) saturate(842%) hue-rotate(126deg) brightness(102%) contrast(92%);
+    }
 
 hr {
     border: 1px solid #525661;
@@ -92,22 +90,23 @@ hr {
         display: flex;
         justify-content: center;
     }
-    .rodape-lista{
+
+    .rodape-lista {
         display: flex;
         flex-direction: column;
         align-items: center;
         padding: 2% 0% 0%;
     }
 
-    .rodape-lista li {
-        padding: 2% 0%;
-    }
+        .rodape-lista li {
+            padding: 2% 0%;
+        }
 
     .rodape-icons {
         margin: 0 10%;
     }
-    
-    
+
+
     .rodape-logo img {
         width: 8rem;
     }

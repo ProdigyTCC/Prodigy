@@ -1,12 +1,3 @@
-const inputProfileName = document.querySelector(".inputProfileName");
-const inputProfileDate = document.querySelector(".inputProfileDate");
-const buttonEdit = document.getElementById('buttonEdit');
-const buttonConfirm = document.getElementById('buttonConfirm');
-const buttonCancel = document.getElementById('buttonCancel');
-let clickEdit = false;
-let clickConfirm = true;
-let clickCancel = true;
-
 var inputFile = document.getElementById("imagem-perfil");
 var btnImage = document.getElementById("btn-imagem");
 
@@ -31,42 +22,86 @@ inputFile.addEventListener("change", () => {
     reader.readAsText(file);
 });
 
-    
 
-inputProfileName.disabled = true;
-inputProfileDate.disabled = true;
-buttonConfirm.style.display = "none";
-buttonCancel.style.display = "none";
+let btnConfirm = document.querySelectorAll('.buttonConfirm');
+btnConfirm.forEach((buttonConfirm) => {
+    buttonConfirm.style.display = "none";
+});
 
-buttonEdit.addEventListener("click", function editarInput(clickEdit) {
-    if (clickEdit) {
-        inputProfileName.disabled = false;
-        inputProfileDate.disabled = false;
+let btnCancel = document.querySelectorAll('.buttonCancel');
+btnCancel.forEach((buttonCancel) => {
+    buttonCancel.style.display = "none";
+});
+
+let btnEdit = document.querySelectorAll(".btnEdit");
+let buttonEdit;
+
+for (let i = 0; i < btnEdit.length; i++) {
+    if (btnEdit[i].checked) {
+        buttonEdit = btnEdit[i];
+        break;
+    }
+}
+
+function editConta() {
+    let inputsProfile = document.querySelectorAll('.inputProfile');
+
+    for (let i = 0, len = inputsProfile.length; i < len; i++) {
+        inputsProfile[i].disabled = false;
+    }
+
+    btnEdit.forEach((buttonEdit) => {
         buttonEdit.style.display = "none";
+    });
+
+    btnConfirm.forEach((buttonConfirm) => {
         buttonConfirm.style.display = "block";
+    });
+
+    btnCancel.forEach((buttonCancel) => {
         buttonCancel.style.display = "block";
-        clickEdit = true;
-    }
-})
+    });
+}
+btnConfirm.forEach((buttonConfirm) => {
+    buttonConfirm.addEventListener('click', () => {
+        let inputsProfile = document.querySelectorAll('.inputProfile');
+        for (let i = 0, len = inputsProfile.length; i < len; i++) {
+            inputsProfile[i].disabled = true;
+            const valueInputProfile = inputsProfile[i].value;
+            inputsProfile[i].value = valueInputProfile
+        }
+        btnEdit.forEach((buttonEdit) => {
+            buttonEdit.style.display = "block";
+        });
 
-buttonConfirm.addEventListener("click", function editarInput(clickConfirm) {
-    if (clickConfirm) {
-        inputProfileName.disabled = true;
-        inputProfileDate.disabled = true;
-        buttonEdit.style.display = "block";
-        buttonConfirm.style.display = "none";
-        buttonCancel.style.display = "none";
-        clickConfirm = false;
-    }
-})
+        btnConfirm.forEach((buttonConfirm) => {
+            buttonConfirm.style.display = "none";
+        });
 
-buttonCancel.addEventListener("click", function editarInput(clickCancel) {
-    if (clickConfirm) {
-        inputProfileName.disabled = true;
-        inputProfileDate.disabled = true;
-        buttonEdit.style.display = "block";
-        buttonConfirm.style.display = "none";
-        buttonCancel.style.display = "none";
-        clickCancel = false;
-    }
-})
+        btnCancel.forEach((buttonCancel) => {
+            buttonCancel.style.display = "none";
+        });
+    });
+});
+btnCancel.forEach((buttonCancel) => {
+    buttonCancel.onclick = function () {
+        let inputsProfile = document.querySelectorAll('.inputProfile');
+        for (let i = 0, len = inputsProfile.length; i < len; i++) {
+            inputsProfile[i].disabled = true;
+        }
+        btnEdit.forEach((buttonEdit) => {
+            buttonEdit.style.display = "block";
+        });
+
+        btnConfirm.forEach((buttonConfirm) => {
+            buttonConfirm.style.display = "none";
+        });
+
+        btnCancel.forEach((buttonCancel) => {
+            buttonCancel.style.display = "none";
+        });
+    };
+});
+btnEdit.forEach((buttonEdit) => {
+    buttonEdit.addEventListener("click", editConta);
+});

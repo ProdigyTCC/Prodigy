@@ -13,32 +13,32 @@ namespace ProdigyWeb.Controllers
 {
     [Route("[controller]")]
     public class UsuarioController : Controller
-        {
-            HashService hash = new HashService(SHA256.Create());
-            private readonly ProdigyWebContext _context;
-            private readonly ICookie _cookie;
-            private string _caminhoServidor;
+    {
+        HashService hash = new HashService(SHA256.Create());
+        private readonly ProdigyWebContext _context;
+        private readonly ICookie _cookie;
+        private string _caminhoServidor;
 
-            public UsuarioController(
+        public UsuarioController(
                 ProdigyWebContext context,
                 ICookie cookie,
                 IWebHostEnvironment caminhoServidor)
-            {
-                _caminhoServidor = caminhoServidor.WebRootPath;
-                _cookie = cookie;
-                _context = context;
-            }
+        {
+            _caminhoServidor = caminhoServidor.WebRootPath;
+            _cookie = cookie;
+            _context = context;
+        }
 
-            [AllowAnonymous]
-            public void AddSessao()
+        [AllowAnonymous]
+        public void AddSessao()
             {
                 ViewBag.Id = User.FindFirst("Id")?.Value;
                 ViewBag.Nome = User.FindFirst(ClaimTypes.Name)?.Value;
                 ViewBag.Email = User.FindFirst(ClaimTypes.Email)?.Value;
             }
 
-            [HttpGet("Index"), AllowAnonymous]
-            public IActionResult Index()
+        [HttpGet("Index"), AllowAnonymous]
+        public async Task<IActionResult> Index()
             {
                 ViewBag.Layout = "ProdigyWeb";
                 ClaimsPrincipal claims = HttpContext.User;
@@ -47,8 +47,7 @@ namespace ProdigyWeb.Controllers
                 {
                     var usuarioId = User.FindFirst("Id").Value;
 
-                    var usuarios = _context.Usuarios
-                    .Where(x => x.UsuarioId.ToString() == usuarioId).ToList();
+                    var usuarios = await _context.Usuarios.FirstOrDefaultAsync(x => x.UsuarioId.ToString() == usuarioId);
 
                     AddSessao();
                     return View(usuarios);
@@ -57,8 +56,8 @@ namespace ProdigyWeb.Controllers
                 return RedirectToAction("Login", "Usuario");
             }
 
-            [HttpGet("Login")]
-            public IActionResult Login()
+        [HttpGet("Login")]
+        public IActionResult Login()
             {
                 ViewBag.Layout = "ProdigyWeb";
                 ClaimsPrincipal claims = HttpContext.User;
@@ -70,8 +69,8 @@ namespace ProdigyWeb.Controllers
                 return View();
             }
 
-            [HttpPost("LoginUsuario"), AllowAnonymous]
-            public async Task<IActionResult> Login(Usuario usuario)
+        [HttpPost("LoginUsuario"), AllowAnonymous]
+        public async Task<IActionResult> Login(Usuario usuario)
             {
                 try
                 {
@@ -97,8 +96,8 @@ namespace ProdigyWeb.Controllers
                 }
             }
 
-            [HttpGet("Cadastrar")]
-            public IActionResult Cadastrar()
+        [HttpGet("Cadastrar")]
+        public IActionResult Cadastrar()
             {
                 ViewBag.Layout = "ProdigyWeb";
                 ClaimsPrincipal claims = HttpContext.User;
@@ -111,8 +110,9 @@ namespace ProdigyWeb.Controllers
                 return View();
             }
 
-            [HttpPost("CadastrarUsuario")]
-            public async Task<IActionResult> CadastrarUsuario(Usuario usuario)
+        [HttpPost("CadastrarUsuario")]
+        
+        public async Task<IActionResult> CadastrarUsuario(Usuario usuario)
             {
                 try
                 {
@@ -148,15 +148,16 @@ namespace ProdigyWeb.Controllers
                 return RedirectToAction(nameof(Cadastrar));
             }
 
-            [HttpGet("Logout"), Authorize]
-            public async Task<IActionResult> Logout()
+        [HttpGet("Logout"), Authorize]
+        public async Task<IActionResult> Logout()
             {
                 await _cookie.Logout(HttpContext);
                 TempData["Sucesso"] = "Sessão finalizada";
                 return RedirectToAction("Index", "Home");
             }
-            [HttpPost("UploadImagem")]
-            public async Task<IActionResult> UploadImagem(IFormFile? imagem)
+
+        [HttpPost("UploadImagem")]
+        public async Task<IActionResult> UploadImagem(IFormFile? imagem)
             {
                 AddSessao();
 
@@ -193,8 +194,8 @@ namespace ProdigyWeb.Controllers
                 return RedirectToAction(nameof(Index));
             }
 
-            [HttpPost("DeletarConta")]
-            public async Task<IActionResult> DeletarConta()
+        [HttpPost("DeletarConta")]
+        public async Task<IActionResult> DeletarConta()
             {
                 var usuarioId = User.FindFirst("Id")?.Value;
                     
@@ -213,5 +214,50 @@ namespace ProdigyWeb.Controllers
                     return RedirectToAction(nameof(Index));
                 }
             }
+
+        [HttpPost("EditarConta")]
+        public async Task<IActionResult> EditarConta(Usuario usuario)
+        {   
+            try
+            {
+                if (ModelState.IsValid)
+                {
+                    var usuarioId = User.FindFirst("Id")?.Value;
+                    var senhaSecreta = "";
+                    var usuarioBanco = await _context.Usuarios.AsNoTracking().FirstOrDefaultAsync(x => x.UsuarioId.ToString() == usuarioId);
+
+                    if (usuarioBanco != null)
+                    {
+                        if (!string.IsNullOrEmpty(usuario.Senha))
+                        {
+                            senhaSecreta = hash.CriptografarSenha(usuario.Senha.ToString());
+                            usuarioBanco.Senha = senhaSecreta;
+                        }
+
+                        if (!string.IsNullOrEmpty(usuario.Nome)) usuarioBanco.Nome = usuario.Nome;
+                        if (!string.IsNullOrEmpty(usuario.Email)) usuarioBanco.Email = usuario.Email;
+                        if (!string.IsNullOrEmpty(usuario.Cpf)) usuarioBanco.Cpf = usuario.Cpf;
+                        if (!string.IsNullOrEmpty(usuario.DataNascimento)) usuarioBanco.DataNascimento = usuario.DataNascimento;
+
+                        _context.Usuarios.Update(usuarioBanco);
+                        _context.SaveChanges();
+                        TempData["Sucesso"] = "Cadastro atualizado com sucesso!";
+                        return RedirectToAction(nameof(Index));
+                    }
+                    else
+                    {
+                        TempData["Erro"] = "Algo deu errado! Tente novamente";
+                        return RedirectToAction(nameof(Index));
+                    }
+                }
+            }
+            catch (DbUpdateException e)
+            {
+                TempData["Erro"] = $"Erro ao atualizar o cadastro: {e.Message}";
+                return RedirectToAction(nameof(Login));
+            }
+            TempData["Erro"] = "Os valores enviados estão vazios!";
+            return RedirectToAction(nameof(Index));
         }
+    }
 }

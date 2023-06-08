@@ -2,29 +2,44 @@
     margin: 1% 5% 1%;
     display: flex;
     justify-content: space-around;
-  }
-  
-  .navbar ul li a{
+}
+
+.navbar-a, .navbar-a svg path, .navbar-a img {
     color: #E2F0EF;
     font-size: 1em;
     font-weight: 500;
-    margin-left: 2rem;  
-    transition: all 0.35s ease-in-out; 
-  }
-  
-  .navbar a:hover{
+    margin-left: 2rem;
+}
+
+    .navbar-a:hover {
+        color: #30BEB2;
+    }
+
+.navbar .navbar-nav .nav-item a:active {
     color: #30BEB2;
-  }
-  
-  .navbar img{
-    height: 1.2rem;
-  }
-  
-  .navbar-toggler {
+}
+
+.logo-prodigy {
+    height: 1.6rem;
+}
+
+    .logo-prodigy:hover {
+        cursor: pointer;
+    }
+
+        .logo-prodigy:hover path {
+            fill: #30BEB2;
+        }
+
+.navbar-toggler {
     border: none !important;
     outline: none;
-  }
-  
-  .navbar-toggler:focus {
-    box-shadow: 0 0 0 0;
-  }
+}
+
+    .navbar-toggler:focus {
+        box-shadow: 0 0 0 0;
+    }
+
+    .navbar-toggler img {
+        height: 1.2rem;
+    }

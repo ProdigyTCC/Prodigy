@@ -1,0 +1,111 @@
+﻿@model ProdigyWeb.Models.SProduto
+
+@{
+    ViewData["Title"] = "Adicionar Produto";
+}
+
+<div class="main-addproduto p-5">
+
+    <!-- INICIO FORMULARIO -->
+    <form asp-controller="SEstoque" asp-action="Index" enctype="multipart/form-data">
+        <div class="d-flex fundo">
+
+
+            <div class="container formulario">
+                <div class="group-input-contato">
+                    @*Input = Nome do produto*@
+                    <p class="label-estoque">Nome do produto</p>
+                    <div class="input-contato input-group">
+                        <input asp-for="Nome" value="@Model.Nome" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                    </div>
+                </div>
+
+                <div class="group-input-contato">
+                    @*Input = Descrição do produto*@
+                    <p class="label-estoque">Descrição do produto</p>
+                    <div class="input-contato input-group">
+                        <input value="@Model.DescProduto" asp-for="DescProduto" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                    </div>
+                </div>
+
+                <div class="group-input-contato">
+                    @*Input = Quantidade*@
+                    <p class="label-estoque">Quantidade</p>
+                    <div class="input-contato input-group">
+                        <input value="@Model.QuantProduto" asp-for="QuantProduto" type="number" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                    </div>
+                </div>
+
+                <div class="group-input-contato">
+                    @*Input = Marca*@
+                    <p class="label-estoque">Marca</p>
+                    <div class="input-contato input-group">
+                        <input value="@Model.Marca" asp-for="Marca" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                    </div>
+                </div>
+
+                <div class="group-input-contato">
+                    @*Input = Categoria*@
+                    <p class="label-estoque">Categoria</p>
+                    <div class="input-contato input-group">
+                        <select asp-for="SCategoriaProdutoId" class="form-select" aria-label="Default select example">
+                            @if (ViewBag.CategProduto != null)
+                            {
+                                @foreach (var cgProduto in ViewBag.CategProduto)
+                                {
+                                    <option value="@cgProduto.SCategoriaProdutoId">@cgProduto.Nome</option>
+                                }
+                            }
+                        </select>
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    @*Input = Adicionar imagem*@
+                    <p class="label-estoque">Imagem</p>
+                    <input name="imagem" class="form-control" type="file" id="formFile">
+                </div>
+            </div>
+
+            <div class="container formulario">
+                <div class="group-input-contato">
+                    @*Input = Data de validade*@
+                    <p class="label-estoque">Data de validade</p>
+                    <div class="input-contato input-group">
+                        <input value="@Model.DataValidade" asp-for="DataValidade" type="date" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                    </div>
+                </div>
+
+                <div class="group-input-contato">
+                    @*Input = Data de entrada*@
+                    <p class="label-estoque">Data de entrada</p>
+                    <div class="input-contato input-group">
+                        <input value="@Model.DataEntrada" asp-for="DataEntrada" type="date" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                    </div>
+                </div>
+
+                <div class="group-input-contato">
+                    @*Input = Valor de custo*@
+                    <p class="label-estoque">Valor de custo</p>
+                    <div class="input-contato input-group">
+                        <input value="@Model.ValorInicial" asp-for="ValorInicial" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                    </div>
+                </div>
+
+                <div class="group-input-contato">
+                    @*Input = Valor de venda*@
+                    <p class="label-estoque">Valor de venda</p>
+                    <div class="input-contato input-group">
+                        <input value="@Model.ValorFinal" asp-for="ValorFinal" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                    </div>
+                </div>
+                <div class="button-profile d-flex flex-row justify-content-center">
+                    <button type="button" class="button-small-cancel me-2">Limpar</button>
+                    <a style="text-decoration: none;" asp-action="Index" asp-controller="SEstoque"><button class="button-small-cancel me-2">Cancelar</button></a>
+                    <button type="submit" class="button-small-confirm ms-2">Salvar</button>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+<!-- FIM FORMULARIO -->

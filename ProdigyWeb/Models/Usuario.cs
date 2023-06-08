@@ -13,17 +13,13 @@ namespace ProdigyWeb.Models
         public int UsuarioId { get; set; }
 
         [Display(Name = "Nome Completo")]
-        [Required(ErrorMessage ="* Nome completo obrigatório!")]
         [MaxLength(100, ErrorMessage = "O seu nome não pode ultrapassar 100 caracteres.")]
         public string Nome { get; set; }
 
-        [EmailAddress]
         [Display(Name = "Email válido")]
-        [Required(ErrorMessage = "* E-mail obrigatório")]
         [MaxLength(100, ErrorMessage = "O seu e-mail não pode ultrapassar 100 caracteres")]
         public string Email { get; set; }
 
-        [Phone]
         [Display(Name = "Telefone")]
         public string Telefone { get; set; }
 
@@ -34,14 +30,11 @@ namespace ProdigyWeb.Models
         public string Imagem { get; set; }
 
         [Display(Name = "Data de Nascimento")]
-        [Required(ErrorMessage = "* Data de nascimento obrigatório")]
         public string DataNascimento { get; set; }
 
         public string DataRegistro { get; set; }
 
-        [DataType(DataType.Password)]
         [Display(Name = "Senha")]
-        [Required(ErrorMessage = "* Senha obrigatória")]
         public string Senha { get; set; }
 
         [Display(Name = "Plano")]
@@ -59,7 +52,6 @@ namespace ProdigyWeb.Models
         public string Nacionalidade { get; set; }
 
         [Display(Name = "CPF")]
-        [Required(ErrorMessage = "CPF obrigatório")]
         [MaxLength(14)]
         public string Cpf { get; set; }
 
