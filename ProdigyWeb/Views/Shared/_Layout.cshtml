@@ -25,19 +25,24 @@
    
     <script type="text/javascript" charset="utf-8">
             
-        window.onload = function () {
-            
+        window.onload = function() {
+            Alert()
+        }
+        function Alert()
+        {
+            let url = window.location.href
+
             const btnCloseModalErro = document.querySelector('#closeModalErro')
             const btnCloseModalSucesso = document.querySelector('#closeModalSucesso')
 
             var erro = "@TempData["Erro"]"
             var sucesso = "@TempData["Sucesso"]"
-            
+
             if (erro) {
                 $('#modalErro').modal('show')
             }
 
-            btnCloseModalErro.addEventListener('click', () =>{
+            btnCloseModalErro.addEventListener('click', () => {
                 $('#modalErro').modal('hide')
             })
 
@@ -47,6 +52,12 @@
 
             btnCloseModalSucesso.addEventListener('click', () => {
                 $('#modalSucesso').modal('hide')
+                if (url == 'https://localhost:7202/Usuario/Atualizar/1') {
+                    window.location.href = 'https://localhost:7202/Usuario/Atualizar'
+                }
+                if(url == 'http://localhost:5157/Usuario/Atualizar/1'){
+                    window.location.href = 'http://localhost:5157/Usuario/Atualizar'
+                }
             })
         }
     </script>

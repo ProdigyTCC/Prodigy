@@ -214,18 +214,23 @@ namespace ProdigyWeb.Controllers
                 }
             }
 
-        [HttpGet("Atualizar"), AllowAnonymous]
-        public async Task<IActionResult> Atualizar(bool? erroAtualizar)
+        [HttpGet("Atualizar/{value?}"), AllowAnonymous]
+        public async Task<IActionResult> Atualizar(string? value)
         {
             var usuarioId = User.FindFirst("Id")?.Value;
             var usuarios = await _context.Usuarios.FirstOrDefaultAsync(x => x.UsuarioId.Equals(int.Parse(usuarioId)));
+            var enderecos = await _context.Enderecos.FirstOrDefaultAsync(x => x.UsuarioId.Equals(int.Parse(usuarioId)));
 
             ViewBag.Layout = "ProdigyWeb";
             ClaimsPrincipal claims = HttpContext.User;
 
             if (claims.Identity.IsAuthenticated)
             {
-                if(erroAtualizar == true) TempData["Sucesso"] = "Cadastro atualizado com sucesso!";
+                if(value == "1") TempData["Sucesso"] = "Cadastro atualizado com sucesso!";
+                if(value == "2") TempData["Erro"] = "Erro ao atualizar o cadastro!";
+                value = "0";
+
+                ViewBag.Endereco = enderecos;
 
                 AddSessao();
                 return View(usuarios);
@@ -234,7 +239,7 @@ namespace ProdigyWeb.Controllers
         }
 
         [HttpPost("AtualizarConta")]
-        public async Task<IActionResult> AtualizarConta(string Nome, string Cpf, string Email, string DataNascimento, string Senha)
+        public async Task<IActionResult> AtualizarConta(string Nome, string Cpf, string Email, string DataNascimento, string Telefone, string Senha)
         {   
             try
             {
@@ -256,20 +261,75 @@ namespace ProdigyWeb.Controllers
                         if (!string.IsNullOrEmpty(Cpf)) usuarioBanco.Cpf = Cpf;
                         if (!string.IsNullOrEmpty(Email)) usuarioBanco.Email = Email;
                         if (!string.IsNullOrEmpty(DataNascimento)) usuarioBanco.DataNascimento = DataNascimento;
+                        if (!string.IsNullOrEmpty(Telefone)) usuarioBanco.Telefone = Telefone;
 
                         _context.Usuarios.Update(usuarioBanco);
                         _context.SaveChanges();
 
-                        return RedirectToAction("Atualizar", new { erroAtualizar = true});
+                        return RedirectToAction("Atualizar");
                     }
                 }
             }
             catch (DbUpdateException e)
             {
-                TempData["Erro"] = $"Erro ao atualizar o cadastro: {e.Message}";
                 return RedirectToAction(nameof(Login));
             }
-            TempData["Erro"] = "Os valores enviados estão vazios!";
+            return RedirectToAction(nameof(Index));
+        }
+
+        [HttpPost("AtualizarEndereco")]
+        public async Task<IActionResult> AtualizarEndereco(string Rua, string Numero, string Bairro, string Complemento, string Cep, string Cidade, string Estado, string Pais)
+        {
+            try
+            {
+                if (ModelState.IsValid)
+                {
+                    var usuarioId = User.FindFirst("Id")?.Value;
+
+                    var enderecoBanco = await _context.Enderecos.AsNoTracking().FirstOrDefaultAsync(x => x.UsuarioId.ToString() == usuarioId);
+
+                    if (enderecoBanco != null)
+                    {
+                        if (!string.IsNullOrEmpty(Rua)) enderecoBanco.Rua = Rua;
+                        if (!string.IsNullOrEmpty(Numero)) enderecoBanco.Numero = int.Parse(Numero);
+                        if (!string.IsNullOrEmpty(Bairro)) enderecoBanco.Bairro = Bairro;
+                        if (!string.IsNullOrEmpty(Complemento)) enderecoBanco.Complemento = Complemento;
+                        if (!string.IsNullOrEmpty(Cep)) enderecoBanco.Cep = Cep;
+                        if (!string.IsNullOrEmpty(Cidade)) enderecoBanco.Cidade = Cidade;
+                        if (!string.IsNullOrEmpty(Estado)) enderecoBanco.Estado = Estado;
+                        if (!string.IsNullOrEmpty(Pais)) enderecoBanco.Pais = Pais;
+
+                        _context.Enderecos.Update(enderecoBanco);
+                        _context.SaveChanges();
+
+                        return RedirectToAction("Atualizar");
+                    }
+                    else
+                    {
+                        var endereco = new Endereco()
+                        {
+                            Rua = Rua,
+                            Numero = int.Parse(Numero),
+                            Bairro = Bairro,
+                            Complemento = Complemento,
+                            Cep = Cep,
+                            Cidade = Cidade,
+                            Estado = Estado,
+                            Pais = Pais,
+                            UsuarioId = int.Parse(usuarioId)
+                        };
+
+                        _context.Enderecos.Add(endereco);
+                        _context.SaveChanges();
+
+                        return RedirectToAction("Atualizar");
+                    }
+                }
+            }
+            catch (DbUpdateException e)
+            {
+                return RedirectToAction(nameof(Login));
+            }
             return RedirectToAction(nameof(Index));
         }
     }

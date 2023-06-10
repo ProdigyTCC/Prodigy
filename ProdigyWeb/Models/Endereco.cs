@@ -47,7 +47,10 @@ namespace ProdigyWeb.Models
         [Display(Name = "País")]
         [Required(ErrorMessage = "* Campo obrigatório")]
         public string Pais { get; set; }
-        
+        public int UsuarioId { get; set; }
+        [ForeignKey("UsuarioId")]
+        public virtual Usuario Usuario { get; set; }
+
         [NotMapped]
         public virtual List<EnderecoComposta> EnderecoCompostas { get; set; }
     }

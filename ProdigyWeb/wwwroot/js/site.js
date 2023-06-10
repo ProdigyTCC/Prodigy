@@ -24,6 +24,7 @@ if (background == 'http://localhost:5157/Home/Planos' ||
 
 }
 
-if (background == 'http://localhost:5157/SHome') {
+if (background == 'http://localhost:5157/SHome' ||
+    background == 'https://localhost:7202/SHome') {
     document.body.style.background = "#E2F0EF";
 }

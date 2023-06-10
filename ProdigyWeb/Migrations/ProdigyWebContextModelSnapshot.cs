@@ -174,7 +174,12 @@ namespace ProdigyWeb.Migrations
                         .HasMaxLength(100)
                         .HasColumnType("character varying(100)");
 
+                    b.Property<int>("UsuarioId")
+                        .HasColumnType("integer");
+
                     b.HasKey("EnderecoId");
+
+                    b.HasIndex("UsuarioId");
 
                     b.ToTable("Enderecos");
                 });
@@ -999,6 +1004,17 @@ namespace ProdigyWeb.Migrations
                 });
 
             modelBuilder.Entity("ProdigyWeb.Models.Config", b =>
+                {
+                    b.HasOne("ProdigyWeb.Models.Usuario", "Usuario")
+                        .WithMany()
+                        .HasForeignKey("UsuarioId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Usuario");
+                });
+
+            modelBuilder.Entity("ProdigyWeb.Models.Endereco", b =>
                 {
                     b.HasOne("ProdigyWeb.Models.Usuario", "Usuario")
                         .WithMany()
