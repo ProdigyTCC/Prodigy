@@ -72,12 +72,20 @@ namespace ProdigyWeb.Migrations
 
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("ConfigId"));
 
-                    b.Property<string>("NomeEmpresa")
+                    b.Property<string>("PorcentagemDesconto")
                         .HasColumnType("text");
 
-                    b.Property<string>("Tema")
-                        .HasMaxLength(20)
-                        .HasColumnType("character varying(20)");
+                    b.Property<string>("PorcentagemLucro")
+                        .HasColumnType("text");
+
+                    b.Property<string>("TaxaCredito")
+                        .HasColumnType("text");
+
+                    b.Property<string>("TaxaDebito")
+                        .HasColumnType("text");
+
+                    b.Property<string>("TaxaParcela")
+                        .HasColumnType("text");
 
                     b.Property<int>("UsuarioId")
                         .HasColumnType("integer");
@@ -158,8 +166,8 @@ namespace ProdigyWeb.Migrations
 
                     b.Property<string>("Estado")
                         .IsRequired()
-                        .HasMaxLength(2)
-                        .HasColumnType("character varying(2)");
+                        .HasMaxLength(20)
+                        .HasColumnType("character varying(20)");
 
                     b.Property<int>("Numero")
                         .HasColumnType("integer");
@@ -220,15 +228,41 @@ namespace ProdigyWeb.Migrations
 
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("JuridicoId"));
 
+                    b.Property<string>("Bairro")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("character varying(50)");
+
+                    b.Property<string>("Cep")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("CertificadoNF")
+                        .HasColumnType("text");
+
+                    b.Property<string>("Cidade")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("character varying(50)");
+
                     b.Property<string>("Cnpj")
                         .HasMaxLength(18)
                         .HasColumnType("character varying(18)");
 
-                    b.Property<DateOnly>("DataFundacao")
-                        .HasColumnType("date");
+                    b.Property<string>("Complemento")
+                        .HasMaxLength(50)
+                        .HasColumnType("character varying(50)");
+
+                    b.Property<string>("DataFundacao")
+                        .HasColumnType("text");
 
                     b.Property<string>("Email")
                         .HasColumnType("text");
+
+                    b.Property<string>("Estado")
+                        .IsRequired()
+                        .HasMaxLength(2)
+                        .HasColumnType("character varying(2)");
 
                     b.Property<string>("Natureza")
                         .HasColumnType("text");
@@ -237,11 +271,24 @@ namespace ProdigyWeb.Migrations
                         .HasMaxLength(100)
                         .HasColumnType("character varying(100)");
 
+                    b.Property<int>("Numero")
+                        .HasColumnType("integer");
+
+                    b.Property<string>("Pais")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("character varying(50)");
+
                     b.Property<string>("RgEstadual")
                         .HasColumnType("text");
 
                     b.Property<string>("RgMunicipal")
                         .HasColumnType("text");
+
+                    b.Property<string>("Rua")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("character varying(100)");
 
                     b.Property<string>("Telefone")
                         .HasColumnType("text");
@@ -982,6 +1029,9 @@ namespace ProdigyWeb.Migrations
                         .HasColumnType("text");
 
                     b.Property<string>("Sexo")
+                        .HasColumnType("text");
+
+                    b.Property<string>("Status")
                         .HasColumnType("text");
 
                     b.Property<string>("Telefone")

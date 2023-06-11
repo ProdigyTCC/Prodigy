@@ -40,6 +40,9 @@ namespace ProdigyWeb.Models
         [Display(Name = "Plano")]
         public string Plano { get; set; }
 
+        [Display(Name = "Status da Conta")]
+        public string Status { get; set; }
+
         [Display(Name = "Orientação Sexual")]
         public string Sexo { get; set; }
 

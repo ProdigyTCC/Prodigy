@@ -58,6 +58,12 @@
                 if(url == 'http://localhost:5157/Usuario/Atualizar/1'){
                     window.location.href = 'http://localhost:5157/Usuario/Atualizar'
                 }
+                if (url == 'https://localhost:7202/Usuario/Atualizar/2') {
+                    window.location.href = 'https://localhost:7202/Usuario/Atualizar'
+                }
+                if(url == 'http://localhost:5157/Usuario/Atualizar/2'){
+                    window.location.href = 'http://localhost:5157/Usuario/Atualizar'
+                }
             })
         }
     </script>
@@ -188,6 +194,7 @@
             </nav>
         </header>
         <div>
+            <partial name="_CookieConsentPartial" />
             <main role="main">
                 @RenderBody()
             </main>
@@ -272,6 +279,7 @@
         <script src="~/js/payment.js" asp-append-version="true"></script>
         <script src="~/js/doughnut.js" asp-append-version="true"></script>
         <script src="~/js/atualizarUsuario.js" asp-append-version="true"></script>
+        <script src="~/js/atualizarEmpresa.js" asp-append-version="true"></script>
         @await RenderSectionAsync("Scripts", required: false)
     }
     else if(ViewBag.Layout == "Dashboard")

@@ -301,6 +301,10 @@
       "PackagePath": "staticwebassets\\js\\.editorconfig"
     },
     {
+      "Id": "C:\\Users\\Wallace\\Desktop\\tcc\\Development\\Prodigy\\ProdigyWeb\\wwwroot\\js\\atualizarEmpresa.js",
+      "PackagePath": "staticwebassets\\js\\atualizarEmpresa.js"
+    },
+    {
       "Id": "C:\\Users\\Wallace\\Desktop\\tcc\\Development\\Prodigy\\ProdigyWeb\\wwwroot\\js\\atualizarUsuario.js",
       "PackagePath": "staticwebassets\\js\\atualizarUsuario.js"
     },

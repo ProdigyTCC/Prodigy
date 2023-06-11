@@ -18,15 +18,18 @@ namespace ProdigyWeb.Controllers
         private readonly ProdigyWebContext _context;
         private readonly ICookie _cookie;
         private string _caminhoServidor;
+        private readonly IValidaIdentidade _auth;
 
         public UsuarioController(
                 ProdigyWebContext context,
                 ICookie cookie,
-                IWebHostEnvironment caminhoServidor)
+                IWebHostEnvironment caminhoServidor,
+                IValidaIdentidade auth)
         {
             _caminhoServidor = caminhoServidor.WebRootPath;
             _cookie = cookie;
             _context = context;
+            _auth = auth;
         }
 
         [AllowAnonymous]
@@ -112,40 +115,45 @@ namespace ProdigyWeb.Controllers
 
         [HttpPost("CadastrarUsuario")]
         public async Task<IActionResult> CadastrarUsuario(Usuario usuario)
+        {
+            try
             {
-                try
+                if (ModelState.IsValid)
                 {
-                    if (ModelState.IsValid)
+                    var usuarios = await _context.Usuarios.FirstOrDefaultAsync(x => x.Email == usuario.Email);
+
+                    var authCpf = _auth.ValidaCpf(usuario.Cpf);
+
+                    string senhaSecreta = hash.CriptografarSenha(usuario.Senha.ToString());
+
+                    if (usuarios != null)
                     {
-                        var usuarios = await _context.Usuarios.FirstOrDefaultAsync(x => x.Email == usuario.Email);
-
-                        string senhaSecreta = hash.CriptografarSenha(usuario.Senha.ToString());
-
-                        if (usuarios == null)
-                        {
-                            usuario.Senha = senhaSecreta;
-                            usuario.Nivel = "Administrador";
-                            usuario.DataRegistro = DateTime.UtcNow.ToString("dd/MM/yyyy");
-
-                            _context.Usuarios.Add(usuario);
-                            _context.SaveChanges();
-                            TempData["Sucesso"] = "Cadastro realizado com sucesso!";
-                            return RedirectToAction(nameof(Login));
-                        }
-                        else
-                        {
-                            TempData["Erro"] = "Email já existe, ou algum campo está incompleto.";
-                            return RedirectToAction(nameof(Cadastrar));
-                        }
+                        TempData["Erro"] = "Email já existe, ou algum campo está incompleto.";
+                        return RedirectToAction(nameof(Cadastrar));
                     }
-                }
-                catch (DbUpdateException e)
-                {
-                    TempData["Erro"] = $"Erro ao criar cadastro: {e.Message}";
+                    if (!authCpf)
+                    {
+                        TempData["Erro"] = "CPF inválido.";
+                        return RedirectToAction(nameof(Cadastrar));
+                    }
+                    usuario.Senha = senhaSecreta;
+                    usuario.Nivel = "Administrador";
+                    usuario.Status = "Ativo";
+                    usuario.DataRegistro = DateTime.UtcNow.ToString("dd/MM/yyyy");
+
+                    _context.Usuarios.Add(usuario);
+                    _context.SaveChanges();
+                    TempData["Sucesso"] = "Cadastro realizado com sucesso!";
                     return RedirectToAction(nameof(Login));
                 }
-                return RedirectToAction(nameof(Cadastrar));
             }
+            catch (DbUpdateException e)
+            {
+                TempData["Erro"] = $"Erro ao criar cadastro: {e.Message}";
+                return RedirectToAction(nameof(Login));
+            }
+            return RedirectToAction(nameof(Cadastrar));
+        }
 
         [HttpGet("Logout"), Authorize]
         public async Task<IActionResult> Logout()
@@ -156,42 +164,33 @@ namespace ProdigyWeb.Controllers
             }
 
         [HttpPost("UploadImagem")]
-        public async Task<IActionResult> UploadImagem(IFormFile? imagem)
+        public IActionResult UploadImagem(IFormFile? imagem)
+        {
+            AddSessao();
+
+            if (imagem == null) return RedirectToAction(nameof(Index),
+                  TempData["Erro"] = $"Selecione uma imagem para atualizar o perfil!");
+
+            var nomeImagem = Upload("Imagem", imagem);
+                
+            string usuarioId = ViewBag.Id;
+            var usuarioBanco = _context.Usuarios
+                .AsNoTracking()
+                .FirstOrDefault(x => x.UsuarioId.ToString() == usuarioId);
+
+            try
             {
-                AddSessao();
-
-                if (imagem == null) return RedirectToAction(nameof(Index),
-                       TempData["Erro"] = $"Selecione uma imagem para atualizar o perfil!");
-
-                string caminhoAddFoto = _caminhoServidor + "\\Imagem\\";
-                string nomeImagem = Guid.NewGuid().ToString() + "_" + imagem.FileName;
-                string usuarioId = ViewBag.Id;
-                var usuarioBanco = _context.Usuarios
-                    .AsNoTracking()
-                    .FirstOrDefault(x => x.UsuarioId.ToString() == usuarioId);
-
-                if (!Directory.Exists(caminhoAddFoto))
-                {
-                    Directory.CreateDirectory(caminhoAddFoto);
-                }
-
-                using (var stream = System.IO.File.Create(caminhoAddFoto + nomeImagem))
-                {
-                    await imagem.CopyToAsync(stream);
-                }
-                try
-                {
-                    usuarioBanco.Imagem = nomeImagem;
-                    _context.Usuarios.Update(usuarioBanco);
-                    _context.SaveChanges();
-                }
-                catch (DbUpdateException e)
-                {
-                    return RedirectToAction(nameof(Index),
-                        TempData["Erro"] = $"Falha ao atualizar a imagem! ERRO: [ {e} ]");
-                }
-                return RedirectToAction(nameof(Index));
+                usuarioBanco.Imagem = nomeImagem.ToString();
+                _context.Usuarios.Update(usuarioBanco);
+                _context.SaveChanges();
             }
+            catch (DbUpdateException e)
+            {
+                return RedirectToAction(nameof(Index),
+                TempData["Erro"] = $"Falha ao atualizar a imagem! ERRO: [ {e} ]");
+            }
+            return RedirectToAction(nameof(Index));
+        }
 
         [HttpPost("DeletarConta")]
         public async Task<IActionResult> DeletarConta(string id)
@@ -220,6 +219,7 @@ namespace ProdigyWeb.Controllers
             var usuarioId = User.FindFirst("Id")?.Value;
             var usuarios = await _context.Usuarios.FirstOrDefaultAsync(x => x.UsuarioId.Equals(int.Parse(usuarioId)));
             var enderecos = await _context.Enderecos.FirstOrDefaultAsync(x => x.UsuarioId.Equals(int.Parse(usuarioId)));
+            var juridico = await _context.Juridicos.FirstOrDefaultAsync(x => x.UsuarioId.Equals(int.Parse(usuarioId)));
 
             ViewBag.Layout = "ProdigyWeb";
             ClaimsPrincipal claims = HttpContext.User;
@@ -231,6 +231,7 @@ namespace ProdigyWeb.Controllers
                 value = "0";
 
                 ViewBag.Endereco = enderecos;
+                ViewBag.Juridico = juridico;
 
                 AddSessao();
                 return View(usuarios);
@@ -239,7 +240,9 @@ namespace ProdigyWeb.Controllers
         }
 
         [HttpPost("AtualizarConta")]
-        public async Task<IActionResult> AtualizarConta(string Nome, string Cpf, string Email, string DataNascimento, string Telefone, string Senha)
+        public async Task<IActionResult> AtualizarConta(string Nome, 
+            string Cpf, string Email, string DataNascimento, 
+            string Telefone, string Senha)
         {   
             try
             {
@@ -278,7 +281,9 @@ namespace ProdigyWeb.Controllers
         }
 
         [HttpPost("AtualizarEndereco")]
-        public async Task<IActionResult> AtualizarEndereco(string Rua, string Numero, string Bairro, string Complemento, string Cep, string Cidade, string Estado, string Pais)
+        public async Task<IActionResult> AtualizarEndereco(string Rua, 
+            string Numero, string Bairro, string Complemento, string Cep, 
+            string Cidade, string Estado, string Pais)
         {
             try
             {
@@ -331,6 +336,104 @@ namespace ProdigyWeb.Controllers
                 return RedirectToAction(nameof(Login));
             }
             return RedirectToAction(nameof(Index));
+        }
+
+        [HttpPost("AtualizarEmpresa")]
+        public async Task<IActionResult> AtualizarEmpresa(string NomeRazaoEmpresa, 
+            string EmailEmpresa, string TelefoneEmpresa, string CnpjEmpresa,
+            string RgMunicipalEmpresa, string RgEstadualEmpresa, string NaturezaEmpresa,
+            string DataFundacaoEmpresa, IFormFile Certificado, string RuaEmpresa, string NumeroEmpresa, 
+            string BairroEmpresa, string ComplementoEmpresa, string CepEmpresa, string CidadeEmpresa, 
+            string EstadoEmpresa, string PaisEmpresa)
+        {
+            var usuarioId = User.FindFirst("Id")?.Value;
+
+            var juridicoBanco = await _context.Juridicos.FirstOrDefaultAsync(x => x.UsuarioId.Equals(int.Parse(usuarioId)));
+
+            var authCnpj = _auth.ValidaCnpj(CnpjEmpresa);
+
+            if (!authCnpj)
+            {
+                TempData["Erro"] = "CNPJ é inválido!";
+                return RedirectToAction(nameof(Atualizar));
+            }
+
+            try
+            {
+                var arquivoSalvo = Upload("Certificados", Certificado);
+                
+                if(juridicoBanco == null)
+                {
+                    var juridico = new Juridico()
+                    {
+                        NomeRazao = NomeRazaoEmpresa,
+                        Email = EmailEmpresa,
+                        Telefone = TelefoneEmpresa,
+                        Cnpj = CnpjEmpresa,
+                        RgMunicipal = RgMunicipalEmpresa,
+                        RgEstadual = RgEstadualEmpresa,
+                        Natureza = NaturezaEmpresa,
+                        DataFundacao = DataFundacaoEmpresa,
+                        CertificadoNF = arquivoSalvo.ToString(),
+                        Rua = RuaEmpresa,
+                        Numero = int.Parse(NumeroEmpresa),
+                        Bairro = BairroEmpresa,
+                        Complemento = ComplementoEmpresa,
+                        Cep = CepEmpresa,
+                        Cidade = CidadeEmpresa,
+                        Estado = EstadoEmpresa,
+                        Pais = PaisEmpresa,
+                        UsuarioId = int.Parse(usuarioId)
+                    };
+
+                    _context.Juridicos.Add(juridico);
+                    _context.SaveChanges();
+
+                    return RedirectToAction(nameof(Atualizar));
+                }
+                if (!string.IsNullOrEmpty(NomeRazaoEmpresa)) juridicoBanco.NomeRazao = NomeRazaoEmpresa;
+                if (!string.IsNullOrEmpty(EmailEmpresa)) juridicoBanco.Email = EmailEmpresa;
+                if (!string.IsNullOrEmpty(TelefoneEmpresa)) juridicoBanco.Telefone = TelefoneEmpresa;
+                if (!string.IsNullOrEmpty(CnpjEmpresa)) juridicoBanco.Cnpj = CnpjEmpresa;
+                if (!string.IsNullOrEmpty(RgMunicipalEmpresa)) juridicoBanco.RgMunicipal = RgMunicipalEmpresa;
+                if (!string.IsNullOrEmpty(RgEstadualEmpresa)) juridicoBanco.RgEstadual = RgEstadualEmpresa;
+                if (!string.IsNullOrEmpty(NaturezaEmpresa)) juridicoBanco.Natureza = NaturezaEmpresa;
+                if (!string.IsNullOrEmpty(DataFundacaoEmpresa)) juridicoBanco.DataFundacao = DataFundacaoEmpresa;
+                if (!string.IsNullOrEmpty(Certificado.FileName)) juridicoBanco.CertificadoNF = arquivoSalvo.ToString();//Falta Arrumar
+                if (!string.IsNullOrEmpty(RuaEmpresa)) juridicoBanco.Rua = RuaEmpresa;
+                if (!string.IsNullOrEmpty(NumeroEmpresa)) juridicoBanco.Numero = int.Parse(NumeroEmpresa);
+                if (!string.IsNullOrEmpty(BairroEmpresa)) juridicoBanco.Bairro = BairroEmpresa;
+                if (!string.IsNullOrEmpty(ComplementoEmpresa)) juridicoBanco.Complemento = ComplementoEmpresa;
+                if (!string.IsNullOrEmpty(CepEmpresa)) juridicoBanco.Cep = CepEmpresa;
+                if (!string.IsNullOrEmpty(CidadeEmpresa)) juridicoBanco.Cidade = CidadeEmpresa;
+                if (!string.IsNullOrEmpty(EstadoEmpresa)) juridicoBanco.Estado = EstadoEmpresa;
+                if (!string.IsNullOrEmpty(PaisEmpresa)) juridicoBanco.Pais = PaisEmpresa;
+
+                _context.Juridicos.Update(juridicoBanco);
+                _context.SaveChanges();
+
+                return RedirectToAction(nameof(Atualizar));
+            }
+            catch (Exception)
+            {
+                return RedirectToAction(nameof(Atualizar));
+            }
+        }
+        public async Task<string> Upload(string diretorio,IFormFile arquivo)
+        {
+            string caminhoAddFoto = _caminhoServidor + $"\\{diretorio}\\";
+            string nomeArquivo = Guid.NewGuid().ToString() + "_" + arquivo.FileName;
+
+            if (!Directory.Exists(caminhoAddFoto))
+            {
+                Directory.CreateDirectory(caminhoAddFoto);
+            }
+
+            using (var stream = System.IO.File.Create(caminhoAddFoto + nomeArquivo))
+            {
+                await arquivo.CopyToAsync(stream);
+            }
+            return nomeArquivo;
         }
     }
 }

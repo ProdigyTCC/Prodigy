@@ -33,7 +33,7 @@ namespace ProdigyWeb.Models
         [Required(ErrorMessage = "* Campo obirgatório")]
         public string Cep { get; set; }
 
-        [MaxLength(2)]
+        [MaxLength(20)]
         [Display(Name = "Estado")]
         [Required(ErrorMessage = "* Campo obirgatório")]
         public string Estado { get; set; }

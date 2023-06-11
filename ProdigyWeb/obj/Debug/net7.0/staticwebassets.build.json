@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "8RJ9Kc2T/5HiPw+56sUAlOsUzGzXBAunUWDXNGEDr5w=",
+  "Hash": "kk6/HUnWW67X/NYS6PVTbB1jTG5haa8EYSHHvu2yslg=",
   "Source": "ProdigyWeb",
   "BasePath": "_content/ProdigyWeb",
   "Mode": "Default",
@@ -1307,6 +1307,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\js\\.editorconfig"
+    },
+    {
+      "Identity": "C:\\Users\\Wallace\\Desktop\\tcc\\Development\\Prodigy\\ProdigyWeb\\wwwroot\\js\\atualizarEmpresa.js",
+      "SourceId": "ProdigyWeb",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Wallace\\Desktop\\tcc\\Development\\Prodigy\\ProdigyWeb\\wwwroot\\",
+      "BasePath": "_content/ProdigyWeb",
+      "RelativePath": "js/atualizarEmpresa.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\atualizarEmpresa.js"
     },
     {
       "Identity": "C:\\Users\\Wallace\\Desktop\\tcc\\Development\\Prodigy\\ProdigyWeb\\wwwroot\\js\\atualizarUsuario.js",

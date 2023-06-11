@@ -22,6 +22,10 @@ btnCancelEndereco.style.display = "none"
 btnConfirmEndereco.style.display = "none"
 btnEditEndereco.style.display = "block"
 
+btnCancelEmpresa.style.display = "none"
+btnConfirmEmpresa.style.display = "none"
+btnEditEmpresa.style.display = "block"
+
 //BOTOES GERAL
 btnEditGeral.addEventListener('click', () => {
     btnCancelGeral.style.display = "block"
@@ -68,7 +72,7 @@ btnConfirmConta.addEventListener('click', () => {
     btnConfirmConta.style.display = "none"
     btnEditConta.style.display = "block"
 
-    var formData = new FormData()
+    let formData = new FormData()
 
     formData.append("Nome", inputNome.value)
     formData.append("Cpf", inputCpf.value)
@@ -85,6 +89,10 @@ btnConfirmConta.addEventListener('click', () => {
             let value = '/1'
             window.location.href = 'https://localhost:7202/Usuario/Atualizar' + value
         })
+        .catch(function () {
+            let value = '/2'
+            window.location.href = 'https://localhost:7202/Usuario/Atualizar' + value
+        }) 
 
     inputNome.disabled = true
     inputCpf.disabled = true
@@ -136,13 +144,12 @@ btnEditEndereco.addEventListener('click', () => {
 })
 
 btnConfirmEndereco.addEventListener('click', () => {
-    let urlCurrent = window.location.href
 
     btnCancelEndereco.style.display = "none"
     btnConfirmEndereco.style.display = "none"
     btnEditEndereco.style.display = "block"
 
-    var formData = new FormData()
+    let formData = new FormData()
 
     formData.append("Rua", inputRua.value)
     formData.append("Numero", inputNumero.value)
@@ -159,6 +166,10 @@ btnConfirmEndereco.addEventListener('click', () => {
     })
         .then(function () {
             let value = '/1'
+            window.location.href = 'https://localhost:7202/Usuario/Atualizar' + value
+        })
+        .catch(function () {
+            let value = '/2'
             window.location.href = 'https://localhost:7202/Usuario/Atualizar' + value
         })
 
@@ -187,3 +198,4 @@ btnCancelEndereco.addEventListener('click', () => {
     inputPais.disabled = true
 })
 //FIM ENDEREÇO/CONTATO
+

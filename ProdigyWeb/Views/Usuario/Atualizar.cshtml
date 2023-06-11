@@ -3,10 +3,15 @@
     ViewData["Title"] = "Atualizar";
 
     var endereco = new Endereco();
+    var juridico = new Juridico();
 
     if(ViewBag.Endereco != null)
     {
         endereco = ViewBag.Endereco;
+    }
+    if(ViewBag.Juridico != null)
+    {
+        juridico = ViewBag.Juridico;
     }
 }
 <div class="section-profile container-fluid d-flex flex-row justify-content-between pt-3 pb-5">
@@ -28,30 +33,32 @@
         <hr class="line-profile">
 
         <div class="tab-content mx-3 mb-2" id="pills-tabContent">
+            
+            <h4>Informações Gerais</h4>
             @*PAINEL GERAL *@
             <div class="tab-pane fade show active" id="pills-geral" role="tabpanel" aria-labelledby="pills-geral-tab">
-                <p class="label-profile pb-1 m-0">Forma de Pagamento</p>
+                <p class="label-profile pb-1 m-0">Percentual de Lucro</p>
                 <div class="input-group pb-3">
-                    <input class="form-control" value="" type="text" placeholder="Nenhum" disabled>
+                    <input class="form-control" value="" type="text" placeholder="%" disabled>
                 </div>
 
-                <p class="label-profile pb-1 m-0">Data de Registro</p>
+                <p class="label-profile pb-1 m-0">Taxa no Crédito</p>
                 <div class="input-group pb-3">
-                    <input class="form-control" value="" type="text" placeholder="00/00/0000" disabled>
+                    <input class="form-control" value="" type="text" placeholder="%" disabled>
                 </div>
 
-                <p class="label-profile pb-1 m-0">Status de Pagamento</p>
+                <p class="label-profile pb-1 m-0">Taxa por Parcelas</p>
                 <div class="input-group pb-3">
-                    <input class="form-control" value="" type="text" placeholder="Informação" aria-label="Disabled input example" disabled>
+                    <input class="form-control" value="" type="text" placeholder="%" aria-label="Disabled input example" disabled>
                 </div>
 
-                <p class="label-profile pb-1 m-0">Plano Atual</p>
+                <p class="label-profile pb-1 m-0">Taxa no Débito</p>
                 <div class="input-group pb-3">
-                        <input class="form-control" value="@Model.Plano" type="text" placeholder="Plano" aria-label="Disabled input example" disabled>
+                        <input class="form-control" value="" type="text" placeholder="%" aria-label="Disabled input example" disabled>
                 </div>
-                <p class="label-profile pb-1 m-0">Vencimento do plano</p>
+                <p class="label-profile pb-1 m-0">Desconto Dinheiro/Pix</p>
                 <div class="input-group pb-3">
-                    <input class="form-control" type="text" placeholder="29/07/2023" aria-label="Disabled input example" disabled>
+                    <input class="form-control" type="text" placeholder="%" aria-label="Disabled input example" disabled>
                 </div>
 
                 <div class="container d-flex justify-content-end p-0">
@@ -63,6 +70,8 @@
 
             @*PAINEL CONTA*@
             <div class="tab-pane fade" id="pills-conta" role="tabpanel" aria-labelledby="pills-conta-tab">
+
+                <h4>Dados da Conta</h4>
                 <div id="FormConta">
                     
                     <div class="form-row">
@@ -108,6 +117,8 @@
 
             @*PAINEL ENDERECO*@
             <div class="tab-pane fade" id="pills-endereco" role="tabpanel" aria-labelledby="pills-endereco-tab">
+                
+                <h4>Endereço do Usuário</h4>
                 <div class="form-row">
                     <div class="form-group col">
                         <p class="label-profile pb-1 m-0">Logradouro</p>
@@ -161,7 +172,116 @@
             </div>
 
             @*PAINEL EMPRESA*@
-            <div class="tab-pane fade" id="pills-empresa" role="tabpanel" aria-labelledby="pills-empresa-tab">D</div>
+            <div class="tab-pane fade" id="pills-empresa" role="tabpanel" aria-labelledby="pills-empresa-tab">
+                <h4>Dados da Empresa</h4>
+                <div class="form-row">
+                    <div class="form-group col">
+                        <p class="label-profile pb-1 m-0">Nome da Empresa</p>
+                        <input name="Razao" id="inputRazao" class="inputProfile form-control" value="@juridico.NomeRazao" type="text" placeholder="Razão Social" disabled>
+                    </div>
+                    <div class="form-group col-md-4">
+                        <p class="label-profile pb-1 m-0">Data de Fundação</p>
+                        <input name="DataFundacao" id="inputDtFundacao" class="inputProfile form-control" value="@juridico.DataFundacao" type="date" placeholder="dd/mm/aaaa" disabled>
+                    </div>
+                    
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group col-md-5">
+                        <p class="label-profile pb-1 m-0">Celular</p>
+                        <input name="Telefone" id="inputTelefoneJuridico" class="inputProfile form-control" value="@juridico.Telefone" type="text" placeholder="(DDD) Número" disabled>
+                    </div>
+
+                    <div class="form-group col-md-7">
+                        <p class="label-profile pb-1 m-0">CNPJ</p>
+                        <input name="Cnpj" id="inputCnpj" class="inputProfile form-control" value="@juridico.Cnpj" type="text" placeholder="00.000.000/0001-00" disabled>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group col-md-4">
+                        <p class="label-profile pb-1 m-0">Reg. Municipal</p>
+                        <input name="RgMunicipal" id="inputRegMunicipal" class="inputProfile form-control" value="@juridico.RgMunicipal" type="text" placeholder="Registro Municipal" disabled>
+                    </div>
+                    <div class="form-group col-md-4">
+                        <p class="label-profile pb-1 m-0">Reg. Estadual</p>
+                        <input name="RgEstadual" id="inputRegEstadual" class="inputProfile form-control" value="@juridico.RgEstadual" type="text" placeholder="Registro Estadual" disabled>
+                    </div>
+                    <div class="form-group col-md-4">
+                        <p class="label-profile pb-1 m-0">Natureza Jurídica</p>
+                        <input name="Natureza" id="inputNatureza" class="inputProfile form-control" value="@juridico.Natureza" type="text" placeholder="Natureza de Operação" disabled>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group col">
+                        <p class="label-profile pb-1 m-0">Email da Empresa</p>
+                        <input name="Email" id="inputEmailJuridico" class="inputProfile form-control" value="@juridico.Email" type="text" placeholder="E-mail da Empresa" disabled>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col">
+                        <p class="label-estoque">Certificado e-NF</p>
+                        <input name="Certificado" class="form-control" type="file" id="inputCertificado">
+                    </div>
+                </div>
+                <br>
+
+                <hr class="line-profile m-0 mb-3">
+                <h4>Endereço da Empresa</h4>
+
+                    <div class="form-row">
+                        <div class="form-group col">
+                            <p class="label-profile pb-1 m-0">Logradouro</p>
+                            <input name="RuaEmpresa" id="inputRuaEmpresa" class="inputProfile form-control" value="@juridico.Rua" type="text" placeholder="Logradouro" disabled>
+                        </div>
+
+                        <div class="form-group col-md-2">
+                            <p class="label-profile pb-1 m-0">Número</p>
+                            <input name="NumeroEmpresa" id="inputNumeroEmpresa" class="inputProfile form-control" value="@juridico.Numero" type="text" placeholder="000" disabled>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group col-md-7">
+                            <p class="label-profile pb-1 m-0">Bairro</p>
+                        <input name="BairroEmpresa" id="inputBairroEmpresa" class="inputProfile form-control" value="@juridico.Bairro" type="email" placeholder="Bairro" disabled>
+                        </div>
+
+                        <div class="form-group col-md-5">
+                            <p class="label-profile pb-1 m-0">Complemento</p>
+                            <input name="ComplementoEmpresa" id="inputComplementoEmpresa" class="inputProfile form-control" value="@juridico.Complemento" type="text" placeholder="Nº Bloco/Apartamento..." disabled>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group col-md-4">
+                            <p class="label-profile pb-1 m-0">CEP</p>
+                            <input name="CepEmpresa" id="inputCepEmpresa" class="inputProfile form-control" value="@juridico.Cep" type="text" placeholder="00000-000" disabled>
+                        </div>
+                        <div class="form-group col-md-8">
+                            <p class="label-profile pb-1 m-0">Cidade</p>
+                        <input name="CidadeEmpresa" id="inputCidadeEmpresa" class="inputProfile form-control" value="@juridico.Cidade" type="text" placeholder="Nome da cidade" disabled>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <p class="label-profile pb-1 m-0">Estado</p>
+                            <input name="EstadoEmpresa" id="inputEstadoEmpresa" class="inputProfile form-control" value="@juridico.Estado" type="text" placeholder="Ex.:SP" disabled>
+                        </div>
+                        <div class="form-group col-md-4">
+                            <p class="label-profile pb-1 m-0">País</p>
+                        <input name="PaisEmpresa" id="inputPaisEmpresa" class="inputProfile form-control" value="@juridico.Pais" type="text" placeholder="Ex.: Brasil" disabled>
+                        </div>
+                    </div>
+
+                <div class="container d-flex justify-content-end p-0">
+                    <button id="btnEditEmpresa" type="button" class="buttonConfirm button-small">Editar</button>
+                    <button id="btnCancelEmpresa" type="button" class="buttonCancel button-small-cancel mx-2">Cancelar</button>
+                    <button id="btnConfirmEmpresa" class="buttonConfirm button-small">Confirmar</button>
+                </div>
+            </div>
         </div>
     </div>
 </div>

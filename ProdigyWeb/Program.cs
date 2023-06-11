@@ -21,7 +21,12 @@ builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationSc
         options.LoginPath = "/Usuario/Login";
         options.ExpireTimeSpan = TimeSpan.FromHours(8);
     });
-
+builder.Services.Configure<CookiePolicyOptions>(options =>
+{
+    options.CheckConsentNeeded = context => true;
+    options.MinimumSameSitePolicy = SameSiteMode.None;
+    options.HttpOnly = HttpOnlyPolicy.Always;
+});
 
 var app = builder.Build();
 
@@ -42,11 +47,7 @@ app.UseStaticFiles(new StaticFileOptions
 
 app.UseRouting();
 
-app.UseCookiePolicy(new CookiePolicyOptions
-{
-    MinimumSameSitePolicy = SameSiteMode.Strict,
-    HttpOnly = HttpOnlyPolicy.Always
-});
+app.UseCookiePolicy();
 
 app.UseAuthentication();
 

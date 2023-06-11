@@ -10,11 +10,11 @@ namespace ProdigyWeb.Models
     public class Config
     {
         public int ConfigId { get; set; }
-
-        [MaxLength(20)]
-        [Display(Name = "Cor do tema")]
-        public string Tema { get; set; }
-        public string NomeEmpresa { get; set; }
+        public string PorcentagemLucro { get; set; }
+        public string TaxaCredito { get; set; }
+        public string TaxaDebito { get; set; }
+        public string TaxaParcela { get; set; }
+        public string PorcentagemDesconto { get; set; }
 
         [ForeignKey("UsuarioId")]
         public Usuario Usuario { get; set; }

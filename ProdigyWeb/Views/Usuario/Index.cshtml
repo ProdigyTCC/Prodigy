@@ -2,8 +2,8 @@
 @{
     ViewData["Title"] = "Perfil";
 }
-    <div class="section-profile container-fluid d-flex flex-row justify-content-between pt-3 pb-5">
-        <div class="container-fluid profile">
+<div class="section-profile container-fluid d-flex flex-md-nowrap justify-content-between pt-3 pb-5">
+        <div class="container-fluid profile pb-5">
             <div class="container-fluid card-profile pt-3 justify-content-center text-center">
                 <form asp-action="UploadImagem" asp-controller="Usuario" enctype="multipart/form-data">
                     <div class="personal-image">
@@ -47,7 +47,7 @@
         </div>
     <div class="container-fluid input-profile d-flex flex-column">
             <h2 class="info-input mb-3">Informações da empresa</h2>
-        <p class="label-profile pb-1 m-0">Login</p>
+        <p class="label-profile pb-1 m-0">Forma de pagamento</p>
         <div class="input-group pb-3">
             <input class="inputProfileName form-control" value="@Model.Email" type="text" placeholder="Nome" disabled>
         </div>
@@ -57,9 +57,9 @@
             <input class="inputProfileDate form-control" value="@Model.DataRegistro" type="text" placeholder="00/00/0000" disabled>
         </div>
 
-        <p class="label-profile pb-1 m-0">CPF</p>
+        <p class="label-profile pb-1 m-0">Status da Conta</p>
         <div class="input-group pb-3">
-            <input class="form-control" value="@Model.Cpf" type="text" placeholder="Informação" aria-label="Disabled input example" disabled>
+            <input class="form-control" value="@Model.Status" type="text" placeholder="Status" aria-label="Disabled input example" disabled>
         </div>
 
         <p class="label-profile pb-1 m-0">Plano Atual</p>
