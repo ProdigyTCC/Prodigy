@@ -48,7 +48,7 @@ btnEditEmpresa.addEventListener('click', () => {
     inputPaisEmpresa.disabled = false
 })
 
-btnConfirmEmpresa.addEventListener('click', () => {
+btnConfirmEmpresa.addEventListener('click', (event) => {
 
     btnCancelEmpresa.style.display = "none"
     btnConfirmEmpresa.style.display = "none"
@@ -64,7 +64,7 @@ btnConfirmEmpresa.addEventListener('click', () => {
     formData.append("RgEstadualEmpresa", inputRegEstadual.value)
     formData.append("NaturezaEmpresa", inputNatureza.value)
     formData.append("DataFundacaoEmpresa", inputDtFundacao.value)
-    formData.append("Certificado", inputCertificado.value)
+    formData.append("Certificado", inputCertificado.event.target.files[0])
     formData.append("RuaEmpresa", inputRuaEmpresa.value)
     formData.append("NumeroEmpresa", inputNumeroEmpresa.value)
     formData.append("BairroEmpresa", inputBairroEmpresa.value)

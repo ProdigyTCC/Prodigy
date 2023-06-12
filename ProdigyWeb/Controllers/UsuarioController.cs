@@ -8,6 +8,7 @@ using ProdigyWeb.Services;
 using System.Data.Common;
 using System.Security.Claims;
 using System.Security.Cryptography;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace ProdigyWeb.Controllers
 {
@@ -164,15 +165,26 @@ namespace ProdigyWeb.Controllers
             }
 
         [HttpPost("UploadImagem")]
-        public IActionResult UploadImagem(IFormFile? imagem)
+        public async Task<IActionResult> UploadImagem(IFormFile? imagem)
         {
             AddSessao();
 
             if (imagem == null) return RedirectToAction(nameof(Index),
                   TempData["Erro"] = $"Selecione uma imagem para atualizar o perfil!");
 
-            var nomeImagem = Upload("Imagem", imagem);
-                
+            string caminhoAddFoto = _caminhoServidor + $"\\Imagem\\";
+            string nomeImagem = Guid.NewGuid().ToString() + "_" + imagem.FileName;
+
+            if (!Directory.Exists(caminhoAddFoto))
+            {
+                Directory.CreateDirectory(caminhoAddFoto);
+            }
+
+            using (var stream = System.IO.File.Create(caminhoAddFoto + nomeImagem))
+            {
+                await imagem.CopyToAsync(stream);
+            }
+
             string usuarioId = ViewBag.Id;
             var usuarioBanco = _context.Usuarios
                 .AsNoTracking()
@@ -352,15 +364,26 @@ namespace ProdigyWeb.Controllers
 
             var authCnpj = _auth.ValidaCnpj(CnpjEmpresa);
 
-            if (!authCnpj)
-            {
-                TempData["Erro"] = "CNPJ é inválido!";
-                return RedirectToAction(nameof(Atualizar));
-            }
-
             try
             {
-                var arquivoSalvo = Upload("Certificados", Certificado);
+                string caminhoAddFoto = _caminhoServidor + "\\Certificado\\";
+                string nomeArquivo = Guid.NewGuid().ToString() + "_" + Certificado.FileName;
+
+                if (!Directory.Exists(caminhoAddFoto))
+                {
+                    Directory.CreateDirectory(caminhoAddFoto);
+                }
+
+                using (var stream = System.IO.File.Create(caminhoAddFoto + nomeArquivo))
+                {
+                    await Certificado.CopyToAsync(stream);
+                }
+
+                if (!authCnpj)
+                {
+                    TempData["Erro"] = "CNPJ é inválido!";
+                    return RedirectToAction(nameof(Atualizar));
+                }
                 
                 if(juridicoBanco == null)
                 {
@@ -374,7 +397,7 @@ namespace ProdigyWeb.Controllers
                         RgEstadual = RgEstadualEmpresa,
                         Natureza = NaturezaEmpresa,
                         DataFundacao = DataFundacaoEmpresa,
-                        CertificadoNF = arquivoSalvo.ToString(),
+                        CertificadoNF = nomeArquivo,
                         Rua = RuaEmpresa,
                         Numero = int.Parse(NumeroEmpresa),
                         Bairro = BairroEmpresa,
@@ -399,7 +422,7 @@ namespace ProdigyWeb.Controllers
                 if (!string.IsNullOrEmpty(RgEstadualEmpresa)) juridicoBanco.RgEstadual = RgEstadualEmpresa;
                 if (!string.IsNullOrEmpty(NaturezaEmpresa)) juridicoBanco.Natureza = NaturezaEmpresa;
                 if (!string.IsNullOrEmpty(DataFundacaoEmpresa)) juridicoBanco.DataFundacao = DataFundacaoEmpresa;
-                if (!string.IsNullOrEmpty(Certificado.FileName)) juridicoBanco.CertificadoNF = arquivoSalvo.ToString();//Falta Arrumar
+                if (!string.IsNullOrEmpty(Certificado.FileName)) juridicoBanco.CertificadoNF = nomeArquivo;
                 if (!string.IsNullOrEmpty(RuaEmpresa)) juridicoBanco.Rua = RuaEmpresa;
                 if (!string.IsNullOrEmpty(NumeroEmpresa)) juridicoBanco.Numero = int.Parse(NumeroEmpresa);
                 if (!string.IsNullOrEmpty(BairroEmpresa)) juridicoBanco.Bairro = BairroEmpresa;
@@ -418,22 +441,6 @@ namespace ProdigyWeb.Controllers
             {
                 return RedirectToAction(nameof(Atualizar));
             }
-        }
-        public async Task<string> Upload(string diretorio,IFormFile arquivo)
-        {
-            string caminhoAddFoto = _caminhoServidor + $"\\{diretorio}\\";
-            string nomeArquivo = Guid.NewGuid().ToString() + "_" + arquivo.FileName;
-
-            if (!Directory.Exists(caminhoAddFoto))
-            {
-                Directory.CreateDirectory(caminhoAddFoto);
-            }
-
-            using (var stream = System.IO.File.Create(caminhoAddFoto + nomeArquivo))
-            {
-                await arquivo.CopyToAsync(stream);
-            }
-            return nomeArquivo;
         }
     }
 }

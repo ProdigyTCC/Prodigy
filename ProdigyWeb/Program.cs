@@ -14,6 +14,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllersWithViews();
 builder.Services.AddScoped<ICookie, CookieService>();
 builder.Services.AddScoped<IEmail, EmailService>();
+builder.Services.AddScoped<IValidaIdentidade, ValidaIdentidade>();
 builder.Services.AddDbContext<ProdigyWebContext>(options => options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection")));
 builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
     .AddCookie(options =>
