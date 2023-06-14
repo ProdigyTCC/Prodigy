@@ -93,3 +93,22 @@ input:focus {
   padding-left: 5%;
   border-radius: 5px 5px 5px 5px;
 }
+
+.back-page .icon-p {
+  text-decoration: none;
+  width: 5%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  color: #1D7870;
+  font-weight: 600;
+}
+
+.back-page:hover {
+  text-decoration-line: none;
+}
+
+.back-page .icon-p:hover {
+  color: #30BEB2;
+}

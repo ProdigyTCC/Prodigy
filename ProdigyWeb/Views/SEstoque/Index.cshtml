@@ -33,9 +33,9 @@
                             <td>@item.ValorFinal</td>
                             <td>
                                 <div class="d-flex botoes-estoque">
-                                    <button id="buttonAddProd" class="botao-estoque" href=""><i class="fa-solid fa-square-plus fa-xl"></i></button>
-                                    <a asp-controller="SEstoque" asp-action="Editar" asp-route-id="@item.SProdutoId" type="button" class="botao-estoque"><i class="fa-solid fa-square-pen fa-xl"></i></a>
-                                    <a asp-action="InfoProdutos"  type="button" class="botao-estoque" data-bs-toggle="modal" data-bs-target="#verInfoProduto" data-bs-whatever="mdo"><i class="fa-solid fa-circle-info fa-xl"></i></a>
+                                    <button id="buttonAddProd" class="botao-estoque" href="" title="Adicionar Quantidade"><i class="fa-solid fa-square-plus fa-xl"></i></button>
+                                    <a asp-controller="SEstoque" asp-action="Editar" asp-route-id="@item.SProdutoId" type="button" class="botao-estoque" title="Editar produto"><i class="fa-solid fa-square-pen fa-xl"></i></a>
+                                    <a asp-action="InfoProdutos"  type="button" class="botao-estoque" data-bs-toggle="modal" data-bs-target="#verInfoProduto" data-bs-whatever="mdo" title="Ver informações sobre o produto"><i class="fa-solid fa-circle-info fa-xl"></i></a>
                                 </div>
                             </td>
                         </tr>
@@ -45,9 +45,9 @@
         </table>
     </div>
     
-    <div class="div-botoes-estoque w-75 d-flex flex-row justify-content-between">
-        <a class="" asp-area="" asp-controller="SEstoque" asp-action="Addproduto"><button class="button-small">Adicionar produto</button></a>
-        <button class="button-small" data-bs-toggle="modal" data-bs-target="#addCategoria">Adicionar Categoria</button>
+    <div class="div-botoes-estoque w-75 d-flex flex-row justify-content-around">
+        <a class="" asp-area="" asp-controller="SEstoque" asp-action="Addproduto"><button class="button-dash-default">Adicionar produto</button></a>
+        <button class="button-dash-default" data-bs-toggle="modal" data-bs-target="#addCategoria">Adicionar Categoria</button>
     </div>
 
         @* MODAL EDITAR PRDUTO *@
@@ -226,8 +226,8 @@
                         </div>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn button-modal-cancel" data-bs-dismiss="modal">Cancelar</button>
-                        <button type="submit" class="btn button-modal-confirm">Salvar</button>
+                        <button type="button" class="button-modal-cancel" data-bs-dismiss="modal">Cancelar</button>
+                        <button type="submit" class="button-modal-confirm">Salvar</button>
                     </div>
                 </form>
             </div>

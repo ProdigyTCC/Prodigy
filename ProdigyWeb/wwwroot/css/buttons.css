@@ -1,5 +1,6 @@
 .primary-button, .secondary-button, .button-edit, .button-small,
-.button-small-cancel, .button-small-confirm, .button-modal-cancel, .button-modal-confirm, .button-white {
+.button-small-cancel, .button-small-confirm, .button-modal-cancel, 
+.button-modal-confirm, .button-white, .button-dash-default, .button-funcionario-primary, .button-funcionario-secondary {
     text-align: center;
     border: none;
     border-radius: 5px;
@@ -49,14 +50,26 @@
 .button-edit {
     width: 200px;
     height: 40px;
-    color: #E2F0EF;
     font-size: 20px;
     font-weight: 600;
+}
+
+.button-funcionario-primary, .button-funcionario-secondary {
+    width: 100px;
+    height: 40px;
+    font-weight: 600;
+}
+
+/* BOTÕES COM A MESMA COR - CINZA*/
+
+.button-edit, .button-funcionario-secondary {
     background-color: #2D3037;
+    color: #E2F0EF;
 }
 
 /* BOTÕES COM A MESMA COR - VERDE*/
-.primary-button, .button-dash-default, .button-modal-confirm, .button-small, .button-small-confirm {
+.primary-button, .button-dash-default, .button-modal-confirm, .button-small, 
+.button-small-confirm, .button-funcionario-primary {
     color: #E2F0EF;
     background-color: #30BEB2;
 }
@@ -72,24 +85,22 @@
     background-color: #c71f37;
 }
 
-
 /* HOVERS */
 
-
 /* BOTÕES COM O MESMO HOVER - VERDE ESCURO */
-.button-confirm:hover, .button-small-confirm:hover, .button-dash-default:hover {
+.button-confirm:hover, .button-small-confirm:hover, .button-modal-confirm:hover, .button-dash-default:hover, .button-funcionario-primary:hover {
     color: #E2F0EF;
     background-color: #1D7870;
 }
 
 /* BOTÕES COM O MESMO HOVER - VERMELHO ESCURO */
-.button-cancel:hover, .button-small-cancel:hover {
+.button-cancel:hover, .button-small-cancel:hover, .button-modal-cancel:hover {
     color: #E2F0EF;
     background-color: #85182a;
 }
 
 /* BOTÕES COM O MESMO HOVER - CINZA */
-.button-edit:hover {
+.button-edit:hover,.button-funcionario-secondary:hover {
     background-color: #434853;
 }
 

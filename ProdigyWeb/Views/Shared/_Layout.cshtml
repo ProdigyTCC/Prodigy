@@ -22,6 +22,7 @@
     <link rel="stylesheet" href="~/css/SDashboard.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/css/estoque.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/css/addprodutos.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/funcionario.css" asp-append-version="true" />
    
     <script type="text/javascript" charset="utf-8">
             
@@ -278,17 +279,18 @@
         <script src="~/js/perfil.js" asp-append-version="true"></script>
         <script src="~/js/payment.js" asp-append-version="true"></script>
         <script src="~/js/doughnut.js" asp-append-version="true"></script>
+        <script defer src="~/js/sidebar.js" asp-append-version="true"></script>
         <script src="~/js/atualizarUsuario.js" asp-append-version="true"></script>
         <script src="~/js/atualizarEmpresa.js" asp-append-version="true"></script>
         @await RenderSectionAsync("Scripts", required: false)
     }
     else if(ViewBag.Layout == "Dashboard")
     {
-        <header>
-            <nav class="nav">
+
+        <div class="container-fluid d-flex flex-row p-0">
             <!-- NAVBAR INÍCIO -->
-            <div class="barra">
-                <div class="topo">
+            <header class="barra">
+                <nav class="topo">
                     <img src="~/img/svg/PRODIGY.svg" alt="" class="logo">
                     <a class="ps-3" asp-area="" asp-controller="SHome" asp-action="Index"><img src="~/img/svg/Dashboard.svg" alt=""><p class="ps-3 m-0">Dashboard</p></a>
                     <a class="ps-3" asp-area="" asp-controller="SHome" asp-action="Caixa"><img src="~/img/svg/Balance.svg" alt=""><p class="ps-3 m-0">Fluxo de caixa</p></a>
@@ -296,22 +298,16 @@
                     <a class="ps-3" asp-area="" asp-controller="SEstoque" asp-action="Index"><img src="~/img/svg/Inventory.svg" alt=""><p class="ps-3 m-0">Estoque</p></a>
                     <a class="ps-3" asp-area="" asp-controller="SFuncionario" asp-action="Index"><img src="~/img/svg/Employeers.svg" alt=""><p class="ps-3 m-0">Funcionários</p></a>
                     <a class="ps-3" asp-area="" asp-controller="SHome" asp-action="Agenda"><img src="~/img/svg/Calendar.svg" alt=""><p class="ps-3 m-0">Agenda</p></a>
-                </div>
+                </nav>
                 <hr id="hr">
-                <div class="baixo">
+                <nav class="baixo">
                     <a class="ps-3" asp-area="" asp-controller="Usuario" asp-action="Index"><img src="~/img/svg/Profile.svg" alt=""><p class="ps-3 m-0">Perfil</p></a>
                     <a class="ps-3" asp-area="" asp-controller="SHome" asp-action="Config"><img src="~/img/svg/Config.svg" alt=""><p class="ps-3 m-0">Configurações</p></a>
                         <a class="ps-3" asp-area="" asp-controller="Usuario" asp-action="Logout"><img src="~/img/svg/Subtract.svg" alt=""><p class="ps-3 m-0">Sair</p></a>
-                </div>
-            </div>
+                </nav>
+            </header>
             <!-- NAVBAR FIM -->
-            </nav>
-            
-        </header>
-
-
-        <div class="container-fluid">
-            <main role="main" class="pb-3">
+            <main role="main" class="pb-3 container-fluid">
                 @RenderBody()
             </main>
         </div>
@@ -322,7 +318,7 @@
         <script src="~/js/perfil.js" asp-append-version="true"></script>
         <script src="~/js/payment.js" asp-append-version="true"></script>
         <script src="~/js/doughnut.js" asp-append-version="true"></script>
-        <script src="~/js/estoque.js" asp-append-version="true"></script>
+        <script defer src="~/js/sidebar.js" asp-append-version="true"></script>
         <script src="~/js/atualizarUsuario.js" asp-append-version="true"></script>
         @await RenderSectionAsync("Scripts", required: false)
     }

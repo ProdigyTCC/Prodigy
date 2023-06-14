@@ -2,31 +2,47 @@
 @{
     ViewData["Title"] = "Cadastro";
 }
-<div class="cadastro-titulo">
+<div class="cadastro-titulo pt-3">
     <p>Olá novo usuário! É um prazer tê-lo conosco.</p>
 </div>
 <div class="primeiro cadastro">
-    <h1>Dados principais</h1>
+    <h1 class="mb-3">Dados principais</h1>
 
-    <form class="d-flex flex-column justify-content-center align-items-center" asp-controller="Usuario" asp-action="CadastrarUsuario">
-        <label for="nome">Nome completo</label><br>
-        <input type="text" asp-for="Nome" id="" required placeholder="Ex.: Marcelo Antônio Nunes"><br>
+    <div class="formulario d-flex flex-column justify-content-center">
+    <form asp-controller="Usuario" asp-action="CadastrarUsuario">
+        <div class="mb-3 ms-5 me-5 text-start">
+            <p class="label-profile pb-1 m-0">Nome completo</p>
+            <input type="text" asp-for="Nome" id="" placeholder="Seu nome completo" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" required>
+        </div>
 
-        <label for="cpf">CPF</label><br>
-        <input type="text" asp-for="Cpf" id="" required placeholder="Ex.: 000.000.000-00"><br>
+        <div class="mb-3 ms-5 me-5 text-start">
+            <p class="label-profile pb-1 m-0">CPF</p>
+            <input type="text" asp-for="Cpf" id="" placeholder="000.000.000-00" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" required>
+        </div>
 
-        <label for="email">Email</label><br>
-        <input type="email" asp-for="Email" id="" required placeholder="Ex.: email@contato.com"><br>
+        <div class="mb-3 ms-5 me-5 text-start">
+            <p class="label-profile pb-1 m-0">E-mail</p>
+            <input type="email" asp-for="Email" id="" placeholder="exemplo@exemplo.com" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" required>
+        </div>
 
-        <label for="confirm-email">Confirmar e-mail</label><br>
-        <input type="email" name="" id="" required placeholder="Ex.: email@contato.com"><br>
+        <div class="mb-3 ms-5 me-5 text-start">
+            <p class="label-profile pb-1 m-0">Confirmar E-mail</p>
+            <input type="email" id="" placeholder="exemplo@exemplo.com" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" required>
+        </div>
 
-        <label for="nascimento">Data de nascimento</label><br>
-        <input type="date" asp-for="DataNascimento" id="" required placeholder="Ex.: 01/01/2000"><br>
+        <div class="mb-3 ms-5 me-5 text-start">
+            <p class="label-profile pb-1 m-0">Data de nascimento</p>
+            <input type="date" asp-for="DataNascimento" id="" placeholder="00/00/0000" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" required>
+        </div>
 
-        <label for="senha">Senha</label><br>
-        <input type="password" asp-for="Senha" id="" required placeholder="Ex.: #Senha.Forte10"><br>
+        <div class="mb-3 ms-5 me-5 text-start">
+            <p class="label-profile pb-1 m-0">Senha</p>
+            <input type="password" asp-for="Senha" id="" placeholder="********" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" required>
+        </div>
 
-        <button type="submit" class="button-small">Confirmar</button>
+        <div class="mt-3 mb-3 ms-5 me-5 text-start d-flex justify-content-center">
+            <button type="submit" class="primary-button">Confirmar</button>
+        </div>
     </form>
+    </div>
 </div>

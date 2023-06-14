@@ -123,7 +123,7 @@ namespace ProdigyWeb.Controllers
                 {
                     var usuarios = await _context.Usuarios.FirstOrDefaultAsync(x => x.Email == usuario.Email);
 
-                    var authCpf = _auth.ValidaCpf(usuario.Cpf);
+                    // var authCpf = _auth.ValidaCpf(usuario.Cpf);
 
                     string senhaSecreta = hash.CriptografarSenha(usuario.Senha.ToString());
 
@@ -132,11 +132,11 @@ namespace ProdigyWeb.Controllers
                         TempData["Erro"] = "Email já existe, ou algum campo está incompleto.";
                         return RedirectToAction(nameof(Cadastrar));
                     }
-                    if (!authCpf)
-                    {
-                        TempData["Erro"] = "CPF inválido.";
-                        return RedirectToAction(nameof(Cadastrar));
-                    }
+                    // if (!authCpf)
+                    // {
+                    //     TempData["Erro"] = "CPF inválido.";
+                    //     return RedirectToAction(nameof(Cadastrar));
+                    // }
                     usuario.Senha = senhaSecreta;
                     usuario.Nivel = "Administrador";
                     usuario.Status = "Ativo";

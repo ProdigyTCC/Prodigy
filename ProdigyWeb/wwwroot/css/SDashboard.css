@@ -18,56 +18,56 @@
 }
 
 .barra {
-    position: fixed;
+    /* position: fixed; */
     width: 18.75%;
     height: 100vh;
     background-color: #2D3037;
     overflow: scroll;
 }
 
-    .barra::-webkit-scrollbar {
-        display: none;
-    }
+.barra::-webkit-scrollbar {
+    display: none;
+}
 
-.baixo,
-.topo {
+.baixo, .topo {
     display: flex;
     flex-direction: column;
     vertical-align: middle;
 }
 
-    .baixo a,
-    .topo a {
-        display: flex;
-        align-items: center;
-        text-decoration: none;
-        color: #E2F0EF;
-        margin: 0.7em auto;
-        width: 80%;
-        border-radius: 15px;
-        height: 50px;
-        transition: all 0.20s ease-in-out;
-    }
+.baixo a, .topo a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #E2F0EF;
+    margin: 0.7em auto;
+    width: 80%;
+    border-radius: 15px;
+    height: 50px;
+    transition: all 0.20s ease-in-out;
+}
 
-    .baixo p, .topo p {
-        font-weight: 600;
-    }
+.baixo p, .topo p {
+    font-weight: 600;
+}
 
-    .baixo a:hover,
-    .topo a:hover {
-        background-color: #1D7870;
-        cursor: pointer;
-    }
+.baixo a:hover, .topo a:hover {
+    background-color: #1D7870;
+    cursor: pointer;
+}
 
-    .baixo a:active, .topo a:active {
-        background-color: #1D7870;
-    }
+.barra a:is(:link, :active, :visited).active{
+    background-color: #1D7870;
+}
 
 /* DASHBOARD ITENS */
 
 .main-dashboard {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     background-color: #E2F0EF;
-    padding-left: 20rem;
+    padding-left: 3rem;
     padding-top: 3rem;
 }
 
@@ -79,8 +79,8 @@
 
 .cards-dashboard {
     display: grid;
-    grid-template-columns: 0.9fr 1.1fr;
-    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
     gap: 5% 5%;
     grid-auto-flow: row;
     grid-template-areas:
@@ -89,11 +89,12 @@
 }
 
 .card-relatorio, .card-vendas, .card-estoque, .card-agenda {
-    width: 25rem;
-    height: 18rem;
+    width: 700px;
+    height: 400px;
     background-color: #2D3037;
     border-radius: 15px;
     padding: 5% 5%;
+    box-shadow: 10px 10px 30px 0px rgba(0,0,0,0.25);
 }
 
 /* CARD RELATORIO */

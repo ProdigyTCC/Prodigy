@@ -3,7 +3,10 @@ let background = window.location.href;
 if (background == 'http://localhost:5157/Home/Planos' ||
     background == 'https://localhost:7202/Home/Planos' ||
     background == 'https://localhost:7202/Index' ||
-    background == 'http://localhost:5157/Index') {
+    background == 'http://localhost:5157/Index' ||
+    background == 'http://localhost:5157/AddProduto' ||
+    background == 'http://localhost:5157/SEstoque' ||
+    background == 'http://localhost:5157/SFuncionario')  {
 
     document.body.style.background = "#E2F0EF";
 
