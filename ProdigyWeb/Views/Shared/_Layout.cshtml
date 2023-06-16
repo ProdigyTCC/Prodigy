@@ -31,7 +31,7 @@
         }
         function Alert()
         {
-            let url = window.location.href
+            let url = window.location.pathname
 
             const btnCloseModalErro = document.querySelector('#closeModalErro')
             const btnCloseModalSucesso = document.querySelector('#closeModalSucesso')
@@ -53,17 +53,17 @@
 
             btnCloseModalSucesso.addEventListener('click', () => {
                 $('#modalSucesso').modal('hide')
-                if (url == 'https://localhost:7202/Usuario/Atualizar/1') {
-                    window.location.href = 'https://localhost:7202/Usuario/Atualizar'
+                if (url == '/Usuario/Atualizar/1') {
+                    window.location.pathname = '/Usuario/Atualizar'
                 }
-                if(url == 'http://localhost:5157/Usuario/Atualizar/1'){
-                    window.location.href = 'http://localhost:5157/Usuario/Atualizar'
+                if(url == '/Usuario/Atualizar/1'){
+                    window.location.pathname = '/Usuario/Atualizar'
                 }
-                if (url == 'https://localhost:7202/Usuario/Atualizar/2') {
-                    window.location.href = 'https://localhost:7202/Usuario/Atualizar'
+                if (url == '/Usuario/Atualizar/2') {
+                    window.location.pathname = '/Usuario/Atualizar'
                 }
-                if(url == 'http://localhost:5157/Usuario/Atualizar/2'){
-                    window.location.href = 'http://localhost:5157/Usuario/Atualizar'
+                if(url == '/Usuario/Atualizar/2'){
+                    window.location.pathname = '/Usuario/Atualizar'
                 }
             })
         }
@@ -296,7 +296,7 @@
                     <img src="~/img/svg/PRODIGY.svg" alt="" class="logo">
                     <a class="ps-3" asp-area="" asp-controller="SHome" asp-action="Index"><img src="~/img/svg/Dashboard.svg" alt=""><p class="ps-3 m-0">Dashboard</p></a>
                     <a class="ps-3" asp-area="" asp-controller="SHome" asp-action="Caixa"><img src="~/img/svg/Balance.svg" alt=""><p class="ps-3 m-0">Fluxo de caixa</p></a>
-                    <a class="ps-3" asp-area="" asp-controller="SHome" asp-action="Pedidos"><img src="~/img/svg/Tips.svg" alt=""><p class="ps-3 m-0">Pedidos</p></a>
+                    <a class="ps-3" asp-area="" asp-controller="SPedidos" asp-action="Index"><img src="~/img/svg/Tips.svg" alt=""><p class="ps-3 m-0">Pedidos</p></a>
                     <a class="ps-3" asp-area="" asp-controller="SEstoque" asp-action="Index"><img src="~/img/svg/Inventory.svg" alt=""><p class="ps-3 m-0">Estoque</p></a>
                     <a class="ps-3" asp-area="" asp-controller="SFuncionario" asp-action="Index"><img src="~/img/svg/Employeers.svg" alt=""><p class="ps-3 m-0">Funcionários</p></a>
                     <a class="ps-3" asp-area="" asp-controller="SHome" asp-action="Cliente"><img src="~/img/svg/Calendar.svg" alt=""><p class="ps-3 m-0">Cliente</p></a>

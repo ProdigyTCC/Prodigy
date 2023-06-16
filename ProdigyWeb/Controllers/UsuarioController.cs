@@ -250,7 +250,85 @@ namespace ProdigyWeb.Controllers
             }
             return RedirectToAction("Login", "Usuario");
         }
+        
+        [HttpPost("AtualizarEmpresa")]
+        public async Task<IActionResult> AtualizarEmpresa(string NomeRazaoEmpresa, 
+            string EmailEmpresa, string TelefoneEmpresa, string CnpjEmpresa,
+            string RgMunicipalEmpresa, string RgEstadualEmpresa, string NaturezaEmpresa,
+            string DataFundacaoEmpresa, string RuaEmpresa, string NumeroEmpresa, 
+            string BairroEmpresa, string ComplementoEmpresa, string CepEmpresa, string CidadeEmpresa, 
+            string EstadoEmpresa, string PaisEmpresa)
+        {
+            var usuarioId = User.FindFirst("Id")?.Value;
 
+            var juridicoBanco = await _context.Juridicos.FirstOrDefaultAsync(x => x.UsuarioId == int.Parse(usuarioId));
+
+            //var authCnpj = _auth.ValidaCnpj(CnpjEmpresa);
+
+            try
+            {
+                // if (!authCnpj)
+                // {
+                //     TempData["Erro"] = "CNPJ é inválido!";
+                //     return RedirectToAction(nameof(Atualizar));
+                // }
+                
+                if(juridicoBanco == null)
+                {
+                    var juridico = new Juridico()
+                    {
+                        NomeRazao = NomeRazaoEmpresa,
+                        Email = EmailEmpresa,
+                        Telefone = TelefoneEmpresa,
+                        Cnpj = CnpjEmpresa,
+                        RgMunicipal = RgMunicipalEmpresa,
+                        RgEstadual = RgEstadualEmpresa,
+                        Natureza = NaturezaEmpresa,
+                        DataFundacao = DataFundacaoEmpresa,
+                        Rua = RuaEmpresa,
+                        Numero = int.Parse(NumeroEmpresa),
+                        Bairro = BairroEmpresa,
+                        Complemento = ComplementoEmpresa,
+                        Cep = CepEmpresa,
+                        Cidade = CidadeEmpresa,
+                        Estado = EstadoEmpresa,
+                        Pais = PaisEmpresa,
+                        UsuarioId = int.Parse(usuarioId)
+                    };
+
+                    _context.Juridicos.Add(juridico);
+                    _context.SaveChanges();
+
+                    return RedirectToAction(nameof(Atualizar));
+                }
+                if (!string.IsNullOrEmpty(NomeRazaoEmpresa)) juridicoBanco.NomeRazao = NomeRazaoEmpresa;
+                if (!string.IsNullOrEmpty(EmailEmpresa)) juridicoBanco.Email = EmailEmpresa;
+                if (!string.IsNullOrEmpty(TelefoneEmpresa)) juridicoBanco.Telefone = TelefoneEmpresa;
+                if (!string.IsNullOrEmpty(CnpjEmpresa)) juridicoBanco.Cnpj = CnpjEmpresa;
+                if (!string.IsNullOrEmpty(RgMunicipalEmpresa)) juridicoBanco.RgMunicipal = RgMunicipalEmpresa;
+                if (!string.IsNullOrEmpty(RgEstadualEmpresa)) juridicoBanco.RgEstadual = RgEstadualEmpresa;
+                if (!string.IsNullOrEmpty(NaturezaEmpresa)) juridicoBanco.Natureza = NaturezaEmpresa;
+                if (!string.IsNullOrEmpty(DataFundacaoEmpresa)) juridicoBanco.DataFundacao = DataFundacaoEmpresa;
+                if (!string.IsNullOrEmpty(RuaEmpresa)) juridicoBanco.Rua = RuaEmpresa;
+                if (!string.IsNullOrEmpty(NumeroEmpresa)) juridicoBanco.Numero = int.Parse(NumeroEmpresa);
+                if (!string.IsNullOrEmpty(BairroEmpresa)) juridicoBanco.Bairro = BairroEmpresa;
+                if (!string.IsNullOrEmpty(ComplementoEmpresa)) juridicoBanco.Complemento = ComplementoEmpresa;
+                if (!string.IsNullOrEmpty(CepEmpresa)) juridicoBanco.Cep = CepEmpresa;
+                if (!string.IsNullOrEmpty(CidadeEmpresa)) juridicoBanco.Cidade = CidadeEmpresa;
+                if (!string.IsNullOrEmpty(EstadoEmpresa)) juridicoBanco.Estado = EstadoEmpresa;
+                if (!string.IsNullOrEmpty(PaisEmpresa)) juridicoBanco.Pais = PaisEmpresa;
+
+                _context.Juridicos.Update(juridicoBanco);
+                _context.SaveChanges();
+
+                return RedirectToAction(nameof(Atualizar));
+            }
+            catch (Exception)
+            {
+                return RedirectToAction(nameof(Atualizar));
+            }
+        }
+        
         [HttpPost("AtualizarConta")]
         public async Task<IActionResult> AtualizarConta(string Nome, 
             string Cpf, string Email, string DataNascimento, 
@@ -285,7 +363,7 @@ namespace ProdigyWeb.Controllers
                     }
                 }
             }
-            catch (DbUpdateException e)
+            catch (DbUpdateException)
             {
                 return RedirectToAction(nameof(Login));
             }
@@ -343,104 +421,11 @@ namespace ProdigyWeb.Controllers
                     }
                 }
             }
-            catch (DbUpdateException e)
+            catch (DbUpdateException)
             {
                 return RedirectToAction(nameof(Login));
             }
             return RedirectToAction(nameof(Index));
-        }
-
-        [HttpPost("AtualizarEmpresa")]
-        public async Task<IActionResult> AtualizarEmpresa(string NomeRazaoEmpresa, 
-            string EmailEmpresa, string TelefoneEmpresa, string CnpjEmpresa,
-            string RgMunicipalEmpresa, string RgEstadualEmpresa, string NaturezaEmpresa,
-            string DataFundacaoEmpresa, IFormFile Certificado, string RuaEmpresa, string NumeroEmpresa, 
-            string BairroEmpresa, string ComplementoEmpresa, string CepEmpresa, string CidadeEmpresa, 
-            string EstadoEmpresa, string PaisEmpresa)
-        {
-            var usuarioId = User.FindFirst("Id")?.Value;
-
-            var juridicoBanco = await _context.Juridicos.FirstOrDefaultAsync(x => x.UsuarioId.Equals(int.Parse(usuarioId)));
-
-            var authCnpj = _auth.ValidaCnpj(CnpjEmpresa);
-
-            try
-            {
-                string caminhoAddFoto = _caminhoServidor + "\\Certificado\\";
-                string nomeArquivo = Guid.NewGuid().ToString() + "_" + Certificado.FileName;
-
-                if (!Directory.Exists(caminhoAddFoto))
-                {
-                    Directory.CreateDirectory(caminhoAddFoto);
-                }
-
-                using (var stream = System.IO.File.Create(caminhoAddFoto + nomeArquivo))
-                {
-                    await Certificado.CopyToAsync(stream);
-                }
-
-                if (!authCnpj)
-                {
-                    TempData["Erro"] = "CNPJ é inválido!";
-                    return RedirectToAction(nameof(Atualizar));
-                }
-                
-                if(juridicoBanco == null)
-                {
-                    var juridico = new Juridico()
-                    {
-                        NomeRazao = NomeRazaoEmpresa,
-                        Email = EmailEmpresa,
-                        Telefone = TelefoneEmpresa,
-                        Cnpj = CnpjEmpresa,
-                        RgMunicipal = RgMunicipalEmpresa,
-                        RgEstadual = RgEstadualEmpresa,
-                        Natureza = NaturezaEmpresa,
-                        DataFundacao = DataFundacaoEmpresa,
-                        CertificadoNF = nomeArquivo,
-                        Rua = RuaEmpresa,
-                        Numero = int.Parse(NumeroEmpresa),
-                        Bairro = BairroEmpresa,
-                        Complemento = ComplementoEmpresa,
-                        Cep = CepEmpresa,
-                        Cidade = CidadeEmpresa,
-                        Estado = EstadoEmpresa,
-                        Pais = PaisEmpresa,
-                        UsuarioId = int.Parse(usuarioId)
-                    };
-
-                    _context.Juridicos.Add(juridico);
-                    _context.SaveChanges();
-
-                    return RedirectToAction(nameof(Atualizar));
-                }
-                if (!string.IsNullOrEmpty(NomeRazaoEmpresa)) juridicoBanco.NomeRazao = NomeRazaoEmpresa;
-                if (!string.IsNullOrEmpty(EmailEmpresa)) juridicoBanco.Email = EmailEmpresa;
-                if (!string.IsNullOrEmpty(TelefoneEmpresa)) juridicoBanco.Telefone = TelefoneEmpresa;
-                if (!string.IsNullOrEmpty(CnpjEmpresa)) juridicoBanco.Cnpj = CnpjEmpresa;
-                if (!string.IsNullOrEmpty(RgMunicipalEmpresa)) juridicoBanco.RgMunicipal = RgMunicipalEmpresa;
-                if (!string.IsNullOrEmpty(RgEstadualEmpresa)) juridicoBanco.RgEstadual = RgEstadualEmpresa;
-                if (!string.IsNullOrEmpty(NaturezaEmpresa)) juridicoBanco.Natureza = NaturezaEmpresa;
-                if (!string.IsNullOrEmpty(DataFundacaoEmpresa)) juridicoBanco.DataFundacao = DataFundacaoEmpresa;
-                if (!string.IsNullOrEmpty(Certificado.FileName)) juridicoBanco.CertificadoNF = nomeArquivo;
-                if (!string.IsNullOrEmpty(RuaEmpresa)) juridicoBanco.Rua = RuaEmpresa;
-                if (!string.IsNullOrEmpty(NumeroEmpresa)) juridicoBanco.Numero = int.Parse(NumeroEmpresa);
-                if (!string.IsNullOrEmpty(BairroEmpresa)) juridicoBanco.Bairro = BairroEmpresa;
-                if (!string.IsNullOrEmpty(ComplementoEmpresa)) juridicoBanco.Complemento = ComplementoEmpresa;
-                if (!string.IsNullOrEmpty(CepEmpresa)) juridicoBanco.Cep = CepEmpresa;
-                if (!string.IsNullOrEmpty(CidadeEmpresa)) juridicoBanco.Cidade = CidadeEmpresa;
-                if (!string.IsNullOrEmpty(EstadoEmpresa)) juridicoBanco.Estado = EstadoEmpresa;
-                if (!string.IsNullOrEmpty(PaisEmpresa)) juridicoBanco.Pais = PaisEmpresa;
-
-                _context.Juridicos.Update(juridicoBanco);
-                _context.SaveChanges();
-
-                return RedirectToAction(nameof(Atualizar));
-            }
-            catch (Exception)
-            {
-                return RedirectToAction(nameof(Atualizar));
-            }
         }
     }
 }
