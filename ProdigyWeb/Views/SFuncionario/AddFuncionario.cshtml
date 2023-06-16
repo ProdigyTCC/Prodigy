@@ -1,0 +1,121 @@
+@model ProdigyWeb.Models.SFuncionario
+
+@{
+    ViewData["Title"] = "Adicionar Funcionário";
+}
+
+<div class="main-addproduto">
+    <!-- INICIO FORMULARIO -->
+        <h1 class="title-system">Adicionar funcionário</h1>
+        <a class="back-page" href="">
+            <div class="icon-p">
+                <i class="fa-solid fa-circle-left fa-lg"></i>
+                <p class="m-0">Voltar</p>
+            </div>
+        </a>
+    <form>
+        <div class="d-flex fundo">
+            <div class="container formulario">
+                <div class="group-input-contato"> @*Input = Nome do funcionário*@
+                    <p class="label-estoque">Nome do funcionário</p>
+                    <div class="input-contato input-group">
+                        <input type="text" class="form-control" placeholder="Nome completo do funcionário" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" required>
+                    </div>
+                </div>
+
+                <div class="group-input-contato"> @*Input = CPF*@
+                    <p class="label-estoque">CPF</p>
+                    <div class="input-contato input-group">
+                        <input type="text" class="form-control" placeholder="000.000.000-00" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" required>
+                    </div>
+                </div>
+
+                <div class="group-input-contato"> @*Input = Sexo*@
+                    <p class="label-estoque">Sexo</p>
+                   <select class="form-select" aria-label="Default select example" required>
+                        <option selected>Selecione:</option>
+                        <option value="1">Masculino</option>
+                        <option value="2">Feminino</option>
+                        <option value="3">Outro</option>
+                        <option value="4">Prefere não dizer</option>
+                    </select>
+                </div>
+
+                <div class="group-input-contato"> @*Input = Quantidade de filhos*@
+                    <p class="label-estoque">Quantidade de filhos</p>
+                    <div class="input-contato input-group">
+                        <input type="number" class="form-control" placeholder="0" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                    </div>
+                </div>
+
+                <div class="group-input-contato"> @*Input = Data de acerto*@
+                    <p class="label-estoque">Data de acerto</p>
+                    <div class="input-contato input-group">
+                        <input type="date" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" required>
+                    </div>
+                </div>
+
+                <div class="mb-3"> @*Input = Adicionar imagem*@
+                    <p class="label-estoque">Imagem</p> 
+                    <input name="imagem" class="form-control" type="file" id="formFile">
+                </div>
+            </div>
+
+            <div class="container formulario">
+                <div class="group-input-contato"> @*Input = Data de nascimento*@
+                    <p class="label-estoque">Data de nascimento</p>
+                    <div class="input-contato input-group">
+                        <input type="date" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" required>
+                    </div>
+                </div>
+
+                <div class="group-input-contato"> @*Input = Telefone*@
+                    <p class="label-estoque">Telefone</p>
+                    <div class="input-contato input-group">
+                        <input type="tel" class="form-control" placeholder="(99) 99999-9999" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" required>
+                    </div>
+                </div>
+
+                <div class="group-input-contato"> @*Input = Estado civil*@
+                    <p class="label-estoque">Estado civil</p>
+                   <select class="form-select" aria-label="Default select example" required>
+                        <option selected>Selecione:</option>
+                        <option value="1">Solteiro (a)</option>
+                        <option value="2">Casado (a)</option>
+                        <option value="3">Divorciado (a)</option>
+                        <option value="4">Viúvo (a)</option>
+                        <option value="5">Separado judicialmente</option>
+                    </select>
+                </div>
+
+                <div class="group-input-contato"> @*Input = Categoria de habilitação*@
+                    <p class="label-estoque">Categoria de habilitação</p>
+                    <div class="input-contato input-group">
+                        <input type="text" class="form-control" placeholder="Tipo A/B" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                    </div>
+                </div>
+
+                <div class="group-input-contato"> @*Input = Salário atual*@
+                    <p class="label-estoque">Salário atual</p>
+                    <div class="input-contato input-group">
+                        <input type="text" class="form-control" placeholder="R$0" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" required>
+                    </div>
+                </div>
+
+                <div class="group-input-contato">
+                <p class="label-contato">Observações</p>
+
+                <div class="input-contato input-group">
+                    <textarea class="input-detalhes form-control m-0" aria-label="With textarea" maxlength="150"></textarea>
+                </div>
+            </div>
+
+                <div class="button-profile d-flex flex-row justify-content-center">
+                    <button type="button" class="button-small-cancel me-2">Cancelar</button>
+                    <button type="submit" class="button-small-confirm ms-2">Salvar</button>
+                </div>
+            </div>
+            </div>
+        </form>
+    </div>
+    <!-- FIM FORMULARIO -->

@@ -1,6 +1,7 @@
 .primary-button, .secondary-button, .button-edit, .button-small,
 .button-small-cancel, .button-small-confirm, .button-modal-cancel, 
-.button-modal-confirm, .button-white, .button-dash-default, .button-funcionario-primary, .button-funcionario-secondary {
+.button-modal-confirm, .button-white, .button-dash-default, .button-funcionario-primary,
+ .button-funcionario-secondary, .button-search {
     text-align: center;
     border: none;
     border-radius: 5px;
@@ -10,10 +11,17 @@
 }
 
 /* BOTÕES COM O MESMO TAMANHO */
-.primary-button, .button-dash-default, .button-white {
+.primary-button, .button-white {
     width: 20rem;
     height: 2.8rem;
     font-size: 1.2em;
+    font-weight: 600;
+}
+
+.button-dash-default  {
+    width: 12.5rem;
+    height: 40px;
+    font-size: 1em;
     font-weight: 600;
 }
 
@@ -54,6 +62,11 @@
     font-weight: 600;
 }
 
+.button-search {
+    width: 60px;
+    height: 40px;
+}
+
 .button-funcionario-primary, .button-funcionario-secondary {
     width: 100px;
     height: 40px;
@@ -69,7 +82,7 @@
 
 /* BOTÕES COM A MESMA COR - VERDE*/
 .primary-button, .button-dash-default, .button-modal-confirm, .button-small, 
-.button-small-confirm, .button-funcionario-primary {
+.button-small-confirm, .button-funcionario-primary, .button-search {
     color: #E2F0EF;
     background-color: #30BEB2;
 }
@@ -88,7 +101,8 @@
 /* HOVERS */
 
 /* BOTÕES COM O MESMO HOVER - VERDE ESCURO */
-.button-confirm:hover, .button-small-confirm:hover, .button-modal-confirm:hover, .button-dash-default:hover, .button-funcionario-primary:hover {
+.button-confirm:hover, .button-small-confirm:hover, .button-modal-confirm:hover, 
+.button-dash-default:hover, .button-funcionario-primary:hover, .button-search:hover {
     color: #E2F0EF;
     background-color: #1D7870;
 }

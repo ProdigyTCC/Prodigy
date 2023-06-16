@@ -126,7 +126,7 @@
 }
 
 .circle-despesas {
-    background-color: #E2F0EF;
+    background-color: #FF2323;
 }
 /* FIM CARD RELATORIO */
 
@@ -158,6 +158,11 @@
 .item-info-vendas p {
     font-size: 0.7rem;
     font-weight: 500;
+}
+
+.bar-chart{
+    width: 500px;
+    height: 300px;
 }
 /* FIM CARD VENDAS */
 

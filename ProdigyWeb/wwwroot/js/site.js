@@ -1,12 +1,8 @@
-let background = window.location.href;
+let background = window.location.pathname;
 
-if (background == 'http://localhost:5157/Home/Planos' ||
-    background == 'https://localhost:7202/Home/Planos' ||
-    background == 'https://localhost:7202/Index' ||
-    background == 'http://localhost:5157/Index' ||
-    background == 'http://localhost:5157/AddProduto' ||
-    background == 'http://localhost:5157/SEstoque' ||
-    background == 'http://localhost:5157/SFuncionario')  {
+if (background == '/Home/Planos' || background == '/SHome' || background == '/SEstoque' ||
+    background == '/SFuncionario' || background == '/SFuncionario/AddFuncionario' || background == '/SFuncionario/Editar' ||
+    background == '/AddProduto' || background == '/SEstoque/Editar/1') {
 
     document.body.style.background = "#E2F0EF";
 

@@ -213,6 +213,10 @@
       "PackagePath": "staticwebassets\\js\\doughnut.js"
     },
     {
+      "Id": "C:\\Users\\marce\\OneDrive\\Área de Trabalho\\Marcelo\\Prodigy\\ProdigyWeb\\wwwroot\\js\\lineChart.js",
+      "PackagePath": "staticwebassets\\js\\lineChart.js"
+    },
+    {
       "Id": "C:\\Users\\marce\\OneDrive\\Área de Trabalho\\Marcelo\\Prodigy\\ProdigyWeb\\wwwroot\\js\\payment.js",
       "PackagePath": "staticwebassets\\js\\payment.js"
     },

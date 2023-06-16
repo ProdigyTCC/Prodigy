@@ -1,6 +1,7 @@
 .fundo-cartoes {
+    display: flex;
+    flex-direction: column;
     justify-content: space-between;
-    width: 81.25%;
 }
 
 .cartao {

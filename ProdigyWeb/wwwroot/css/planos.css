@@ -92,7 +92,7 @@
 }
 
 @media(max-width: 1000px){
-    .table{
+    .tabela-planos{
       display: none;
     }
 }

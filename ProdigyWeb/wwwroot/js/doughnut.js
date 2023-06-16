@@ -1,26 +1,37 @@
-  const data = {
-    labels: [
-      'Red',
-      'Blue',
-      'Yellow'
+const data = {
+  labels: [
+    'Faturamento',
+    'Lucro',
+    'Despesas'
+  ],
+  datasets: [{
+    label: 'Resumo financeiro',
+    data: [570, 50, 100],
+    backgroundColor: [
+      'rgba(29, 120, 112, 1)',
+      'rgba(48, 190, 178, 1)',
+      'rgba(255, 35, 35, 1'
     ],
-    datasets: [{
-      label: 'My First Dataset',
-      data: [300, 50, 100],
-      backgroundColor: [
-        'rgb(255, 99, 132)',
-        'rgb(54, 162, 235)',
-        'rgb(255, 205, 86)'
-      ],
-      hoverOffset: 4
-    }]
-  };
+    borderWidth: 0,
+    hoverOffset: 4
+  }]
+};
 
   const config = {
     type: 'doughnut',
     data: data,
+    options: {
+      scales: {
+        y: {
+          beginAtZero: true
+        }
+      }
+    }
   };
 
-  const ctx = document.getElementById('doughnut')
+  const myChart = new Chart(
+    document.getElementById('myChart'),
+    config
+  );
 
-  const myChart = new Chart(ctx, config);
+  

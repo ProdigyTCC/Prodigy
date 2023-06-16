@@ -279,9 +279,11 @@
         <script src="~/js/perfil.js" asp-append-version="true"></script>
         <script src="~/js/payment.js" asp-append-version="true"></script>
         <script src="~/js/doughnut.js" asp-append-version="true"></script>
+        <script src="~/js/lineChart.js" asp-append-version="true"></script>
         <script defer src="~/js/sidebar.js" asp-append-version="true"></script>
         <script src="~/js/atualizarUsuario.js" asp-append-version="true"></script>
         <script src="~/js/atualizarEmpresa.js" asp-append-version="true"></script>
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
         @await RenderSectionAsync("Scripts", required: false)
     }
     else if(ViewBag.Layout == "Dashboard")
@@ -297,7 +299,8 @@
                     <a class="ps-3" asp-area="" asp-controller="SHome" asp-action="Pedidos"><img src="~/img/svg/Tips.svg" alt=""><p class="ps-3 m-0">Pedidos</p></a>
                     <a class="ps-3" asp-area="" asp-controller="SEstoque" asp-action="Index"><img src="~/img/svg/Inventory.svg" alt=""><p class="ps-3 m-0">Estoque</p></a>
                     <a class="ps-3" asp-area="" asp-controller="SFuncionario" asp-action="Index"><img src="~/img/svg/Employeers.svg" alt=""><p class="ps-3 m-0">Funcionários</p></a>
-                    <a class="ps-3" asp-area="" asp-controller="SHome" asp-action="Agenda"><img src="~/img/svg/Calendar.svg" alt=""><p class="ps-3 m-0">Agenda</p></a>
+                    <a class="ps-3" asp-area="" asp-controller="SHome" asp-action="Cliente"><img src="~/img/svg/Calendar.svg" alt=""><p class="ps-3 m-0">Cliente</p></a>
+                    <a class="ps-3" asp-area="" asp-controller="SHome" asp-action="Fornecedor"><img src="~/img/svg/Calendar.svg" alt=""><p class="ps-3 m-0">Fornecedor</p></a>
                 </nav>
                 <hr id="hr">
                 <nav class="baixo">
@@ -307,7 +310,7 @@
                 </nav>
             </header>
             <!-- NAVBAR FIM -->
-            <main role="main" class="pb-3 container-fluid">
+            <main role="main" class="container-fluid">
                 @RenderBody()
             </main>
         </div>
@@ -318,15 +321,14 @@
         <script src="~/js/perfil.js" asp-append-version="true"></script>
         <script src="~/js/payment.js" asp-append-version="true"></script>
         <script src="~/js/doughnut.js" asp-append-version="true"></script>
+        <script src="~/js/lineChart.js" asp-append-version="true"></script>
         <script defer src="~/js/sidebar.js" asp-append-version="true"></script>
         <script src="~/js/atualizarUsuario.js" asp-append-version="true"></script>
         @await RenderSectionAsync("Scripts", required: false)
     }
 
     <script src="https://kit.fontawesome.com/6fe9f6935b.js" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.3.0/chart.min.js" integrity="sha512-mlz/Fs1VtBou2TrUkGzX4VoGvybkD9nkeXWJm3rle0DPHssYYx4j+8kIS15T78ttGfmOjH0lLaBXGcShaVkdkg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script type="text/javascript" src="http://www.chartjs.org/assets/Chart.js"></script>
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

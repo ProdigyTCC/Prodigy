@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "6tOx8le5Sv5yUSLLrizL0Q9eWJj5DRB9W5nS/uhlkzg=",
+  "Hash": "cnWGQ9oVmXyMvAVTY8Y8NzJtgtS8tIVtanWdDSxCD2g=",
   "Source": "ProdigyWeb",
   "BasePath": "_content/ProdigyWeb",
   "Mode": "Default",
@@ -933,6 +933,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\js\\doughnut.js"
+    },
+    {
+      "Identity": "C:\\Users\\marce\\OneDrive\\Área de Trabalho\\Marcelo\\Prodigy\\ProdigyWeb\\wwwroot\\js\\lineChart.js",
+      "SourceId": "ProdigyWeb",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\marce\\OneDrive\\Área de Trabalho\\Marcelo\\Prodigy\\ProdigyWeb\\wwwroot\\",
+      "BasePath": "_content/ProdigyWeb",
+      "RelativePath": "js/lineChart.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\lineChart.js"
     },
     {
       "Identity": "C:\\Users\\marce\\OneDrive\\Área de Trabalho\\Marcelo\\Prodigy\\ProdigyWeb\\wwwroot\\js\\payment.js",

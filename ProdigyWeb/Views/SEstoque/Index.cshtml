@@ -5,8 +5,27 @@
 
     var categoriaProduto = new SCategoriaProduto();
 }
+
 <div class="fundo d-flex flex-column justify-content-between align-items-center">
-    <div class="tabela mb-3">
+    <div class="mb-3 d-flex flex-row justify-content-between w-100">
+        <div class="title-page">
+            <div class="title-system">Estoque</div>
+        </div>
+        <div class="div-button-search d-flex flex-row">
+            <div class="div-botoes-estoque d-flex flex-row justify-content-around">
+                <a class="" asp-area="" asp-controller="SEstoque" asp-action="Addproduto"><button class="button-dash-default me-2">Adicionar produto</button></a>
+                <button class="button-dash-default me-2" data-bs-toggle="modal" data-bs-target="#addCategoria">Adicionar Categoria</button>
+            </div>
+            <form class="d-flex">
+                <input class="form-control ms-2 me-2 input-search" type="search" placeholder="Pesquisar" aria-label="Search">
+                <button class="button-search justify-content-center" type="submit" title="Pesquisar">
+                    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <div class="table-responsive-lg tabela">
         <table class="table tabela-estoque">
             <thead>
                 <tr>
@@ -43,11 +62,6 @@
                 }
             </tbody>
         </table>
-    </div>
-    
-    <div class="div-botoes-estoque w-75 d-flex flex-row justify-content-around">
-        <a class="" asp-area="" asp-controller="SEstoque" asp-action="Addproduto"><button class="button-dash-default">Adicionar produto</button></a>
-        <button class="button-dash-default" data-bs-toggle="modal" data-bs-target="#addCategoria">Adicionar Categoria</button>
     </div>
 
         @* MODAL EDITAR PRDUTO *@

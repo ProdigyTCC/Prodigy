@@ -11,7 +11,7 @@
             <div class="subtitle-cards-dashboard"><p>Relatório</p></div>
             <div class="content-relatorio d-flex flex-column justify-content-center align-items-center">
                 <div class="grafico-relatorio"> @*Gráfico do relatório*@
-                    <canvas id="doughnut" width="400" height="150"></canvas>
+                    <canvas id="myChart" width="270"></canvas>
                 </div> 
                 <div class="listen-relatorio w-75 d-flex flex-row justify-content-between"> @*Lista que fica abaixo do gráfico*@
                     <div class="item-lucro d-flex flex-row align-items-center">
@@ -46,6 +46,9 @@
                         <p class="m-0">Despesas</p>
                     </div>
                 </div>
+            </div>
+            <div class="bar-chart mx-auto">
+                    <canvas id="line"></canvas>
             </div>
         </div>
 
@@ -88,3 +91,5 @@
         </div>
     </div>
 </div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
