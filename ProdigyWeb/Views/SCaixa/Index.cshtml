@@ -1,0 +1,61 @@
+<div class="main-fluxo-caixa m-3">
+    <div class="mb-3 d-flex flex-row justify-content-between w-100">
+        <div class="title-page">
+            <div class="title-system">Fluxo de caixa</div>
+        </div>
+        <div class="div-button-search d-flex flex-row">
+            <div class="div-botoes-estoque d-flex flex-row justify-content-around">
+            <a asp-area="" asp-controller="SCaixa" asp-action="NovaVenda"><button class="button-dash-default me-2">Nova venda</button></a>
+            </div>
+        </div>
+    </div> 
+
+    @* CARDS *@
+
+    <div class="topo-fluxo-caixa mb-3"> @* CARDS DE FATURAMENTO, DESPESAS E LUCRO *@
+        <div class="cards-fluxo"> 
+            <p class="title-card-fluxo">Faturamento</p>
+            <p class="value-card-fluxo green-text">+R$1024,83</p>
+        </div>
+        <div class="cards-fluxo">
+            <p class="title-card-fluxo">Despesas</p>
+            <p class="value-card-fluxo red-text">-R$568,49</p>
+        </div>
+        <div class="cards-fluxo">
+            <p class="title-card-fluxo">Lucro</p>
+            <p class="value-card-fluxo green-text">+R$456,34</p>
+        </div>
+    </div>
+
+    <hr class="line-fluxo-caixa">
+
+    <div class="vendas-historico-fluxo mt-3"> 
+        <div class="vendas-chart-fluxo"> @* DIV DO GRÁFICO TOTAL DE VENDAS *@
+            <p class="title-card-fluxo m-0">Total de vendas</p>
+            <p class="value-card-fluxo m-0 green-text">+R$1024,83</p>
+            <canvas class="line"></canvas>
+        </div>
+
+        <div class="historico-fluxo"> @* DIV DO HISTÓRICO DE VENDAS *@
+            <div class="title-card-historico">Histórico de vendas</div>
+            <table class="table table-sm">
+                <thead>
+                    <tr>
+                    <th scope="col">Cód</th>
+                    <th scope="col">Produto</th>
+                    <th scope="col">Qtd</th>
+                    <th scope="col">Data</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <td>#53PG5K</td>
+                    <td>Banana</td>
+                    <td>3 un.</td>
+                    <td>16/06/2023</td>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>

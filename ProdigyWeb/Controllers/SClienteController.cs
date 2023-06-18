@@ -1,10 +1,10 @@
-﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc;
 using System.Security.Claims;
 
 namespace ProdigyWeb.Controllers
 {
     [Route("[controller]")]
-    public class SFuncionarioController : Controller
+    public class SClienteController : Controller
     {
         public IActionResult Index()
         {
@@ -18,8 +18,8 @@ namespace ProdigyWeb.Controllers
             return RedirectToAction("Login", "Usuario");
         }
 
-        [HttpGet("AddFuncionario")]
-        public IActionResult AddFuncionario()
+        [HttpGet("AddCliente")]
+        public IActionResult AddCliente()
         {
             ClaimsPrincipal claims = HttpContext.User;
 

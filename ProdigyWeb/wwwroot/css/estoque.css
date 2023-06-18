@@ -30,6 +30,10 @@
     color: #30BEB2;
 }
 
+.red-icon-button i:hover {
+    color: #c71f37;
+}
+
 .botao-estoque {
     background-color: transparent;
     border: none;

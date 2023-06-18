@@ -22,7 +22,9 @@
     <link rel="stylesheet" href="~/css/SDashboard.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/css/estoque.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/css/addprodutos.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/addpedidos.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/css/funcionario.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/fluxoCaixa.css" asp-append-version="true" />
    
     <script type="text/javascript" charset="utf-8">
             
@@ -266,7 +268,7 @@
                 </div>
 
                 <br><br>
-                <hr>
+                <hr class="line-rodape">
                 <br>
                 <div class="rodape-copyright">
                     <p>Copyright © 2023 | Prodigy. Todos os direitos reservados.<p>
@@ -295,16 +297,16 @@
                 <nav class="topo">
                     <img src="~/img/svg/PRODIGY.svg" alt="" class="logo">
                     <a class="ps-3" asp-area="" asp-controller="SHome" asp-action="Index"><img src="~/img/svg/Dashboard.svg" alt=""><p class="ps-3 m-0">Dashboard</p></a>
-                    <a class="ps-3" asp-area="" asp-controller="SHome" asp-action="Caixa"><img src="~/img/svg/Balance.svg" alt=""><p class="ps-3 m-0">Fluxo de caixa</p></a>
+                    <a class="ps-3" asp-area="" asp-controller="SCaixa" asp-action="Index"><img src="~/img/svg/Balance.svg" alt=""><p class="ps-3 m-0">Fluxo de caixa</p></a>
                     <a class="ps-3" asp-area="" asp-controller="SPedidos" asp-action="Index"><img src="~/img/svg/Tips.svg" alt=""><p class="ps-3 m-0">Pedidos</p></a>
                     <a class="ps-3" asp-area="" asp-controller="SEstoque" asp-action="Index"><img src="~/img/svg/Inventory.svg" alt=""><p class="ps-3 m-0">Estoque</p></a>
                     <a class="ps-3" asp-area="" asp-controller="SFuncionario" asp-action="Index"><img src="~/img/svg/Employeers.svg" alt=""><p class="ps-3 m-0">Funcionários</p></a>
-                    <a class="ps-3" asp-area="" asp-controller="SHome" asp-action="Cliente"><img src="~/img/svg/Calendar.svg" alt=""><p class="ps-3 m-0">Cliente</p></a>
-                    <a class="ps-3" asp-area="" asp-controller="SHome" asp-action="Fornecedor"><img src="~/img/svg/Calendar.svg" alt=""><p class="ps-3 m-0">Fornecedor</p></a>
+                    <a class="ps-3" asp-area="" asp-controller="SCliente" asp-action="Index"><img src="~/img/svg/Cliente.svg" alt=""><p class="ps-3 m-0">Cliente</p></a>
+                    <a class="ps-3" asp-area="" asp-controller="SFornecedor" asp-action="Index"><img src="~/img/svg/Fornecedor.svg" alt=""><p class="ps-3 m-0">Fornecedor</p></a>
                 </nav>
                 <hr id="hr">
                 <nav class="baixo">
-                    <a class="ps-3" asp-area="" asp-controller="Usuario" asp-action="Index"><img src="~/img/svg/Profile.svg" alt=""><p class="ps-3 m-0">Perfil</p></a>
+                    <a class="ps-3" asp-area="" asp-controller="Usuario" asp-action="Index"><img src="~/img/svg/Perfil.svg" alt=""><p class="ps-3 m-0">Perfil</p></a>
                     <a class="ps-3" asp-area="" asp-controller="SHome" asp-action="Config"><img src="~/img/svg/Config.svg" alt=""><p class="ps-3 m-0">Configurações</p></a>
                         <a class="ps-3" asp-area="" asp-controller="Usuario" asp-action="Logout"><img src="~/img/svg/Subtract.svg" alt=""><p class="ps-3 m-0">Sair</p></a>
                 </nav>
@@ -320,6 +322,7 @@
         <script src="~/js/site.js" asp-append-version="true"></script>
         <script src="~/js/perfil.js" asp-append-version="true"></script>
         <script src="~/js/payment.js" asp-append-version="true"></script>
+        <script src="~/js/venda.js" asp-append-version="true"></script>
         <script src="~/js/doughnut.js" asp-append-version="true"></script>
         <script src="~/js/lineChart.js" asp-append-version="true"></script>
         <script defer src="~/js/sidebar.js" asp-append-version="true"></script>

@@ -19,8 +19,7 @@
 
 .barra {
     /* position: fixed; */
-    width: 18.75%;
-    height: 100vh;
+    max-width: 18.75%;
     background-color: #2D3037;
     overflow: scroll;
 }
@@ -67,8 +66,6 @@
     flex-direction: column;
     justify-content: center;
     background-color: #E2F0EF;
-    padding-left: 3rem;
-    padding-top: 3rem;
 }
 
 .title-system {
@@ -89,11 +86,11 @@
 }
 
 .card-relatorio, .card-vendas, .card-estoque, .card-agenda {
-    width: 700px;
-    height: 400px;
+    width: 30rem;
+    height: 16rem;
     background-color: #2D3037;
     border-radius: 15px;
-    padding: 5% 5%;
+    padding: 2% 5%;
     box-shadow: 10px 10px 30px 0px rgba(0,0,0,0.25);
 }
 
@@ -107,27 +104,12 @@
     font-weight: 600;
 }
 
-.circle-lucro, .circle-faturamento, .circle-despesas {
-    width: 14px;
-    height: 14px;
-    border-radius: 100px;
+.doughnut-chart canvas {
+    width: auto;
+    height: 13rem;
+    margin: 0 auto;
 }
 
-.listen-relatorio p {
-    font-size: 0.8rem;
-}
-
-.circle-lucro {
-    background-color: #30BEB2;
-}
-
-.circle-faturamento {
-    background-color: #1D7870;
-}
-
-.circle-despesas {
-    background-color: #FF2323;
-}
 /* FIM CARD RELATORIO */
 
 /* CARD VENDAS */
@@ -136,23 +118,9 @@
 }
 
 .valor-vendas {
-    font-size: 1.6rem;
+    font-size: 1.5rem;
     font-weight: 700;
     color: #30BEB2;
-}
-
-.circle-info-faturamento {
-    width: 10px;
-    height: 10px;
-    background-color: #30BEB2;
-    border-radius: 100px;
-}
-
-.circle-info-despesas {
-    width: 10px;
-    height: 10px;
-    background-color: #FF2323;
-    border-radius: 100px;
 }
 
 .item-info-vendas p {
@@ -160,9 +128,10 @@
     font-weight: 500;
 }
 
-.bar-chart{
-    width: 500px;
-    height: 300px;
+.bar-chart canvas {
+    width: auto;
+    height: 11rem;
+    margin: 0 auto;
 }
 /* FIM CARD VENDAS */
 

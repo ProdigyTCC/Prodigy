@@ -1,10 +1,16 @@
-﻿using Microsoft.AspNetCore.Mvc;
+using System;
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Linq;
 using System.Security.Claims;
+using System.Threading.Tasks;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging;
 
 namespace ProdigyWeb.Controllers
 {
     [Route("[controller]")]
-    public class SFuncionarioController : Controller
+    public class SCaixaController : Controller
     {
         public IActionResult Index()
         {
@@ -18,10 +24,10 @@ namespace ProdigyWeb.Controllers
             return RedirectToAction("Login", "Usuario");
         }
 
-        [HttpGet("AddFuncionario")]
-        public IActionResult AddFuncionario()
+        [HttpGet("NovaVenda")]
+        public IActionResult NovaVenda()
         {
-            ClaimsPrincipal claims = HttpContext.User;
+           ClaimsPrincipal claims = HttpContext.User;
 
             if (claims.Identity.IsAuthenticated)
             {

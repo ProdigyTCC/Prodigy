@@ -1,0 +1,70 @@
+.topo-fluxo-caixa {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.vendas-historico-fluxo {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: start;
+}
+
+.cards-fluxo {
+    width: 20rem;
+    color: white; background-color: #2D3037;
+    border-radius: 15px;
+    padding: 2%;
+    box-shadow: 10px 10px 30px 0px rgba(0,0,0,0.25);
+}
+
+.title-card-fluxo {
+    font-size: 1.4rem;
+    font-weight: 600;
+}
+
+.value-card-fluxo {
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+.green-text {
+    color: #30BEB2;
+}
+
+.red-text {
+    color: #c71f37;
+}
+
+.line-fluxo-caixa {
+    color: #2D3037;
+    border: 1px solid #2D3037;
+}
+
+.vendas-chart-fluxo {
+    width: 43rem;
+    color: white; background-color: #2D3037;
+    border-radius: 15px;
+    padding: 2%;
+    box-shadow: 10px 10px 30px 0px rgba(0,0,0,0.25);
+}
+
+.historico-fluxo {
+    width: 20rem;
+    color: white; background-color: #2D3037;
+    border-radius: 15px;
+    padding: 2%;
+    box-shadow: 10px 10px 30px 0px rgba(0,0,0,0.25);
+}
+
+.title-card-historico {
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.historico-fluxo .table {
+    color: #E2F0EF;
+    font-size: 0.8rem;
+}

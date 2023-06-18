@@ -1,15 +1,15 @@
 .main-addproduto {
-    padding-top: 3rem;
-    padding-left: 3rem;
+    padding: 3rem;
     color: #1D7870;
 }
 
-.formulario input {
+.addinputs input {
     margin-bottom: 1.5em;
+    border-radius: 5px;
     border: solid #1D7870 0.1px;
 }
 
-.formulario input:focus {
+.addinputs input:focus {
     outline-color: #1D7870;
 }
 

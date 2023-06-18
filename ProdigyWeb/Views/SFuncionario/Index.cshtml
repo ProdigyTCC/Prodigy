@@ -6,11 +6,11 @@
             </div>
             <div class="div-button-search d-flex flex-row">
                 <div class="div-botoes-estoque d-flex flex-row justify-content-around">
-                    <button class="button-dash-default me-2">Adicionar Funcionário</button>
+                    <a asp-area="" asp-controller="SFuncionario" asp-action="AddFuncionario"><button class="button-dash-default me-2">Adicionar Funcionário</button></a>
                 </div>
                 <form class="d-flex">
-                    <input class="form-control ms-2 me-2 input-search" type="search" placeholder="Pesquisar" aria-label="Search">
-                    <a class="" asp-area="" asp-controller="SFuncionario" asp-action="AddFuncionario"><button class="button-search justify-content-center" type="submit"></a>
+                    <input class="form-control ms-2 me-2 input-search" type="search" placeholder="Pesquisar funcionário" aria-label="Search">
+                    <button class="button-search justify-content-center" type="submit"></a>
                         <i class="fa-solid fa-magnifying-glass fa-lg"></i>
                     </button>
                 </form>

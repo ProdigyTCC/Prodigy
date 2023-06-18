@@ -10,7 +10,7 @@ const data = {
     backgroundColor: [
       'rgba(29, 120, 112, 1)',
       'rgba(48, 190, 178, 1)',
-      'rgba(255, 35, 35, 1'
+      'rgb(199, 31, 55)'
     ],
     borderWidth: 0,
     hoverOffset: 4
@@ -22,9 +22,16 @@ const data = {
     data: data,
     options: {
       scales: {
-        y: {
-          beginAtZero: true
-        }
+        xAxes: [{
+            gridLines: {
+                color: "rgba(0, 0, 0, 0)",
+            }
+        }],
+        yAxes: [{
+            gridLines: {
+                color: "rgba(0, 0, 0, 0)",
+            }   
+        }]
       }
     }
   };

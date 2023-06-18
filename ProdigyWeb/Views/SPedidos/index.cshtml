@@ -1,32 +1,52 @@
+@{
+    ViewData["Title"] = "Pedidos";
+}
 <!-- LISTA DE PEDIDOS INÍCIO -->
-  <div class="fundo">
-        <h6>Pedidos</h6>
-        <div class="tabela">
-            <table class="table">
-                <thead>
-                  <tr>
-                    <th scope="col">Código</th>
-                    <th scope="col">Pedido</th>
-                    <th scope="col">Empresa</th>
-                    <th scope="col">Previsão</th>
-                    <th scope="col">D.E.A</th>
-                    <th></th>
-                  </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <th scope="row">14588</th>
-                        <td>Espelhos e Tomadas</td>
-                        <td>Ilumi</td>
-                        <td>29/07/2023</td>
-                        <td>0</td>
-                        <td class="buttons">
-                            <a href=""><img src="src/svg/Add.svg" alt=""></a>
-                            <a href=""><img src="src/svg/Edit.svg" alt=""></a>
-                            <a href=""><img src="src/svg/Alert.svg" alt=""></a>
-                        </td>
-                    </tr>
-                </tbody>
-              </table>
-        </div>
+<div class="fundo">
+  <div class="mb-3 d-flex flex-row justify-content-between w-100">
+    <div class="title-page">
+        <div class="title-system">Pedidos</div>
     </div>
+    <div class="div-button-search d-flex flex-row">
+        <div class="div-botoes-estoque d-flex flex-row justify-content-around">
+          <a asp-area="" asp-controller="SPedidos" asp-action="Addpedido"><button class="button-dash-default me-2">Adicionar pedido</button></a>
+        </div>
+        <form class="d-flex">
+            <input class="form-control ms-2 me-2 input-search" type="search" placeholder="Pesquisar" aria-label="Search">
+            <button class="button-search justify-content-center" type="submit">
+              <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+            </button>
+        </form>
+    </div>
+  </div> 
+  <div class="table-responsive-lg tabela">
+    <table class="table tabela-estoque">
+      <thead>
+        <tr>
+          <th scope="col">Código</th>
+          <th scope="col">Pedido</th>
+          <th scope="col">Empresa</th>
+          <th scope="col">Previsão</th>
+          <th scope="col">D.E.A</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row">14588</th>
+          <td>Espelhos e Tomadas</td>
+          <td>Ilumi</td>
+          <td>29/07/2023</td>
+          <td>0</td>
+          <td>
+            <div class="d-flex botoes-estoque">
+              @* <button id="buttonAddProd" class="botao-estoque" href="" title="Adicionar Quantidade"><i class="fa-solid fa-square-plus fa-xl"></i></button> *@
+              <a type="button" class="botao-estoque" title="Editar pedido"><i class="fa-solid fa-square-pen fa-xl"></i></a>
+              <a type="button" class="botao-estoque" data-bs-toggle="modal" data-bs-target="#verInfoProduto" data-bs-whatever="mdo" title="Ver informações sobre o pedido"><i class="fa-solid fa-circle-info fa-xl"></i></a>
+              </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

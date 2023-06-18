@@ -1,104 +1,84 @@
-@model ProdigyWeb.Models.SProduto
-
 @{
-    ViewData["Title"] = "Adicionar Produto";
+    ViewData["Title"] = "Adicionar Pedido";
 }
 
 <div class="main-addproduto">
 
     <!-- INICIO FORMULARIO -->
-        <h1 class="title-system">Adicionar Produto</h1>
+        <h1 class="title-system">Adicionar Pedido</h1>
         <a class="back-page" href="">
             <div class="icon-p">
                 <i class="fa-solid fa-circle-left fa-lg"></i>
                 <p class="m-0">Voltar</p>
             </div>
         </a>
-    <form asp-controller="SEstoque" asp-action="AddProdutoBanco" enctype="multipart/form-data">
-        <div class="d-flex fundo">
-            <div class="container formulario">
-                <div class="group-input-contato"> @*Input = Nome do produto*@
-                    <p class="label-estoque">Nome do produto</p>
+    <form>
+        <table class="table tabela-pedidos mt-3">
+        <thead>
+            <tr>
+            <th scope="col">
+               <input class="form-control input-search" type="search" placeholder="Pesquisar produto" aria-label="Search">
+            </th>
+            </tr>
+        </thead>
+        <thead>
+            <tr>
+            <th scope="col">Nome do produto</th>
+            <th scope="col">Marca</th>
+            <th scope="col">Qtd</th>
+            <th scope="col">Valor</th>
+            <th scope="col">Ações</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+            <td scope="row">Banana</td>
+            <td>CPS</td>
+            <td>5</td>
+            <td>20</td>
+            <td> 
+                <button type="button" class="botao-estoque" title="Adicionar quantidade"><i class="fa-solid fa-square-plus fa-xl"></i></button>
+                <button type="button" class="botao-estoque" title="Diminuir quantidade"><i class="fa-solid fa-square-minus fa-xl"></i></button>
+                <button type="button" class="botao-estoque red-icon-button" title="Excluir pedido"><i class="fa-solid fa-trash fa-xl"></i></button>
+            </td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>Valor total:</td>
+            <th>R$00,00</th>
+        </tfoot>
+        </table>
+        <div class="d-flex fundo-addpedidos">
+
+            <div class="container addinputs">
+                <div class="group-input-contato"> @*Data pedido*@
+                    <p class="label-estoque">Data do pedido</p>
                     <div class="input-contato input-group">
-                        <input asp-for="Nome" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" required>
+                        <input type="date" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" required>
                     </div>
                 </div>
 
-                <div class="group-input-contato"> @*Input = Descrição do produto*@
-                    <p class="label-estoque">Descrição do produto</p>
+                <div class="group-input-contato"> @*Input = Nota fiscal*@
+                    <p class="label-estoque">Nota fiscal</p>
                     <div class="input-contato input-group">
-                    <input asp-for="DescProduto" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                    <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
                     </div>
-                </div>
-
-                <div class="group-input-contato"> @*Input = Quantidade*@
-                    <p class="label-estoque">Quantidade</p>
-                    <div class="input-contato input-group">
-                    <input asp-for="QuantProduto" type="number" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" required>
-                    </div>
-                </div>
-
-                <div class="group-input-contato">
-                    @*Input = Marca*@
-                    <p class="label-estoque">Marca</p>
-                    <div class="input-contato input-group">
-                        <input asp-for="Marca" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" required>
-                    </div>
-                </div>
-
-                <div class="mb-3"> @*Input = Adicionar imagem*@
-                    <p class="label-estoque">Imagem</p> 
-                    <input name="imagem" class="form-control" type="file" id="formFile">
                 </div>
             </div>
 
-            <div class="container formulario">
-                <div class="group-input-contato"> @*Input = Data de validade*@
-                    <p class="label-estoque">Data de validade</p>
+            <div class="container addinputs">
+                <div class="group-input-contato"> @*Input = Data de entrega*@
+                    <p class="label-estoque">Data de entrega</p>
                     <div class="input-contato input-group">
-                        <input asp-for="DataValidade" type="date" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" required>
+                        <input type="date" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" required>
                     </div>
                 </div>
 
-                <div class="group-input-contato"> @*Input = Data de entrada*@
-                    <p class="label-estoque">Data de entrada</p>
-                    <div class="input-contato input-group">
-                    <input asp-for="DataEntrada" type="date" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" required>
-                    </div>
-                </div>
-
-                <div class="group-input-contato"> @*Input = Valor de custo*@
-                    <p class="label-estoque">Valor de custo</p>
-                    <div class="input-contato input-group">
-                    <input asp-for="ValorInicial" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" required>
-                    </div>
-                </div> 
-
-                <div class="group-input-contato"> @*Input = Valor de venda*@
-                    <p class="label-estoque">Valor de venda</p>
-                    <div class="input-contato input-group">
-                    <input asp-for="ValorFinal" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" required>
-                    </div>
-                </div>
-
-                <div class="group-input-contato"> 
-                    @*Input = Categoria*@
-                    <p class="label-estoque">Categoria</p>
-                    <div class="input-contato input-group">
-                    <select asp-for="SCategoriaProdutoId" class="form-select" aria-label="Default select example">
-                            @if(ViewBag.CategProduto != null)
-                            {
-                                @foreach (var cgProduto in ViewBag.CategProduto)
-                                {
-                                <option value="@cgProduto.SCategoriaProdutoId">@cgProduto.Nome</option>
-                                }
-                            }
-                        </select>
-                    </div>
-                </div>
-
-                <div class="button-profile d-flex flex-row justify-content-center">
-                    <button type="button" class="button-small-cancel me-2">Limpar</button>
+                <div class="d-flex flex-row justify-content-center mt-5">
+                    <button type="button" class="button-small-cancel me-2">Cancelar</button>
                     <button type="submit" class="button-small-confirm ms-2">Salvar</button>
                 </div>
             </div>

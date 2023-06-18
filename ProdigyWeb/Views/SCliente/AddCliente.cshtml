@@ -1,0 +1,73 @@
+@{
+    ViewData["Title"] = "Adicionar cliente";
+}
+
+<div class="main-addproduto">
+    <!-- INICIO FORMULARIO -->
+        <h1 class="title-system">Adicionar cliente</h1>
+        <a class="back-page" href="">
+            <div class="icon-p">
+                <i class="fa-solid fa-circle-left fa-lg"></i>
+                <p class="m-0">Voltar</p>
+            </div>
+        </a>
+    <form>
+        <div class="d-flex fundo">
+            <div class="container addinputs">
+                <div class="group-input-contato"> @*Input = Nome do cliente*@
+                    <p class="label-estoque">Nome do cliente</p>
+                    <div class="input-contato input-group">
+                        <input type="text" class="form-control" placeholder="Nome completo do cliente" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" required>
+                    </div>
+                </div>
+
+                <div class="group-input-contato"> @*Input = CPF*@
+                    <p class="label-estoque">CPF</p>
+                    <div class="input-contato input-group">
+                        <input type="text" class="form-control" placeholder="000.000.000-00" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" required>
+                    </div>
+                </div>
+
+                <div class="group-input-contato"> @*Input = Sexo*@
+                    <p class="label-estoque">Sexo</p>
+                   <select class="form-select" aria-label="Default select example" required>
+                        <option selected>Selecione:</option>
+                        <option value="1">Masculino</option>
+                        <option value="2">Feminino</option>
+                        <option value="3">Outro</option>
+                        <option value="4">Prefere não dizer</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="container addinputs">
+                <div class="group-input-contato"> @*Input = Email*@
+                    <p class="label-estoque">Email</p>
+                    <div class="input-contato input-group">
+                        <input type="email" class="form-control" placeholder="cliente@email.com" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" required>
+                    </div>
+                </div>
+
+                <div class="group-input-contato"> @*Input = Data de nascimento*@
+                    <p class="label-estoque">Data de nascimento</p>
+                    <div class="input-contato input-group">
+                        <input type="date" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" required>
+                    </div>
+                </div>
+
+                <div class="group-input-contato"> @*Input = Telefone*@
+                    <p class="label-estoque">Telefone</p>
+                    <div class="input-contato input-group">
+                        <input type="tel" class="form-control" placeholder="(99) 99999-9999" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" required>
+                    </div>
+                </div>
+
+                <div class="d-flex flex-row justify-content-center mt-5">
+                    <button type="button" class="button-small-cancel me-2">Cancelar</button>
+                    <button type="submit" class="button-small-confirm ms-2">Salvar</button>
+                </div>
+            </div>
+            </div>
+        </form>
+    </div>
+    <!-- FIM FORMULARIO -->

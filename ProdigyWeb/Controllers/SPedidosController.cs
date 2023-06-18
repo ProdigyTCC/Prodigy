@@ -9,9 +9,23 @@ using Microsoft.Extensions.Logging;
 
 namespace ProdigyWeb.Controllers
 {
+    [Route("[controller]")]
     public class SPedidosController : Controller
     {
         public IActionResult Index()
+        {
+           ClaimsPrincipal claims = HttpContext.User;
+
+            if (claims.Identity.IsAuthenticated)
+            {
+                ViewBag.Layout = "Dashboard";
+                return View();
+            }
+            return RedirectToAction("Login", "Usuario");
+        }
+
+        [HttpGet("AddPedido")]
+        public IActionResult AddPedido()
         {
            ClaimsPrincipal claims = HttpContext.User;
 

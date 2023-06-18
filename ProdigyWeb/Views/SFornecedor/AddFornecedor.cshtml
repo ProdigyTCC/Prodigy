@@ -1,0 +1,90 @@
+@{
+    ViewData["Title"] = "Adicionar fornecedor";
+}
+
+<div class="main-addproduto">
+    <!-- INICIO FORMULARIO -->
+        <h1 class="title-system">Adicionar fornecedor</h1>
+        <a class="back-page" href="">
+            <div class="icon-p">
+                <i class="fa-solid fa-circle-left fa-lg"></i>
+                <p class="m-0">Voltar</p>
+            </div>
+        </a>
+    <form>
+        <div class="d-flex fundo">
+            <div class="container addinputs">
+                <div class="group-input-contato"> @*Input = Nome fantasia*@
+                    <p class="label-estoque">Nome fantasia</p>
+                    <div class="input-contato input-group">
+                        <input type="text" class="form-control" placeholder="Nome fantasia do fornecedor" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" required>
+                    </div>
+                </div>
+
+                <div class="group-input-contato"> @*Input = CNPJ*@
+                    <p class="label-estoque">CNPJ</p>
+                    <div class="input-contato input-group">
+                        <input type="text" class="form-control" placeholder="00.000.000/0001-00" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" required>
+                    </div>
+                </div>
+
+                <div class="group-input-contato"> @*Input = Inscrição estadual*@
+                    <p class="label-estoque">Inscrição estadual</p>
+                    <div class="input-contato input-group">
+                        <input type="text" class="form-control" placeholder="000.000.000.000" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" required>
+                    </div>
+                </div>
+
+                <div class="group-input-contato"> @*Input = Nome do representante*@
+                    <p class="label-estoque">Nome do representante</p>
+                    <div class="input-contato input-group">
+                        <input type="text" class="form-control" placeholder="Nome completo do representante" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" required>
+                    </div>
+                </div>
+
+                <div class="group-input-contato"> @*Input = Data de fundação*@
+                    <p class="label-estoque">Data de fundação</p>
+                    <div class="input-contato input-group">
+                        <input type="date" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" required>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container addinputs">
+                <div class="group-input-contato"> @*Input = Email*@
+                    <p class="label-estoque">Email</p>
+                    <div class="input-contato input-group">
+                        <input type="email" class="form-control" placeholder="fornecedor@email.com" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" required>
+                    </div>
+                </div>
+
+                <div class="group-input-contato"> @*Input = Telefone*@
+                    <p class="label-estoque">Telefone</p>
+                    <div class="input-contato input-group">
+                        <input type="tel" class="form-control" placeholder="(99) 99999-9999" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" required>
+                    </div>
+                </div>
+
+                <div class="group-input-contato"> @*Input = Inscrição estadual*@
+                    <p class="label-estoque">Inscrição estadual</p>
+                    <div class="input-contato input-group">
+                        <input type="text" class="form-control" placeholder="000.000.000.000" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" required>
+                    </div>
+                </div>
+
+                <div class="group-input-contato"> @*Input = CPF do representante*@
+                    <p class="label-estoque">CPF do representante</p>
+                    <div class="input-contato input-group">
+                        <input type="text" class="form-control" placeholder="00.000.000/0001-00" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" required>
+                    </div>
+                </div>
+
+                <div class="d-flex flex-row justify-content-center mt-5">
+                    <button type="button" class="button-small-cancel me-2">Cancelar</button>
+                    <button type="submit" class="button-small-confirm ms-2">Salvar</button>
+                </div>
+            </div>
+            </div>
+        </form>
+    </div>
+    <!-- FIM FORMULARIO -->

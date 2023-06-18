@@ -2,31 +2,17 @@
     ViewData["Title"] = "Home Page";
 }
 
-<div class="container-fluid main-dashboard mb-5">
+<div class="container-fluid main-dashboard m-2">
     <div class="title"><p class="title-system">Dashboard</p></div>
 
     <div class="cards-dashboard"> @*Div principal que armazena os 4 cards = relatório/vendas/estoque/histórico*@
         
         <div class="card-relatorio"> @*Div relatório*@
-            <div class="subtitle-cards-dashboard"><p>Relatório</p></div>
-            <div class="content-relatorio d-flex flex-column justify-content-center align-items-center">
-                <div class="grafico-relatorio"> @*Gráfico do relatório*@
-                    <canvas id="myChart" width="270"></canvas>
+            <div class="subtitle-cards-dashboard"><p class="m-0">Relatório</p></div>
+            <div class="content-relatorio">
+                <div class="doughnut-chart mx-auto"> @*Gráfico do relatório*@
+                    <canvas id="myChart"></canvas>
                 </div> 
-                <div class="listen-relatorio w-75 d-flex flex-row justify-content-between"> @*Lista que fica abaixo do gráfico*@
-                    <div class="item-lucro d-flex flex-row align-items-center">
-                        <div class="circle-lucro me-1"></div> @*Estas divs circle são os círculos ao lado dos paragrafos*@
-                        <p class="m-0">Lucro</p>
-                    </div>
-                    <div class="item-faturamento d-flex flex-row align-items-center">
-                        <div class="circle-faturamento me-1"></div>
-                        <p class="m-0">Faturamento</p>
-                    </div>
-                    <div class="item-lucro d-flex flex-row align-items-center">
-                        <div class="circle-despesas me-1"></div>
-                        <p class="m-0">Despesas</p>
-                    </div>
-                </div>
             </div>
         </div>
 
@@ -34,21 +20,11 @@
             <div class="info-vendas d-flex flex-row justify-content-between">
                 <div class="nome-valor-vendas">
                     <div class="subtitle-cards-dashboard">Total de Vendas</div>
-                    <p class="valor-vendas">R$1024,83</p>
-                </div>
-                <div class="circles-info-vendas">
-                    <div class="item-info-vendas d-flex flex-row align-items-center">
-                        <div class="circle-info-faturamento me-1"></div>
-                        <p class="m-0">Faturamento</p>
-                    </div>
-                    <div class="item-info-vendas d-flex flex-row align-items-center">
-                        <div class="circle-info-despesas me-1"></div>
-                        <p class="m-0">Despesas</p>
-                    </div>
+                    <p class="valor-vendas m-0">R$1024,83</p>
                 </div>
             </div>
             <div class="bar-chart mx-auto">
-                    <canvas id="line"></canvas>
+                    <canvas class="line"></canvas>
             </div>
         </div>
 
@@ -57,7 +33,7 @@
             <table class="table table-estoque-dashboard">
                 <thead>
                     <tr>
-                        <th scope="col"></th>
+                        <th scope="col">#</th>
                         <th scope="col">Produto</th>
                         <th scope="col">Categoria</th>
                         <th scope="col">Status</th>
@@ -87,7 +63,37 @@
         </div>
 
         <div class="card-agenda">
-            
+            <div class="subtitle-cards-dashboard">Pedidos</div>
+            <table class="table table-estoque-dashboard">
+                <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Pedido</th>
+                        <th scope="col">Cliente</th>
+                        <th scope="col">Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                    <th scope="row">1</th>
+                    <td>Produto</td>
+                    <td>Categoria</td>
+                    <td>Em andamento</td>
+                    </tr>
+                    <tr>
+                    <th scope="row">2</th>
+                    <td>Produto</td>
+                    <td>Categoria</td>
+                    <td>Concluído</td>
+                    </tr>
+                    <tr>
+                    <th scope="row">3</th>
+                    <td>Produto</td>
+                    <td>Categoria</td>
+                    <td>Concluído</td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
     </div>
 </div>

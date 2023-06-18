@@ -16,25 +16,25 @@
         </a>
     <form asp-controller="SEstoque" asp-action="AddProdutoBanco" enctype="multipart/form-data">
         <div class="d-flex fundo">
-            <div class="container formulario">
+            <div class="container addinputs">
                 <div class="group-input-contato"> @*Input = Nome do produto*@
                     <p class="label-estoque">Nome do produto</p>
                     <div class="input-contato input-group">
-                        <input asp-for="Nome" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" required>
+                        <input asp-for="Nome" type="text" placeholder="Nome do produto" class="form-control"required>
                     </div>
                 </div>
 
                 <div class="group-input-contato"> @*Input = Descrição do produto*@
                     <p class="label-estoque">Descrição do produto</p>
                     <div class="input-contato input-group">
-                    <input asp-for="DescProduto" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                    <input asp-for="DescProduto" placeholder="Descrição do produto" type="text" class="form-control">
                     </div>
                 </div>
 
                 <div class="group-input-contato"> @*Input = Quantidade*@
                     <p class="label-estoque">Quantidade</p>
                     <div class="input-contato input-group">
-                    <input asp-for="QuantProduto" type="number" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" required>
+                    <input asp-for="QuantProduto" placeholder="Quantidade de produtos" type="number" class="form-control" required>
                     </div>
                 </div>
 
@@ -42,7 +42,7 @@
                     @*Input = Marca*@
                     <p class="label-estoque">Marca</p>
                     <div class="input-contato input-group">
-                        <input asp-for="Marca" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" required>
+                        <input asp-for="Marca" placeholder="Marca do produto" type="text" class="form-control" required>
                     </div>
                 </div>
 
@@ -52,32 +52,32 @@
                 </div>
             </div>
 
-            <div class="container formulario">
+            <div class="container addinputs">
                 <div class="group-input-contato"> @*Input = Data de validade*@
                     <p class="label-estoque">Data de validade</p>
                     <div class="input-contato input-group">
-                        <input asp-for="DataValidade" type="date" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" required>
+                        <input asp-for="DataValidade" type="date" class="form-control" required>
                     </div>
                 </div>
 
                 <div class="group-input-contato"> @*Input = Data de entrada*@
                     <p class="label-estoque">Data de entrada</p>
                     <div class="input-contato input-group">
-                    <input asp-for="DataEntrada" type="date" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" required>
+                    <input asp-for="DataEntrada" type="date" class="form-control" required>
                     </div>
                 </div>
 
                 <div class="group-input-contato"> @*Input = Valor de custo*@
                     <p class="label-estoque">Valor de custo</p>
                     <div class="input-contato input-group">
-                    <input asp-for="ValorInicial" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" required>
+                    <input asp-for="ValorInicial" placeholder="R$00,00" type="text" class="form-control" required>
                     </div>
                 </div> 
 
                 <div class="group-input-contato"> @*Input = Valor de venda*@
                     <p class="label-estoque">Valor de venda</p>
                     <div class="input-contato input-group">
-                    <input asp-for="ValorFinal" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" required>
+                    <input asp-for="ValorFinal" placeholder="R$00,00" type="text" class="form-control" required>
                     </div>
                 </div>
 
@@ -86,6 +86,7 @@
                     <p class="label-estoque">Categoria</p>
                     <div class="input-contato input-group">
                     <select asp-for="SCategoriaProdutoId" class="form-select" aria-label="Default select example">
+                            <option selected>Selecionar categoria</option>
                             @if(ViewBag.CategProduto != null)
                             {
                                 @foreach (var cgProduto in ViewBag.CategProduto)
@@ -97,8 +98,8 @@
                     </div>
                 </div>
 
-                <div class="button-profile d-flex flex-row justify-content-center">
-                    <button type="button" class="button-small-cancel me-2">Limpar</button>
+                <div class="d-flex flex-row justify-content-center mt-5">
+                    <button type="button" class="button-small-cancel me-2">Cancelar</button>
                     <button type="submit" class="button-small-confirm ms-2">Salvar</button>
                 </div>
             </div>

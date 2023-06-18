@@ -66,7 +66,7 @@ footer {
         filter: invert(58%) sepia(31%) saturate(842%) hue-rotate(126deg) brightness(102%) contrast(92%);
     }
 
-hr {
+.line-rodape {
     border: 1px solid #525661;
     margin: 0% 2%;
 }
