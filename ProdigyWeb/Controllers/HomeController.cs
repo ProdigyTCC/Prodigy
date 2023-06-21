@@ -12,6 +12,7 @@ public class HomeController : Controller
         ViewBag.Id = User.FindFirst("Id")?.Value;
         ViewBag.Nome = User.FindFirst(ClaimTypes.Name)?.Value;
         ViewBag.Email = User.FindFirst(ClaimTypes.Email)?.Value;
+        ViewBag.Nivel = User.FindFirst(ClaimTypes.Role)?.Value;
     }
     public IActionResult Index()
     {
@@ -43,11 +44,5 @@ public class HomeController : Controller
 
         AddSessao();
         return View();
-    }
-
-    [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-    public IActionResult Error()
-    {
-        return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
     }
 }

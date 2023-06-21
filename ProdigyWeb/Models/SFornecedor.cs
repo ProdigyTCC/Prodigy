@@ -10,12 +10,10 @@ namespace ProdigyWeb.Models
 
         [MaxLength(100)]
         [Display(Name = "Nome fantasia")]
-        [Required(ErrorMessage = "* Campo obrigatório")]
-        public int NomeRazao { get; set; }
+        public string NomeRazao { get; set; }
 
         [EmailAddress]
         [Display(Name = "Email válido")]
-        [Required(ErrorMessage = "* E-mail obrigatório")]
         [MaxLength(100, ErrorMessage = "O seu e-mail não pode ultrapassar 100 caracteres")]
         public string Email { get; set; }
 
@@ -25,12 +23,10 @@ namespace ProdigyWeb.Models
 
         [MaxLength(18)]
         [Display(Name = "CNPJ do fornecedor")]
-        [Required(ErrorMessage = "* Campo obrigatório")]
         public string Cnpj { get; set; }
 
         [MaxLength(18)]
         [Display(Name = "CPF do representante")]
-        [Required(ErrorMessage = "* Campo obrigatório")]
         public string CpfRepresentante { get; set; }
 
         [Display(Name = "Inscrição estadual")]
@@ -40,13 +36,48 @@ namespace ProdigyWeb.Models
         public string RgMunicipal { get; set; }
 
         [Display(Name = "Data de fundação")]
-        [Required(ErrorMessage = "* Campo obrigatório")]
-        public DateTime DataFundacao { get; set; }
+        public string DataFundacao { get; set; }
 
         [MaxLength(100)]
         [Display(Name = "Nome do representante")]
-        [Required(ErrorMessage = "* Campo obrigatório")]
         public string NomeRepresentante { get; set; }
+
+        [Display(Name = "Data de registro")]
+        public string DataRegistro { get; set; }
+
+        [MaxLength(100)]
+        [Display(Name = "Rua")]
+        public string Rua { get; set; }
+
+        [Display(Name = "N°")]
+        public string Numero { get; set; }
+
+        [MaxLength(50)]
+        [Display(Name = "Complemento")]
+        public string Complemento { get; set; }
+
+        [MaxLength(100)]
+        [Display(Name = "Bairro")]
+        public string Bairro { get; set; }
+
+        [Display(Name = "CEP")]
+        public string Cep { get; set; }
+
+        [MaxLength(2)]
+        [Display(Name = "Estado")]
+        public string Estado { get; set; }
+
+        [MaxLength(100)]
+        [Display(Name = "Cidade")]
+        public string Cidade { get; set; }
+
+        [MaxLength(50)]
+        [Display(Name = "País")]
+        public string Pais { get; set; }
+
+        public int UsuarioId { get; set; }
+        [ForeignKey("UsuarioId")]
+        public virtual Usuario Usuario { get; set; }
 
         [NotMapped]
         public virtual List<SEnderecoComposta> SEnderecoCompostas { get; set; }

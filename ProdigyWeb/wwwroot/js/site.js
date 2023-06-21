@@ -1,8 +1,8 @@
 let background = window.location.pathname;
 
 if (background == '/Home/Planos' || background == '/SHome' || background == '/SEstoque' || background == '/SPedidos/AddPedido' ||
-    background == '/SFuncionario' || background == '/SFuncionario/AddFuncionario' || background == '/SFuncionario/Editar' ||
-    background == '/AddProduto' || background == '/SEstoque/Editar/1' || background == '/SPedidos' || background == '/SCaixa' || background == '/SCaixa/NovaVenda'
+    background == '/SFuncionario' || background == '/SFuncionario/AddFuncionario' || background == '/SFuncionario/Editar/{id?}' ||
+    background == '/AddProduto' || background == '/SEstoque/Editar/{id?}' || background == '/SPedidos' || background == '/SCaixa' || background == '/SCaixa/NovaVenda'
     || background == '/SCliente' || background == '/SCliente/AddCliente' || background == '/SFornecedor' || background == '/SFornecedor/AddFornecedor') {
 
     document.body.style.background = "#E2F0EF";
@@ -22,9 +22,4 @@ if (background == '/Home/Planos' || background == '/SHome' || background == '/SE
         });
     });
 
-}
-
-if (background == '/SHome' ||
-    background == '/SHome') {
-    document.body.style.background = "#E2F0EF";
 }

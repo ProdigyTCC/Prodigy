@@ -1,41 +1,72 @@
+@model IEnumerable<ProdigyWeb.Models.SFuncionario>
+@{
+    ViewData["Title"] = "Funcionários";
+}
     <!-- CARTÃO INÍCIO -->
     <div class="fundo-cartoes m-5">
         <div class="mb-3 d-flex flex-row justify-content-between w-100">
             <div class="title-page">
-                <div class="title-system">Funcionários</div>
+                <div class="title-system" style="color: #E2F0EF;">Funcionários</div>
             </div>
             <div class="div-button-search d-flex flex-row">
                 <div class="div-botoes-estoque d-flex flex-row justify-content-around">
                     <a asp-area="" asp-controller="SFuncionario" asp-action="AddFuncionario"><button class="button-dash-default me-2">Adicionar Funcionário</button></a>
                 </div>
-                <form class="d-flex">
-                    <input class="form-control ms-2 me-2 input-search" type="search" placeholder="Pesquisar funcionário" aria-label="Search">
-                    <button class="button-search justify-content-center" type="submit"></a>
-                        <i class="fa-solid fa-magnifying-glass fa-lg"></i>
-                    </button>
-                </form>
+            <form asp-controller="SFuncionario" asp-action="Index" method="get" class="d-flex">
+                <input name="nome" id="nome" class="form-control ms-2 me-2 input-search" type="search" placeholder="Nome ou Código" aria-label="Search">
+                <button class="button-search justify-content-center" type="submit">
+                    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+                </button>
+            </form>
             </div>
         </div> 
-
-        <div class="cartao mt-3 mb-3">
-            <div class="text-center pt-3 pb-3"><img src="~/img/fotoPerfil.png" width="128px" alt=""></div>
-            <div class="informacoes">
-                <p class="titulo">Pedro Henrique</p>
-                <p class="subtitulo">23 Anos</p>
-                <div class="teste d-flex flex-column justify-content-center text-start ps-3 pb-3">
-                    <p>Cargo:</p>
-                    <p>Aux. de Suporte</p>
-
-                    <p>Cargo:</p>
-                    <p>Aux. de Suporte</p> 
-                    
-                    <p>Cargo:</p>
-                    <p>Aux. de Suporte</p>
+        @if(Model.Count() <= 0)
+        {  
+            <h2 class="text-center my-5" style="color:#E2F0EF;">Não foi encontrado registro de funcionários no sistema!</h2>
+        }
+        else
+        {
+            <div class="container-fluid d-flex">
+            @foreach(var item in Model)
+            {
+                <div class="cartao mt-3 mb-3">
+                    @if (item.Imagem == "" || item.Imagem == null)
+                    {
+                        <div class="text-center pt-3 pb-3"><img src="~/img/fotoPerfil.png" width="128px" alt=""></div>
+                    }
+                    else
+                    {
+                        string img = "/Imagem/" + item.Imagem;
+                        <div class="text-center pt-3 pb-3"><img src="@img" class="personal-avatar" alt="avatar"></div>
+                    }
+                    <div class="informacoes">
+                        @try
+                        {
+                            <p class="titulo">@item.Nome.Substring(0, @item.Nome.ToString().IndexOf(' '))</p>
+                        }
+                        catch (Exception)
+                        {
+                            <p class="titulo">@item.Nome</p>
+                        }
+                        <p class="subtitulo">Cód: @item.SFuncionarioId</p>
+                        <br>
+                        <div class="teste d-flex flex-column justify-content-center text-start ps-3 pb-3">
+                            <p>Cargo:</p>
+                            <p>@item.Nivel</p>
+                            <br>
+                            <p>Salário:</p>
+                            <p>@item.Salario</p> 
+                            <br>
+                            <p>Telefone:</p>
+                            <p>@item.Telefone</p>
+                        </div>
+                    </div>
+                    <div class="text-center botoes pb-3">
+                        <button class="button-funcionario-secondary">Ver mais</button>
+                        <a asp-action="Editar" asp-controller="SFuncionario" asp-route-id="@item.SFuncionarioId"><button class="button-funcionario-primary">Editar</button></a>
+                    </div>
                 </div>
+            }
             </div>
-            <div class="text-center botoes pb-3">
-                <button class="button-funcionario-secondary">Ver mais</button>
-                <button class="button-funcionario-primary">Editar</button>
-            </div>
-        </div>
+        }
     </div>

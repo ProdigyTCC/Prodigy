@@ -1,3 +1,4 @@
+@model IEnumerable<ProdigyWeb.Models.SFornecedor>
 @{
     ViewData["Title"] = "Fornecedor";
 }
@@ -11,11 +12,11 @@
         <div class="div-botoes-estoque d-flex flex-row justify-content-around">
           <a asp-area="" asp-controller="SFornecedor" asp-action="AddFornecedor"><button class="button-dash-default me-2">Adicionar fornecedor</button></a>
         </div>
-        <form class="d-flex">
-            <input class="form-control ms-2 me-2 input-search" type="search" placeholder="Pesquisar fornecedor" aria-label="Search">
-            <button class="button-search justify-content-center" type="submit">
-              <i class="fa-solid fa-magnifying-glass fa-lg"></i>
-            </button>
+       <form asp-controller="SFornecedor" asp-action="Index" method="get" class="d-flex">
+                <input name="nome" id="nome" class="form-control ms-2 me-2 input-search" type="search" placeholder="Nome ou Código" aria-label="Search">
+                <button class="button-search justify-content-center" type="submit">
+                    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+                </button>
         </form>
     </div>
   </div> 
@@ -23,6 +24,7 @@
     <table class="table tabela-estoque">
       <thead>
         <tr>
+          <th scope="col">Cód.</th>
           <th scope="col">Nome</th>
           <th scope="col">CNPJ</th>
           <th scope="col">Email</th>
@@ -31,17 +33,24 @@
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <th scope="row">Nome fornecedor</th>
-          <td>00.000.000/0001-00</td>
-          <td>fornecedor@email.com</td>
-          <td>(13) 99999-9999</td>
-          <td>
-            <div class="d-flex botoes-estoque">
-              <a type="button" class="botao-estoque" title="Editar cliente"><i class="fa-solid fa-square-pen fa-xl"></i></a>
-              </div>
-          </td>
-        </tr>
+        @if(Model != null)
+        {
+          @foreach(var item in Model)
+          {
+              <tr>
+                <th scope="row">@item.SFornecedorId</th>
+                <th>@item.NomeRazao</th>
+                <td>@item.Cnpj</td>
+                <td>@item.Email</td>
+                <td>@item.Telefone</td>
+                <td>
+                  <div class="d-flex botoes-estoque">
+                    <a asp-action="Editar" asp-controller="SFornecedor" asp-route-id="@item.SFornecedorId" type="button" class="botao-estoque" title="Editar cliente"><i class="fa-solid fa-square-pen fa-xl"></i></a>
+                    </div>
+                </td>
+              </tr>
+          }
+        }
       </tbody>
     </table>
   </div>

@@ -1,0 +1,79 @@
+﻿main .nova-venda {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 0% 0%;
+    grid-template-areas:
+        "A C"
+        "B C";
+    margin-top: 2rem;
+}
+
+.tabela-nova-venda {
+    height: 60vh;
+    width: 44rem;
+    padding: 1rem;
+    background-color: #525661;
+    color: #E2F0EF;
+    grid-area: A;
+    margin: 0;
+}
+
+    .tabela-nova-venda thead {
+        background-color: #2D3037;
+    }
+
+.info-venda {
+    width: 16rem;
+    padding: 2rem;
+    background-color: #2D3037;
+    color: #E2F0EF;
+    grid-area: C;
+}
+
+.label-cargo {
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.name-funcionario {
+    font-size: 1rem;
+}
+
+.subtotal-venda, .desconto-venda, .subtotal-valor, .desconto-valor {
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.total-venda {
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.total-valor {
+    font-size: 1.4rem;
+    font-weight: 700;
+}
+
+.pesquisa-produto-nova-venda {
+    background-color: #2D3037;
+}
+
+.topo-input-nova-venda {
+    padding: 1rem 1rem 0rem;
+}
+
+.input-nova-venda .input-pesquisar-produto {
+    width: 20rem;
+}
+
+.input-nova-venda .input-qtd-produto {
+    width: 5rem;
+}
+
+.label-topo-venda {
+    font-size: 1rem;
+    font-weight: 500;
+    color: #E2F0EF;
+    margin: 0rem 1rem 0rem 0rem;
+}

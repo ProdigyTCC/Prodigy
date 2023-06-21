@@ -13,12 +13,11 @@ namespace ProdigyWeb.Models
         public int ModuloId { get; set; }
 
         [MaxLength(100)]
-        public int NomeSistema { get; set; }
-
-        [MaxLength(10)]
-        [Display(Name = "Escolha seu plano")]
-        [Required(ErrorMessage = "* Campo Obrigatório")]
-        public string Plano { get; set; }
+        public string NomeSistema { get; set; }
+        public string Valor { get; set; }
+        public int UsuarioId { get; set; }
+        [ForeignKey("UsuarioId")]
+        public virtual Usuario Usuario { get; set; }
         public virtual List<ModuloComposta> ModuloComposta { get; set; }
     }
 }

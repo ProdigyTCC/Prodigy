@@ -1,0 +1,108 @@
+@model ProdigyWeb.Models.Modulo
+@{
+    ViewData["Title"] = "Módulos";
+}
+
+<div class="contaier-fluid text-center pt-5">
+    <h1 class="title-modulo mb-4">Módulos Personalizados</h1>
+    <p class="description-modulo">Torne sua experiência mais personalizada ao seu negócio e também mais completa,<br> para acompanhar o sucesso e a escalabilidade do seu negócio</p>
+</div>
+
+<hr class="line-profile mb-4 mx-5">
+
+<div class="container-fluid d-flex flex-column">
+    <ul class="nav nav-pills mb-3 mt-3 d-flex flex-row justify-content-around" id="pills-tab" role="tablist">
+        <li class="nav-item" role="presentation">
+            <button class="nav-link active" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-moduloLoja" type="button" role="tab" aria-controls="pills-moduloLoja" aria-selected="true">Módulos Disponíveis</button>
+        </li>
+        <li class="nav-item" role="presentation">
+            <button class="nav-link" id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#pills-moduloAtivo" type="button" role="tab" aria-controls="pills-moduloAtivo" aria-selected="false">Módulos Ativos</button>
+        </li>
+    </ul>
+    <div class="tab-content mx-3 mb-2" id="pills-tabContent">
+        <div class="tab-pane fade show active d-flex justify-content-around p-4 mb-4" id="pills-moduloLoja">
+
+            <div class="card" style="width: 18rem; background-color:#2D3037;">
+                <img class="w-75 mx-auto mt-4" style="border-radius: 5px;" src="~/img/loginModulo.jpg" alt="Módulo de Funcionários">
+                <div class="card-body">
+                    <h5 class="card-title">Acesso de Funcionários</h5>
+                    <div class="d-flex">
+                        <h4 class="subtitulo">R$ 5,99</h4>
+                        <p class="ms-2">/mês.</p>
+                    </div>
+                    <p>Autorização de acesso aos funcionários de sua empresa.<br>Defina login, senha e nível de acesso aos seus funcionários</p>
+                    <hr class="line-profile">
+                    <form asp-action="AddModulo" asp-controller="Modulo">
+                        <input type="hidden" asp-for="NomeSistema" value="AcessoFuncionario" />
+                        <input type="hidden" asp-for="Valor" value="5.99" />
+                        <div class="text-center botoes mt-3">
+                            <button type="submit" class="button-funcionario-primary">Adquirir</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <div class="card" style="width: 18rem; background-color:#2D3037;">
+                <img class="w-75 mx-auto mt-4" style="border-radius: 5px;" src="~/img/whatsappModulo.jpg" alt="Módulo de Funcionários">
+                <div class="card-body">
+                    <h5 class="card-title">Envio de Mensagens</h5>
+                    <div class="d-flex">
+                        <h4 class="subtitulo">R$ 5,99</h4>
+                        <p class="ms-2">/mês.</p>
+                    </div>
+                    <p>Envio de mendagens automáticas personalizadas para seus clientes e funcionários.</p>
+                    <hr class="line-profile">
+                    <div class="text-center botoes mt-3">
+                        <button class="button-funcionario-primary">Adquirir</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card" style="width: 18rem; background-color:#2D3037;">
+                <img class="w-75 mx-auto mt-4" style="border-radius: 5px;" src="~/img/agendamentoModulo.jpg" alt="Módulo de Funcionários">
+                <div class="card-body">
+                    <h5 class="card-title">Agenda de Eventos</h5>
+                    <div class="d-flex">
+                        <h4 class="subtitulo">R$ 5,99</h4>
+                        <p class="ms-2">/mês.</p>
+                    </div>
+                    <p>Agende tributos e evite esquecer de pagar seus tributos em dia ou comunicar reuniões.</p>
+                    <hr class="line-profile">
+                    <div class="text-center botoes mt-3">
+                        <button class="button-funcionario-primary">Adquirir</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+            @if (ViewBag.Modulo != null && ViewBag.Modulo == "AcessoFuncionario")
+            {
+            <div class="tab-pane fade d-flex justify-content-around p-4 mb-5" style="margin-top: -37.44rem;" id="pills-moduloAtivo">
+                <div class="card" style="width: 18rem; background-color:#2D3037;">
+                    <img class="w-75 mx-auto mt-4" style="border-radius: 5px;" src="~/img/loginModulo.jpg" alt="Módulo de Funcionários">
+                <div class="card-body">
+                    <h5 class="card-title">Acesso de Funcionários</h5>
+                    <div class="d-flex">
+                        <h4 class="subtitulo">R$ 5,99</h4>
+                        <p class="ms-2">/mês.</p>
+                    </div>
+                    <p>Autorização de acesso aos funcionários de sua empresa.<br>Defina login, senha e nível de acesso aos seus funcionários</p>
+                    <hr class="line-profile">
+                        <div class="text-center botoes mt-3 mx-4">
+                                <button type="button" class="button-small-cancel">Deletar</button>
+                        </div>
+                </div>
+                </div>
+            </div>  
+            }
+            else
+            {
+            <div class="tab-pane fade d-flex justify-content-around p-4 mb-5" id="pills-moduloAtivo">
+                <div style="margin-bottom: 30%;">
+                    <h1 class="title-modulo mb-4" style="margin-top: -30rem;">Nenhum módulo ativo encontrado</h1>
+                </div>
+            </div>
+            }
+
+    </div>
+</div>

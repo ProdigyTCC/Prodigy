@@ -20,6 +20,7 @@ namespace ProdigyWeb.Controllers
             ViewBag.Id = User.FindFirst("Id")?.Value;
             ViewBag.Nome = User.FindFirst(ClaimTypes.Name)?.Value;
             ViewBag.Email = User.FindFirst(ClaimTypes.Email)?.Value;
+            ViewBag.Nivel = User.FindFirst(ClaimTypes.Role)?.Value;
         }
 
         [HttpGet("Index")]
@@ -102,9 +103,9 @@ namespace ProdigyWeb.Controllers
                 TempData["Erro"] = "As informações do cartão estão inválidas!";
                 return RedirectToAction(nameof(Index));
             }
-            catch(DbException e)
+            catch(DbException)
             {
-                TempData["Erro"] = $"Não foi possivel salvar seu cartão: {e.Message}!";
+                TempData["Erro"] = "Não foi possivel salvar seu cartão!";
                 return RedirectToAction(nameof(Index));
             }
         }

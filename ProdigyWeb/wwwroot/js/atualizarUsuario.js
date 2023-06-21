@@ -2,10 +2,6 @@ const btnEditConta = document.querySelector("#btnEditConta")
 const btnCancelConta = document.querySelector("#btnCancelConta")
 const btnConfirmConta = document.querySelector("#btnConfirmConta")
 
-const btnEditGeral = document.querySelector("#btnEditGeral")
-const btnCancelGeral = document.querySelector("#btnCancelGeral")
-const btnConfirmGeral = document.querySelector("#btnConfirmGeral")
-
 const btnEditEndereco = document.querySelector("#btnEditEndereco")
 const btnCancelEndereco = document.querySelector("#btnCancelEndereco")
 const btnConfirmEndereco = document.querySelector("#btnConfirmEndereco")
@@ -14,9 +10,7 @@ const btnEditEmpresa = document.querySelector("#btnEditEmpresa")
 const btnCancelEmpresa = document.querySelector("#btnCancelEmpresa")
 const btnConfirmEmpresa = document.querySelector("#btnConfirmEmpresa")
 
-btnCancelGeral.style.display = "none"
-btnConfirmGeral.style.display = "none"
-btnEditGeral.style.display = "block"
+
 
 btnCancelConta.style.display = "none"
 btnConfirmConta.style.display = "none"
@@ -31,23 +25,7 @@ btnConfirmEmpresa.style.display = "none"
 btnEditEmpresa.style.display = "block"
 
 //BOTOES GERAL
-btnEditGeral.addEventListener('click', () => {
-    btnCancelGeral.style.display = "block"
-    btnConfirmGeral.style.display = "block"
-    btnEditGeral.style.display = "none"
-})
 
-btnConfirmGeral.addEventListener('click', () => {
-    btnCancelGeral.style.display = "none"
-    btnConfirmGeral.style.display = "none"
-    btnEditGeral.style.display = "block"
-})
-
-btnCancelGeral.addEventListener('click', () => {
-    btnCancelGeral.style.display = "none"
-    btnConfirmGeral.style.display = "none"
-    btnEditGeral.style.display = "block"
-})
 //FIM GERAL
 
 //BOTOES CONTA
@@ -93,10 +71,6 @@ btnConfirmConta.addEventListener('click', () => {
             let value = '/1'
             window.location.pathname = '/Usuario/Atualizar' + value
         })
-        .catch(function () {
-            let value = '/2'
-            window.location.pathname = '/Usuario/Atualizar' + value
-        }) 
 
     inputNome.disabled = true
     inputCpf.disabled = true
@@ -172,10 +146,6 @@ btnConfirmEndereco.addEventListener('click', () => {
             let value = '/1'
             window.location.pathname = '/Usuario/Atualizar' + value
         })
-        .catch(function () {
-            let value = '/2'
-            window.location.pathname = '/Usuario/Atualizar' + value
-        })
 
     inputRua.disabled = true
     inputNumero.disabled = true
@@ -247,7 +217,7 @@ btnEditEmpresa.addEventListener('click', () => {
     inputPaisEmpresa.disabled = false
 })
 
-btnConfirmEmpresa.addEventListener('click', (event) => {
+btnConfirmEmpresa.addEventListener('click', () => {
 
     btnCancelEmpresa.style.display = "none"
     btnConfirmEmpresa.style.display = "none"
@@ -279,10 +249,6 @@ btnConfirmEmpresa.addEventListener('click', (event) => {
     })
         .then(function () {
             let value = '/1'
-            window.location.pathname = '/Usuario/Atualizar' + value
-        })
-        .catch(function () {
-            let value = '/2'
             window.location.pathname = '/Usuario/Atualizar' + value
         })
 

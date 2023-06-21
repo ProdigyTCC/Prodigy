@@ -1,25 +1,32 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\marce\\OneDrive\\Área de Trabalho\\Marcelo\\Prodigy\\ProdigyWeb\\ProdigyWeb.csproj": {}
+    "C:\\Users\\Wallace\\Desktop\\tcc\\Production\\Prodigy\\ProdigyWeb\\ProdigyWeb.csproj": {}
   },
   "projects": {
-    "C:\\Users\\marce\\OneDrive\\Área de Trabalho\\Marcelo\\Prodigy\\ProdigyWeb\\ProdigyWeb.csproj": {
+    "C:\\Users\\Wallace\\Desktop\\tcc\\Production\\Prodigy\\ProdigyWeb\\ProdigyWeb.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\marce\\OneDrive\\Área de Trabalho\\Marcelo\\Prodigy\\ProdigyWeb\\ProdigyWeb.csproj",
+        "projectUniqueName": "C:\\Users\\Wallace\\Desktop\\tcc\\Production\\Prodigy\\ProdigyWeb\\ProdigyWeb.csproj",
         "projectName": "ProdigyWeb",
-        "projectPath": "C:\\Users\\marce\\OneDrive\\Área de Trabalho\\Marcelo\\Prodigy\\ProdigyWeb\\ProdigyWeb.csproj",
-        "packagesPath": "C:\\Users\\marce\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\marce\\OneDrive\\Área de Trabalho\\Marcelo\\Prodigy\\ProdigyWeb\\obj\\",
+        "projectPath": "C:\\Users\\Wallace\\Desktop\\tcc\\Production\\Prodigy\\ProdigyWeb\\ProdigyWeb.csproj",
+        "packagesPath": "C:\\Users\\Wallace\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Wallace\\Desktop\\tcc\\Production\\Prodigy\\ProdigyWeb\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\marce\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\Wallace\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net7.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -86,7 +93,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.203\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.202\\RuntimeIdentifierGraph.json"
         }
       }
     }

@@ -1,12 +1,10 @@
 @model IEnumerable<ProdigyWeb.Models.SProduto>
-@using ProdigyWeb.Models
 @{
     ViewData["Title"] = "Estoque";
 
     var categoriaProduto = new SCategoriaProduto();
 }
-
-<div class="fundo d-flex flex-column justify-content-between align-items-center">
+<div class="fundo">
     <div class="mb-3 d-flex flex-row justify-content-between w-100">
         <div class="title-page">
             <div class="title-system">Estoque</div>
@@ -16,8 +14,8 @@
                 <a class="" asp-area="" asp-controller="SEstoque" asp-action="Addproduto"><button class="button-dash-default me-2">Adicionar Produto</button></a>
                 <button class="button-dash-default me-2" data-bs-toggle="modal" data-bs-target="#addCategoria">Adicionar Categoria</button>
             </div>
-            <form class="d-flex">
-                <input class="form-control ms-2 me-2 input-search" type="search" placeholder="Pesquisar produto" aria-label="Search">
+            <form asp-controller="SEstoque" asp-action="Index" method="get" class="d-flex">
+                <input name="nome" id="nome" class="form-control ms-2 me-2 input-search" type="search" placeholder="Nome ou Código" aria-label="Search">
                 <button class="button-search justify-content-center" type="submit" title="Pesquisar">
                     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
                 </button>
@@ -63,90 +61,11 @@
             </tbody>
         </table>
     </div>
-
-        @* MODAL EDITAR PRDUTO *@
-        <div class="modal fade" id="editProduto" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-            <div class="modal-dialog text-dark">
-                <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Informações do produto</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="container">
-                                    <div class="mb-3">
-                                        <label for="recipient-name" class="col-form-label">Foto</label>
-                                        <img src="~/img/fotoPerfil.png" class="img-thumbnail w-15" alt="...">
-                                    </div>
-                    <div class="row">
-                        <div class="col">
-                            <div class="modal-body">
-                                <form>
-                                    <div class="mb-3">
-                                        <label for="recipient-name" class="col-form-label">Nome</label>
-                                        <input type="text" class="form-control" id="recipient-name">
-                                    </div>
-                                    <div class="mb-3">
-                                        <label for="recipient-name" class="col-form-label">Descrição</label>
-                                        <input type="text" class="form-control" id="recipient-name">
-                                    </div>
-                                    <div class="mb-3">
-                                        <label for="recipient-name" class="col-form-label">Quantidade</label>
-                                        <input type="number" class="form-control" id="recipient-name">
-                                    </div>
-                                    <div class="mb-3">
-                                        <label for="recipient-name" class="col-form-label">Fabricante</label>
-                                        <input type="text" class="form-control" id="recipient-name">
-                                    </div>
-                                    <div class="mb-3">
-                                        <label for="recipient-name" class="col-form-label">Fornecedor</label>
-                                        <input type="text" class="form-control" id="recipient-name">
-                                    </div>
-                                </form>
-                            </div>
-                        </div>
-                        <div class="col">
-                            <div class="modal-body">
-                                <form>
-                                    <div class="mb-3">
-                                        <label for="recipient-name" class="col-form-label">Data de validade</label>
-                                        <input type="date" class="form-control" id="recipient-name">
-                                    </div>
-                                    <div class="mb-3">
-                                        <label for="recipient-name" class="col-form-label">Data de entrada</label>
-                                        <input type="date" class="form-control" id="recipient-name">
-                                    </div>
-                                    <div class="mb-3">
-                                        <label for="recipient-name" class="col-form-label">Valor de custo</label>
-                                        <input type="text" class="form-control" id="recipient-name">
-                                    </div>
-                                    <div class="mb-3">
-                                        <label for="recipient-name" class="col-form-label">Valor de venda</label>
-                                        <input type="text" class="form-control" id="recipient-name">
-                                    </div>
-                                    <div class="mb-3">
-                                        <label for="recipient-name" class="col-form-label">Categoria</label>
-                                        <select class="form-select" aria-label="Default select example">
-                                            <option selected>Selecionar Categoria</option>
-                                            <option value="null">Exemplo</option>
-                                        </select>
-                                    </div>
-                                </form>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
-                </div>
-                </div>
-            </div>
-        </div>
-        @* FIM DO MODAL EDITAR PRODUTO *@
-
+</div>
     @* MODAL INFORMAÇÕES*@
         <div class="modal fade" id="verInfoProduto" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog modal-fullscreen-xl-down text-dark w-100">
-                <div class="modal-content">
+                <div class="modal-content"></div>
                 <div class="modal-header">
                     <h5 class="modal-title" id="exampleModalLabel">Informações do produto</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
@@ -248,4 +167,3 @@
         </div>
     </div>
     @* FIM DO MODAL ADD CATEGORIA *@
-</div>

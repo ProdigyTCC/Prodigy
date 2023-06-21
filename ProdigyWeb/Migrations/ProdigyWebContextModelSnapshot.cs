@@ -72,6 +72,9 @@ namespace ProdigyWeb.Migrations
 
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("ConfigId"));
 
+                    b.Property<string>("NfEletronica")
+                        .HasColumnType("text");
+
                     b.Property<string>("PorcentagemDesconto")
                         .HasColumnType("text");
 
@@ -311,16 +314,19 @@ namespace ProdigyWeb.Migrations
 
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("ModuloId"));
 
-                    b.Property<int>("NomeSistema")
+                    b.Property<string>("NomeSistema")
                         .HasMaxLength(100)
+                        .HasColumnType("character varying(100)");
+
+                    b.Property<int>("UsuarioId")
                         .HasColumnType("integer");
 
-                    b.Property<string>("Plano")
-                        .IsRequired()
-                        .HasMaxLength(10)
-                        .HasColumnType("character varying(10)");
+                    b.Property<string>("Valor")
+                        .HasColumnType("text");
 
                     b.HasKey("ModuloId");
+
+                    b.HasIndex("UsuarioId");
 
                     b.ToTable("Modulos");
                 });
@@ -523,31 +529,66 @@ namespace ProdigyWeb.Migrations
 
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("SClienteId"));
 
+                    b.Property<string>("Bairro")
+                        .HasMaxLength(100)
+                        .HasColumnType("character varying(100)");
+
+                    b.Property<string>("Cep")
+                        .HasColumnType("text");
+
+                    b.Property<string>("Cidade")
+                        .HasMaxLength(100)
+                        .HasColumnType("character varying(100)");
+
+                    b.Property<string>("Complemento")
+                        .HasMaxLength(50)
+                        .HasColumnType("character varying(50)");
+
                     b.Property<string>("Cpf")
-                        .IsRequired()
                         .HasMaxLength(14)
                         .HasColumnType("character varying(14)");
 
-                    b.Property<DateTime>("DataNacimento")
-                        .HasColumnType("timestamp with time zone");
+                    b.Property<string>("DataNacimento")
+                        .HasColumnType("text");
 
-                    b.Property<DateTime>("DataRegistro")
-                        .HasColumnType("timestamp with time zone");
+                    b.Property<string>("DataRegistro")
+                        .HasColumnType("text");
 
                     b.Property<string>("Email")
-                        .IsRequired()
                         .HasMaxLength(100)
                         .HasColumnType("character varying(100)");
 
+                    b.Property<string>("Estado")
+                        .HasMaxLength(2)
+                        .HasColumnType("character varying(2)");
+
                     b.Property<string>("Nome")
-                        .IsRequired()
                         .HasMaxLength(100)
                         .HasColumnType("character varying(100)");
+
+                    b.Property<string>("Numero")
+                        .HasColumnType("text");
+
+                    b.Property<string>("Pais")
+                        .HasMaxLength(50)
+                        .HasColumnType("character varying(50)");
+
+                    b.Property<string>("Rua")
+                        .HasMaxLength(100)
+                        .HasColumnType("character varying(100)");
+
+                    b.Property<string>("Sexo")
+                        .HasColumnType("text");
 
                     b.Property<string>("Telefone")
                         .HasColumnType("text");
 
+                    b.Property<int>("UsuarioId")
+                        .HasColumnType("integer");
+
                     b.HasKey("SClienteId");
+
+                    b.HasIndex("UsuarioId");
 
                     b.ToTable("SClientes");
                 });
@@ -716,32 +757,57 @@ namespace ProdigyWeb.Migrations
 
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("SFornecedorId"));
 
+                    b.Property<string>("Bairro")
+                        .HasMaxLength(100)
+                        .HasColumnType("character varying(100)");
+
+                    b.Property<string>("Cep")
+                        .HasColumnType("text");
+
+                    b.Property<string>("Cidade")
+                        .HasMaxLength(100)
+                        .HasColumnType("character varying(100)");
+
                     b.Property<string>("Cnpj")
-                        .IsRequired()
                         .HasMaxLength(18)
                         .HasColumnType("character varying(18)");
+
+                    b.Property<string>("Complemento")
+                        .HasMaxLength(50)
+                        .HasColumnType("character varying(50)");
 
                     b.Property<string>("CpfRepresentante")
-                        .IsRequired()
                         .HasMaxLength(18)
                         .HasColumnType("character varying(18)");
 
-                    b.Property<DateTime>("DataFundacao")
-                        .HasColumnType("timestamp with time zone");
+                    b.Property<string>("DataFundacao")
+                        .HasColumnType("text");
+
+                    b.Property<string>("DataRegistro")
+                        .HasColumnType("text");
 
                     b.Property<string>("Email")
-                        .IsRequired()
                         .HasMaxLength(100)
                         .HasColumnType("character varying(100)");
 
-                    b.Property<int>("NomeRazao")
+                    b.Property<string>("Estado")
+                        .HasMaxLength(2)
+                        .HasColumnType("character varying(2)");
+
+                    b.Property<string>("NomeRazao")
                         .HasMaxLength(100)
-                        .HasColumnType("integer");
+                        .HasColumnType("character varying(100)");
 
                     b.Property<string>("NomeRepresentante")
-                        .IsRequired()
                         .HasMaxLength(100)
                         .HasColumnType("character varying(100)");
+
+                    b.Property<string>("Numero")
+                        .HasColumnType("text");
+
+                    b.Property<string>("Pais")
+                        .HasMaxLength(50)
+                        .HasColumnType("character varying(50)");
 
                     b.Property<string>("RgEstadual")
                         .HasColumnType("text");
@@ -749,10 +815,19 @@ namespace ProdigyWeb.Migrations
                     b.Property<string>("RgMunicipal")
                         .HasColumnType("text");
 
+                    b.Property<string>("Rua")
+                        .HasMaxLength(100)
+                        .HasColumnType("character varying(100)");
+
                     b.Property<string>("Telefone")
                         .HasColumnType("text");
 
+                    b.Property<int>("UsuarioId")
+                        .HasColumnType("integer");
+
                     b.HasKey("SFornecedorId");
+
+                    b.HasIndex("UsuarioId");
 
                     b.ToTable("SFornecedores");
                 });
@@ -765,22 +840,42 @@ namespace ProdigyWeb.Migrations
 
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("SFuncionarioId"));
 
+                    b.Property<string>("Bairro")
+                        .HasMaxLength(100)
+                        .HasColumnType("character varying(100)");
+
+                    b.Property<string>("Cep")
+                        .HasColumnType("text");
+
+                    b.Property<string>("Cidade")
+                        .HasMaxLength(100)
+                        .HasColumnType("character varying(100)");
+
+                    b.Property<string>("Complemento")
+                        .HasMaxLength(50)
+                        .HasColumnType("character varying(50)");
+
                     b.Property<string>("Cpf")
-                        .IsRequired()
                         .HasMaxLength(14)
                         .HasColumnType("character varying(14)");
 
-                    b.Property<DateTime>("DataNascimento")
-                        .HasColumnType("timestamp with time zone");
+                    b.Property<string>("DataNascimento")
+                        .HasColumnType("text");
 
-                    b.Property<DateTime>("DataPagamento")
-                        .HasColumnType("timestamp with time zone");
+                    b.Property<string>("DataPagamento")
+                        .HasColumnType("text");
 
-                    b.Property<DateTime>("DataRegistro")
-                        .HasColumnType("timestamp with time zone");
+                    b.Property<string>("DataRegistro")
+                        .HasColumnType("text");
+
+                    b.Property<string>("Email")
+                        .HasColumnType("text");
+
+                    b.Property<string>("Estado")
+                        .HasMaxLength(2)
+                        .HasColumnType("character varying(2)");
 
                     b.Property<string>("EstadoCivil")
-                        .IsRequired()
                         .HasMaxLength(10)
                         .HasColumnType("character varying(10)");
 
@@ -799,9 +894,16 @@ namespace ProdigyWeb.Migrations
                         .HasMaxLength(100)
                         .HasColumnType("character varying(100)");
 
+                    b.Property<string>("Numero")
+                        .HasColumnType("text");
+
                     b.Property<string>("Observacao")
                         .HasMaxLength(200)
                         .HasColumnType("character varying(200)");
+
+                    b.Property<string>("Pais")
+                        .HasMaxLength(50)
+                        .HasColumnType("character varying(50)");
 
                     b.Property<string>("Pis")
                         .HasColumnType("text");
@@ -809,18 +911,29 @@ namespace ProdigyWeb.Migrations
                     b.Property<int>("QtFilhos")
                         .HasColumnType("integer");
 
-                    b.Property<decimal>("Salario")
-                        .HasColumnType("decimal(10,2)");
+                    b.Property<string>("Rua")
+                        .HasMaxLength(100)
+                        .HasColumnType("character varying(100)");
+
+                    b.Property<string>("Salario")
+                        .HasColumnType("text");
+
+                    b.Property<string>("Senha")
+                        .HasColumnType("text");
 
                     b.Property<string>("Sexo")
-                        .IsRequired()
                         .HasMaxLength(25)
                         .HasColumnType("character varying(25)");
 
                     b.Property<string>("Telefone")
                         .HasColumnType("text");
 
+                    b.Property<int>("UsuarioId")
+                        .HasColumnType("integer");
+
                     b.HasKey("SFuncionarioId");
+
+                    b.HasIndex("UsuarioId");
 
                     b.ToTable("SFuncionarios");
                 });
@@ -1113,6 +1226,17 @@ namespace ProdigyWeb.Migrations
                     b.Navigation("Usuario");
                 });
 
+            modelBuilder.Entity("ProdigyWeb.Models.Modulo", b =>
+                {
+                    b.HasOne("ProdigyWeb.Models.Usuario", "Usuario")
+                        .WithMany()
+                        .HasForeignKey("UsuarioId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Usuario");
+                });
+
             modelBuilder.Entity("ProdigyWeb.Models.ModuloComposta", b =>
                 {
                     b.HasOne("ProdigyWeb.Models.Config", null)
@@ -1199,6 +1323,17 @@ namespace ProdigyWeb.Migrations
                     b.Navigation("Usuario");
                 });
 
+            modelBuilder.Entity("ProdigyWeb.Models.SCliente", b =>
+                {
+                    b.HasOne("ProdigyWeb.Models.Usuario", "Usuario")
+                        .WithMany()
+                        .HasForeignKey("UsuarioId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Usuario");
+                });
+
             modelBuilder.Entity("ProdigyWeb.Models.SClienteJuridico", b =>
                 {
                     b.HasOne("ProdigyWeb.Models.SCliente", "SCliente")
@@ -1239,6 +1374,28 @@ namespace ProdigyWeb.Migrations
                     b.Navigation("SFornecedor");
 
                     b.Navigation("SFuncionario");
+                });
+
+            modelBuilder.Entity("ProdigyWeb.Models.SFornecedor", b =>
+                {
+                    b.HasOne("ProdigyWeb.Models.Usuario", "Usuario")
+                        .WithMany()
+                        .HasForeignKey("UsuarioId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Usuario");
+                });
+
+            modelBuilder.Entity("ProdigyWeb.Models.SFuncionario", b =>
+                {
+                    b.HasOne("ProdigyWeb.Models.Usuario", "Usuario")
+                        .WithMany()
+                        .HasForeignKey("UsuarioId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Usuario");
                 });
 
             modelBuilder.Entity("ProdigyWeb.Models.SPedido", b =>

@@ -1,0 +1,55 @@
+@model ProdigyWeb.Models.Config
+@{
+    ViewData["Title"] = "Configurações";
+
+    var config = new Config();
+
+    if(ViewBag.Config != null)
+    {
+        config = ViewBag.Config;
+    }
+}
+
+<div class="main-addproduto">
+    
+    <form asp-action="AddConfig" asp-controller="Config" enctype="multipart/form-data">
+    <div class="d-flex fundo mb-0 pb-0">
+        <h1 class="title-system">Configurações</h1>
+    </div>
+        <div class="d-flex fundo">
+            <div class="container addinputs w-50 ms-0">
+                <p class="label-profile pb-1 m-0">Percentual de Lucro</p>
+                <div class="input-group pb-3">
+                    <input asp-for="PorcentagemLucro" class="form-control" id="lucro" value="@config.PorcentagemLucro" type="text" placeholder="%">
+                </div>
+
+                <p class="label-profile pb-1 m-0">Taxa no Crédito</p>
+                <div class="input-group pb-3">
+                    <input asp-for="TaxaCredito" class="form-control" id="credito" value="@config.TaxaCredito" type="text" placeholder="%">
+                </div>
+
+                <p class="label-profile pb-1 m-0">Taxa por Parcelas</p>
+                <div class="input-group pb-3">
+                    <input asp-for="TaxaParcela" class="form-control" id="parcela" value="@config.TaxaParcela" type="text" placeholder="%" aria-label="Disabled input example">
+                </div>
+
+                <p class="label-profile pb-1 m-0">Taxa no Débito</p>
+                <div class="input-group pb-3">
+                    <input asp-for="TaxaDebito" class="form-control" id="debito" value="@config.TaxaDebito" type="text" placeholder="%" aria-label="Disabled input example">
+                </div>
+                <p class="label-profile pb-1 m-0">Desconto Dinheiro/Pix</p>
+                <div class="input-group pb-3">
+                    <input asp-for="PorcentagemDesconto" class="form-control" id="dinheiro" value="@config.PorcentagemDesconto" type="text" placeholder="%" aria-label="Disabled input example">
+                </div>
+                
+                <div class="mb-3"> @*Input = Adicionar imagem*@
+                    <p class="label-estoque">Certificado Eletrônico (e-NF)</p> 
+                    <input name="arquivo" class="form-control" type="file" id="formFileConfig">
+                </div>
+                <div class="container d-flex justify-content-end p-0">
+                    <button type="submit" class="button-small-confirm ms-2">Salvar</button>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>

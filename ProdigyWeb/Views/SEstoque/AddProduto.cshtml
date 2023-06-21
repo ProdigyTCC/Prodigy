@@ -7,13 +7,15 @@
 <div class="main-addproduto">
 
     <!-- INICIO FORMULARIO -->
+    <div class="fundo mb-0 pb-0">
         <h1 class="title-system">Adicionar Produto</h1>
-        <a class="back-page" href="">
+        <a class="back-page" asp-controller="SEstoque" asp-action="Index">
             <div class="icon-p">
                 <i class="fa-solid fa-circle-left fa-lg"></i>
                 <p class="m-0">Voltar</p>
             </div>
         </a>
+    </div>
     <form asp-controller="SEstoque" asp-action="AddProdutoBanco" enctype="multipart/form-data">
         <div class="d-flex fundo">
             <div class="container addinputs">
@@ -99,7 +101,7 @@
                 </div>
 
                 <div class="d-flex flex-row justify-content-center mt-5">
-                    <button type="button" class="button-small-cancel me-2">Cancelar</button>
+                    <a style="text-decoration: none;" asp-controller="SEstoque" asp-action="Index"><button type="button" class="button-small-cancel me-2">Cancelar</button></a>
                     <button type="submit" class="button-small-confirm ms-2">Salvar</button>
                 </div>
             </div>

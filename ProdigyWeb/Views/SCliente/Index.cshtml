@@ -1,3 +1,4 @@
+@model IEnumerable<ProdigyWeb.Models.SCliente>
 @{
     ViewData["Title"] = "Clientes";
 }
@@ -11,8 +12,8 @@
         <div class="div-botoes-estoque d-flex flex-row justify-content-around">
           <a asp-area="" asp-controller="SCliente" asp-action="AddCliente"><button class="button-dash-default me-2">Adicionar cliente</button></a>
         </div>
-        <form class="d-flex">
-            <input class="form-control ms-2 me-2 input-search" type="search" placeholder="Pesquisar cliente" aria-label="Search">
+        <form asp-controller="SCliente" asp-action="Index" class="d-flex">
+            <input name="nome" class="form-control ms-2 me-2 input-search" type="search" placeholder="Pesquisar cliente" aria-label="Search">
             <button class="button-search justify-content-center" type="submit">
               <i class="fa-solid fa-magnifying-glass fa-lg"></i>
             </button>
@@ -23,28 +24,34 @@
     <table class="table tabela-estoque">
       <thead>
         <tr>
+          <th scope="col">Cód.</th>
           <th scope="col">Nome</th>
           <th scope="col">CPF</th>
           <th scope="col">Telefone</th>
-          <th scope="col">Data de nascimento</th>
           <th scope="col">Data de registro</th>
           <th></th>
         </tr>
       </thead>
-      <tbody>
-        <tr>
-          <th scope="row">Nome cliente</th>
-          <td>555.333.111-00</td>
-          <td>(13) 99999-9999</td>
-          <td>29/07/2023</td>
-          <td>29/07/2023</td>
-          <td>
-            <div class="d-flex botoes-estoque">
-              <a type="button" class="botao-estoque" title="Editar cliente"><i class="fa-solid fa-square-pen fa-xl"></i></a>
-              </div>
-          </td>
-        </tr>
-      </tbody>
+      @if(Model.Count() > 0)
+      {
+        @foreach(var item in Model)
+        {
+          <tbody>
+            <tr>
+              <th scope="row">@item.SClienteId</th>
+              <td>@item.Nome</td>
+              <td>@item.Cpf</td>
+              <td>@item.Telefone</td>
+              <td>@item.DataRegistro</td>
+              <td>
+                <div class="d-flex botoes-estoque">
+                  <a asp-action="Editar" asp-controller="SCliente" asp-route-id="@item.SClienteId" type="button" class="botao-estoque" title="Editar cliente"><i class="fa-solid fa-square-pen fa-xl"></i></a>
+                  </div>
+              </td>
+            </tr>
+          </tbody>
+        }
+      }
     </table>
   </div>
 </div>

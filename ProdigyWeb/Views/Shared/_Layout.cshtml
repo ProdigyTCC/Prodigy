@@ -25,6 +25,7 @@
     <link rel="stylesheet" href="~/css/addpedidos.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/css/funcionario.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/css/fluxoCaixa.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/venda.css" asp-append-version="true" />
    
     <script type="text/javascript" charset="utf-8">
             
@@ -58,13 +59,7 @@
                 if (url == '/Usuario/Atualizar/1') {
                     window.location.pathname = '/Usuario/Atualizar'
                 }
-                if(url == '/Usuario/Atualizar/1'){
-                    window.location.pathname = '/Usuario/Atualizar'
-                }
                 if (url == '/Usuario/Atualizar/2') {
-                    window.location.pathname = '/Usuario/Atualizar'
-                }
-                if(url == '/Usuario/Atualizar/2'){
                     window.location.pathname = '/Usuario/Atualizar'
                 }
             })
@@ -157,6 +152,9 @@
                             <li class="nav-item">
                                 <a class="nav-link navbar-a" asp-area="" asp-controller="Home" asp-action="Planos">Planos</a>
                             </li>
+                            <li class="nav-item">
+                                <a class="nav-link navbar-a" asp-area="" asp-controller="Modulo" asp-action="Index">Módulos</a>
+                            </li>
 
                             @if (ViewBag.Id == null)
                             {
@@ -168,7 +166,7 @@
                                 </li>
                             }
                             <li class="nav-item">
-                                <a class="nav-link navbar-a" asp-area="" asp-controller="SEstoque" asp-action="Index">Sistema</a>
+                                <a class="nav-link navbar-a" asp-area="" asp-controller="SHome" asp-action="Index">Sistema</a>
                             </li>
                             @if (ViewBag.Id != null)
                             {
@@ -182,11 +180,17 @@
                                     <p class="nav-link navbar-a">
                                         @try
                                         {
-                                            @ViewBag.Nome.ToString().Substring(0, @ViewBag.Nome.ToString().IndexOf(' '))
+                                            @if(ViewBag.Nome != null)
+                                            {
+                                                @ViewBag.Nome.ToString().Substring(0, @ViewBag.Nome.ToString().IndexOf(' '))
+                                            }
                                         }
                                         catch (Exception)
                                         {
-                                            @ViewBag.Nome.ToString()
+                                            @if (ViewBag.Nome != null)
+                                            {
+                                                @ViewBag.Nome.ToString()
+                                            }
                                         }
                                     </p>
                                 </li>
@@ -197,7 +201,7 @@
             </nav>
         </header>
         <div>
-            <partial name="_CookieConsentPartial" />
+           @*<partial name="_CookieConsentPartial" />*@
             <main role="main">
                 @RenderBody()
             </main>
@@ -271,7 +275,7 @@
                 <hr class="line-rodape">
                 <br>
                 <div class="rodape-copyright">
-                    <p>Copyright © 2023 | Prodigy. Todos os direitos reservados.<p>
+                    <p>Copyright © 2023 | Prodigy. Todos os direitos reservados. CNPJ: xx.xxx.xxx/xxxx-xx<p>
                 </div>
             </div>
         </footer>
@@ -284,7 +288,7 @@
         <script src="~/js/lineChart.js" asp-append-version="true"></script>
         <script defer src="~/js/sidebar.js" asp-append-version="true"></script>
         <script src="~/js/atualizarUsuario.js" asp-append-version="true"></script>
-        <script src="~/js/atualizarEmpresa.js" asp-append-version="true"></script>
+        <script src="~/js/modulos.js" asp-append-version="true"></script>
         <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
         @await RenderSectionAsync("Scripts", required: false)
     }
@@ -307,7 +311,7 @@
                 <hr id="hr">
                 <nav class="baixo">
                     <a class="ps-3" asp-area="" asp-controller="Usuario" asp-action="Index"><img src="~/img/svg/Perfil.svg" alt=""><p class="ps-3 m-0">Perfil</p></a>
-                    <a class="ps-3" asp-area="" asp-controller="SHome" asp-action="Config"><img src="~/img/svg/Config.svg" alt=""><p class="ps-3 m-0">Configurações</p></a>
+                    <a class="ps-3" asp-area="" asp-controller="Config" asp-action="Index"><img src="~/img/svg/Config.svg" alt=""><p class="ps-3 m-0">Configurações</p></a>
                         <a class="ps-3" asp-area="" asp-controller="Usuario" asp-action="Logout"><img src="~/img/svg/Subtract.svg" alt=""><p class="ps-3 m-0">Sair</p></a>
                 </nav>
             </header>
@@ -327,6 +331,8 @@
         <script src="~/js/lineChart.js" asp-append-version="true"></script>
         <script defer src="~/js/sidebar.js" asp-append-version="true"></script>
         <script src="~/js/atualizarUsuario.js" asp-append-version="true"></script>
+        <script src="~/js/config.js" asp-append-version="true"></script>
+        <script src="~/js/modulos.js" asp-append-version="true"></script>
         @await RenderSectionAsync("Scripts", required: false)
     }
 

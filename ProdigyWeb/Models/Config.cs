@@ -15,6 +15,7 @@ namespace ProdigyWeb.Models
         public string TaxaDebito { get; set; }
         public string TaxaParcela { get; set; }
         public string PorcentagemDesconto { get; set; }
+        public string NfEletronica { get; set; }
 
         [ForeignKey("UsuarioId")]
         public Usuario Usuario { get; set; }

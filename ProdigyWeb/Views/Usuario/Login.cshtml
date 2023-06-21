@@ -3,17 +3,33 @@
     ViewData["Title"] = "Login";
 }
 
-<div class="card-login">
-    <h1 class="text-center my-4 fw-bold">Login</h1>
+<div class="card-login" style="height: 70vh;">
+    <h1 class="text-center my-4 fw-bold pt-3">Login</h1>
     <div class="formulario d-flex flex-column justify-content-center">
         <form asp-controller="Usuario" asp-action="LoginUsuario">
             <div class="mb-3 ms-5 me-5 text-start">
-                <p class="label-profile pb-1 m-0">Email</p>
-                <input type="email" asp-for="Email" id="email" placeholder="exemplo@exemplo.com" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" required>
+                <p class="label-profile pb-1 m-0">Usuário</p>
+                <input type="text" name="Email" id="email" placeholder="Email ou CPF" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" required>
+            </div>
+            <div class="mb-3 ms-5 me-5 text-start">
+                <p class="label-profile pb-1 m-0">CNPJ da Empresa</p>
+                <input type="text" name="Cnpj" placeholder="Cnpj da Empresa" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" required>
+            </div>
+            <div class="mb-3 ms-5 me-5 text-start">
+                @*Input = CPF*@
+                <p class="label-profile pb-1 m-0">Cargo</p>
+
+                <select name="Nivel" class="form-select" aria-label="Default select example" required>
+                    <option selected>Cargo</option>
+                    <option value="Funcionario">Funcionario</option>
+                    <option value="Administrador">Administrador</option>
+                    <option value="Estoque">Estoque</option>
+                </select>
+
             </div>
             <div class="mb-3 ms-5 me-5 text-start">
                 <p class="label-profile pb-1 m-0">Senha</p>
-                <input type="password" asp-for="Senha" id="" placeholder="*****************" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" required>
+                <input type="password" name="Senha" id="" placeholder="*****************" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" required>
             </div>
             <div class="botao-esqueceu-senha d-flex flex-column justify-content-center align-items-center pt-3 mb-3">
                 <a class="mb-3" href="">Esqueceu sua senha?</a>

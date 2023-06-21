@@ -8,7 +8,6 @@ using ProdigyWeb.Services;
 using System.Data.Common;
 using System.Security.Claims;
 using System.Security.Cryptography;
-using static System.Net.Mime.MediaTypeNames;
 
 namespace ProdigyWeb.Controllers
 {
@@ -20,7 +19,7 @@ namespace ProdigyWeb.Controllers
         private readonly ICookie _cookie;
         private string _caminhoServidor;
         private readonly IValidaIdentidade _auth;
-
+        
         public UsuarioController(
                 ProdigyWebContext context,
                 ICookie cookie,
@@ -39,9 +38,10 @@ namespace ProdigyWeb.Controllers
                 ViewBag.Id = User.FindFirst("Id")?.Value;
                 ViewBag.Nome = User.FindFirst(ClaimTypes.Name)?.Value;
                 ViewBag.Email = User.FindFirst(ClaimTypes.Email)?.Value;
+                ViewBag.Nivel = User.FindFirst(ClaimTypes.Role)?.Value;
             }
 
-        [HttpGet("Index"), AllowAnonymous]
+        [HttpGet("Index")]
         public async Task<IActionResult> Index()
             {
                 ViewBag.Layout = "ProdigyWeb";
@@ -74,43 +74,62 @@ namespace ProdigyWeb.Controllers
             }
 
         [HttpPost("LoginUsuario"), AllowAnonymous]
-        public async Task<IActionResult> Login(Usuario usuario)
+        public async Task<IActionResult> Login(string Email, string Cnpj, string Nivel, string Senha)
             {
+            var usuarios = new Usuario();
+            var funcionario = new SFuncionario(); 
                 try
                 {
-                    var usuarios = _cookie.ValidarUsuario(usuario.Email, usuario.Senha);
+                if(Nivel == "Administrador")
+                {
+                    usuarios = _cookie.ValidarUsuario(Email, Senha);
+                }
 
-                    if (usuarios == null)
-                    {
+                if (Nivel == "Funcionario")
+                {
+                    funcionario = _cookie.ValidarFuncionario(Email, Senha, Cnpj);
+                }
+
+                if (usuarios == null)
+                {
                         TempData["Erro"] = "Login e/ou senha inválidos!";
-                        return RedirectToAction(nameof(Index));
-                    }
-
+                        return RedirectToAction("Login");
+                }
+                else
+                {
                     await _cookie.GerarClaim(HttpContext, usuarios);
+                }
+                if (funcionario != null)
+                {
+                    TempData["Erro"] = "Login e/ou senha inválidos!";
+                    return RedirectToAction("Login");
+                }
+                else
+                {
+                    await _cookie.GerarClaimFuncionario(HttpContext, funcionario);
+                }
 
-                    var usuarioBanco = _context.Usuarios.FirstOrDefault(x => x.Email == usuario.Email);
-
+                    var usuarioBanco = _context.Usuarios.FirstOrDefault(x => x.Email == Email || x.Cpf == Email);
+                    
                     if (string.IsNullOrEmpty(usuarioBanco.Plano)) return RedirectToAction("Planos", "Home");
 
-                    return RedirectToAction(nameof(Index));
+                    return RedirectToAction("Index");
                 }
                 catch (Exception)
                 {
-                    return RedirectToAction(nameof(Login));
+                    return RedirectToAction("Login");
                 }
             }
 
         [HttpGet("Cadastrar")]
         public IActionResult Cadastrar()
             {
+                AddSessao();
                 ViewBag.Layout = "ProdigyWeb";
                 ClaimsPrincipal claims = HttpContext.User;
 
                 if (claims.Identity.IsAuthenticated)
-                    return RedirectToAction(nameof(Index));
-
-                AddSessao();
-
+                    return RedirectToAction("Index");
                 return View();
             }
 
@@ -130,11 +149,11 @@ namespace ProdigyWeb.Controllers
                     if (usuarios != null)
                     {
                         TempData["Erro"] = "Email já existe, ou algum campo está incompleto.";
-                        return RedirectToAction(nameof(Cadastrar));
+                        return RedirectToAction("Cadastrar");
                     }
                     // if (!authCpf)
                     // {
-                    //     TempData["Erro"] = "CPF inválido.";
+                    //     
                     //     return RedirectToAction(nameof(Cadastrar));
                     // }
                     usuario.Senha = senhaSecreta;
@@ -145,15 +164,15 @@ namespace ProdigyWeb.Controllers
                     _context.Usuarios.Add(usuario);
                     _context.SaveChanges();
                     TempData["Sucesso"] = "Cadastro realizado com sucesso!";
-                    return RedirectToAction(nameof(Login));
+                    return RedirectToAction("Login");
                 }
             }
             catch (DbUpdateException e)
             {
                 TempData["Erro"] = $"Erro ao criar cadastro: {e.Message}";
-                return RedirectToAction(nameof(Login));
+                return RedirectToAction("Login");
             }
-            return RedirectToAction(nameof(Cadastrar));
+            return RedirectToAction("Cadastrar");
         }
 
         [HttpGet("Logout"), Authorize]
@@ -169,8 +188,11 @@ namespace ProdigyWeb.Controllers
         {
             AddSessao();
 
-            if (imagem == null) return RedirectToAction(nameof(Index),
-                  TempData["Erro"] = $"Selecione uma imagem para atualizar o perfil!");
+            if (imagem == null) 
+            {
+                TempData["Erro"] = $"Selecione uma imagem para atualizar o perfil!";
+                return RedirectToAction("Index");
+            }
 
             string caminhoAddFoto = _caminhoServidor + $"\\Imagem\\";
             string nomeImagem = Guid.NewGuid().ToString() + "_" + imagem.FileName;
@@ -198,10 +220,10 @@ namespace ProdigyWeb.Controllers
             }
             catch (DbUpdateException e)
             {
-                return RedirectToAction(nameof(Index),
-                TempData["Erro"] = $"Falha ao atualizar a imagem! ERRO: [ {e} ]");
+                TempData["Erro"] = $"Falha ao atualizar a imagem! ERRO: [ {e} ]";
+                return RedirectToAction("Index");
             }
-            return RedirectToAction(nameof(Index));
+            return RedirectToAction("Index");
         }
 
         [HttpPost("DeletarConta")]
@@ -221,7 +243,7 @@ namespace ProdigyWeb.Controllers
                 catch(DbException e)
                 {
                     TempData["Erro"] = $"Ocorreu um erro ao tentar excluir a conta. Contate o administrador! {e.Message}";
-                    return RedirectToAction(nameof(Index));
+                    return RedirectToAction("Index");
                 }
             }
 
@@ -263,16 +285,9 @@ namespace ProdigyWeb.Controllers
 
             var juridicoBanco = await _context.Juridicos.FirstOrDefaultAsync(x => x.UsuarioId == int.Parse(usuarioId));
 
-            //var authCnpj = _auth.ValidaCnpj(CnpjEmpresa);
-
             try
             {
-                // if (!authCnpj)
-                // {
-                //     TempData["Erro"] = "CNPJ é inválido!";
-                //     return RedirectToAction(nameof(Atualizar));
-                // }
-                
+
                 if(juridicoBanco == null)
                 {
                     var juridico = new Juridico()
@@ -299,7 +314,7 @@ namespace ProdigyWeb.Controllers
                     _context.Juridicos.Add(juridico);
                     _context.SaveChanges();
 
-                    return RedirectToAction(nameof(Atualizar));
+                    return RedirectToAction("Atualizar");
                 }
                 if (!string.IsNullOrEmpty(NomeRazaoEmpresa)) juridicoBanco.NomeRazao = NomeRazaoEmpresa;
                 if (!string.IsNullOrEmpty(EmailEmpresa)) juridicoBanco.Email = EmailEmpresa;
@@ -321,11 +336,11 @@ namespace ProdigyWeb.Controllers
                 _context.Juridicos.Update(juridicoBanco);
                 _context.SaveChanges();
 
-                return RedirectToAction(nameof(Atualizar));
+                return RedirectToAction("Atualizar");
             }
             catch (Exception)
             {
-                return RedirectToAction(nameof(Atualizar));
+                return RedirectToAction("Atualizar");
             }
         }
         
@@ -365,9 +380,9 @@ namespace ProdigyWeb.Controllers
             }
             catch (DbUpdateException)
             {
-                return RedirectToAction(nameof(Login));
+                return RedirectToAction("Login");
             }
-            return RedirectToAction(nameof(Index));
+            return RedirectToAction("Index");
         }
 
         [HttpPost("AtualizarEndereco")]
@@ -423,9 +438,9 @@ namespace ProdigyWeb.Controllers
             }
             catch (DbUpdateException)
             {
-                return RedirectToAction(nameof(Login));
+                return RedirectToAction("Login");
             }
-            return RedirectToAction(nameof(Index));
+            return RedirectToAction("Index");
         }
     }
 }

@@ -1,21 +1,27 @@
 ﻿@model ProdigyWeb.Models.SProduto
-
 @{
-    ViewData["Title"] = "Adicionar Produto";
+    ViewData["Title"] = "Editar Produto";
 }
-
 <div class="main-addproduto p-5">
-    <h1 class="title-system">Adicionar Produto</h1>
-    <a class="back-page" href="">
-        <div class="icon-p">
-            <i class="fa-solid fa-circle-left fa-lg"></i>
-            <p class="m-0">Voltar</p>
-        </div>
-    </a>
+    <div class="fundo mb-0 pb-0">
+        <h1 class="title-system">Editar Produto</h1>
+        <a class="back-page" asp-controller="SEstoque" asp-action="Index">
+            <div class="icon-p">
+                <i class="fa-solid fa-circle-left fa-lg"></i>
+                <p class="m-0">Voltar</p>
+            </div>
+        </a>
+    </div>
     <!-- INICIO FORMULARIO -->
-    <form asp-controller="SEstoque" asp-action="Index" enctype="multipart/form-data">
+    <form asp-controller="SEstoque" asp-action="EditarProduto" enctype="multipart/form-data">
         <div class="d-flex fundo">
-            <div class="container formulario">
+            <div class="container addinputs">
+                <div class="group-input-contato"> @*Input = Nome fantasia*@
+                    <p class="label-estoque">Código</p>
+                    <div class="input-contato input-group">
+                        <input type="text" value="@Model.SProdutoId" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" disabled>
+                    </div>
+                </div>
                 <div class="group-input-contato">
                     @*Input = Nome do produto*@
                     <p class="label-estoque">Nome do produto</p>
@@ -71,7 +77,7 @@
                 </div>
             </div>
 
-            <div class="container formulario">
+            <div class="container addinputs">
                 <div class="group-input-contato">
                     @*Input = Data de validade*@
                     <p class="label-estoque">Data de validade</p>
@@ -104,8 +110,7 @@
                     </div>
                 </div>
                 <div class="button-profile d-flex flex-row justify-content-center">
-                    <button type="button" class="button-small-cancel me-2">Limpar</button>
-                    <a style="text-decoration: none;" asp-action="Index" asp-controller="SEstoque"><button class="button-small-cancel me-2">Cancelar</button></a>
+                    <a style="text-decoration: none;" asp-controller="SEstoque" asp-action="Index"><button type="button" class="button-small-cancel me-2">Cancelar</button></a>
                     <button type="submit" class="button-small-confirm ms-2">Salvar</button>
                 </div>
             </div>

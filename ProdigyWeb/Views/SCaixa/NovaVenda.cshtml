@@ -5,24 +5,144 @@
 <div class="main-addproduto">
 
     <!-- INICIO FORMULARIO -->
-        <h1 class="title-system">Nova venda</h1>
-        <a class="back-page" href="">
-            <div class="icon-p">
-                <i class="fa-solid fa-circle-left fa-lg"></i>
-                <p class="m-0">Voltar</p>
+    <h1 class="title-system">Nova venda</h1>
+    <a class="back-page" asp-action="Index" asp-controller="SCaixa">
+        <div class="icon-p">
+            <i class="fa-solid fa-circle-left fa-lg"></i>
+            <p class="m-0">Voltar</p>
+        </div>
+    </a>
+    <main class="nova-venda">
+        <div class="table-responsive-lg tab-add-venda">
+            <table class="table tabela-nova-venda">
+                <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Cód</th>
+                        <th scope="col">Descrição</th>
+                        <th scope="col">Qtd</th>
+                        <th scope="col">Vlr. Unitário</th>
+                        <th scope="col">Vlr. Total</th>
+                        <th scope="col">%</th>
+                        <th scope="col">Ações</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row">1</th>
+                        <td>24125</td>
+                        <td>Banana</td>
+                        <td>2</td>
+                        <td>10</td>
+                        <td>20</td>
+                        <td>0</td>
+                        <td>
+                            <button type="button" class="botao-estoque" title="Adicionar quantidade"><i class="fa-solid fa-square-plus fa-xl"></i></button>
+                            <button type="button" class="botao-estoque" title="Diminuir quantidade"><i class="fa-solid fa-square-minus fa-xl"></i></button>
+                            <button type="button" class="botao-estoque red-icon-button" title="Excluir pedido"><i class="fa-solid fa-trash fa-xl"></i></button>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <th scope="row">1</th>
+                        <td>24125</td>
+                        <td>Banana</td>
+                        <td>2</td>
+                        <td>10</td>
+                        <td>20</td>
+                        <td>0</td>
+                        <td>
+                            <button type="button" class="botao-estoque" title="Adicionar quantidade"><i class="fa-solid fa-square-plus fa-xl"></i></button>
+                            <button type="button" class="botao-estoque" title="Diminuir quantidade"><i class="fa-solid fa-square-minus fa-xl"></i></button>
+                            <button type="button" class="botao-estoque red-icon-button" title="Excluir pedido"><i class="fa-solid fa-trash fa-xl"></i></button>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <th scope="row">1</th>
+                        <td>24125</td>
+                        <td>Banana</td>
+                        <td>2</td>
+                        <td>10</td>
+                        <td>20</td>
+                        <td>0</td>
+                        <td>
+                            <button type="button" class="botao-estoque" title="Adicionar quantidade"><i class="fa-solid fa-square-plus fa-xl"></i></button>
+                            <button type="button" class="botao-estoque" title="Diminuir quantidade"><i class="fa-solid fa-square-minus fa-xl"></i></button>
+                            <button type="button" class="botao-estoque red-icon-button" title="Excluir pedido"><i class="fa-solid fa-trash fa-xl"></i></button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="pesquisa-produto-nova-venda">
+            <div class="topo-input-nova-venda d-flex flex-row justify-content-between">
+                <div class="group-input-venda">
+                    @*Input = Pesquisar produto*@
+                    <div class="input-nova-venda input-group">
+                        <input type="text" class="input-pesquisar-produto form-control" placeholder="Pesquisa o nome ou cód do produto" required>
+                    </div>
+                </div>
+                <div class="group-input-venda">
+                    @*Input = QTD*@
+                    <div class="input-nova-venda input-group">
+                        <input type="number" placeholder="QTD" min="1" class="input-qtd-produto form-control" required>
+                    </div>
+                </div>
+                <div class="button-adicionar-venda">
+                    <button class="button-small">Adicionar</button>
+                </div>
             </div>
-        </a>
-    <form>
-        <div class="d-flex fundo">
-            <div class="container addinputs">
-                <div class="group-input-contato"> @*Input = Produto*@
-                    <p class="label-estoque">Produto</p>
+            <table class="table tabela-pedidos">
+                <thead>
+                    <tr>
+                        <th scope="col">Nome do produto</th>
+                        <th scope="col">Marca</th>
+                        <th scope="col">Qtd</th>
+                        <th scope="col">Valor</th>
+                        <th scope="col">Ações</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td scope="row">Banana</td>
+                        <td>CPS</td>
+                        <td>5</td>
+                        <td>20</td>
+                        <td>
+                            <button type="button" class="botao-estoque red-icon-button" title="Excluir produto"><i class="fa-solid fa-trash fa-xl"></i></button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="info-venda d-flex flex-column justify-content-between">
+            <div class="topo-info-venda">
+                <div class="venda-funcionario d-flex justify-content-between align-items-center">
+                    @* Funcionário: ...*@
+                    <p class="label-cargo">Funcionário:</p>
+                    <p class="name-funcionario">Marcelo</p>
+                </div>
+                <div class="group-input-contato">
+                    @*Input = Cliente*@
+                    <p class="label-estoque">Cliente</p>
                     <div class="input-contato input-group">
-                    <input type="text" class="form-control" placeholder="Procure o produto aqui" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" required>
+                        <input type="text" class="form-control" placeholder="Pesquisar cliente" required>
                     </div>
                 </div>
 
-                <div class="group-input-contato"> @*Input = Forma de pagamento*@
+                <div class="group-input-contato">
+                    @*Input = Data de venda*@
+                    <p class="label-estoque">Data de venda</p>
+                    <div class="input-contato input-group">
+                        <input type="date" class="form-control" required>
+                    </div>
+                </div>
+
+                <div class="group-input-contato">
+                    @*Input = Forma de pagamento*@
                     <p class="label-estoque">Forma de pagamento</p>
                     <div class="input-contato input-group">
                         <select id="pagamentoVenda" class="form-select m-0" aria-label="Default select example" onchange="adicionarInput()">
@@ -35,43 +155,23 @@
                         </select>
                     </div>
                 </div>
-
-                <div class="group-input-contato"> @*Input = Cliente*@
-                    <p class="label-estoque">Cliente</p>
-                    <div class="input-contato input-group">
-                    <input type="text" placeholder="Nome do cliente" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" required>
-                    </div>
+            </div>
+            <hr>
+            <div class="baixo-info-venda d-flex flex-column justify-content-start">
+                <div class="info-subtotal-venda d-flex flex-row justify-content-between align-items-center">
+                    <p class="subtotal-venda">Subtotal:</p>
+                    <p class="subtotal-valor">R$24,99</p>
+                </div>
+                <div class="info-desconto-venda d-flex flex-row justify-content-between align-items-center">
+                    <p class="desconto-venda">Desconto:</p>
+                    <p class="desconto-valor">R$00,00</p>
+                </div>
+                <div class="info-total-venda d-flex flex-row justify-content-between align-items-center">
+                    <p class="total-venda">Total:</p>
+                    <p class="total-valor">R$24,99</p>
                 </div>
             </div>
-
-            <div class="container addinputs">
-                <div class="group-input-contato"> @*Input = Valor total*@
-                    <p class="label-estoque">Valor total</p>
-                    <div class="input-contato input-group">
-                        <input type="text" placeholder="R$00,00" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" required>
-                    </div>
-                </div>
-
-                <div class="group-input-contato"> @*Input = Data de venda*@
-                    <p class="label-estoque">Data de venda</p>
-                    <div class="input-contato input-group">
-                    <input type="date" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" required>
-                    </div>
-                </div>
-
-                <div class="group-input-contato"> @*Input = Funcionário*@
-                    <p class="label-estoque">Funcionário</p>
-                    <div class="input-contato input-group">
-                    <input type="text" placeholder="Nome do funcionário" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" required>
-                    </div>
-                </div> 
-                
-                <div class="d-flex flex-row justify-content-center mt-5">
-                    <button type="button" class="button-small-cancel me-2">Limpar</button>
-                    <button type="submit" class="button-small-confirm ms-2">Salvar</button>
-                </div>
-            </div>
-            </div>
-        </form>
-    </div>
-    <!-- FIM FORMULARIO -->
+        </div>
+    </main>
+</div>
+<!-- FIM FORMULARIO -->

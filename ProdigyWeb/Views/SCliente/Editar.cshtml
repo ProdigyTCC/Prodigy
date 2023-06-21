@@ -1,0 +1,145 @@
+@model ProdigyWeb.Models.SCliente
+@{
+    ViewData["Title"] = "Editar cliente";
+}
+
+<div class="main-addproduto">
+    <!-- INICIO FORMULARIO -->
+    <div class="fundo pb-0 mb-0">
+        <h1 class="title-system">Editar Cliente</h1>
+        <a asp-action="Index" asp-controller="SCliente" class="back-page">
+            <div class="icon-p">
+                <i class="fa-solid fa-circle-left fa-lg"></i>
+                <p class="m-0">Voltar</p>
+            </div>
+        </a>
+    </div>
+    <form asp-action="EditarCliente" asp-controller="SCliente">
+        <div class="d-flex fundo pb-0 mb-0">
+            <div class="container addinputs">
+                <h2>Dados do Cliente</h2>
+                <hr class="line-profile">
+                <div class="group-input-contato"> @*Input = Nome fantasia*@
+                    <p class="label-estoque">Código</p>
+                    <div class="input-contato input-group">
+                        <input type="text" value="@Model.SClienteId" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" disabled>
+                    </div>
+                </div>
+                <div class="group-input-contato"> @*Input = Nome do cliente*@
+                    <p class="label-estoque">Nome do cliente</p>
+                    <div class="input-contato input-group">
+                        <input asp-for="Nome" value="@Model.Nome" type="text" class="form-control" placeholder="Nome completo do cliente" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" required>
+                    </div>
+                </div>
+
+                <div class="group-input-contato"> @*Input = CPF*@
+                    <p class="label-estoque">CPF</p>
+                    <div class="input-contato input-group">
+                        <input asp-for="Cpf" value="@Model.Cpf" type="text" class="form-control" placeholder="000.000.000-00" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" required>
+                    </div>
+                </div>
+
+                <div class="group-input-contato"> @*Input = Sexo*@
+                    <p class="label-estoque">Sexo</p>
+                   <select asp-for="Sexo" class="form-select" aria-label="Default select example" required>
+                        <option selected>@Model.Sexo</option>
+                        <option value="1">Masculino</option>
+                        <option value="2">Feminino</option>
+                        <option value="3">Outro</option>
+                        <option value="4">Prefere não dizer</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="container addinputs" style="margin-top: 4.38rem;">
+                <div class="group-input-contato"> @*Input = Email*@
+                    <p class="label-estoque">Email</p>
+                    <div class="input-contato input-group">
+                        <input asp-for="Email" value="@Model.Email" type="email" class="form-control" placeholder="cliente@email.com" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" required>
+                    </div>
+                </div>
+
+                <div class="group-input-contato"> @*Input = Data de nascimento*@
+                    <p class="label-estoque">Data de nascimento</p>
+                    <div class="input-contato input-group">
+                        <input asp-for="DataNacimento" value="@Model.DataNacimento" type="date" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" required>
+                    </div>
+                </div>
+
+                <div class="group-input-contato"> @*Input = Telefone*@
+                    <p class="label-estoque">Telefone</p>
+                    <div class="input-contato input-group">
+                        <input asp-for="Telefone" value="@Model.Telefone" type="text" class="form-control" placeholder="(99) 99999-9999" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" required>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+        <div class="d-flex fundo">
+            <div class="container addinputs">
+            <h2>Endereço</h2>
+            <hr class="line-profile">
+                <div class="group-input-contato">
+                    <p class="label-estoque">Logradouro</p>
+                    <div class="input-contato input-group">
+                        <input asp-for="Rua" value="@Model.Rua" class="form-control" type="text" placeholder="Logradouro">
+                    </div>
+                </div>
+
+                <div class="group-input-contato">
+                    <p class="label-estoque">Número</p>
+                    <div class="input-contato input-group">
+                        <input asp-for="Numero" value="@Model.Numero" class="form-control" type="text" placeholder="000">
+                    </div>
+                </div>
+
+                <div class="group-input-contato">
+                    <p class="label-estoque">Bairro</p>
+                    <div class="input-contato input-group">
+                        <input asp-for="Bairro" value="@Model.Bairro" class="form-control" type="text" placeholder="Bairro">
+                    </div>
+                </div>
+
+                <div class="group-input-contato">
+                    <p class="label-estoque">Complemento</p>
+                    <div class="input-contato input-group">
+                        <input asp-for="Complemento" value="@Model.Complemento" class="form-control" type="text" placeholder="Nº Bloco/Apartamento...">
+                    </div>
+                </div>
+            </div>
+
+            <div class="container addinputs" style="margin-top: 4.38rem;">
+                <div class="group-input-contato">
+                    <p class="label-estoque">CEP</p>
+                    <div class="input-contato input-group">
+                        <input asp-for="Cep" value="@Model.Cep" class="form-control" type="text" placeholder="00000-000">
+                    </div>
+                </div>
+                <div class="group-input-contato">
+                    <p class="label-estoque">Cidade</p>
+                    <div class="input-contato input-group">
+                        <input asp-for="Cidade" value="@Model.Cidade" class="form-control" type="text" placeholder="Nome da cidade">
+                    </div>
+                </div>
+
+                <div class="group-input-contato">
+                    <p class="label-estoque">Estado</p>
+                    <div class="input-contato input-group">
+                        <input asp-for="Estado" value="@Model.Estado" class="form-control" type="text" placeholder="Ex.:SP">
+                    </div>
+                </div>
+                <div class="group-input-contato">
+                    <p class="label-estoque">País</p>
+                    <div class="input-contato input-group">
+                        <input asp-for="Pais" value="@Model.Pais" class="form-control" type="text" placeholder="Ex.: Brasil">
+                    </div>
+                </div>
+                <div class="d-flex flex-row justify-content-center mt-5">
+                    <a style="text-decoration: none;" asp-action="Index" asp-controller="SCliente"><button type="button" class="button-small-cancel me-2">Cancelar</button></a>
+                    <button type="submit" class="button-small-confirm ms-2">Salvar</button>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+    <!-- FIM FORMULARIO -->
