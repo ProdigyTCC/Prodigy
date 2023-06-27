@@ -1,3 +1,4 @@
+@model IEnumerable<ProdigyWeb.Models.SPedido>
 @{
     ViewData["Title"] = "Pedidos";
 }
@@ -11,8 +12,8 @@
         <div class="div-botoes-estoque d-flex flex-row justify-content-around">
           <a asp-area="" asp-controller="SPedidos" asp-action="Addpedido"><button class="button-dash-default me-2">Adicionar pedido</button></a>
         </div>
-        <form class="d-flex">
-            <input class="form-control ms-2 me-2 input-search" type="search" placeholder="Pesquisar" aria-label="Search">
+        <form asp-action="Index" asp-controller="SPedidos" method="get" class="d-flex">
+            <input name="pedidoBusca" class="form-control ms-2 me-2 input-search" type="search" placeholder="Pesquisar" aria-label="Search">
             <button class="button-search justify-content-center" type="submit">
               <i class="fa-solid fa-magnifying-glass fa-lg"></i>
             </button>
@@ -23,29 +24,34 @@
     <table class="table tabela-estoque">
       <thead>
         <tr>
-          <th scope="col">Código</th>
-          <th scope="col">Pedido</th>
-          <th scope="col">Empresa</th>
+          <th scope="col">Cód.</th>
+          <th scope="col">Descrição</th>
+          <th scope="col">Status</th>
           <th scope="col">Previsão</th>
-          <th scope="col">D.E.A</th>
+          <th scope="col">Total</th>
           <th></th>
         </tr>
       </thead>
       <tbody>
-                @* <tr>
-          <th scope="row">14588</th>
-          <td>Espelhos e Tomadas</td>
-          <td>Ilumi</td>
-          <td>29/07/2023</td>
-          <td>0</td>
-          <td>
-            <div class="d-flex botoes-estoque">
-              <button id="buttonAddProd" class="botao-estoque" href="" title="Adicionar Quantidade"><i class="fa-solid fa-square-plus fa-xl"></i></button> 
-              <a type="button" class="botao-estoque" title="Editar pedido"><i class="fa-solid fa-square-pen fa-xl"></i></a>
-              <a type="button" class="botao-estoque" data-bs-toggle="modal" data-bs-target="#verInfoProduto" data-bs-whatever="mdo" title="Ver informações sobre o pedido"><i class="fa-solid fa-circle-info fa-xl"></i></a>
+        @if(Model != null)
+        {
+          foreach(var item in Model)
+          {
+          <tr>
+            <th scope="row">@item.SPedidoId</th>
+            <td>@item.Descricao</td>
+            <td>@item.Status</td>
+            <td>@item.DataEntrega</td>
+            <td>R$ @item.ValorPedido</td>
+            <td>
+              <div class="d-flex botoes-estoque">
+                <a type="button" class="botao-estoque" title="Editar pedido"><i class="fa-solid fa-square-pen fa-xl"></i></a>
+                <a type="button" class="botao-estoque" data-bs-toggle="modal" data-bs-target="#verInfoProduto" data-bs-whatever="mdo" title="Ver informações sobre o pedido"><i class="fa-solid fa-circle-info fa-xl"></i></a>
               </div>
-          </td>
-                </tr>*@
+            </td>
+          </tr>
+          }
+        }
       </tbody>
     </table>
   </div>

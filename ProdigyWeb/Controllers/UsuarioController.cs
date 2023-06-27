@@ -42,36 +42,38 @@ namespace ProdigyWeb.Controllers
             }
 
         [HttpGet("Index")]
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(string? msg)
+        {
+            ViewBag.Layout = "ProdigyWeb";
+            ClaimsPrincipal claims = HttpContext.User;
+
+            if (claims.Identity.IsAuthenticated)
             {
-                ViewBag.Layout = "ProdigyWeb";
-                ClaimsPrincipal claims = HttpContext.User;
+                AddSessao();
 
-                if (claims.Identity.IsAuthenticated)
-                {
-                    var usuarioId = User.FindFirst("Id").Value;
+                var usuarioId = User.FindFirst("Id").Value;
 
-                    var usuarios = await _context.Usuarios.FirstOrDefaultAsync(x => x.UsuarioId.ToString() == usuarioId);
-
-                    AddSessao();
-                    return View(usuarios);
-                }
-
-                return RedirectToAction("Login", "Usuario");
+                var usuarios = await _context.Usuarios.FirstOrDefaultAsync(x => x.UsuarioId.ToString() == usuarioId);
+                TempData["Msg"] = msg;
+                return View(usuarios);
             }
+
+            return RedirectToAction("Login", "Usuario");
+        }
 
         [HttpGet("Login")]
-        public IActionResult Login()
-            {
-                ViewBag.Layout = "ProdigyWeb";
-                ClaimsPrincipal claims = HttpContext.User;
+        public IActionResult Login(string? msg)
+        {
+            AddSessao();
+            ViewBag.Layout = "ProdigyWeb";
+            ClaimsPrincipal claims = HttpContext.User;
 
-                if (claims.Identity.IsAuthenticated)
-                    return RedirectToAction("Index", "Usuario");
+            if (claims.Identity.IsAuthenticated)
+                return RedirectToAction("Index", "Usuario");
 
-                AddSessao();
-                return View();
-            }
+            TempData["Msg"] = msg;
+            return View();
+        }
 
         [HttpPost("LoginUsuario"), AllowAnonymous]
         public async Task<IActionResult> Login(string Email, string Cnpj, string Nivel, string Senha)
@@ -92,8 +94,8 @@ namespace ProdigyWeb.Controllers
 
                 if (usuarios == null)
                 {
-                        TempData["Erro"] = "Login e/ou senha inválidos!";
-                        return RedirectToAction("Login");
+                    string msg = "Login e/ou senha inválidos!";
+                    return RedirectToAction("Login", new {msg});
                 }
                 else
                 {
@@ -101,8 +103,8 @@ namespace ProdigyWeb.Controllers
                 }
                 if (funcionario != null)
                 {
-                    TempData["Erro"] = "Login e/ou senha inválidos!";
-                    return RedirectToAction("Login");
+                    string msg = "Login e/ou senha inválidos!";
+                    return RedirectToAction("Login", new {msg});
                 }
                 else
                 {
@@ -122,7 +124,7 @@ namespace ProdigyWeb.Controllers
             }
 
         [HttpGet("Cadastrar")]
-        public IActionResult Cadastrar()
+        public IActionResult Cadastrar(string? msg)
             {
                 AddSessao();
                 ViewBag.Layout = "ProdigyWeb";
@@ -130,12 +132,15 @@ namespace ProdigyWeb.Controllers
 
                 if (claims.Identity.IsAuthenticated)
                     return RedirectToAction("Index");
+
+                TempData["Msg"] = msg;
                 return View();
             }
 
         [HttpPost("CadastrarUsuario")]
         public async Task<IActionResult> CadastrarUsuario(Usuario usuario)
         {
+            string msg;
             try
             {
                 if (ModelState.IsValid)
@@ -148,8 +153,8 @@ namespace ProdigyWeb.Controllers
 
                     if (usuarios != null)
                     {
-                        TempData["Erro"] = "Email já existe, ou algum campo está incompleto.";
-                        return RedirectToAction("Cadastrar");
+                        msg = "Email já existe, ou algum campo está incompleto.";
+                        return RedirectToAction("Cadastrar", new{msg});
                     }
                     // if (!authCpf)
                     // {
@@ -163,35 +168,36 @@ namespace ProdigyWeb.Controllers
 
                     _context.Usuarios.Add(usuario);
                     _context.SaveChanges();
-                    TempData["Sucesso"] = "Cadastro realizado com sucesso!";
-                    return RedirectToAction("Login");
+                    msg = "Cadastro realizado com sucesso!";
+                    return RedirectToAction("Login", new {msg});
                 }
             }
             catch (DbUpdateException e)
             {
-                TempData["Erro"] = $"Erro ao criar cadastro: {e.Message}";
-                return RedirectToAction("Login");
+                msg = $"Erro ao criar cadastro: {e.Message}";
+                return RedirectToAction("Cadastrar", new {msg});
             }
             return RedirectToAction("Cadastrar");
         }
 
         [HttpGet("Logout"), Authorize]
         public async Task<IActionResult> Logout()
-            {
-                await _cookie.Logout(HttpContext);
-                TempData["Sucesso"] = "Sessão finalizada";
-                return RedirectToAction("Index", "Home");
-            }
+        {
+            await _cookie.Logout(HttpContext);
+            var msg = "Sessão finalizada";
+            return RedirectToAction("Index", "Home", new {msg});
+        }
 
         [HttpPost("UploadImagem")]
         public async Task<IActionResult> UploadImagem(IFormFile? imagem)
         {
+            string msg;
             AddSessao();
 
             if (imagem == null) 
             {
-                TempData["Erro"] = $"Selecione uma imagem para atualizar o perfil!";
-                return RedirectToAction("Index");
+                msg = $"Selecione uma imagem para atualizar o perfil!";
+                return RedirectToAction("Index", new {msg});
             }
 
             string caminhoAddFoto = _caminhoServidor + $"\\Imagem\\";
@@ -220,32 +226,33 @@ namespace ProdigyWeb.Controllers
             }
             catch (DbUpdateException e)
             {
-                TempData["Erro"] = $"Falha ao atualizar a imagem! ERRO: [ {e} ]";
-                return RedirectToAction("Index");
+                msg = $"Falha ao atualizar a imagem! ERRO: [ {e} ]";
+                return RedirectToAction("Index", new {msg});
             }
             return RedirectToAction("Index");
         }
 
-        [HttpPost("DeletarConta")]
-        public async Task<IActionResult> DeletarConta(string id)
+        [HttpDelete("DeletarConta")]
+        public async Task<IActionResult> DeletarConta(string? id)
+        {
+            string msg;
+            var usuarioId = User.FindFirst("Id")?.Value;
+                
+            try
             {
-                var usuarioId = User.FindFirst("Id")?.Value;
-                    
-                try
-                {
-                    var usuarios = _context.Usuarios.FirstOrDefault(x => x.UsuarioId.ToString() == id);
-                    _context.Usuarios.Remove(usuarios);
-                    _context.SaveChanges();
-                    await _cookie.Logout(HttpContext);
-                    TempData["Sucesso"] = "O grupo Prodigy agradece a sua utilização!";
-                    return RedirectToAction("Index", "Home");
-                }
-                catch(DbException e)
-                {
-                    TempData["Erro"] = $"Ocorreu um erro ao tentar excluir a conta. Contate o administrador! {e.Message}";
-                    return RedirectToAction("Index");
-                }
+                var usuarios = _context.Usuarios.FirstOrDefault(x => x.UsuarioId.ToString() == id);
+                _context.Usuarios.Remove(usuarios);
+                _context.SaveChanges();
+                await _cookie.Logout(HttpContext);
+                msg = "O grupo Prodigy agradece a sua utilização!";
+                return RedirectToAction("Index", "Home", new {msg});
             }
+            catch(DbException e)
+            {
+                msg = $"Ocorreu um erro ao tentar excluir a conta. Contate o administrador! {e.Message}";
+                return RedirectToAction("Index", new {msg});
+            }
+        }
 
         [HttpGet("Atualizar/{value?}"), AllowAnonymous]
         public async Task<IActionResult> Atualizar(string? value)
@@ -260,8 +267,8 @@ namespace ProdigyWeb.Controllers
 
             if (claims.Identity.IsAuthenticated)
             {
-                if(value == "1") TempData["Sucesso"] = "Cadastro atualizado com sucesso!";
-                if(value == "2") TempData["Erro"] = "Erro ao atualizar o cadastro!";
+                if(value == "1") TempData["Msg"] = "Cadastro atualizado com sucesso!";
+                if(value == "2") TempData["Msg"] = "Erro ao atualizar o cadastro!";
                 value = "0";
 
                 ViewBag.Endereco = enderecos;

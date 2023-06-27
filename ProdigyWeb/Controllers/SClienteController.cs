@@ -18,7 +18,7 @@ namespace ProdigyWeb.Controllers
         }
 
         [HttpGet("Index")]
-        public IActionResult Index(string? nome = "")
+        public IActionResult Index(string? msg, string? nome = "")
         {
             ClaimsPrincipal claims = HttpContext.User;
 
@@ -36,6 +36,7 @@ namespace ProdigyWeb.Controllers
                 }
 
                 ViewBag.Layout = "Dashboard";
+                TempData["Msg"] = msg;
                 if(clientes != null) return View(clientes);
 
                 return View();
@@ -44,13 +45,14 @@ namespace ProdigyWeb.Controllers
         }
 
         [HttpGet("AddCliente")]
-        public IActionResult AddCliente()
+        public IActionResult AddCliente(string? msg)
         {
             ClaimsPrincipal claims = HttpContext.User;
 
             if (claims.Identity.IsAuthenticated)
             {
                 ViewBag.Layout = "Dashboard";
+                TempData["Msg"] = msg;
                 return View();
             }
             return RedirectToAction("Login", "Usuario");
@@ -59,6 +61,7 @@ namespace ProdigyWeb.Controllers
         [HttpPost("AddClienteBanco")]
         public async Task<IActionResult> AddClienteBanco(SCliente cliente)
         {
+            string msg;
             var usuarioId = User.FindFirst("Id")?.Value;
 
             var clienteBanco = await _context.SClientes.FirstOrDefaultAsync(x => x.Cpf.Equals(cliente.Cpf) &&
@@ -73,22 +76,22 @@ namespace ProdigyWeb.Controllers
                     _context.SClientes.Add(cliente);
                     _context.SaveChanges();
 
-                    TempData["Sucesso"] = "Cliente cadastrado com sucesso!";
-                    return RedirectToAction(nameof(Index));
+                    msg = "Cliente cadastrado com sucesso!";
+                    return RedirectToAction(nameof(Index), new {msg});
                 }
                 
-                TempData["Erro"] = "Este cliente já existe em seu sistema!";
-                return RedirectToAction(nameof(AddCliente));
+                msg = "Este cliente já existe em seu sistema!";
+                return RedirectToAction(nameof(AddCliente), new {msg});
             }
             catch(DbException)
             {
-                TempData["Erro"] = "Erro ao cadastrar o cliente";
-                return RedirectToAction(nameof(AddCliente));
+                msg = "Erro ao cadastrar o cliente";
+                return RedirectToAction(nameof(AddCliente), new {msg});
             }
         }
     
         [HttpGet("Editar")]
-        public async Task<IActionResult> Editar(int? id)
+        public async Task<IActionResult> Editar(string? msg, int? id)
         {
             var clientes = await _context.SClientes.FirstOrDefaultAsync(x => x.SClienteId.Equals(id));
 
@@ -100,9 +103,11 @@ namespace ProdigyWeb.Controllers
                 if (clientes != null)
                 {
                     ViewBag.Layout = "Dashboard";
+                    TempData["Msg"] = msg;
                     return View(clientes);
                 }
                 ViewBag.Layout = "Dashboard";
+                TempData["Msg"] = msg;
                 return View();
             }
             return RedirectToAction("Login", "Usuario");
@@ -111,6 +116,7 @@ namespace ProdigyWeb.Controllers
         [HttpPost("EditarCliente")]
         public async Task<IActionResult> EditarCliente(SCliente cliente)
         {
+            string msg;
             var usuarioId = User.FindFirst("Id")?.Value;
 
             var clienteBanco = await _context.SClientes.FirstOrDefaultAsync(x => x.UsuarioId.ToString().Equals(usuarioId));
@@ -139,18 +145,17 @@ namespace ProdigyWeb.Controllers
                     _context.SClientes.Update(clienteBanco);
                     _context.SaveChanges();
 
-                    TempData["Sucesso"] = "Cliente atualizado com sucesso!";
-                    return RedirectToAction(nameof(Index));
+                    msg = "Cliente atualizado com sucesso!";
+                    return RedirectToAction(nameof(Index), new {msg});
                 }
-                TempData["Erro"] = "Erro ao atualizar o cliente!\nTente novamente.";
-                return RedirectToAction(nameof(Editar));
+                msg = "Erro ao atualizar os dados do cliente!\nTente novamente.";
+                return RedirectToAction(nameof(Editar), new {msg});
             }
             catch (DbException)
             {
-                TempData["Erro"] = "Erro cadastrar o cliente";
-                return RedirectToAction(nameof(Editar));
+                msg = "Erro cadastrar o cliente";
+                return RedirectToAction(nameof(Editar), new {msg});
             }
         }
-
     }
 }

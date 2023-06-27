@@ -11,13 +11,17 @@ namespace ProdigyWeb.Models
     {
         [Key]
         public int SPedidoId { get; set; }
-        public DateTime DataPedido { get; set; }
-        public DateTime DataEntrega { get; set; }
-
-        [Column(TypeName = "decimal(10,2)")]
+        public string DataPedido { get; set; }
+        public string DataEntrega { get; set; }
+        public string Status { get; set; }
+        public string Descricao { get; set; }
         public decimal ValorPedido { get; set; }
         public int QuantProduto { get; set; }
         public string NotaFiscal { get; set; }
+
+        public int UsuarioId { get; set; }
+        [ForeignKey("UsuarioId")]
+        public virtual Usuario Usuario { get; set; }
 
         [ForeignKey("FornecedorId")]
         public virtual SFornecedor SFornecedor { get; set; }

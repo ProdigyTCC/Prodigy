@@ -21,7 +21,7 @@ namespace ProdigyWeb.Controllers
         }
 
         [HttpGet("Index")]
-        public IActionResult Index(string? nome = "")
+        public IActionResult Index(string? msg, string? nome = "")
         {
             ClaimsPrincipal claims = HttpContext.User;
             var usuarioId = User.FindFirst("Id")?.Value;
@@ -34,15 +34,17 @@ namespace ProdigyWeb.Controllers
                 if (nome != "")
                 {
                     produtos = produtos.Where(x => x.SProdutoId.ToString() == nome || x.Nome.Contains(nome)).ToList();
-                    if(produtos != null) return View(produtos);
+                    if (produtos != null) return View(produtos);
+                    else View();
                 }
+                TempData["Msg"] = msg;
                 return View(produtos);
             }
             return RedirectToAction("Login", "Usuario");
         }
 
         [HttpGet("AddProduto")]
-        public async Task<IActionResult> AddProduto()
+        public async Task<IActionResult> AddProduto(string? msg)
         {
             ClaimsPrincipal claims = HttpContext.User;
             var usuarioId = User.FindFirst("Id")?.Value;
@@ -53,6 +55,7 @@ namespace ProdigyWeb.Controllers
 
                 ViewBag.CategProduto = categProduto;
                 ViewBag.Layout = "Dashboard";
+                TempData["Msg"] = msg;
                 return View();
             }
             return RedirectToAction("Login", "Usuario");
@@ -61,11 +64,13 @@ namespace ProdigyWeb.Controllers
         [HttpPost("AddProdutoBanco")]
         public async Task<IActionResult> AddProdutoBanco(SProduto produto, IFormFile? imagem) 
         {
+            string msg;
+            
             var usuarioId = User.FindFirst("Id")?.Value;
             if (imagem == null)
             {
-                TempData["Erro"] = $"Selecione uma arquivo para adicionar foto ao produto!";
-                return RedirectToAction(nameof(AddProduto));
+                msg = $"Selecione uma arquivo para adicionar foto ao produto!";
+                return RedirectToAction(nameof(AddProduto), new {msg});
             }
             var produtoBanco = await _context.SProdutos.FirstOrDefaultAsync(x => x.Nome.Equals(produto.Nome) &&
                 x.UsuarioId.ToString().Equals(usuarioId));
@@ -92,8 +97,8 @@ namespace ProdigyWeb.Controllers
                     _context.SProdutos.Add(produto);
                     _context.SaveChanges();
 
-                    TempData["Sucesso"] = "Produto cadastrado com sucesso!";
-                    return RedirectToAction(nameof(Index));
+                    msg = "Produto cadastrado com sucesso!";
+                    return RedirectToAction(nameof(Index), new {msg});
                 }
                 produtoBanco.QuantProduto = produto.QuantProduto;
                 produtoBanco.Imagem = nomeImagem;
@@ -101,19 +106,21 @@ namespace ProdigyWeb.Controllers
                 _context.SProdutos.Update(produto);
                 _context.SaveChanges();
 
-                TempData["Erro"] = "Este produto já existe em seu estoque!\nEntão atualizamos esse item.";
-                return RedirectToAction(nameof(AddProduto));
+                msg = "Este produto já existe em seu estoque!\nEntão atualizamos esse item.";
+                return RedirectToAction(nameof(AddProduto), new {msg});
             }
             catch(DbException)
             {
-                TempData["Erro"] = "Erro cadastrar o produto";
-                return RedirectToAction(nameof(AddProduto));
+                msg = "Erro cadastrar o produto";
+                return RedirectToAction(nameof(AddProduto), new {msg});
             }
         }
 
         [HttpPost("AddCategoriaProduto")]
         public async Task<IActionResult> AddCategoriaProduto(string nome, string descCategoria)
         {
+            string msg;
+
             var usuarioId = User.FindFirst("Id")?.Value;
 
             var categProdutosBanco = await _context.SCategoriaProdutos.Where(x => x.Nome.Equals(nome) && 
@@ -132,21 +139,21 @@ namespace ProdigyWeb.Controllers
                 {
                     _context.SCategoriaProdutos.Add(categProduto);
                     _context.SaveChanges();
-                    TempData["Sucesso"] = "Categoria cadastrada com sucesso!";
-                    return RedirectToAction(nameof(Index));
+                    msg = "Categoria cadastrada com sucesso!";
+                    return RedirectToAction(nameof(Index), new {msg});
                 }
-                TempData["Erro"] = "Esta categoria já existe!";
-                return RedirectToAction(nameof(Index));
+                msg = "Esta categoria já existe!";
+                return RedirectToAction(nameof(Index), new {msg});
             }
             catch (DbException)
             {
-                TempData["Erro"] = "Erro ao cadastrar no banco";
-                return RedirectToAction(nameof(Index));
+                msg = "Erro ao cadastrar no banco";
+                return RedirectToAction(nameof(Index), new {msg});
             }
         }
 
         [HttpGet("Editar")]
-        public async Task<IActionResult> Editar(int? id)
+        public async Task<IActionResult> Editar(string? msg, int? id)
         {
             var produtos = await _context.SProdutos.FirstOrDefaultAsync(x => x.SProdutoId.Equals(id));
 
@@ -161,9 +168,11 @@ namespace ProdigyWeb.Controllers
 
                     ViewBag.CategProduto = categProduto;
                     ViewBag.Layout = "Dashboard";
+                    TempData["Msg"] = msg;
                     return View(produtos);
                 }
                 ViewBag.Layout = "Dashboard";
+                TempData["Msg"] = msg;
                 return View();
             }
             return RedirectToAction("Login", "Usuario");
@@ -172,11 +181,13 @@ namespace ProdigyWeb.Controllers
         [HttpPost("EditarProduto")]
         public async Task<IActionResult> EditarProduto(SProduto produto, IFormFile? imagem)
         {
+            string msg;
+
             var usuarioId = User.FindFirst("Id")?.Value;
             if (imagem == null)
             {
-                TempData["Erro"] = $"Selecione uma arquivo para atualizar a foto do produto!";
-                return RedirectToAction(nameof(AddProduto));
+                msg = $"Selecione uma arquivo para atualizar a foto do produto!";
+                return RedirectToAction(nameof(AddProduto), new {msg});
             }
             var produtoBanco = await _context.SProdutos.FirstOrDefaultAsync(x => x.UsuarioId.ToString().Equals(usuarioId));
 
@@ -212,16 +223,16 @@ namespace ProdigyWeb.Controllers
                     _context.SProdutos.Update(produtoBanco);
                     _context.SaveChanges();
 
-                    TempData["Sucesso"] = "Produto atualizado com sucesso!";
-                    return RedirectToAction("Index", "SEstoque");
+                    msg = "Produto atualizado com sucesso!";
+                    return RedirectToAction("Index", "SEstoque", new {msg});
                 }
-                TempData["Erro"] = "Erro ao atualizar o produto!\nTente novamente.";
-                return RedirectToAction(nameof(Editar));
+                msg = "Erro ao atualizar o produto!\nTente novamente.";
+                return RedirectToAction(nameof(Editar), new {msg});
             }
             catch (DbException)
             {
-                TempData["Erro"] = "Erro cadastrar o produto";
-                return RedirectToAction(nameof(Editar));
+                msg = "Erro cadastrar o produto";
+                return RedirectToAction(nameof(Editar), new {msg});
             }
         }
 

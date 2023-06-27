@@ -6,14 +6,7 @@
     <div id="planoInfo" class="card-plan-info container">
         <div id="planInfo" class="plan-info">
             <p class="plan-select">Plano selecionado:</p>
-            @if (TempData["Plano"] != null)
-            {
-                <p class="name-plan">@TempData["Plano"]</p>
-            }
-            else
-            {
                 <p class="name-plan">Starter</p>
-            }
             <hr class="m-0">
             <ul class="plan-details m-0">
                 <li>Valor do plano: R$00,00</li>
@@ -104,7 +97,7 @@
                     <p class="label-contato mb-1">Nome no cartão</p>
                     <div class="input-contato input-group">
                         <input name="nomeCartao" id="card-name-input" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
-                            <input name="plano" id="card-name-input" value="@TempData["Plano"].ToString()" type="hidden" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                            <input name="plano" id="card-name-input" type="hidden" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
                     </div>
                 </div>
                 <div class="group-input-contato">

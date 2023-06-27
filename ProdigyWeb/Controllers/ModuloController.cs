@@ -23,7 +23,7 @@ namespace ProdigyWeb.Controllers
             ViewBag.Nivel = User.FindFirst(ClaimTypes.Role)?.Value;
         }
         [HttpGet("Index")]
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(string? msg)
         {
             var moduloBanco = new Modulo();
             var usuarioId = User.FindFirst("Id")?.Value;
@@ -40,6 +40,7 @@ namespace ProdigyWeb.Controllers
                         ViewBag.Modulo = "AcessoFuncionario";
                 }
                 else ViewBag.Modulo = "";
+                TempData["Msg"] = msg;
                 return View();
             }
 
@@ -49,12 +50,14 @@ namespace ProdigyWeb.Controllers
                     ViewBag.Modulo = "AcessoFuncionario";
             }
             else ViewBag.Modulo = "";
+            TempData["Msg"] = msg;
             return View();
         }
 
         [HttpPost("AddModulo")]
         public async Task<IActionResult> AddModulo(Modulo modulo)
         {
+            string msg;
             var usuarioId = User.FindFirst("Id")?.Value;
 
             try
@@ -66,8 +69,8 @@ namespace ProdigyWeb.Controllers
 
                     if(moduloBanco != null)
                     {
-                        TempData["Erro"] = "Você já tem este modulo ativo";
-                        return RedirectToAction(nameof(Index));
+                        msg = "Vocï¿½ jï¿½ tem este modulo ativo";
+                        return RedirectToAction(nameof(Index), new {msg});
                     }
 
                     //if (moduloBanco == null)
@@ -80,16 +83,16 @@ namespace ProdigyWeb.Controllers
                     _context.Modulos.Add(modulo);
                     _context.SaveChanges();
 
-                    TempData["Sucesso"] = "Modulo adicionado!";
-                    return RedirectToAction(nameof(Index));
+                    msg = "Modulo adicionado!";
+                    return RedirectToAction(nameof(Index), new {msg});
                 }
-                TempData["Erro"] = "Algo inesperado aconteceu!";
-                return RedirectToAction(nameof(Index));
+                msg = "Algo inesperado aconteceu!";
+                return RedirectToAction("Login", "Usuario", new {msg});
             }
-            catch (Exception)
+            catch (Exception e)
             {
-                TempData["Erro"] = "Algo inesperado aconteceu!";
-                return RedirectToAction(nameof(Index));
+                msg = $"Algo inesperado aconteceu!\n ERRO: {e.Message}";
+                return RedirectToAction(nameof(Index), new {msg});
             }
         }
     }

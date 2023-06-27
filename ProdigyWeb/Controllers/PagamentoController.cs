@@ -7,6 +7,7 @@ using System.Security.Claims;
 
 namespace ProdigyWeb.Controllers
 {
+    [Route("[controller]")]
     public class PagamentoController : Controller
     {
         private string Plano = "";
@@ -24,7 +25,7 @@ namespace ProdigyWeb.Controllers
         }
 
         [HttpGet("Index")]
-        public IActionResult Index()
+        public IActionResult Index(string? msg)
         {
             ViewBag.Layout = "ProdigyWeb";
             ClaimsPrincipal claims = HttpContext.User;
@@ -32,6 +33,7 @@ namespace ProdigyWeb.Controllers
             if (claims.Identity.IsAuthenticated)
             {
                 AddSessao();
+                TempData["Msg"] = msg;
                 return View();
             }
             return RedirectToAction("Login", "Usuario");
@@ -40,6 +42,8 @@ namespace ProdigyWeb.Controllers
         [HttpPost("AddPlano")]
         public async Task<IActionResult> AddPlano(string? plano) 
         {
+            string msg;
+
             var usuarioId = User.FindFirst("Id")?.Value;
 
             var usuarios = await _context.Usuarios.FirstOrDefaultAsync(x => x.UsuarioId.ToString() == usuarioId);
@@ -48,8 +52,8 @@ namespace ProdigyWeb.Controllers
             {
                 if (usuarios == null) 
                 {
-                    TempData["Erro"] = "Faça o login primeiro!";
-                    return RedirectToAction("Login", "Usuario");
+                    msg = "Faça o login primeiro!";
+                    return RedirectToAction("Login", "Usuario", new {msg});
                 }
                 Plano = plano;
                 usuarios.Plano = plano;
@@ -57,22 +61,24 @@ namespace ProdigyWeb.Controllers
                 if(plano != "Starter")
                 {
                     TempData["Plano"] = plano;
-                    return RedirectToAction(nameof(Index));
+                    return RedirectToAction("Index");
                 }
                 _context.Usuarios.Update(usuarios);
                 _context.SaveChanges();
-                return RedirectToAction("Index", "Usuario");
+                msg = "Plano adicionado!";
+                return RedirectToAction("Index", "Usuario", new {msg});
             }
             catch(DbException e)
             {
-                TempData["Erro"] = $"Erro ao adicionar pagamento: {e.Message}";
-                return RedirectToAction("Planos", "Home");
+                msg = $"Erro ao adicionar pagamento: {e.Message}";
+                return RedirectToAction("Planos", "Home", new {msg});
             }
         }
 
         [HttpPost("AdicionarCartao")]
         public async Task<IActionResult> AdicionarCartao(string nomeCartao, string numeroCartao, string cpfTitular, string mesCartao, string anoCartao, string cvCartao, string plano)
         {
+            string msg;
             var usuarioId = User.FindFirst("Id")?.Value;
                 
             var cartao = new Cartao
@@ -97,16 +103,16 @@ namespace ProdigyWeb.Controllers
                     _context.Cartoes.Add(cartao);
                     _context.Usuarios.Update(usuarios);
                     _context.SaveChanges();
-                    TempData["Sucesso"] = "Cartão cadastrado com sucesso!";
-                    return RedirectToAction("Index", "Usuario");
+                    msg = "Cartão cadastrado com sucesso!";
+                    return RedirectToAction("Index", "Usuario", new {msg});
                 }
-                TempData["Erro"] = "As informações do cartão estão inválidas!";
-                return RedirectToAction(nameof(Index));
+                msg = "As informações do cartão estão inválidas!";
+                return RedirectToAction(nameof(Index), new {msg});
             }
-            catch(DbException)
+            catch(DbException e)
             {
-                TempData["Erro"] = "Não foi possivel salvar seu cartão!";
-                return RedirectToAction(nameof(Index));
+                msg = $"Não foi possivel salvar seu cartão!\nErro: {e.Message}";
+                return RedirectToAction(nameof(Index), new {msg});
             }
         }
     }

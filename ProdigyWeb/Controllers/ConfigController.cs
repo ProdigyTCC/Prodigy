@@ -44,6 +44,7 @@ namespace ProdigyWeb.Controllers
         [HttpPost("AddConfig")]
         public async Task<IActionResult> AddConfig(Config config, IFormFile? arquivo)
         {
+            string msg;
             try{
                 if (ModelState.IsValid)
                 {
@@ -52,8 +53,8 @@ namespace ProdigyWeb.Controllers
                     var configBanco = await _context.Configs.FirstOrDefaultAsync(x => x.UsuarioId.ToString() == usuarioId);
                     if (arquivo == null)
                     {
-                        TempData["Erro"] = $"Selecione uma arquivo para atualizar o perfil!";
-                        return RedirectToAction(nameof(Index));
+                        msg = $"Selecione uma arquivo para atualizar o perfil!";
+                        return RedirectToAction(nameof(Index), new {msg});
                     }
 
                     string caminhoAddFoto = _caminhoServidor + $"\\Arquivo\\";
@@ -80,7 +81,8 @@ namespace ProdigyWeb.Controllers
                         _context.Configs.Update(configBanco);
                         _context.SaveChanges();
 
-                        return RedirectToAction(nameof(Index));
+                        msg = "Configurações atualizadas com sucesso!";
+                        return RedirectToAction(nameof(Index), new {msg});
                     }
                     else
                     {
@@ -90,14 +92,17 @@ namespace ProdigyWeb.Controllers
                         _context.Configs.Add(config);
                         _context.SaveChanges();
 
-                        return RedirectToAction(nameof(Index));
+                        msg = "Configurações salvas com sucesso!";
+                        return RedirectToAction(nameof(Index), new {msg});
                     }
                 }
-                return RedirectToAction("Index", "SEstoque");
+                msg = "Algo ocorreu mal, tente novamente ou contate o administrador!";
+                return RedirectToAction("Index", "SEstoque", new {msg});
             }
-            catch (Exception)
+            catch (Exception e)
             {
-                return RedirectToAction(nameof(Index));
+                msg = $"Algo ocorreu mal.ERRO: {e.Message}";
+                return RedirectToAction(nameof(Index), new {msg});
             }
         }
     }

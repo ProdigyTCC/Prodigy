@@ -1,79 +1,126 @@
+@model IEnumerable<ProdigyWeb.Models.SProduto>
 @{
     ViewData["Title"] = "Adicionar Pedido";
+    var produto = new SProduto();
+    var pedido = new SPedido();
 }
 
 <div class="main-addproduto">
-
     <!-- INICIO FORMULARIO -->
-        <h1 class="title-system">Adicionar Pedido</h1>
-        <a class="back-page" asp-controller="SPedidos" asp-action="Index">
-            <div class="icon-p">
-                <i class="fa-solid fa-circle-left fa-lg"></i>
-                <p class="m-0">Voltar</p>
-            </div>
-        </a>
-    <form>
-        <table class="table tabela-pedidos mt-3">
+    <h1 class="title-system">Adicionar Pedido</h1>
+    <a class="back-page" asp-controller="SPedidos" asp-action="Index">
+        <div class="icon-p">
+            <i class="fa-solid fa-circle-left fa-lg"></i>
+            <p class="m-0">Voltar</p>
+        </div>
+    </a>
+    <table class="table tabela-pedidos mt-3">
         <thead>
-            <tr>
-            <th scope="col">
-               <input class="form-control input-search" type="search" placeholder="Pesquisar produto" aria-label="Search">
-            </th>
-            </tr>
+            <form asp-action="AddPedido" asp-controller="SPedidos" method="get">
+                <tr>
+                    <th scope="col">
+                        <input name="produtoPedido" class="form-control input-search" type="search" placeholder="Pesquisar produto" aria-label="Search">
+                    </th>
+                    <th scope="col">
+                        <button class="button-search justify-content-center" type="submit">
+                            <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+                        </button>            
+                    </th>
+                </tr>
+            </form>
         </thead>
+
         <thead>
             <tr>
-            <th scope="col">Nome do produto</th>
-            <th scope="col">Marca</th>
-            <th scope="col">Qtd</th>
-            <th scope="col">Valor</th>
-            <th scope="col">Ações</th>
+                <th scope="col">Cód.</th>
+                <th scope="col">Nome do produto</th>
+                <th scope="col">Marca</th>
+                <th scope="col">Quantidade</th>
+                <th scope="col">Valor Custo</th>
+                <th scope="col">Ações</th>
             </tr>
         </thead>
         <tbody>
-            <tr>
-            <td scope="row">Banana</td>
-            <td>CPS</td>
-            <td>5</td>
-            <td>20</td>
-            <td> 
-                <button type="button" class="botao-estoque" title="Adicionar quantidade"><i class="fa-solid fa-square-plus fa-xl"></i></button>
-                <button type="button" class="botao-estoque" title="Diminuir quantidade"><i class="fa-solid fa-square-minus fa-xl"></i></button>
-                <button type="button" class="botao-estoque red-icon-button" title="Excluir pedido"><i class="fa-solid fa-trash fa-xl"></i></button>
-            </td>
-            </tr>
+            @if (Model != null)
+            {
+                foreach(var item in Model)
+                {
+                <tr>
+                    <td scope="row">@item.SProdutoId</td>
+                    <td>@item.Nome</td>
+                    <td>@item.Marca</td>
+                    <td id="qtProduto">@item.QuantProduto</td>
+                    <td id="valorCusto">@item.ValorInicial</td>
+                    <td> 
+                        <button id="maisProduto" type="button" class="botao-estoque" title="Adicionar quantidade"><i class="fa-solid fa-square-plus fa-xl"></i></button>
+                        <button id="menosProduto" type="button" class="botao-estoque" title="Diminuir quantidade"><i class="fa-solid fa-square-minus fa-xl"></i></button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <button id="confirmaProduto" type="button" class="btn btn-success" title="Adicionar quantidade">Adicionar</button>
+                    </td>
+                </tr>
+                }
+            }
         </tbody>
         <tfoot>
             <td></td>
             <td></td>
             <td></td>
+            <td></td>
             <td>Valor total:</td>
-            <th>R$00,00</th>
+            <th id="valorTotal">R$</th>
         </tfoot>
-        </table>
+    </table>
+    <form asp-action="NovoPedido" asp-controller="SPedidos">
         <div class="d-flex fundo-addpedidos">
+            <div class="container addinputs">
+                <div class="group-input-contato"> 
+                        @*Input = Categoria*@
+                        <p class="label-estoque">Fornecedor</p>
+                        
+                        <select asp-for="@produto.SFornecedorId" class="form-select" aria-label="Default select example">
+                            <option selected>Selecionar fornecedor</option>
+                            @if(ViewBag.Fornecedor != null)
+                            {
+                                @foreach (var fornecedor in ViewBag.Fornecedor)
+                                {
+                                    <option value="@fornecedor.SFornecedorId">@fornecedor.NomeRazao</option>
+                                }
+                            }
+                        </select>
+                        
+                    </div>
+
+                <div class="group-input-contato"> @*Input = Nota fiscal*@
+                    <p class="label-estoque">Data de entrega</p>
+                    <div class="input-contato input-group">
+                        <input asp-for="@pedido.DataEntrega" type="date" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                    </div>
+                </div>
+                <div class="group-input-contato">
+                    <p class="label-contato">Descrição</p>
+
+                    <div class="input-contato input-group">
+                        <textarea asp-for="@pedido.Descricao" class="input-detalhes form-control m-0" aria-label="With textarea" maxlength="150"></textarea>
+                    </div>
+                </div>
+                
+            </div>
 
             <div class="container addinputs">
-                <div class="group-input-contato"> @*Data pedido*@
-                    <p class="label-estoque">Data do pedido</p>
+                <div class="group-input-contato"> @*Input = Nota fiscal*@
+                    <p class="label-estoque">Quantidade de Produtos</p>
                     <div class="input-contato input-group">
-                        <input type="date" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" required>
+                        <input id="inputQtProduto" asp-for="@pedido.QuantProduto" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
                     </div>
                 </div>
 
                 <div class="group-input-contato"> @*Input = Nota fiscal*@
-                    <p class="label-estoque">Nota fiscal</p>
+                    <p class="label-estoque">Valor do Pedido</p>
                     <div class="input-contato input-group">
-                    <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
-                    </div>
-                </div>
-            </div>
-
-            <div class="container addinputs">
-                <div class="group-input-contato"> @*Input = Data de entrega*@
-                    <p class="label-estoque">Data de entrega</p>
-                    <div class="input-contato input-group">
-                        <input type="date" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" required>
+                        <input id="inputValorProduto" asp-for="@pedido.ValorPedido" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
                     </div>
                 </div>
 
@@ -82,7 +129,7 @@
                     <button type="submit" class="button-small-confirm ms-2">Salvar</button>
                 </div>
             </div>
-            </div>
-        </form>
-    </div>
+        </div>
+    </form>
+</div>
     <!-- FIM FORMULARIO -->

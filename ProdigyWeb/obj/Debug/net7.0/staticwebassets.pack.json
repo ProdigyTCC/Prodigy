@@ -5,8 +5,20 @@
       "PackagePath": "staticwebassets\\ProdigyWeb.bundle.scp.css"
     },
     {
+      "Id": "C:\\Users\\Wallace\\Desktop\\tcc\\Production\\Prodigy\\ProdigyWeb\\wwwroot\\Arquivo\\1da304a9-d7e5-4a52-9327-d88749a7b6fa_AULA 08  INTERNET PROTOCOLOS 21052023.pdf",
+      "PackagePath": "staticwebassets\\Arquivo\\1da304a9-d7e5-4a52-9327-d88749a7b6fa_AULA 08  INTERNET PROTOCOLOS 21052023.pdf"
+    },
+    {
+      "Id": "C:\\Users\\Wallace\\Desktop\\tcc\\Production\\Prodigy\\ProdigyWeb\\wwwroot\\Arquivo\\310a44f2-b803-4c65-9a94-925ec47e14f7_AULA 08  INTERNET PROTOCOLOS 21052023.pdf",
+      "PackagePath": "staticwebassets\\Arquivo\\310a44f2-b803-4c65-9a94-925ec47e14f7_AULA 08  INTERNET PROTOCOLOS 21052023.pdf"
+    },
+    {
       "Id": "C:\\Users\\Wallace\\Desktop\\tcc\\Production\\Prodigy\\ProdigyWeb\\wwwroot\\Arquivo\\de2591f7-1c85-452a-b105-7e1fb607102c_Teste de Programação  - Rota das Oficinas.pdf",
       "PackagePath": "staticwebassets\\Arquivo\\de2591f7-1c85-452a-b105-7e1fb607102c_Teste de Programação  - Rota das Oficinas.pdf"
+    },
+    {
+      "Id": "C:\\Users\\Wallace\\Desktop\\tcc\\Production\\Prodigy\\ProdigyWeb\\wwwroot\\Arquivo\\eb991927-ca04-407d-baf4-63dc474a561c_Teste de Programação  - Rota das Oficinas.pdf",
+      "PackagePath": "staticwebassets\\Arquivo\\eb991927-ca04-407d-baf4-63dc474a561c_Teste de Programação  - Rota das Oficinas.pdf"
     },
     {
       "Id": "C:\\Users\\Wallace\\Desktop\\tcc\\Production\\Prodigy\\ProdigyWeb\\wwwroot\\css\\PagContato.css",
@@ -79,6 +91,10 @@
     {
       "Id": "C:\\Users\\Wallace\\Desktop\\tcc\\Production\\Prodigy\\ProdigyWeb\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
+    },
+    {
+      "Id": "C:\\Users\\Wallace\\Desktop\\tcc\\Production\\Prodigy\\ProdigyWeb\\wwwroot\\css\\venda.css",
+      "PackagePath": "staticwebassets\\css\\venda.css"
     },
     {
       "Id": "C:\\Users\\Wallace\\Desktop\\tcc\\Production\\Prodigy\\ProdigyWeb\\wwwroot\\favicon.ico",
@@ -259,6 +275,10 @@
     {
       "Id": "C:\\Users\\Wallace\\Desktop\\tcc\\Production\\Prodigy\\ProdigyWeb\\wwwroot\\js\\payment.js",
       "PackagePath": "staticwebassets\\js\\payment.js"
+    },
+    {
+      "Id": "C:\\Users\\Wallace\\Desktop\\tcc\\Production\\Prodigy\\ProdigyWeb\\wwwroot\\js\\pedidos.js",
+      "PackagePath": "staticwebassets\\js\\pedidos.js"
     },
     {
       "Id": "C:\\Users\\Wallace\\Desktop\\tcc\\Production\\Prodigy\\ProdigyWeb\\wwwroot\\js\\perfil.js",

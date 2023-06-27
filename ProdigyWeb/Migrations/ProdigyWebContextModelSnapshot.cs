@@ -946,11 +946,14 @@ namespace ProdigyWeb.Migrations
 
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("SPedidoId"));
 
-                    b.Property<DateTime>("DataEntrega")
-                        .HasColumnType("timestamp with time zone");
+                    b.Property<string>("DataEntrega")
+                        .HasColumnType("text");
 
-                    b.Property<DateTime>("DataPedido")
-                        .HasColumnType("timestamp with time zone");
+                    b.Property<string>("DataPedido")
+                        .HasColumnType("text");
+
+                    b.Property<string>("Descricao")
+                        .HasColumnType("text");
 
                     b.Property<int?>("FornecedorId")
                         .HasColumnType("integer");
@@ -970,14 +973,22 @@ namespace ProdigyWeb.Migrations
                     b.Property<int>("SProdutoId")
                         .HasColumnType("integer");
 
+                    b.Property<string>("Status")
+                        .HasColumnType("text");
+
+                    b.Property<int>("UsuarioId")
+                        .HasColumnType("integer");
+
                     b.Property<decimal>("ValorPedido")
-                        .HasColumnType("decimal(10,2)");
+                        .HasColumnType("numeric");
 
                     b.HasKey("SPedidoId");
 
                     b.HasIndex("FornecedorId");
 
                     b.HasIndex("ProdutoId");
+
+                    b.HasIndex("UsuarioId");
 
                     b.ToTable("SPedidos");
                 });
@@ -1408,9 +1419,17 @@ namespace ProdigyWeb.Migrations
                         .WithMany("SPedidos")
                         .HasForeignKey("ProdutoId");
 
+                    b.HasOne("ProdigyWeb.Models.Usuario", "Usuario")
+                        .WithMany()
+                        .HasForeignKey("UsuarioId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
                     b.Navigation("SFornecedor");
 
                     b.Navigation("SProduto");
+
+                    b.Navigation("Usuario");
                 });
 
             modelBuilder.Entity("ProdigyWeb.Models.SProduto", b =>

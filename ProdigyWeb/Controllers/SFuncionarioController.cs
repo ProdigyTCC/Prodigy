@@ -24,7 +24,7 @@ namespace ProdigyWeb.Controllers
         }
 
         [HttpGet("Index")]
-        public async Task<IActionResult> Index(string? nome = "")
+        public async Task<IActionResult> Index(string? msg, string? nome = "")
         {
             ClaimsPrincipal claims = HttpContext.User;
             var usuarioId = User.FindFirst("Id")?.Value;
@@ -39,6 +39,7 @@ namespace ProdigyWeb.Controllers
 
                     if(funcionarios != null) return View(funcionarios);
                 }
+                TempData["Msg"] = msg;
                 if(funcionarios != null) return View(funcionarios);
 
                 return View();
@@ -47,7 +48,7 @@ namespace ProdigyWeb.Controllers
         }
 
         [HttpGet("AddFuncionario")]
-        public async Task<IActionResult> AddFuncionario()
+        public async Task<IActionResult> AddFuncionario(string? msg)
         {
             ClaimsPrincipal claims = HttpContext.User;
 
@@ -65,6 +66,7 @@ namespace ProdigyWeb.Controllers
                 else ViewBag.Modulo = "";
 
                 ViewBag.Layout = "Dashboard";
+                TempData["Msg"] = msg;
                 return View();
             }
             return RedirectToAction("Login", "Usuario");
@@ -73,11 +75,13 @@ namespace ProdigyWeb.Controllers
         [HttpPost("AddFuncionario")]
         public async Task<IActionResult> AddFuncionario(SFuncionario? funcionario, IFormFile imagem)
         {
+            string msg;
+
             string senha = "";
             if (imagem == null) 
             {
-                TempData["Erro"] = "Erro ao adicionar a Imagem!\nTente novamente.";
-                return RedirectToAction(nameof(AddFuncionario));
+                msg = "Erro ao adicionar a Imagem!\nTente novamente.";
+                return RedirectToAction(nameof(AddFuncionario), new {msg});
             }
             var usuarioId = User.FindFirst("Id")?.Value;
 
@@ -113,22 +117,22 @@ namespace ProdigyWeb.Controllers
                     _context.SFuncionarios.Add(funcionario);
                     _context.SaveChanges();
 
-                    TempData["Sucesso"] = "Funcionário cadastrado com sucesso!";
-                    return RedirectToAction(nameof(Index));
+                    msg = "Funcionário cadastrado com sucesso!";
+                    return RedirectToAction(nameof(Index), new {msg});
                 }
                 
-                TempData["Erro"] = "Este funcionário já existe em seu sistema!";
-                return RedirectToAction(nameof(AddFuncionario));
+                msg = "Este funcionário já existe em seu sistema!";
+                return RedirectToAction(nameof(AddFuncionario), new {msg});
             }
             catch(DbException)
             {
-                TempData["Erro"] = "Erro ao cadastrar o funcionário";
-                return RedirectToAction(nameof(AddFuncionario));
+                msg = "Erro ao cadastrar o funcionário";
+                return RedirectToAction(nameof(AddFuncionario), new {msg});
             }
         }
     
         [HttpGet("Editar")]
-        public async Task<ActionResult> Editar(int? id)
+        public async Task<ActionResult> Editar(string? msg, int? id)
         {
             ClaimsPrincipal claims = HttpContext.User;
             var ususarioId = User.FindFirst("Id")?.Value;
@@ -150,7 +154,7 @@ namespace ProdigyWeb.Controllers
                 else ViewBag.Modulo = "";
 
                 ViewBag.Layout = "Dashboard";
-                
+                TempData["Msg"] = msg;
                 if(id != null) return View(funcionarios);
 
                 return View();
@@ -163,6 +167,7 @@ namespace ProdigyWeb.Controllers
         {
             var usuarioId = User.FindFirst("Id")?.Value;
             string senha = "";
+            string msg;
 
             var funcionarioBanco = await _context.SFuncionarios.FirstOrDefaultAsync(x => x.UsuarioId.ToString().Equals(usuarioId) && 
                 x.SFuncionarioId == funcionario.SFuncionarioId);
@@ -177,8 +182,8 @@ namespace ProdigyWeb.Controllers
                     }
                     if (imagem == null) 
                     {
-                        TempData["Erro"] = "Erro ao atualizar a Imagem!\nTente novamente.";
-                        return RedirectToAction(nameof(Editar));
+                        msg = "Erro ao atualizar a Imagem!\nTente novamente.";
+                        return RedirectToAction(nameof(Editar), new {msg});
                     }
                     string caminhoImagem = _caminhoServidor + "\\Imagem\\";
                     string nomeImagem = Guid.NewGuid().ToString() + "_" + imagem.FileName;
@@ -221,16 +226,16 @@ namespace ProdigyWeb.Controllers
                     _context.SFuncionarios.Update(funcionarioBanco);
                     _context.SaveChanges();
 
-                    TempData["Sucesso"] = "Funcionario atualizado com sucesso!";
-                    return RedirectToAction(nameof(Index));
+                    msg = "Funcionario atualizado com sucesso!";
+                    return RedirectToAction(nameof(Index), new {msg});
                 }
-                TempData["Erro"] = "Erro ao atualizar o Funcionario!\nTente novamente.";
-                return RedirectToAction(nameof(Editar));
+                msg = "Erro ao atualizar o Funcionario!\nTente novamente.";
+                return RedirectToAction(nameof(Editar), new {msg});
             }
             catch (DbException)
             {
-                TempData["Erro"] = "Erro cadastrar o Funcionario";
-                return RedirectToAction(nameof(Editar));
+                msg = "Erro cadastrar o Funcionario";
+                return RedirectToAction(nameof(Editar), new {msg});
             }
         }
     }

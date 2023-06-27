@@ -110,7 +110,6 @@ btnEditEndereco.addEventListener('click', () => {
     btnConfirmEndereco.style.display = "block"
     btnEditEndereco.style.display = "none"
 
-
     inputRua.disabled = false
     inputNumero.disabled = false
     inputBairro.disabled = false
@@ -283,7 +282,7 @@ btnCancelEmpresa.addEventListener('click', () => {
     inputRegMunicipal.disabled = true
     inputRegEstadual.disabled = true
     inputNatureza.disabled = true
-    inputDtFundacao.disabled = true
+    inputDtFundacao.disabled = true 
 
     inputRuaEmpresa.disabled = true
     inputNumeroEmpresa.disabled = true

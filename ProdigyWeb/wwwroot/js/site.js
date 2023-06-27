@@ -1,6 +1,6 @@
 let background = window.location.pathname;
 
-if (background == '/Home/Planos' || background == '/SHome' || background == '/SEstoque' || background == '/SPedidos/AddPedido' ||
+if (background == '/Home/Planos' || background == '/SHome' || background == '/SEstoque/Index' || background == '/SPedidos/AddPedido' ||
     background == '/SFuncionario' || background == '/SFuncionario/AddFuncionario' || background == '/SFuncionario/Editar/{id?}' ||
     background == '/AddProduto' || background == '/SEstoque/Editar/{id?}' || background == '/SPedidos' || background == '/SCaixa' || background == '/SCaixa/NovaVenda'
     || background == '/SCliente' || background == '/SCliente/AddCliente' || background == '/SFornecedor' || background == '/SFornecedor/AddFornecedor') {
