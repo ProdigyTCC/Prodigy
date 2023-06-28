@@ -6,7 +6,7 @@
 .cadastro{
     text-align: center;
     margin: 2em auto;
-    width: 30%;
+    max-width: 600px;
     background-color: #2D3037;
     border-radius:8px;
     padding-top: 2em;
@@ -21,22 +21,26 @@
 }
 
 .cadastro-titulo{
-    width: 35%;
+    width: 30%;
     text-align: center;
     margin: 0 auto;
     font-weight: 600;
-    font-size: 1.3em;
+    font-size: 1.7em;
 }
 
-.step{
-    justify-content: space-around;
-    margin: 0 auto;
-    border-radius: 5px;
-    margin-top: 2em;
-    width: 10%;
-    height: 15px;
-    color: #30BEB2;
-    border: 1px solid #30BEB2;
-    background-color: #E2F0EF;
-    margin-bottom: 25em;
+@media(max-width: 1024px) {
+    .cadastro-titulo {
+        width: 60%;
+    }
+}
+
+@media(max-width: 425px) {
+    .cadastro {
+        width: 90%;
+    }
+
+    .cadastro-titulo {
+        width: 80%;
+        font-size: 1.2rem;
+    }
 }

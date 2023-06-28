@@ -6,7 +6,6 @@
 .addinputs input {
     margin-bottom: 1.5em;
     border-radius: 5px;
-    border: solid #1D7870 0.1px;
 }
 
 .addinputs input:focus {

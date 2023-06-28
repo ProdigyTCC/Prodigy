@@ -36,11 +36,21 @@
         {
             let url = window.location.pathname
 
+            const btnCloseModalErro = document.querySelector('#closeModalErro')
             const btnCloseModalSucesso = document.querySelector('#closeModalSucesso')
 
-            var Msg = "@TempData["Msg"]"
+            var erro = "@TempData["Erro"]"
+            var sucesso = "@TempData["Sucesso"]"
 
-            if (Msg) {
+            if (erro) {
+                $('#modalErro').modal('show')
+            }
+
+            btnCloseModalErro.addEventListener('click', () => {
+                $('#modalErro').modal('hide')
+            })
+
+            if (sucesso) {
                 $('#modalSucesso').modal('show')
             }
 
@@ -49,7 +59,13 @@
                 if (url == '/Usuario/Atualizar/1') {
                     window.location.pathname = '/Usuario/Atualizar'
                 }
+                if(url == '/Usuario/Atualizar/1'){
+                    window.location.pathname = '/Usuario/Atualizar'
+                }
                 if (url == '/Usuario/Atualizar/2') {
+                    window.location.pathname = '/Usuario/Atualizar'
+                }
+                if(url == '/Usuario/Atualizar/2'){
                     window.location.pathname = '/Usuario/Atualizar'
                 }
             })
@@ -58,16 +74,32 @@
 
 </head>
 <body>
-    
+    @*MENSAGEM DE ERRO*@
+    <div class="modal" tabindex="-1" role="dialog" id="modalErro">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title text-black">Ops!</h5>
+                </div>
+                <div class="modal-body text-black">
+                    <p>@TempData["Erro"]</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" id="closeModalErro" class="btn btn-secondary">Entendi</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
     @*MENSAGEM DE SUCESSO*@
     <div class="modal" tabindex="-1" role="dialog" id="modalSucesso">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title text-black">Mensagem</h5>
+                    <h5 class="modal-title text-black">Sucesso</h5>
                 </div>
                 <div class="modal-body text-black">
-                    <p>@TempData["Msg"]</p>
+                    <p>@TempData["Sucesso"]</p>
                 </div>
                 <div class="modal-footer">
                     <button type="button" id="closeModalSucesso" class="btn btn-secondary">Entendi</button>
@@ -100,17 +132,17 @@
                 <div class="container-fluid">
                     <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">
                         <svg class="logo-prodigy navbar-a" viewBox="0 0 400 69" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M174.815 34.0308C174.815 39.0139 174.026 43.5947 172.448 47.7731C170.869 51.9205 168.641 55.4954 165.762 58.4976C162.884 61.4999 159.417 63.8367 155.363 65.5081C151.339 67.1485 146.882 67.9687 141.992 67.9687C137.101 67.9687 132.644 67.1485 128.621 65.5081C124.597 63.8367 121.146 61.4999 118.268 58.4976C115.389 55.4954 113.161 51.9205 111.582 47.7731C110.004 43.5947 109.214 39.0139 109.214 34.0308C109.214 29.0476 110.004 24.4823 111.582 20.3349C113.161 16.1565 115.389 12.5662 118.268 9.5639C121.146 6.53069 124.597 4.1784 128.621 2.50704C132.644 0.835681 137.101 0 141.992 0C146.882 0 151.339 0.835681 155.363 2.50704C159.417 4.1784 162.884 6.53069 165.762 9.5639C168.641 12.5662 170.869 16.1565 172.448 20.3349C174.026 24.4823 174.815 29.0476 174.815 34.0308ZM165.576 34.0308C165.576 29.9452 165.019 26.2775 163.905 23.0276C162.791 19.7778 161.212 17.0386 159.17 14.8101C157.127 12.5507 154.651 10.8174 151.741 9.61033C148.832 8.40323 145.582 7.79969 141.992 7.79969C138.432 7.79969 135.198 8.40323 132.289 9.61033C129.379 10.8174 126.888 12.5507 124.814 14.8101C122.771 17.0386 121.193 19.7778 120.078 23.0276C118.964 26.2775 118.407 29.9452 118.407 34.0308C118.407 38.1163 118.964 41.784 120.078 45.0339C121.193 48.2528 122.771 50.992 124.814 53.2514C126.888 55.4799 129.379 57.1977 132.289 58.4048C135.198 59.5809 138.432 60.169 141.992 60.169C145.582 60.169 148.832 59.5809 151.741 58.4048C154.651 57.1977 157.127 55.4799 159.17 53.2514C161.212 50.992 162.791 48.2528 163.905 45.0339C165.019 41.784 165.576 38.1163 165.576 34.0308Z" fill="#E2F0EF" />
-                            <path d="M267.346 67.2723H258.339V0.742828H267.346V67.2723Z" fill="#E2F0EF" />
-                            <path d="M375.626 40.7626V67.2723H366.619V40.7626L342.245 0.742828H350.138C350.942 0.742828 351.577 0.944011 352.041 1.34638C352.506 1.71779 352.908 2.21301 353.248 2.83203L368.476 28.6917C369.033 29.775 369.544 30.7964 370.008 31.7559C370.473 32.6844 370.875 33.6284 371.215 34.5879C371.556 33.6284 371.943 32.6844 372.376 31.7559C372.809 30.7964 373.289 29.775 373.815 28.6917L388.997 2.83203C389.275 2.30586 389.662 1.82612 390.158 1.3928C390.653 0.959487 391.287 0.742828 392.061 0.742828H400L375.626 40.7626Z" fill="#E2F0EF" />
-                            <path fill-rule="evenodd" clip-rule="evenodd" d="M81.069 32.0344C79.0881 32.6534 76.937 32.963 74.3371 32.963V40.0198C74.9561 40.3293 75.5287 40.8555 76.0549 41.5983L93.3256 65.3688C94.0994 66.6378 95.3065 67.2723 96.9469 67.2723H104.932L85.5259 40.8555C84.6903 39.6174 83.6998 38.6734 82.5546 38.0235C85.1236 37.4354 87.414 36.5688 89.4258 35.4236C91.4686 34.2784 93.1863 32.9011 94.5791 31.2916C96.0029 29.6512 97.0862 27.8096 97.829 25.7668C98.5719 23.724 98.9433 21.5265 98.9433 19.1742C98.9433 16.3577 98.4635 13.8197 97.504 11.5602C96.5445 9.26987 95.0589 7.31994 93.0471 5.71048C91.0662 4.10103 88.5437 2.87846 85.4795 2.04278C82.4154 1.17614 78.7786 0.742828 74.5693 0.742828H55.7664V67.2723H64.7268V39.7064V39.5091V32.963V7.84611H74.5693C79.769 7.84611 83.6689 8.85202 86.2688 10.8638C88.8687 12.8757 90.1686 15.8625 90.1686 19.8242C90.1686 21.7741 89.8282 23.5538 89.1472 25.1633C88.4663 26.7727 87.4449 28.1655 86.0831 29.3417C84.7522 30.4869 83.0808 31.3844 81.069 32.0344Z" fill="#E2F0EF" />
-                            <path fill-rule="evenodd" clip-rule="evenodd" d="M338.404 60.819V35.2843H330.279V42.1554V42.7996V56.7798C327.989 58.0179 325.637 58.9929 323.223 59.7047C320.839 60.3857 318.1 60.7261 315.005 60.7261C311.074 60.7261 307.53 60.1226 304.373 58.9155C301.216 57.7084 298.524 55.9596 296.295 53.6693C294.098 51.3479 292.395 48.5468 291.188 45.266C290.012 41.9543 289.424 38.2092 289.424 34.0308C289.424 30.0071 289.997 26.3858 291.142 23.1669C292.287 19.9171 293.927 17.1624 296.063 14.903C298.199 12.6126 300.783 10.8638 303.816 9.65675C306.849 8.41871 310.239 7.79969 313.984 7.79969C316.553 7.79969 318.766 8.00087 320.623 8.40324C322.511 8.8056 324.136 9.30081 325.498 9.88889C326.89 10.446 328.066 11.0341 329.026 11.6531C329.985 12.2721 330.837 12.7983 331.579 13.2316C332.353 13.6959 333.05 13.8506 333.669 13.6959C334.319 13.5102 334.845 13.1078 335.247 12.4888L337.801 8.40324C336.377 7.10329 334.845 5.94262 333.204 4.92123C331.564 3.86889 329.784 2.98678 327.865 2.27491C325.946 1.53208 323.857 0.974964 321.598 0.603548C319.338 0.201183 316.893 0 314.262 0C309.062 0 304.358 0.820206 300.149 2.46062C295.939 4.10103 292.364 6.42236 289.424 9.42462C286.484 12.3959 284.209 15.9708 282.599 20.1492C281.021 24.3276 280.232 28.9548 280.232 34.0308C280.232 39.0449 281.052 43.6411 282.692 47.8195C284.333 51.9979 286.669 55.5882 289.703 58.5905C292.767 61.5618 296.45 63.8831 300.752 65.5545C305.054 67.1949 309.883 68.0151 315.237 68.0151C319.756 68.0151 323.904 67.427 327.68 66.2509C331.487 65.0438 335.061 63.2331 338.404 60.819Z" fill="#E2F0EF" />
-                            <path fill-rule="evenodd" clip-rule="evenodd" d="M26.4168 34.2165C24.4669 34.8974 22.2074 35.2379 19.6385 35.2379H8.96035H0V67.2723H8.96035V42.3876H19.6385C23.6621 42.3876 27.206 41.8769 30.2702 40.8555C33.3653 39.8032 35.9497 38.3484 38.0235 36.4914C40.1281 34.6343 41.7221 32.4213 42.8054 29.8524C43.8887 27.2834 44.4303 24.4514 44.4303 21.3563C44.4303 18.2302 43.9197 15.3982 42.8983 12.8602C41.9078 10.3222 40.3912 8.15562 38.3484 6.36046C36.3057 4.56529 33.7213 3.18797 30.5952 2.22849C27.5001 1.23805 23.8478 0.742828 19.6385 0.742828H0V7.84611H8.96035H19.6385C24.9621 7.84611 28.9238 9.03773 31.5237 11.421C34.1546 13.8042 35.47 17.116 35.47 21.3563C35.47 23.3991 35.1295 25.2716 34.4486 26.9739C33.7677 28.6762 32.7463 30.1464 31.3844 31.3844C30.0535 32.5915 28.3977 33.5356 26.4168 34.2165Z" fill="#E2F0EF" />
-                            <path fill-rule="evenodd" clip-rule="evenodd" d="M242.996 47.6338C244.574 43.5482 245.364 39.0139 245.364 34.0308C245.364 29.0476 244.574 24.5133 242.996 20.4277C241.417 16.3422 239.189 12.8447 236.31 9.93532C233.432 6.99496 229.965 4.73553 225.911 3.15702C221.887 1.54756 217.43 0.742828 212.54 0.742828H187.702V8.03182H196.708H212.54C216.13 8.03182 219.38 8.61989 222.29 9.79604C225.199 10.9722 227.675 12.6745 229.718 14.903C231.761 17.1315 233.339 19.8552 234.453 23.0741C235.568 26.293 236.125 29.9452 236.125 34.0308C236.125 38.1163 235.568 41.7686 234.453 44.9875C233.339 48.2064 231.761 50.9301 229.718 53.1586C227.675 55.3561 225.199 57.0429 222.29 58.2191C219.38 59.3952 216.13 59.9833 212.54 59.9833H196.708H187.702V67.2723H212.54C217.43 67.2723 221.887 66.483 225.911 64.9045C229.965 63.2951 233.432 61.0356 236.31 58.1262C239.189 55.2168 241.417 51.7193 242.996 47.6338Z" fill="#E2F0EF" />
+                            <path class="pathProdigy" d="M174.815 34.0308C174.815 39.0139 174.026 43.5947 172.448 47.7731C170.869 51.9205 168.641 55.4954 165.762 58.4976C162.884 61.4999 159.417 63.8367 155.363 65.5081C151.339 67.1485 146.882 67.9687 141.992 67.9687C137.101 67.9687 132.644 67.1485 128.621 65.5081C124.597 63.8367 121.146 61.4999 118.268 58.4976C115.389 55.4954 113.161 51.9205 111.582 47.7731C110.004 43.5947 109.214 39.0139 109.214 34.0308C109.214 29.0476 110.004 24.4823 111.582 20.3349C113.161 16.1565 115.389 12.5662 118.268 9.5639C121.146 6.53069 124.597 4.1784 128.621 2.50704C132.644 0.835681 137.101 0 141.992 0C146.882 0 151.339 0.835681 155.363 2.50704C159.417 4.1784 162.884 6.53069 165.762 9.5639C168.641 12.5662 170.869 16.1565 172.448 20.3349C174.026 24.4823 174.815 29.0476 174.815 34.0308ZM165.576 34.0308C165.576 29.9452 165.019 26.2775 163.905 23.0276C162.791 19.7778 161.212 17.0386 159.17 14.8101C157.127 12.5507 154.651 10.8174 151.741 9.61033C148.832 8.40323 145.582 7.79969 141.992 7.79969C138.432 7.79969 135.198 8.40323 132.289 9.61033C129.379 10.8174 126.888 12.5507 124.814 14.8101C122.771 17.0386 121.193 19.7778 120.078 23.0276C118.964 26.2775 118.407 29.9452 118.407 34.0308C118.407 38.1163 118.964 41.784 120.078 45.0339C121.193 48.2528 122.771 50.992 124.814 53.2514C126.888 55.4799 129.379 57.1977 132.289 58.4048C135.198 59.5809 138.432 60.169 141.992 60.169C145.582 60.169 148.832 59.5809 151.741 58.4048C154.651 57.1977 157.127 55.4799 159.17 53.2514C161.212 50.992 162.791 48.2528 163.905 45.0339C165.019 41.784 165.576 38.1163 165.576 34.0308Z" fill="#E2F0EF" />
+                            <path class="pathProdigy" d="M267.346 67.2723H258.339V0.742828H267.346V67.2723Z" fill="#E2F0EF" />
+                            <path class="pathProdigy" d="M375.626 40.7626V67.2723H366.619V40.7626L342.245 0.742828H350.138C350.942 0.742828 351.577 0.944011 352.041 1.34638C352.506 1.71779 352.908 2.21301 353.248 2.83203L368.476 28.6917C369.033 29.775 369.544 30.7964 370.008 31.7559C370.473 32.6844 370.875 33.6284 371.215 34.5879C371.556 33.6284 371.943 32.6844 372.376 31.7559C372.809 30.7964 373.289 29.775 373.815 28.6917L388.997 2.83203C389.275 2.30586 389.662 1.82612 390.158 1.3928C390.653 0.959487 391.287 0.742828 392.061 0.742828H400L375.626 40.7626Z" fill="#E2F0EF" />
+                            <path class="pathProdigy" fill-rule="evenodd" clip-rule="evenodd" d="M81.069 32.0344C79.0881 32.6534 76.937 32.963 74.3371 32.963V40.0198C74.9561 40.3293 75.5287 40.8555 76.0549 41.5983L93.3256 65.3688C94.0994 66.6378 95.3065 67.2723 96.9469 67.2723H104.932L85.5259 40.8555C84.6903 39.6174 83.6998 38.6734 82.5546 38.0235C85.1236 37.4354 87.414 36.5688 89.4258 35.4236C91.4686 34.2784 93.1863 32.9011 94.5791 31.2916C96.0029 29.6512 97.0862 27.8096 97.829 25.7668C98.5719 23.724 98.9433 21.5265 98.9433 19.1742C98.9433 16.3577 98.4635 13.8197 97.504 11.5602C96.5445 9.26987 95.0589 7.31994 93.0471 5.71048C91.0662 4.10103 88.5437 2.87846 85.4795 2.04278C82.4154 1.17614 78.7786 0.742828 74.5693 0.742828H55.7664V67.2723H64.7268V39.7064V39.5091V32.963V7.84611H74.5693C79.769 7.84611 83.6689 8.85202 86.2688 10.8638C88.8687 12.8757 90.1686 15.8625 90.1686 19.8242C90.1686 21.7741 89.8282 23.5538 89.1472 25.1633C88.4663 26.7727 87.4449 28.1655 86.0831 29.3417C84.7522 30.4869 83.0808 31.3844 81.069 32.0344Z" fill="#E2F0EF" />
+                            <path class="pathProdigy" fill-rule="evenodd" clip-rule="evenodd" d="M338.404 60.819V35.2843H330.279V42.1554V42.7996V56.7798C327.989 58.0179 325.637 58.9929 323.223 59.7047C320.839 60.3857 318.1 60.7261 315.005 60.7261C311.074 60.7261 307.53 60.1226 304.373 58.9155C301.216 57.7084 298.524 55.9596 296.295 53.6693C294.098 51.3479 292.395 48.5468 291.188 45.266C290.012 41.9543 289.424 38.2092 289.424 34.0308C289.424 30.0071 289.997 26.3858 291.142 23.1669C292.287 19.9171 293.927 17.1624 296.063 14.903C298.199 12.6126 300.783 10.8638 303.816 9.65675C306.849 8.41871 310.239 7.79969 313.984 7.79969C316.553 7.79969 318.766 8.00087 320.623 8.40324C322.511 8.8056 324.136 9.30081 325.498 9.88889C326.89 10.446 328.066 11.0341 329.026 11.6531C329.985 12.2721 330.837 12.7983 331.579 13.2316C332.353 13.6959 333.05 13.8506 333.669 13.6959C334.319 13.5102 334.845 13.1078 335.247 12.4888L337.801 8.40324C336.377 7.10329 334.845 5.94262 333.204 4.92123C331.564 3.86889 329.784 2.98678 327.865 2.27491C325.946 1.53208 323.857 0.974964 321.598 0.603548C319.338 0.201183 316.893 0 314.262 0C309.062 0 304.358 0.820206 300.149 2.46062C295.939 4.10103 292.364 6.42236 289.424 9.42462C286.484 12.3959 284.209 15.9708 282.599 20.1492C281.021 24.3276 280.232 28.9548 280.232 34.0308C280.232 39.0449 281.052 43.6411 282.692 47.8195C284.333 51.9979 286.669 55.5882 289.703 58.5905C292.767 61.5618 296.45 63.8831 300.752 65.5545C305.054 67.1949 309.883 68.0151 315.237 68.0151C319.756 68.0151 323.904 67.427 327.68 66.2509C331.487 65.0438 335.061 63.2331 338.404 60.819Z" fill="#E2F0EF" />
+                            <path class="pathProdigy" fill-rule="evenodd" clip-rule="evenodd" d="M26.4168 34.2165C24.4669 34.8974 22.2074 35.2379 19.6385 35.2379H8.96035H0V67.2723H8.96035V42.3876H19.6385C23.6621 42.3876 27.206 41.8769 30.2702 40.8555C33.3653 39.8032 35.9497 38.3484 38.0235 36.4914C40.1281 34.6343 41.7221 32.4213 42.8054 29.8524C43.8887 27.2834 44.4303 24.4514 44.4303 21.3563C44.4303 18.2302 43.9197 15.3982 42.8983 12.8602C41.9078 10.3222 40.3912 8.15562 38.3484 6.36046C36.3057 4.56529 33.7213 3.18797 30.5952 2.22849C27.5001 1.23805 23.8478 0.742828 19.6385 0.742828H0V7.84611H8.96035H19.6385C24.9621 7.84611 28.9238 9.03773 31.5237 11.421C34.1546 13.8042 35.47 17.116 35.47 21.3563C35.47 23.3991 35.1295 25.2716 34.4486 26.9739C33.7677 28.6762 32.7463 30.1464 31.3844 31.3844C30.0535 32.5915 28.3977 33.5356 26.4168 34.2165Z" fill="#E2F0EF" />
+                            <path class="pathProdigy" fill-rule="evenodd" clip-rule="evenodd" d="M242.996 47.6338C244.574 43.5482 245.364 39.0139 245.364 34.0308C245.364 29.0476 244.574 24.5133 242.996 20.4277C241.417 16.3422 239.189 12.8447 236.31 9.93532C233.432 6.99496 229.965 4.73553 225.911 3.15702C221.887 1.54756 217.43 0.742828 212.54 0.742828H187.702V8.03182H196.708H212.54C216.13 8.03182 219.38 8.61989 222.29 9.79604C225.199 10.9722 227.675 12.6745 229.718 14.903C231.761 17.1315 233.339 19.8552 234.453 23.0741C235.568 26.293 236.125 29.9452 236.125 34.0308C236.125 38.1163 235.568 41.7686 234.453 44.9875C233.339 48.2064 231.761 50.9301 229.718 53.1586C227.675 55.3561 225.199 57.0429 222.29 58.2191C219.38 59.3952 216.13 59.9833 212.54 59.9833H196.708H187.702V67.2723H212.54C217.43 67.2723 221.887 66.483 225.911 64.9045C229.965 63.2951 233.432 61.0356 236.31 58.1262C239.189 55.2168 241.417 51.7193 242.996 47.6338Z" fill="#E2F0EF" />
                         </svg>
                     </a>
                     <button class="navbar-toggler navbar-a" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                        <img src="../img/menu.png" alt="">
+                        <i id="menuNavbar" class="fa-solid fa-bars fa-2xl"></i>
                     </button>
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul class="navbar-nav ml-auto">
@@ -126,9 +158,6 @@
                             <li class="nav-item">
                                 <a class="nav-link navbar-a" asp-area="" asp-controller="Home" asp-action="Planos">Planos</a>
                             </li>
-                            <li class="nav-item">
-                                <a class="nav-link navbar-a" asp-area="" asp-controller="Modulo" asp-action="Index">Módulos</a>
-                            </li>
 
                             @if (ViewBag.Id == null)
                             {
@@ -139,10 +168,40 @@
                                     <a class="nav-link navbar-a" asp-area="" asp-controller="Usuario" asp-action="Cadastrar">Cadastrar-se</a>
                                 </li>
                             }
-                            <li class="nav-item">
-                                <a class="nav-link navbar-a" asp-area="" asp-controller="SHome" asp-action="Index">Sistema</a>
-                            </li>
                             @if (ViewBag.Id != null)
+                            {
+                            <li class="nav-item">
+                                <a class="nav-link navbar-a" asp-area="" asp-controller="SEstoque" asp-action="Index">Sistema</a>
+                            </li>
+
+                            <li class="nav-item-dropdown">
+                                <div class="dropdown">
+                                    <a class="p-0" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+                                        <img class="profile-navbar" src="~/img/fotoPerfil.png" alt="" srcset="">
+                                    </a>
+                                    <ul class="dropdown-menu dropdown-menu-dark dropdown-menu-lg-end mt-1" aria-labelledby="dropdownMenuButton1">
+                                        <li><h5 class="dropdown-header fw-bold">
+                                    
+                                        @try
+                                        {
+                                            @if (ViewBag.Nome != null) {
+                                            @ViewBag.Nome.ToString().Substring(0, @ViewBag.Nome.ToString().IndexOf(' '))
+                                            }
+                                        }
+                                        catch (Exception)
+                                        {
+                                            @if (ViewBag.Nome != null) {
+                                            @ViewBag.Nome.ToString()
+                                            }
+                                        }
+                                    </h5></li>
+                                        <li><a class="dropdown-item" asp-area="" asp-controller="Usuario" asp-action="Index">Perfil</a></li>
+                                        <li><hr class="dropdown-divider"></li>
+                                         <li><a class="dropdown-item" asp-area="" asp-controller="Usuario" asp-action="Logout">Sair</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                            @* @if (ViewBag.Id != null)
                             {
                                 <li class="nav-item">
                                     <a class="nav-link navbar-a" asp-area="" asp-controller="Usuario" asp-action="Index">Perfil</a>
@@ -154,20 +213,15 @@
                                     <p class="nav-link navbar-a">
                                         @try
                                         {
-                                            @if(ViewBag.Nome != null)
-                                            {
-                                                @ViewBag.Nome.ToString().Substring(0, @ViewBag.Nome.ToString().IndexOf(' '))
-                                            }
+                                            @ViewBag.Nome.ToString().Substring(0, @ViewBag.Nome.ToString().IndexOf(' '))
                                         }
                                         catch (Exception)
                                         {
-                                            @if (ViewBag.Nome != null)
-                                            {
-                                                @ViewBag.Nome.ToString()
-                                            }
+                                            @ViewBag.Nome.ToString()
                                         }
                                     </p>
                                 </li>
+                            } *@
                             }
                         </ul>
                     </div>
@@ -175,7 +229,7 @@
             </nav>
         </header>
         <div>
-           @*<partial name="_CookieConsentPartial" />*@
+            <partial name="_CookieConsentPartial" />
             <main role="main">
                 @RenderBody()
             </main>
@@ -249,7 +303,7 @@
                 <hr class="line-rodape">
                 <br>
                 <div class="rodape-copyright">
-                    <p>Copyright © 2023 | Prodigy. Todos os direitos reservados. CNPJ: XX.XXX.XXX/XXXX-XX<p>
+                    <p>Copyright © 2023 | Prodigy. Todos os direitos reservados.<p>
                 </div>
             </div>
         </footer>
@@ -262,7 +316,7 @@
         <script src="~/js/lineChart.js" asp-append-version="true"></script>
         <script defer src="~/js/sidebar.js" asp-append-version="true"></script>
         <script src="~/js/atualizarUsuario.js" asp-append-version="true"></script>
-        <script src="~/js/modulos.js" asp-append-version="true"></script>
+        <script src="~/js/atualizarEmpresa.js" asp-append-version="true"></script>
         <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
         @await RenderSectionAsync("Scripts", required: false)
     }
@@ -273,20 +327,51 @@
             <!-- NAVBAR INÍCIO -->
             <header class="barra">
                 <nav class="topo">
-                    <img src="~/img/svg/PRODIGY.svg" alt="" class="logo">
-                    <a class="ps-3" asp-area="" asp-controller="SHome" asp-action="Index"><img src="~/img/svg/Dashboard.svg" alt=""><p class="ps-3 m-0">Dashboard</p></a>
-                    <a class="ps-3" asp-area="" asp-controller="SCaixa" asp-action="Index"><img src="~/img/svg/Balance.svg" alt=""><p class="ps-3 m-0">Fluxo de caixa</p></a>
-                    <a class="ps-3" asp-area="" asp-controller="SPedidos" asp-action="Index"><img src="~/img/svg/Tips.svg" alt=""><p class="ps-3 m-0">Pedidos</p></a>
-                    <a class="ps-3" asp-area="" asp-controller="SEstoque" asp-action="Index"><img src="~/img/svg/Inventory.svg" alt=""><p class="ps-3 m-0">Estoque</p></a>
-                    <a class="ps-3" asp-area="" asp-controller="SFuncionario" asp-action="Index"><img src="~/img/svg/Employeers.svg" alt=""><p class="ps-3 m-0">Funcionários</p></a>
-                    <a class="ps-3" asp-area="" asp-controller="SCliente" asp-action="Index"><img src="~/img/svg/Cliente.svg" alt=""><p class="ps-3 m-0">Cliente</p></a>
-                    <a class="ps-3" asp-area="" asp-controller="SFornecedor" asp-action="Index"><img src="~/img/svg/Fornecedor.svg" alt=""><p class="ps-3 m-0">Fornecedor</p></a>
+                    <img src="~/img/svg/PRODIGY.svg" alt="" class="logo-sidebar">
+                    @* <img src="~/img/logo-sidebar-cut.png" alt="" class="logo-sidebar-mobile"> *@
+                    <a class="sidebar-item ps-3" asp-area="" asp-controller="SHome" asp-action="Index">
+                        <img class="sidebar-icon" src="~/img/svg/Dashboard.svg" alt="">
+                        <p class="sidebar-text ps-3 m-0">Dashboard</p>
+                    </a>
+                    <a class="sidebar-item ps-3" asp-area="" asp-controller="SCaixa" asp-action="Index">
+                        <img class="sidebar-icon" src="~/img/svg/Balance.svg" alt="">
+                        <p class="sidebar-text ps-3 m-0">Fluxo de caixa</p>
+                    </a>
+                    <a class="sidebar-item ps-3" asp-area="" asp-controller="SPedidos" asp-action="Index">
+                        <img class="sidebar-icon" src="~/img/svg/Tips.svg" alt="">
+                        <p class="sidebar-text ps-3 m-0">Pedidos</p>
+                    </a>
+                    <a class="sidebar-item ps-3" asp-area="" asp-controller="SEstoque" asp-action="Index">
+                        <img class="sidebar-icon" src="~/img/svg/Inventory.svg" alt="">
+                        <p class="sidebar-text ps-3 m-0">Estoque</p>
+                    </a>
+                    <a class="sidebar-item ps-3" asp-area="" asp-controller="SFuncionario" asp-action="Index">
+                        <img class="sidebar-icon" src="~/img/svg/Employeers.svg" alt="">
+                        <p class="sidebar-text ps-3 m-0">Funcionários</p>
+                    </a>
+                    <a class="sidebar-item ps-3" asp-area="" asp-controller="SCliente" asp-action="Index">
+                        <img class="sidebar-icon" src="~/img/svg/Cliente.svg" alt="">
+                        <p class="sidebar-text ps-3 m-0">Cliente</p>
+                    </a>
+                    <a class="sidebar-item ps-3" asp-area="" asp-controller="SFornecedor" asp-action="Index">
+                        <img class="sidebar-icon" src="~/img/svg/Fornecedor.svg" alt="">
+                        <p class="sidebar-text ps-3 m-0">Fornecedor</p>
+                    </a>
                 </nav>
                 <hr id="hr">
                 <nav class="baixo">
-                    <a class="ps-3" asp-area="" asp-controller="Usuario" asp-action="Index"><img src="~/img/svg/Perfil.svg" alt=""><p class="ps-3 m-0">Perfil</p></a>
-                    <a class="ps-3" asp-area="" asp-controller="Config" asp-action="Index"><img src="~/img/svg/Config.svg" alt=""><p class="ps-3 m-0">Configurações</p></a>
-                        <a class="ps-3" asp-area="" asp-controller="Usuario" asp-action="Logout"><img src="~/img/svg/Subtract.svg" alt=""><p class="ps-3 m-0">Sair</p></a>
+                    <a class="sidebar-item ps-3" asp-area="" asp-controller="Usuario" asp-action="Index">
+                        <img class="sidebar-icon" src="~/img/svg/Perfil.svg" alt="">
+                        <p class="sidebar-text ps-3 m-0">Perfil</p>
+                    </a>
+                    <a class="sidebar-item ps-3" asp-area="" asp-controller="SHome" asp-action="Config">
+                        <img class="sidebar-icon" src="~/img/svg/Config.svg" alt="">
+                        <p class="sidebar-text ps-3 m-0">Configurações</p>
+                    </a>
+                    <a class="sidebar-item ps-3" asp-area="" asp-controller="Usuario" asp-action="Logout">
+                        <img class="sidebar-icon" src="~/img/svg/Subtract.svg" alt="">
+                        <p class="sidebar-text ps-3 m-0">Sair</p>
+                    </a>
                 </nav>
             </header>
             <!-- NAVBAR FIM -->
@@ -305,9 +390,6 @@
         <script src="~/js/lineChart.js" asp-append-version="true"></script>
         <script defer src="~/js/sidebar.js" asp-append-version="true"></script>
         <script src="~/js/atualizarUsuario.js" asp-append-version="true"></script>
-        <script src="~/js/config.js" asp-append-version="true"></script>
-        <script src="~/js/modulos.js" asp-append-version="true"></script>
-        <script src="~/js/pedidos.js" asp-append-version="true"></script>
         @await RenderSectionAsync("Scripts", required: false)
     }
 

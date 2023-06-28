@@ -6,7 +6,14 @@
     <div id="planoInfo" class="card-plan-info container">
         <div id="planInfo" class="plan-info">
             <p class="plan-select">Plano selecionado:</p>
+            @if (TempData["Plano"] != null)
+            {
+                <p class="name-plan">@TempData["Plano"].ToString()</p>
+            }
+            else
+            {
                 <p class="name-plan">Starter</p>
+            }
             <hr class="m-0">
             <ul class="plan-details m-0">
                 <li>Valor do plano: R$00,00</li>
@@ -32,7 +39,7 @@
                         <div class="card-date-expiration">
                             <span class="exp-month">MM</span>
                             <span class="bar">/</span>
-                            <span class="exp-year">YY</span>
+                            <span class="exp-year">AA</span>
                         </div>
                     </div>
                 </div>
@@ -63,6 +70,12 @@
     </div>
 
     <div class="card-checkout-data d-flex flex-column container-fluid">
+        <a class="back-page" href="">
+            <div class="icon-p">
+                <i class="fa-solid fa-circle-left fa-lg"></i>
+                <p class="m-0">Voltar</p>
+            </div>
+        </a>
 
         <div class="options">
             <div id="abaFormaPagamento" class="options-forma-pagamento">
@@ -92,12 +105,13 @@
             <div id="abaCartao" class="options-pagamento-cartao">
                 @*FORMS PARA PAGAMENTO CARTÃO DE CRÉDITO OU DÉBITO*@
                 <form asp-action="AdicionarCartao" asp-controller="Pagamento">
+                    
                 <p class="options-title">Insira os seus dados:</p>
                 <div class="group-input-contato">
                     <p class="label-contato mb-1">Nome no cartão</p>
                     <div class="input-contato input-group">
                         <input name="nomeCartao" id="card-name-input" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
-                            <input name="plano" id="card-name-input" type="hidden" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                            <input name="plano" id="card-name-input"  type="hidden" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
                     </div>
                 </div>
                 <div class="group-input-contato">
@@ -107,14 +121,14 @@
                     </div>
                 </div>
                     <div class="group-input-contato">
-                        <p class="label-contato mb-1">Cpf do titular</p>
+                        <p class="label-contato mb-1">CPF do titular</p>
                         <div class="input-contato input-group">
-                            <input name="cpfTitular" id="card-number-input" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                            <input name="cpfTitular" maxlength="14" id="card-cpf-input" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
                         </div>
                     </div>
                 <div class="group-input-contato">
                     <p class="label-contato mb-1">Data de validade</p>
-                    <div class="d-flex flex-row pb-3">
+                    <div class="d-flex flex-row">
                         <select name="mesCartao" class="form-select me-2" id="exp-month" aria-label="Default select example">
                             <option selected>Mês</option>
                             <option value="01">01</option>
@@ -150,7 +164,7 @@
                 <div class="group-input-contato">
                     <p class="label-contato mb-1">CVV</p>
                     <div class="input-contato input-group">
-                        <input name="cvCartao" id="cvv-input" type="number" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                        <input name="cvCartao" maxlength="3" id="cvv-input" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
                     </div>
                 </div>
                 <div class="button-advanced d-flex justify-content-center mt-3">

@@ -65,6 +65,7 @@
     }
 
     .group-input-contato {
+        margin-bottom: 5%;
         text-align: start;
     }
 
@@ -84,6 +85,7 @@
     }
 
     .botao-contato {
+        display: flex;
         justify-content: center;
     }
 }
