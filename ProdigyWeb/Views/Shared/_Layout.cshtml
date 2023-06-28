@@ -36,21 +36,11 @@
         {
             let url = window.location.pathname
 
-            const btnCloseModalErro = document.querySelector('#closeModalErro')
             const btnCloseModalSucesso = document.querySelector('#closeModalSucesso')
 
-            var erro = "@TempData["Erro"]"
-            var sucesso = "@TempData["Sucesso"]"
+            var Msg = "@TempData["Msg"]"
 
-            if (erro) {
-                $('#modalErro').modal('show')
-            }
-
-            btnCloseModalErro.addEventListener('click', () => {
-                $('#modalErro').modal('hide')
-            })
-
-            if (sucesso) {
+            if (Msg) {
                 $('#modalSucesso').modal('show')
             }
 
@@ -59,13 +49,7 @@
                 if (url == '/Usuario/Atualizar/1') {
                     window.location.pathname = '/Usuario/Atualizar'
                 }
-                if(url == '/Usuario/Atualizar/1'){
-                    window.location.pathname = '/Usuario/Atualizar'
-                }
                 if (url == '/Usuario/Atualizar/2') {
-                    window.location.pathname = '/Usuario/Atualizar'
-                }
-                if(url == '/Usuario/Atualizar/2'){
                     window.location.pathname = '/Usuario/Atualizar'
                 }
             })
@@ -74,32 +58,16 @@
 
 </head>
 <body>
-    @*MENSAGEM DE ERRO*@
-    <div class="modal" tabindex="-1" role="dialog" id="modalErro">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title text-black">Ops!</h5>
-                </div>
-                <div class="modal-body text-black">
-                    <p>@TempData["Erro"]</p>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" id="closeModalErro" class="btn btn-secondary">Entendi</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
+    
     @*MENSAGEM DE SUCESSO*@
     <div class="modal" tabindex="-1" role="dialog" id="modalSucesso">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title text-black">Sucesso</h5>
+                    <h5 class="modal-title text-black">Mensagem</h5>
                 </div>
                 <div class="modal-body text-black">
-                    <p>@TempData["Sucesso"]</p>
+                    <p>@TempData["Msg"]</p>
                 </div>
                 <div class="modal-footer">
                     <button type="button" id="closeModalSucesso" class="btn btn-secondary">Entendi</button>
@@ -142,7 +110,7 @@
                         </svg>
                     </a>
                     <button class="navbar-toggler navbar-a" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                        <i id="menuNavbar" class="fa-solid fa-bars fa-2xl"></i>
+                        <img src="../img/menu.png" alt="">
                     </button>
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul class="navbar-nav ml-auto">
@@ -158,6 +126,9 @@
                             <li class="nav-item">
                                 <a class="nav-link navbar-a" asp-area="" asp-controller="Home" asp-action="Planos">Planos</a>
                             </li>
+                            <li class="nav-item">
+                                <a class="nav-link navbar-a" asp-area="" asp-controller="Modulo" asp-action="Index">Módulos</a>
+                            </li>
 
                             @if (ViewBag.Id == null)
                             {
@@ -171,11 +142,7 @@
                             @if (ViewBag.Id != null)
                             {
                             <li class="nav-item">
-<<<<<<< HEAD
                                 <a class="nav-link navbar-a" asp-area="" asp-controller="SHome" asp-action="Index">Sistema</a>
-=======
-                                <a class="nav-link navbar-a" asp-area="" asp-controller="SEstoque" asp-action="Index">Sistema</a>
->>>>>>> 634585d8cbb100710ea1fa2956a623cf51ebaf73
                             </li>
 
                             <li class="nav-item-dropdown">
@@ -184,7 +151,6 @@
                                         <img class="profile-navbar" src="~/img/fotoPerfil.png" alt="" srcset="">
                                     </a>
                                     <ul class="dropdown-menu dropdown-menu-dark dropdown-menu-lg-end mt-1" aria-labelledby="dropdownMenuButton1">
-<<<<<<< HEAD
                                         <li>    
                                             <h5 class="dropdown-header fw-bold text-center" style="font-size: 1rem;">
                                     
@@ -215,50 +181,6 @@
                                 </div>
                             </li>
                            
-=======
-                                        <li><h5 class="dropdown-header fw-bold">
-                                    
-                                        @try
-                                        {
-                                            @if (ViewBag.Nome != null) {
-                                            @ViewBag.Nome.ToString().Substring(0, @ViewBag.Nome.ToString().IndexOf(' '))
-                                            }
-                                        }
-                                        catch (Exception)
-                                        {
-                                            @if (ViewBag.Nome != null) {
-                                            @ViewBag.Nome.ToString()
-                                            }
-                                        }
-                                    </h5></li>
-                                        <li><a class="dropdown-item" asp-area="" asp-controller="Usuario" asp-action="Index">Perfil</a></li>
-                                        <li><hr class="dropdown-divider"></li>
-                                         <li><a class="dropdown-item" asp-area="" asp-controller="Usuario" asp-action="Logout">Sair</a></li>
-                                    </ul>
-                                </div>
-                            </li>
-                            @* @if (ViewBag.Id != null)
-                            {
-                                <li class="nav-item">
-                                    <a class="nav-link navbar-a" asp-area="" asp-controller="Usuario" asp-action="Index">Perfil</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link navbar-a" asp-area="" asp-controller="Usuario" asp-action="Logout">Sair</a>
-                                </li>
-                                <li class="nav-item">
-                                    <p class="nav-link navbar-a">
-                                        @try
-                                        {
-                                            @ViewBag.Nome.ToString().Substring(0, @ViewBag.Nome.ToString().IndexOf(' '))
-                                        }
-                                        catch (Exception)
-                                        {
-                                            @ViewBag.Nome.ToString()
-                                        }
-                                    </p>
-                                </li>
-                            } *@
->>>>>>> 634585d8cbb100710ea1fa2956a623cf51ebaf73
                             }
                         </ul>
                     </div>
@@ -266,7 +188,7 @@
             </nav>
         </header>
         <div>
-            <partial name="_CookieConsentPartial" />
+           @*<partial name="_CookieConsentPartial" />*@
             <main role="main">
                 @RenderBody()
             </main>
@@ -340,7 +262,7 @@
                 <hr class="line-rodape">
                 <br>
                 <div class="rodape-copyright">
-                    <p>Copyright © 2023 | Prodigy. Todos os direitos reservados.<p>
+                    <p>Copyright © 2023 | Prodigy. Todos os direitos reservados. CNPJ: XX.XXX.XXX/XXXX-XX<p>
                 </div>
             </div>
         </footer>
@@ -353,7 +275,7 @@
         <script src="~/js/lineChart.js" asp-append-version="true"></script>
         <script defer src="~/js/sidebar.js" asp-append-version="true"></script>
         <script src="~/js/atualizarUsuario.js" asp-append-version="true"></script>
-        <script src="~/js/atualizarEmpresa.js" asp-append-version="true"></script>
+        <script src="~/js/modulos.js" asp-append-version="true"></script>
         <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
         @await RenderSectionAsync("Scripts", required: false)
     }
@@ -364,7 +286,6 @@
             <!-- NAVBAR INÍCIO -->
             <header class="barra">
                 <nav class="topo">
-<<<<<<< HEAD
                     <img src="~/img/svg/PRODIGY.svg" alt="" class="logo w-75 mx-auto my-5">
                     <a class="ps-3" asp-area="" asp-controller="SHome" asp-action="Index"><img src="~/img/svg/Dashboard.svg" alt=""><p class="ps-3 m-0">Dashboard</p></a>
                     <a class="ps-3" asp-area="" asp-controller="SCaixa" asp-action="Index"><img src="~/img/svg/Balance.svg" alt=""><p class="ps-3 m-0">Fluxo de caixa</p></a>
@@ -376,53 +297,12 @@
                     <a class="ps-3" asp-area="" asp-controller="SFuncionario" asp-action="Index"><img src="~/img/svg/Employeers.svg" alt=""><p class="ps-3 m-0">Funcionários</p></a>
                     <a class="ps-3" asp-area="" asp-controller="SCliente" asp-action="Index"><img src="~/img/svg/Cliente.svg" alt=""><p class="ps-3 m-0">Cliente</p></a>
                     <a class="ps-3" asp-area="" asp-controller="SFornecedor" asp-action="Index"><img src="~/img/svg/Fornecedor.svg" alt=""><p class="ps-3 m-0">Fornecedor</p></a>
-=======
-                    <img src="~/img/svg/PRODIGY.svg" alt="" class="logo-sidebar">
-                    @* <img src="~/img/logo-sidebar-cut.png" alt="" class="logo-sidebar-mobile"> *@
-                    <a class="sidebar-item ps-3" asp-area="" asp-controller="SHome" asp-action="Index">
-                        <img class="sidebar-icon" src="~/img/svg/Dashboard.svg" alt="">
-                        <p class="sidebar-text ps-3 m-0">Dashboard</p>
-                    </a>
-                    <a class="sidebar-item ps-3" asp-area="" asp-controller="SCaixa" asp-action="Index">
-                        <img class="sidebar-icon" src="~/img/svg/Balance.svg" alt="">
-                        <p class="sidebar-text ps-3 m-0">Fluxo de caixa</p>
-                    </a>
-                    <a class="sidebar-item ps-3" asp-area="" asp-controller="SPedidos" asp-action="Index">
-                        <img class="sidebar-icon" src="~/img/svg/Tips.svg" alt="">
-                        <p class="sidebar-text ps-3 m-0">Pedidos</p>
-                    </a>
-                    <a class="sidebar-item ps-3" asp-area="" asp-controller="SEstoque" asp-action="Index">
-                        <img class="sidebar-icon" src="~/img/svg/Inventory.svg" alt="">
-                        <p class="sidebar-text ps-3 m-0">Estoque</p>
-                    </a>
-                    <a class="sidebar-item ps-3" asp-area="" asp-controller="SFuncionario" asp-action="Index">
-                        <img class="sidebar-icon" src="~/img/svg/Employeers.svg" alt="">
-                        <p class="sidebar-text ps-3 m-0">Funcionários</p>
-                    </a>
-                    <a class="sidebar-item ps-3" asp-area="" asp-controller="SCliente" asp-action="Index">
-                        <img class="sidebar-icon" src="~/img/svg/Cliente.svg" alt="">
-                        <p class="sidebar-text ps-3 m-0">Cliente</p>
-                    </a>
-                    <a class="sidebar-item ps-3" asp-area="" asp-controller="SFornecedor" asp-action="Index">
-                        <img class="sidebar-icon" src="~/img/svg/Fornecedor.svg" alt="">
-                        <p class="sidebar-text ps-3 m-0">Fornecedor</p>
-                    </a>
->>>>>>> 634585d8cbb100710ea1fa2956a623cf51ebaf73
                 </nav>
                 <hr id="hr">
                 <nav class="baixo">
-                    <a class="sidebar-item ps-3" asp-area="" asp-controller="Usuario" asp-action="Index">
-                        <img class="sidebar-icon" src="~/img/svg/Perfil.svg" alt="">
-                        <p class="sidebar-text ps-3 m-0">Perfil</p>
-                    </a>
-                    <a class="sidebar-item ps-3" asp-area="" asp-controller="SHome" asp-action="Config">
-                        <img class="sidebar-icon" src="~/img/svg/Config.svg" alt="">
-                        <p class="sidebar-text ps-3 m-0">Configurações</p>
-                    </a>
-                    <a class="sidebar-item ps-3" asp-area="" asp-controller="Usuario" asp-action="Logout">
-                        <img class="sidebar-icon" src="~/img/svg/Subtract.svg" alt="">
-                        <p class="sidebar-text ps-3 m-0">Sair</p>
-                    </a>
+                    <a class="ps-3" asp-area="" asp-controller="Usuario" asp-action="Index"><img src="~/img/svg/Perfil.svg" alt=""><p class="ps-3 m-0">Perfil</p></a>
+                    <a class="ps-3" asp-area="" asp-controller="Config" asp-action="Index"><img src="~/img/svg/Config.svg" alt=""><p class="ps-3 m-0">Configurações</p></a>
+                        <a class="ps-3" asp-area="" asp-controller="Usuario" asp-action="Logout"><img src="~/img/svg/Subtract.svg" alt=""><p class="ps-3 m-0">Sair</p></a>
                 </nav>
             </header>
             <!-- NAVBAR FIM -->
@@ -441,6 +321,9 @@
         <script src="~/js/lineChart.js" asp-append-version="true"></script>
         <script defer src="~/js/sidebar.js" asp-append-version="true"></script>
         <script src="~/js/atualizarUsuario.js" asp-append-version="true"></script>
+        <script src="~/js/config.js" asp-append-version="true"></script>
+        <script src="~/js/modulos.js" asp-append-version="true"></script>
+        <script src="~/js/pedidos.js" asp-append-version="true"></script>
         @await RenderSectionAsync("Scripts", required: false)
     }
 
