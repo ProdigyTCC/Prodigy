@@ -29,3 +29,8 @@ if (background == '/Home/Planos' || background == '/SHome' || background == '/SE
         });
     });
 }
+
+if (background == '/SHome' ||
+    background == '/SHome') {
+    document.body.style.background = "#E2F0EF";
+}

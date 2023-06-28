@@ -6,9 +6,20 @@
     <div id="planoInfo" class="card-plan-info container">
         <div id="planInfo" class="plan-info">
             <p class="plan-select">Plano selecionado:</p>
+<<<<<<< HEAD
             
                 <p class="name-plan">Starter</p>
             
+=======
+            @if (TempData["Plano"] != null)
+            {
+                <p class="name-plan">@TempData["Plano"].ToString()</p>
+            }
+            else
+            {
+                <p class="name-plan">Starter</p>
+            }
+>>>>>>> 634585d8cbb100710ea1fa2956a623cf51ebaf73
             <hr class="m-0">
             <ul class="plan-details m-0">
                 <li>Valor do plano: R$00,00</li>

@@ -44,10 +44,13 @@
 .card-profile {
     background-color: #2D3037;
     max-width: 400px;
+<<<<<<< HEAD
     border-radius: 15px;
 }
 .card-atualizar {
     background-color: #2D3037;
+=======
+>>>>>>> 634585d8cbb100710ea1fa2956a623cf51ebaf73
     border-radius: 15px;
 }
 .name-profile {
