@@ -1,9 +1,9 @@
 let background = window.location.pathname;
 
-if (background == '/Home/Planos' || background == '/SHome' || background == '/SEstoque' || background == '/SPedidos/AddPedido' ||
+if (background == '/Home/Planos' || background == '/SHome' || background == '/SEstoque/Index' || background == '/SEstoque/AddProduto' || background == '/SPedidos/AddPedido' ||
     background == '/SFuncionario' || background == '/SFuncionario/AddFuncionario' || background == '/SFuncionario/Editar' || background == '/Index' ||
     background == '/AddProduto' || background == '/SEstoque/Editar/1' || background == '/SPedidos' || background == '/SCaixa' || background == '/SCaixa/NovaVenda'
-    || background == '/SCliente' || background == '/SCliente/AddCliente' || background == '/SFornecedor' || background == '/SFornecedor/AddFornecedor') {
+    || background == '/SCliente/Index' || background == '/SCliente/AddCliente' || background == '/SFornecedor/Index' || background == '/SFornecedor/AddFornecedor' || background == '/Config/Index') {
 
     document.body.style.background = "#E2F0EF";
 
