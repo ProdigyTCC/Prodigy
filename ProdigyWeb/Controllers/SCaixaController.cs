@@ -24,15 +24,14 @@ namespace ProdigyWeb.Controllers
 
         public async Task<IActionResult> Index()
         {
-            var moduloBanco = new Modulo();
             ClaimsPrincipal claims = HttpContext.User;
             var usuarioId = User.FindFirst("Id")?.Value;
             
             if (claims.Identity.IsAuthenticated)
             {
+                var moduloBanco = await _context.Modulos.FirstOrDefaultAsync(x => x.UsuarioId.Equals(int.Parse(usuarioId)));
                 if (moduloBanco != null)
                 {
-                    moduloBanco = await _context.Modulos.FirstOrDefaultAsync(x => x.UsuarioId.Equals(int.Parse(usuarioId)));
                     if (moduloBanco.NomeSistema == "AcessoPedido")
                         ViewBag.Modulo = "AcessoPedido";
                 }
@@ -45,10 +44,17 @@ namespace ProdigyWeb.Controllers
         [HttpGet("NovaVenda")]
         public IActionResult NovaVenda()
         {
-           ClaimsPrincipal claims = HttpContext.User;
+            ClaimsPrincipal claims = HttpContext.User;
+            var usuarioId = User.FindFirst("Id")?.Value;
 
             if (claims.Identity.IsAuthenticated)
             {
+                var moduloBanco = _context.Modulos.FirstOrDefault(x => x.UsuarioId.Equals(int.Parse(usuarioId)));
+                if (moduloBanco != null)
+                {
+                    if (moduloBanco.NomeSistema == "AcessoPedido")
+                        ViewBag.Modulo = "AcessoPedido";
+                }
                 ViewBag.Layout = "Dashboard";
                 return View();
             }

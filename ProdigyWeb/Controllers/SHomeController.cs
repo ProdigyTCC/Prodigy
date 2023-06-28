@@ -16,26 +16,24 @@ namespace ProdigyWeb.Controllers
             _context = context;
         }
 
-        public async Task<IActionResult> Index(string? msg)
+        public IActionResult Index()
         {
-            var moduloBanco = new Modulo();
             ClaimsPrincipal claims = HttpContext.User;
             var usuarioId = User.FindFirst("Id")?.Value;
 
             if (claims.Identity.IsAuthenticated)
             {
+                var moduloBanco = _context.Modulos.FirstOrDefault(x => x.UsuarioId.Equals(int.Parse(usuarioId)));
                 ViewBag.Layout = "Dashboard";
                 if (moduloBanco != null)
                 {
-                    moduloBanco = await _context.Modulos.FirstOrDefaultAsync(x => x.UsuarioId.Equals(int.Parse(usuarioId)));
-                    if (moduloBanco.NomeSistema == "AcessoPedido")
+                    if (moduloBanco.NomeSistema == "AcessoPedido" && moduloBanco.NomeSistema != null)
                         ViewBag.Modulo = "AcessoPedido";
                 }
 
                 var pedidos = _context.SPedidos.Where(x => x.UsuarioId.ToString() == usuarioId).ToList();
                 var produtos = _context.SProdutos.Where(x => x.UsuarioId.ToString() == usuarioId).ToList();
-
-                TempData["Msg"] = msg;
+                
                 ViewBag.Pedidos = "";
                 ViewBag.Produtos = "";
                 if (pedidos != null) ViewBag.Pedidos = pedidos;

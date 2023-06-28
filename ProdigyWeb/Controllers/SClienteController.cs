@@ -20,16 +20,15 @@ namespace ProdigyWeb.Controllers
         [HttpGet("Index")]
         public async Task<IActionResult> Index(string? msg, string? nome = "")
         {
-            var moduloBanco = new Modulo();
             ClaimsPrincipal claims = HttpContext.User;
             var usuarioId = User.FindFirst("Id")?.Value;
 
             if (claims.Identity.IsAuthenticated)
             {
                 var clientes = _context.SClientes.Where(x => x.UsuarioId == int.Parse(usuarioId));
+                var moduloBanco = await _context.Modulos.FirstOrDefaultAsync(x => x.UsuarioId.Equals(int.Parse(usuarioId)));
                 if (moduloBanco != null)
                 {
-                    moduloBanco = await _context.Modulos.FirstOrDefaultAsync(x => x.UsuarioId.Equals(int.Parse(usuarioId)));
                     if (moduloBanco.NomeSistema == "AcessoPedido")
                         ViewBag.Modulo = "AcessoPedido";
                 }
@@ -52,15 +51,14 @@ namespace ProdigyWeb.Controllers
         [HttpGet("AddCliente")]
         public async Task<IActionResult> AddClienteAsync(string? msg)
         {
-            var moduloBanco = new Modulo();
             ClaimsPrincipal claims = HttpContext.User;
             var usuarioId = User.FindFirst("Id")?.Value;
 
             if (claims.Identity.IsAuthenticated)
             {
+                var moduloBanco = await _context.Modulos.FirstOrDefaultAsync(x => x.UsuarioId.Equals(int.Parse(usuarioId)));
                 if (moduloBanco != null)
                 {
-                    moduloBanco = await _context.Modulos.FirstOrDefaultAsync(x => x.UsuarioId.Equals(int.Parse(usuarioId)));
                     if (moduloBanco.NomeSistema == "AcessoPedido")
                         ViewBag.Modulo = "AcessoPedido";
                 }
@@ -108,15 +106,14 @@ namespace ProdigyWeb.Controllers
         {
             var clientes = await _context.SClientes.FirstOrDefaultAsync(x => x.SClienteId.Equals(id));
 
-            var moduloBanco = new Modulo();
             ClaimsPrincipal claims = HttpContext.User;
             var usuarioId = User.FindFirst("Id")?.Value;
 
             if (claims.Identity.IsAuthenticated)
             {
+                var moduloBanco = await _context.Modulos.FirstOrDefaultAsync(x => x.UsuarioId.Equals(int.Parse(usuarioId)));
                 if (moduloBanco != null)
                 {
-                    moduloBanco = await _context.Modulos.FirstOrDefaultAsync(x => x.UsuarioId.Equals(int.Parse(usuarioId)));
                     if (moduloBanco.NomeSistema == "AcessoPedido")
                         ViewBag.Modulo = "AcessoPedido";
                 }
@@ -124,7 +121,6 @@ namespace ProdigyWeb.Controllers
                 {
                     if (moduloBanco != null)
                     {
-                        moduloBanco = await _context.Modulos.FirstOrDefaultAsync(x => x.UsuarioId.Equals(int.Parse(usuarioId)));
                         if (moduloBanco.NomeSistema == "AcessoPedido")
                             ViewBag.Modulo = "AcessoPedido";
                     }

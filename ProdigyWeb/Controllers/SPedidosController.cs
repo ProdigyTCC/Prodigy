@@ -56,15 +56,15 @@ namespace ProdigyWeb.Controllers
         [HttpGet("AddPedido")]
         public async Task<IActionResult> AddPedidoAsync(string? msg, string? produtoPedido = "")
         {
-            var moduloBanco = new Modulo();
+            
             ClaimsPrincipal claims = HttpContext.User;
             var usuarioId = User.FindFirst("Id")?.Value;
 
             if (claims.Identity.IsAuthenticated)
             {
+                var moduloBanco = await _context.Modulos.FirstOrDefaultAsync(x => x.UsuarioId.Equals(int.Parse(usuarioId)));
                 if (moduloBanco != null)
                 {
-                    moduloBanco = await _context.Modulos.FirstOrDefaultAsync(x => x.UsuarioId.Equals(int.Parse(usuarioId)));
                     if (moduloBanco.NomeSistema == "AcessoPedido")
                         ViewBag.Modulo = "AcessoPedido";
                 }
