@@ -173,7 +173,7 @@ namespace ProdigyWeb.Controllers
                     _context.SFornecedores.Update(fornecedorBanco);
                     _context.SaveChanges();
 
-                    msg = "fornecedor atualizado com sucesso!";
+                    msg = "Fornecedor atualizado com sucesso!";
                     return RedirectToAction(nameof(Index), new {msg});
                 }
                 msg = "Erro ao atualizar o fornecedor!\nTente novamente.";

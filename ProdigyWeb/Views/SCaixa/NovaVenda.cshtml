@@ -6,11 +6,7 @@
 
     <!-- INICIO FORMULARIO -->
         <h1 class="title-system">Nova venda</h1>
-<<<<<<< HEAD
-        <a class="back-page" asp-action="SHome" asp-controller="Index">
-=======
-        <a class="back-page" href="">
->>>>>>> 634585d8cbb100710ea1fa2956a623cf51ebaf73
+        <a class="back-page" asp-action="Index" asp-controller="SCaixa">
             <div class="icon-p">
                 <i class="fa-solid fa-circle-left fa-lg"></i>
                 <p class="m-0">Voltar</p>
@@ -179,12 +175,13 @@
 
             <div class="group-buttons">
                 <button type="button" class="button-small button-venda">Finalizar venda</button>
-                <button type="button" class="button-small button-cancelar">Cancelar</button>
+                <a style="text-decoration: none;" asp-action="Index" asp-controller="SCaixa">
+                    <button type="button" class="button-small button-cancelar">Cancelar</button>
+                </a>
             </div>
         </div>
     </main>
-<<<<<<< HEAD
 </div>
-=======
+
 </div>
->>>>>>> 634585d8cbb100710ea1fa2956a623cf51ebaf73
+

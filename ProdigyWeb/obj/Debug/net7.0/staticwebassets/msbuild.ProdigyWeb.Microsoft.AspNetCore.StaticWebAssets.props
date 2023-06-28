@@ -32,6 +32,22 @@
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Arquivo\310a44f2-b803-4c65-9a94-925ec47e14f7_AULA 08  INTERNET PROTOCOLOS 21052023.pdf))</OriginalItemSpec>
     </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Arquivo\d34895f3-ec2e-4ce0-a1df-7c17d08751d7_Wallace Coelho dos Santos.pdf))">
+      <SourceType>Package</SourceType>
+      <SourceId>ProdigyWeb</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/ProdigyWeb</BasePath>
+      <RelativePath>Arquivo/d34895f3-ec2e-4ce0-a1df-7c17d08751d7_Wallace Coelho dos Santos.pdf</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Arquivo\d34895f3-ec2e-4ce0-a1df-7c17d08751d7_Wallace Coelho dos Santos.pdf))</OriginalItemSpec>
+    </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Arquivo\de2591f7-1c85-452a-b105-7e1fb607102c_Teste de Programação  - Rota das Oficinas.pdf))">
       <SourceType>Package</SourceType>
       <SourceId>ProdigyWeb</SourceId>
