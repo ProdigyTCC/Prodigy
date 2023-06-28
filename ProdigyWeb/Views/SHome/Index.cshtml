@@ -1,8 +1,8 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
+﻿﻿@{
+    ViewData["Title"] = "Dashboard";
 }
 
-<div class="container-fluid main-dashboard m-2">
+<div class="container main-dashboard">
     <div class="title"><p class="title-system">Dashboard</p></div>
 
     <div class="cards-dashboard"> @*Div principal que armazena os 4 cards = relatório/vendas/estoque/histórico*@
@@ -13,6 +13,21 @@
                 <div class="doughnut-chart mx-auto"> @*Gráfico do relatório*@
                     <canvas id="myChart"></canvas>
                 </div> 
+                
+                <div class="listen-relatorio"> @*Lista que fica abaixo do gráfico*@
+                    <div class="item-lucro d-flex flex-row align-items-center">
+                        <div class="circle-lucro me-1"></div> @*Estas divs circle são os círculos ao lado dos paragrafos*@
+                        <p class="m-0">Lucro</p>
+                    </div>
+                    <div class="item-faturamento d-flex flex-row align-items-center">
+                        <div class="circle-faturamento me-1"></div>
+                        <p class="m-0">Faturamento</p>
+                    </div>
+                    <div class="item-lucro d-flex flex-row align-items-center">
+                        <div class="circle-despesas me-1"></div>
+                        <p class="m-0">Despesas</p>
+                    </div>
+                </div>
             </div>
         </div>
 
@@ -35,29 +50,24 @@
                     <tr>
                         <th scope="col">#</th>
                         <th scope="col">Produto</th>
-                        <th scope="col">Categoria</th>
-                        <th scope="col">Status</th>
+                        <th scope="col">Marca</th>
+                        <th scope="col">Quant.</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                    <th scope="row">1</th>
-                    <td>Produto</td>
-                    <td>Categoria</td>
-                    <td><i class="fa fa-exclamation-triangle" style="color: yellow;"></i></td>
-                    </tr>
-                    <tr>
-                    <th scope="row">2</th>
-                    <td>Produto</td>
-                    <td>Categoria</td>
-                    <td><i class="fa fa-exclamation-circle" style="color: red;"></i></td>
-                    </tr>
-                    <tr>
-                    <th scope="row">3</th>
-                    <td>Produto</td>
-                    <td>Categoria</td>
-                    <td><i class="fa fa-exclamation-circle" style="color: red;"></i></td>
-                    </tr>
+                    @if(ViewBag.Produtos != null)
+                    {
+                        foreach(var prod in ViewBag.Produtos)
+                        {
+                        <tr>
+                            <th scope="row">@prod.SProdutoId</th>
+                            <td>@prod.Nome</td>
+                            <td>@prod.Marca</td>
+                            <td>@prod.QuantProduto</td>
+                            @* <td><i class="fa fa-exclamation-triangle" style="color: yellow;"></i></td> *@
+                        </tr>
+                        }
+                    }
                 </tbody>
             </table>
         </div>
@@ -74,24 +84,19 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                    <th scope="row">1</th>
-                    <td>Produto</td>
-                    <td>Categoria</td>
-                    <td>Em andamento</td>
-                    </tr>
-                    <tr>
-                    <th scope="row">2</th>
-                    <td>Produto</td>
-                    <td>Categoria</td>
-                    <td>Concluído</td>
-                    </tr>
-                    <tr>
-                    <th scope="row">3</th>
-                    <td>Produto</td>
-                    <td>Categoria</td>
-                    <td>Concluído</td>
-                    </tr>
+                    @if(ViewBag.Pedidos != null)
+                    {
+                        foreach(var prod in ViewBag.Pedidos)
+                        {
+                        <tr>
+                            <th scope="row">@prod.SPedidoId</th>
+                            <td>@prod.Descricao</td>
+                            <td>@prod.ValorPedido</td>
+                            <td>@prod.Status</td>
+                            @* <td><i class="fa fa-exclamation-triangle" style="color: yellow;"></i></td> *@
+                        </tr>
+                        }
+                    }
                 </tbody>
             </table>
         </div>

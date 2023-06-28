@@ -2,7 +2,7 @@
 @{
     ViewData["Title"] = "Perfil";
 }
-<div class="section-profile container-fluid d-flex flex-md-nowrap justify-content-between pt-3 pb-5">
+<div class="section-profile container-fluid pt-3 pb-5">
         <div class="container-fluid profile pb-5">
             <div class="container-fluid card-profile pt-3 justify-content-center text-center">
                 <form asp-action="UploadImagem" asp-controller="Usuario" enctype="multipart/form-data">
@@ -71,7 +71,7 @@
             <input class="form-control" type="text" placeholder="29/07/2023" aria-label="Disabled input example" disabled>
         </div>
 
-        <div class="container d-flex justify-content-end p-0">
+        <div class="container button-atualizar d-flex p-0">
             <a style="text-decoration: none;" asp-action="Atualizar" asp-controller="Usuario" type="button" class="button-small">Atualizar dados</a>
         </div>        
     </div>

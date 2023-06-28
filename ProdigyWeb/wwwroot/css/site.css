@@ -64,7 +64,7 @@ input[type="radio"]:checked, input[type="checkbox"]:checked {
   padding: 0%;
 }
 
-.input-contato, .form-select, .input-detalhes {
+.input-contato, .form-select, .input-detalhes, .input-nova-venda {
   display: flex;
   flex-direction: row;
   justify-content: flex-start;

@@ -80,15 +80,17 @@ document.querySelector('#exp-year').oninput = () => {
 };
 
 const cardRotate = document.getElementById('cvv-input');
+const frontElement = document.querySelector('#front');
+const backElement = document.querySelector('#back');
 
-cardRotate.addEventListener("mouseenter", () => {
-    document.querySelector('#front').style.transform = 'perspective(1000px) rotateY44(-180deg)';
-    document.querySelector('#back').style.transform = 'perspective(1000px) rotateY(0deg)';
+cardRotate.addEventListener("focus", () => {
+  frontElement.style.transform = 'perspective(1000px) rotateY(-180deg)';
+  backElement.style.transform = 'perspective(1000px) rotateY(0deg)';
 });
 
-cardRotate.addEventListener("mouseleave", () => {
-    document.querySelector('#front').style.transform = 'perspective(1000px) rotateY(0deg)';
-    document.querySelector('#back').style.transform = 'perspective(1000px) rotateY(180deg)';
+cardRotate.addEventListener("blur", () => {
+  frontElement.style.transform = 'perspective(1000px) rotateY(0deg)';
+  backElement.style.transform = 'perspective(1000px) rotateY(180deg)';
 });
 
 document.querySelector('#cvv-input').oninput = () => {
@@ -119,3 +121,25 @@ function formatarInput() {
     // Atualiza o valor do input
     inputCardNumber.value = novoValor;
 }
+
+// Obtém o elemento de entrada do CPF
+var cpfInput = document.getElementById('card-cpf-input');
+
+// Função para formatar o CPF
+function formatarCPF(cpf) {
+  // Remove caracteres não numéricos
+  cpf = cpf.replace(/\D/g, '');
+
+  // Aplica a formatação do CPF (XXX.XXX.XXX-XX)
+  cpf = cpf.replace(/(\d{3})(\d)/, '$1.$2');
+  cpf = cpf.replace(/(\d{3})(\d)/, '$1.$2');
+  cpf = cpf.replace(/(\d{3})(\d{2})$/, '$1-$2');
+
+  // Retorna o CPF formatado
+  return cpf;
+}
+
+// Formata o CPF quando ocorrer uma mudança no campo de entrada
+cpfInput.addEventListener('input', function() {
+  cpfInput.value = formatarCPF(cpfInput.value);
+});

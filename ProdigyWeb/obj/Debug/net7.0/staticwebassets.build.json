@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "uWcOV0+w2SvbqZ7InHXnFg2TTXZxaL5TSJY8lBIMo9U=",
+  "Hash": "cbTHg04jaytFx0Ho7456LE7ztenfGM77fWCjIuITgdk=",
   "Source": "ProdigyWeb",
   "BasePath": "_content/ProdigyWeb",
   "Mode": "Default",
@@ -544,6 +544,40 @@
       "OriginalItemSpec": "wwwroot\\img\\Chip.png"
     },
     {
+      "Identity": "C:\\Users\\Wallace\\Desktop\\tcc\\Production\\Prodigy\\ProdigyWeb\\wwwroot\\img\\Cliente.png",
+      "SourceId": "ProdigyWeb",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Wallace\\Desktop\\tcc\\Production\\Prodigy\\ProdigyWeb\\wwwroot\\",
+      "BasePath": "_content/ProdigyWeb",
+      "RelativePath": "img/Cliente.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\Cliente.png"
+    },
+    {
+      "Identity": "C:\\Users\\Wallace\\Desktop\\tcc\\Production\\Prodigy\\ProdigyWeb\\wwwroot\\img\\Fornecedor.png",
+      "SourceId": "ProdigyWeb",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Wallace\\Desktop\\tcc\\Production\\Prodigy\\ProdigyWeb\\wwwroot\\",
+      "BasePath": "_content/ProdigyWeb",
+      "RelativePath": "img/Fornecedor.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\Fornecedor.png"
+    },
+    {
       "Identity": "C:\\Users\\Wallace\\Desktop\\tcc\\Production\\Prodigy\\ProdigyWeb\\wwwroot\\img\\fotoPerfil.png",
       "SourceId": "ProdigyWeb",
       "SourceType": "Discovered",
@@ -578,6 +612,23 @@
       "OriginalItemSpec": "wwwroot\\img\\loginModulo.jpg"
     },
     {
+      "Identity": "C:\\Users\\Wallace\\Desktop\\tcc\\Production\\Prodigy\\ProdigyWeb\\wwwroot\\img\\logo-Sidebar-cut.png",
+      "SourceId": "ProdigyWeb",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Wallace\\Desktop\\tcc\\Production\\Prodigy\\ProdigyWeb\\wwwroot\\",
+      "BasePath": "_content/ProdigyWeb",
+      "RelativePath": "img/logo-Sidebar-cut.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\logo-Sidebar-cut.png"
+    },
+    {
       "Identity": "C:\\Users\\Wallace\\Desktop\\tcc\\Production\\Prodigy\\ProdigyWeb\\wwwroot\\img\\menu.png",
       "SourceId": "ProdigyWeb",
       "SourceType": "Discovered",
@@ -593,6 +644,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\img\\menu.png"
+    },
+    {
+      "Identity": "C:\\Users\\Wallace\\Desktop\\tcc\\Production\\Prodigy\\ProdigyWeb\\wwwroot\\img\\note.png",
+      "SourceId": "ProdigyWeb",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Wallace\\Desktop\\tcc\\Production\\Prodigy\\ProdigyWeb\\wwwroot\\",
+      "BasePath": "_content/ProdigyWeb",
+      "RelativePath": "img/note.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\note.png"
     },
     {
       "Identity": "C:\\Users\\Wallace\\Desktop\\tcc\\Production\\Prodigy\\ProdigyWeb\\wwwroot\\img\\panel1.png",
@@ -661,6 +729,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\img\\panel4.png"
+    },
+    {
+      "Identity": "C:\\Users\\Wallace\\Desktop\\tcc\\Production\\Prodigy\\ProdigyWeb\\wwwroot\\img\\Perfil.png",
+      "SourceId": "ProdigyWeb",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Wallace\\Desktop\\tcc\\Production\\Prodigy\\ProdigyWeb\\wwwroot\\",
+      "BasePath": "_content/ProdigyWeb",
+      "RelativePath": "img/Perfil.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\Perfil.png"
     },
     {
       "Identity": "C:\\Users\\Wallace\\Desktop\\tcc\\Production\\Prodigy\\ProdigyWeb\\wwwroot\\img\\presentation.png",

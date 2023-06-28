@@ -24,15 +24,22 @@ namespace ProdigyWeb.Controllers
         }
 
         [HttpGet("Index")]
-        public IActionResult Index(string? msg, string? pedidoBusca = "")
+        public async Task<IActionResult> IndexAsync(string? msg, string? pedidoBusca = "")
         {
-            var usuarioId = User.FindFirst("Id")?.Value;
+            var moduloBanco = new Modulo();
             ClaimsPrincipal claims = HttpContext.User;
+            var usuarioId = User.FindFirst("Id")?.Value;
 
             if (claims.Identity.IsAuthenticated)
             {
                 ViewBag.Layout = "Dashboard";
                 var pedidos = _context.SPedidos.Where(x => x.UsuarioId.Equals(int.Parse(usuarioId))).ToList();
+                if (moduloBanco != null)
+                {
+                    moduloBanco = await _context.Modulos.FirstOrDefaultAsync(x => x.UsuarioId.Equals(int.Parse(usuarioId)));
+                    if (moduloBanco.NomeSistema == "AcessoPedido")
+                        ViewBag.Modulo = "AcessoPedido";
+                }
                 if (pedidoBusca != "")
                 {
                     pedidos = _context.SPedidos.Where(x => x.SPedidoId.ToString().Contains(pedidoBusca) && 
@@ -47,13 +54,20 @@ namespace ProdigyWeb.Controllers
         }
 
         [HttpGet("AddPedido")]
-        public IActionResult AddPedido(string? msg, string? produtoPedido = "")
+        public async Task<IActionResult> AddPedidoAsync(string? msg, string? produtoPedido = "")
         {
-            var usuarioId = User.FindFirst("Id")?.Value;
+            var moduloBanco = new Modulo();
             ClaimsPrincipal claims = HttpContext.User;
+            var usuarioId = User.FindFirst("Id")?.Value;
 
             if (claims.Identity.IsAuthenticated)
             {
+                if (moduloBanco != null)
+                {
+                    moduloBanco = await _context.Modulos.FirstOrDefaultAsync(x => x.UsuarioId.Equals(int.Parse(usuarioId)));
+                    if (moduloBanco.NomeSistema == "AcessoPedido")
+                        ViewBag.Modulo = "AcessoPedido";
+                }
                 ViewBag.Layout = "Dashboard";
                 var fornecedores = _context.SFornecedores.Where(x => x.SFornecedorId.ToString().Equals(usuarioId)).ToList();
 
@@ -91,16 +105,16 @@ namespace ProdigyWeb.Controllers
                     _context.SPedidos.Add(pedido);
                     _context.SaveChanges();
                     msg = "Pedido cadastrado com sucesso!";
-                    return RedirectToAction(nameof(Index), new {msg});
+                    return RedirectToAction(nameof(IndexAsync), new {msg});
                 }
 
                 msg = "Erro cadastrar o pedido!";
-                return RedirectToAction(nameof(Index), new {msg});
+                return RedirectToAction(nameof(IndexAsync), new {msg});
             }
             catch(DbException)
             {
                 msg = "Erro cadastrar o pedido!";
-                return RedirectToAction(nameof(AddPedido), new {msg});
+                return RedirectToAction(nameof(AddPedidoAsync), new {msg});
             }
         }
     }

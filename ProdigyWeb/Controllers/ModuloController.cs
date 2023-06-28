@@ -36,8 +36,8 @@ namespace ProdigyWeb.Controllers
                 AddSessao();
                 if (moduloBanco != null)
                 {
-                    if (moduloBanco.NomeSistema == "AcessoFuncionario")
-                        ViewBag.Modulo = "AcessoFuncionario";
+                    if (moduloBanco.NomeSistema == "AcessoPedido")
+                        ViewBag.Modulo = "AcessoPedido";
                 }
                 else ViewBag.Modulo = "";
                 TempData["Msg"] = msg;
@@ -46,8 +46,8 @@ namespace ProdigyWeb.Controllers
 
             if (moduloBanco != null)
             {
-                if (moduloBanco.NomeSistema == "AcessoFuncionario")
-                    ViewBag.Modulo = "AcessoFuncionario";
+                if (moduloBanco.NomeSistema == "AcessoPedido")
+                    ViewBag.Modulo = "AcessoPedido";
             }
             else ViewBag.Modulo = "";
             TempData["Msg"] = msg;

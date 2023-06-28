@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "39YkWfVGFc2C0yB/Nr/+gfB9XdOoeCbUvzRnRtBqrfLF0RIBIzE9NIOpe6tpQqTSQ03y06W2xzo2yi1q0xHpbA==",
+  "dgSpecHash": "Pw1gYbInLSaVB/FPX9XE6ylIvTbVs3mLJhN0G8Sc5xayXfrl/OPhDO8wEbWHgAVEET7V4z13FRyds+Qm2zwZew==",
   "success": true,
-  "projectFilePath": "c:\\Users\\Wallace\\Desktop\\tcc\\Production\\Prodigy\\ProdigyWeb\\ProdigyWeb.csproj",
+  "projectFilePath": "C:\\Users\\Wallace\\Desktop\\tcc\\Production\\Prodigy\\ProdigyWeb\\ProdigyWeb.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Wallace\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\Wallace\\.nuget\\packages\\microsoft.aspnetcore.authentication\\2.2.0\\microsoft.aspnetcore.authentication.2.2.0.nupkg.sha512",

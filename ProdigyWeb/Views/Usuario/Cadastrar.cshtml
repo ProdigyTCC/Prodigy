@@ -3,44 +3,44 @@
     ViewData["Title"] = "Cadastro";
 }
 <div class="cadastro-titulo pt-3">
-    <p>Olá novo usuário! É um prazer tê-lo conosco.</p>
+    <p>Olá novo usuário! É um prazer tê-lo conosco!</p>
 </div>
 <div class="primeiro cadastro">
     <h1 class="mb-3">Dados principais</h1>
 
     <div class="formulario d-flex flex-column justify-content-center">
     <form asp-controller="Usuario" asp-action="CadastrarUsuario">
-        <div class="mb-3 ms-5 me-5 text-start">
+        <div class="group-input-cadastro mb-3 text-start">
             <p class="label-profile pb-1 m-0">Nome completo</p>
             <input type="text" asp-for="Nome" id="" placeholder="Seu nome completo" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" required>
         </div>
 
-        <div class="mb-3 ms-5 me-5 text-start">
+        <div class="group-input-cadastro mb-3 text-start">
             <p class="label-profile pb-1 m-0">CPF</p>
             <input type="text" asp-for="Cpf" id="" placeholder="000.000.000-00" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" required>
         </div>
 
-        <div class="mb-3 ms-5 me-5 text-start">
+        <div class="group-input-cadastro mb-3 text-start">
             <p class="label-profile pb-1 m-0">E-mail</p>
             <input type="email" asp-for="Email" id="" placeholder="exemplo@exemplo.com" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" required>
         </div>
 
-        <div class="mb-3 ms-5 me-5 text-start">
-            <p class="label-profile pb-1 m-0">Confirmar E-mail</p>
+        <div class="group-input-cadastro mb-3 text-start">
+            <p class="label-profile pb-1 m-0">Confirmar e-mail</p>
             <input type="email" id="" placeholder="exemplo@exemplo.com" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" required>
         </div>
 
-        <div class="mb-3 ms-5 me-5 text-start">
+        <div class="group-input-cadastro mb-3 text-start">
             <p class="label-profile pb-1 m-0">Data de nascimento</p>
             <input type="date" asp-for="DataNascimento" id="" placeholder="00/00/0000" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" required>
         </div>
 
-        <div class="mb-3 ms-5 me-5 text-start">
+        <div class="group-input-cadastro mb-3 text-start">
             <p class="label-profile pb-1 m-0">Senha</p>
             <input type="password" asp-for="Senha" id="" placeholder="********" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" required>
         </div>
 
-        <div class="mt-3 mb-3 ms-5 me-5 text-start d-flex justify-content-center">
+        <div class="mt-4 mb-3 group-button-cadastro text-start d-flex justify-content-center">
             <button type="submit" class="primary-button">Confirmar</button>
         </div>
     </form>

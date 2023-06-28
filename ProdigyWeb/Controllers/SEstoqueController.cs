@@ -21,8 +21,9 @@ namespace ProdigyWeb.Controllers
         }
 
         [HttpGet("Index")]
-        public IActionResult Index(string? msg, string? nome = "")
+        public async Task<IActionResult> Index(string? msg, string? nome = "")
         {
+            var moduloBanco = new Modulo();
             ClaimsPrincipal claims = HttpContext.User;
             var usuarioId = User.FindFirst("Id")?.Value;
 
@@ -30,7 +31,12 @@ namespace ProdigyWeb.Controllers
             {
                 ViewBag.Layout = "Dashboard";
                 var produtos = _context.SProdutos.Where(x => x.UsuarioId.ToString() == usuarioId).ToList();
-
+                if (moduloBanco != null)
+                {
+                    moduloBanco = await _context.Modulos.FirstOrDefaultAsync(x => x.UsuarioId.Equals(int.Parse(usuarioId)));
+                    if (moduloBanco.NomeSistema == "AcessoPedido")
+                        ViewBag.Modulo = "AcessoPedido";
+                }
                 if (nome != "")
                 {
                     produtos = produtos.Where(x => x.SProdutoId.ToString() == nome || x.Nome.Contains(nome)).ToList();
@@ -46,13 +52,19 @@ namespace ProdigyWeb.Controllers
         [HttpGet("AddProduto")]
         public async Task<IActionResult> AddProduto(string? msg)
         {
+            var moduloBanco = new Modulo();
             ClaimsPrincipal claims = HttpContext.User;
             var usuarioId = User.FindFirst("Id")?.Value;
 
             if (claims.Identity.IsAuthenticated)
             {
                 var categProduto = await _context.SCategoriaProdutos.Where(x => x.UsuarioId.ToString() == usuarioId).ToListAsync();
-
+                if (moduloBanco != null)
+                {
+                    moduloBanco = await _context.Modulos.FirstOrDefaultAsync(x => x.UsuarioId.Equals(int.Parse(usuarioId)));
+                    if (moduloBanco.NomeSistema == "AcessoPedido")
+                        ViewBag.Modulo = "AcessoPedido";
+                }
                 ViewBag.CategProduto = categProduto;
                 ViewBag.Layout = "Dashboard";
                 TempData["Msg"] = msg;
@@ -157,13 +169,26 @@ namespace ProdigyWeb.Controllers
         {
             var produtos = await _context.SProdutos.FirstOrDefaultAsync(x => x.SProdutoId.Equals(id));
 
+            var moduloBanco = new Modulo();
             ClaimsPrincipal claims = HttpContext.User;
             var usuarioId = User.FindFirst("Id")?.Value;
 
             if (claims.Identity.IsAuthenticated)
             {
+                if (moduloBanco != null)
+                {
+                    moduloBanco = await _context.Modulos.FirstOrDefaultAsync(x => x.UsuarioId.Equals(int.Parse(usuarioId)));
+                    if (moduloBanco.NomeSistema == "AcessoPedido")
+                        ViewBag.Modulo = "AcessoPedido";
+                }
                 if (produtos != null)
                 {
+                    if (moduloBanco != null)
+                    {
+                        moduloBanco = await _context.Modulos.FirstOrDefaultAsync(x => x.UsuarioId.Equals(int.Parse(usuarioId)));
+                        if (moduloBanco.NomeSistema == "AcessoPedido")
+                            ViewBag.Modulo = "AcessoPedido";
+                    }
                     var categProduto = await _context.SCategoriaProdutos.Where(x => x.UsuarioId.ToString() == usuarioId).ToListAsync();
 
                     ViewBag.CategProduto = categProduto;

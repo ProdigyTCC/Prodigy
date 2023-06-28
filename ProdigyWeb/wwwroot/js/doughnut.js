@@ -1,11 +1,5 @@
 const data = {
-  labels: [
-    'Faturamento',
-    'Lucro',
-    'Despesas'
-  ],
   datasets: [{
-    label: 'Resumo financeiro',
     data: [570, 50, 100],
     backgroundColor: [
       'rgba(29, 120, 112, 1)',

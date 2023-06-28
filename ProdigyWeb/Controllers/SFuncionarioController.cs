@@ -26,6 +26,7 @@ namespace ProdigyWeb.Controllers
         [HttpGet("Index")]
         public async Task<IActionResult> Index(string? msg, string? nome = "")
         {
+            var moduloBanco = new Modulo();
             ClaimsPrincipal claims = HttpContext.User;
             var usuarioId = User.FindFirst("Id")?.Value;
             var funcionarios = await _context.SFuncionarios.Where(x => x.UsuarioId.Equals(int.Parse(usuarioId))).ToListAsync();
@@ -33,6 +34,12 @@ namespace ProdigyWeb.Controllers
             if (claims.Identity.IsAuthenticated)
             {
                 ViewBag.Layout = "Dashboard";
+                if (moduloBanco != null)
+                {
+                    moduloBanco = await _context.Modulos.FirstOrDefaultAsync(x => x.UsuarioId.Equals(int.Parse(usuarioId)));
+                    if (moduloBanco.NomeSistema == "AcessoPedido")
+                        ViewBag.Modulo = "AcessoPedido";
+                }
                 if (nome != "")
                 {
                     funcionarios = funcionarios.Where(x => x.SFuncionarioId.ToString() == nome || x.Nome.Contains(nome)).ToList();
@@ -50,20 +57,18 @@ namespace ProdigyWeb.Controllers
         [HttpGet("AddFuncionario")]
         public async Task<IActionResult> AddFuncionario(string? msg)
         {
+            var moduloBanco = new Modulo();
             ClaimsPrincipal claims = HttpContext.User;
+            var usuarioId = User.FindFirst("Id")?.Value;
 
             if (claims.Identity.IsAuthenticated)
             {
-                var usuarioId = User.FindFirst("Id")?.Value;
-
-                var modulo = await _context.Modulos.FirstOrDefaultAsync(x => x.UsuarioId.Equals(int.Parse(usuarioId)));
-
-                if (modulo != null)
+                if (moduloBanco != null)
                 {
-                    if(modulo.NomeSistema == "AcessoFuncionario")
-                    ViewBag.Modulo = "AcessoFuncionario";
+                    moduloBanco = await _context.Modulos.FirstOrDefaultAsync(x => x.UsuarioId.Equals(int.Parse(usuarioId)));
+                    if (moduloBanco.NomeSistema == "AcessoPedido")
+                        ViewBag.Modulo = "AcessoPedido";
                 }
-                else ViewBag.Modulo = "";
 
                 ViewBag.Layout = "Dashboard";
                 TempData["Msg"] = msg;
@@ -134,24 +139,21 @@ namespace ProdigyWeb.Controllers
         [HttpGet("Editar")]
         public async Task<ActionResult> Editar(string? msg, int? id)
         {
+            var moduloBanco = new Modulo();
             ClaimsPrincipal claims = HttpContext.User;
-            var ususarioId = User.FindFirst("Id")?.Value;
+            var usuarioId = User.FindFirst("Id")?.Value;
 
-            var funcionarios = await _context.SFuncionarios.FirstOrDefaultAsync(x => x.UsuarioId.Equals(int.Parse(ususarioId)) && 
+            var funcionarios = await _context.SFuncionarios.FirstOrDefaultAsync(x => x.UsuarioId.Equals(int.Parse(usuarioId)) && 
                 x.SFuncionarioId.Equals(id));
 
             if (claims.Identity.IsAuthenticated)
             {
-                var usuarioId = User.FindFirst("Id")?.Value;
-
-                var modulo = await _context.Modulos.FirstOrDefaultAsync(x => x.UsuarioId.Equals(int.Parse(ususarioId)));
-
-                if (modulo != null)
+                if (moduloBanco != null)
                 {
-                    if (modulo.NomeSistema == "AcessoFuncionario")
-                        ViewBag.Modulo = "AcessoFuncionario";
+                    moduloBanco = await _context.Modulos.FirstOrDefaultAsync(x => x.UsuarioId.Equals(int.Parse(usuarioId)));
+                    if (moduloBanco.NomeSistema == "AcessoPedido")
+                        ViewBag.Modulo = "AcessoPedido";
                 }
-                else ViewBag.Modulo = "";
 
                 ViewBag.Layout = "Dashboard";
                 TempData["Msg"] = msg;

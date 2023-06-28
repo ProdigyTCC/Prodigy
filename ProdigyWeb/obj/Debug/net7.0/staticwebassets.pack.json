@@ -105,6 +105,18 @@
       "PackagePath": "staticwebassets\\img\\Chip.png"
     },
     {
+      "Id": "C:\\Users\\Wallace\\Desktop\\tcc\\Production\\Prodigy\\ProdigyWeb\\wwwroot\\img\\Cliente.png",
+      "PackagePath": "staticwebassets\\img\\Cliente.png"
+    },
+    {
+      "Id": "C:\\Users\\Wallace\\Desktop\\tcc\\Production\\Prodigy\\ProdigyWeb\\wwwroot\\img\\Fornecedor.png",
+      "PackagePath": "staticwebassets\\img\\Fornecedor.png"
+    },
+    {
+      "Id": "C:\\Users\\Wallace\\Desktop\\tcc\\Production\\Prodigy\\ProdigyWeb\\wwwroot\\img\\Perfil.png",
+      "PackagePath": "staticwebassets\\img\\Perfil.png"
+    },
+    {
       "Id": "C:\\Users\\Wallace\\Desktop\\tcc\\Production\\Prodigy\\ProdigyWeb\\wwwroot\\img\\agendamentoModulo.jpg",
       "PackagePath": "staticwebassets\\img\\agendamentoModulo.jpg"
     },
@@ -129,8 +141,16 @@
       "PackagePath": "staticwebassets\\img\\loginModulo.jpg"
     },
     {
+      "Id": "C:\\Users\\Wallace\\Desktop\\tcc\\Production\\Prodigy\\ProdigyWeb\\wwwroot\\img\\logo-Sidebar-cut.png",
+      "PackagePath": "staticwebassets\\img\\logo-Sidebar-cut.png"
+    },
+    {
       "Id": "C:\\Users\\Wallace\\Desktop\\tcc\\Production\\Prodigy\\ProdigyWeb\\wwwroot\\img\\menu.png",
       "PackagePath": "staticwebassets\\img\\menu.png"
+    },
+    {
+      "Id": "C:\\Users\\Wallace\\Desktop\\tcc\\Production\\Prodigy\\ProdigyWeb\\wwwroot\\img\\note.png",
+      "PackagePath": "staticwebassets\\img\\note.png"
     },
     {
       "Id": "C:\\Users\\Wallace\\Desktop\\tcc\\Production\\Prodigy\\ProdigyWeb\\wwwroot\\img\\panel1.png",

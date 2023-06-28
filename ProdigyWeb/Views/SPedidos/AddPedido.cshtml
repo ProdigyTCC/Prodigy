@@ -18,10 +18,9 @@
         <thead>
             <form asp-action="AddPedido" asp-controller="SPedidos" method="get">
                 <tr>
-                    <th scope="col">
-                        <input name="produtoPedido" class="form-control input-search" type="search" placeholder="Pesquisar produto" aria-label="Search">
-                    </th>
-                    <th scope="col">
+                    <th class="d-flex">
+                        <input name="produtoPedido" class="form-control input-search me-3" type="search" placeholder="Pesquisar produto" aria-label="Search">
+                    
                         <button class="button-search justify-content-center" type="submit">
                             <i class="fa-solid fa-magnifying-glass fa-lg"></i>
                         </button>            
@@ -46,9 +45,9 @@
                 foreach(var item in Model)
                 {
                 <tr>
-                    <td scope="row">@item.SProdutoId</td>
-                    <td>@item.Nome</td>
-                    <td>@item.Marca</td>
+                    <td id="idProduto" scope="row">@item.SProdutoId</td>
+                    <td id="nomeProduto">@item.Nome</td>
+                    <td id="marcaProduto">@item.Marca</td>
                     <td id="qtProduto">@item.QuantProduto</td>
                     <td id="valorCusto">@item.ValorInicial</td>
                     <td> 
@@ -57,6 +56,11 @@
                     </td>
                 </tr>
                 <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
                     <td>
                         <button id="confirmaProduto" type="button" class="btn btn-success" title="Adicionar quantidade">Adicionar</button>
                     </td>
@@ -64,14 +68,25 @@
                 }
             }
         </tbody>
-        <tfoot>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td>Valor total:</td>
-            <th id="valorTotal">R$</th>
-        </tfoot>
+    </table>
+    </br>
+    <table class="table tabela-pedidos mt-3">
+        <thead>
+            <tr>
+                <th style="font-size: 1.2rem;">Lista de Itens</th>
+            </tr>
+            <tr>
+                <th scope="col">Cód.</th>
+                <th scope="col">Nome do produto</th>
+                <th scope="col">Marca</th>
+                <th scope="col">Quantidade</th>
+                <th scope="col">Valor Custo</th>
+                <th scope="col">Ações</th>
+            </tr>
+        </thead>
+        <tbody id="tabelaPedidoResultado">
+            
+        </tbody>
     </table>
     <form asp-action="NovoPedido" asp-controller="SPedidos">
         <div class="d-flex fundo-addpedidos">

@@ -18,16 +18,21 @@ namespace ProdigyWeb.Controllers
         }
 
         [HttpGet("Index")]
-        public IActionResult Index(string? msg, string? nome = "")
+        public async Task<IActionResult> Index(string? msg, string? nome = "")
         {
+            var moduloBanco = new Modulo();
             ClaimsPrincipal claims = HttpContext.User;
-
             var usuarioId = User.FindFirst("Id")?.Value;
 
             if (claims.Identity.IsAuthenticated)
             {
                 var clientes = _context.SClientes.Where(x => x.UsuarioId == int.Parse(usuarioId));
-
+                if (moduloBanco != null)
+                {
+                    moduloBanco = await _context.Modulos.FirstOrDefaultAsync(x => x.UsuarioId.Equals(int.Parse(usuarioId)));
+                    if (moduloBanco.NomeSistema == "AcessoPedido")
+                        ViewBag.Modulo = "AcessoPedido";
+                }
                 if (nome != "")
                 {
                     clientes = clientes.Where(x => x.SClienteId.ToString() == nome || x.Nome.Contains(nome));
@@ -45,12 +50,20 @@ namespace ProdigyWeb.Controllers
         }
 
         [HttpGet("AddCliente")]
-        public IActionResult AddCliente(string? msg)
+        public async Task<IActionResult> AddClienteAsync(string? msg)
         {
+            var moduloBanco = new Modulo();
             ClaimsPrincipal claims = HttpContext.User;
+            var usuarioId = User.FindFirst("Id")?.Value;
 
             if (claims.Identity.IsAuthenticated)
             {
+                if (moduloBanco != null)
+                {
+                    moduloBanco = await _context.Modulos.FirstOrDefaultAsync(x => x.UsuarioId.Equals(int.Parse(usuarioId)));
+                    if (moduloBanco.NomeSistema == "AcessoPedido")
+                        ViewBag.Modulo = "AcessoPedido";
+                }
                 ViewBag.Layout = "Dashboard";
                 TempData["Msg"] = msg;
                 return View();
@@ -81,12 +94,12 @@ namespace ProdigyWeb.Controllers
                 }
                 
                 msg = "Este cliente já existe em seu sistema!";
-                return RedirectToAction(nameof(AddCliente), new {msg});
+                return RedirectToAction(nameof(AddClienteAsync), new {msg});
             }
             catch(DbException)
             {
                 msg = "Erro ao cadastrar o cliente";
-                return RedirectToAction(nameof(AddCliente), new {msg});
+                return RedirectToAction(nameof(AddClienteAsync), new {msg});
             }
         }
     
@@ -95,13 +108,26 @@ namespace ProdigyWeb.Controllers
         {
             var clientes = await _context.SClientes.FirstOrDefaultAsync(x => x.SClienteId.Equals(id));
 
+            var moduloBanco = new Modulo();
             ClaimsPrincipal claims = HttpContext.User;
             var usuarioId = User.FindFirst("Id")?.Value;
 
             if (claims.Identity.IsAuthenticated)
             {
+                if (moduloBanco != null)
+                {
+                    moduloBanco = await _context.Modulos.FirstOrDefaultAsync(x => x.UsuarioId.Equals(int.Parse(usuarioId)));
+                    if (moduloBanco.NomeSistema == "AcessoPedido")
+                        ViewBag.Modulo = "AcessoPedido";
+                }
                 if (clientes != null)
                 {
+                    if (moduloBanco != null)
+                    {
+                        moduloBanco = await _context.Modulos.FirstOrDefaultAsync(x => x.UsuarioId.Equals(int.Parse(usuarioId)));
+                        if (moduloBanco.NomeSistema == "AcessoPedido")
+                            ViewBag.Modulo = "AcessoPedido";
+                    }
                     ViewBag.Layout = "Dashboard";
                     TempData["Msg"] = msg;
                     return View(clientes);
